@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>Your Portfolio</title>
+    <meta name="description" content="私のポートフォリオサイトです" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="keywords" content="ポートフォリオ" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    />
+
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="./assets/js/script.js"></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__inner">
+          <div class="header__logo">
+            <a href="#" class="header__logo__link">Your Portfolio</a>
+          </div>
+          <nav class="header__menu">
+            <ul class="header__list">
+              <li class="header__item">
+                <a href="#works" class="header__link">Works</a>
+              </li>
+              <li class="header__item">
+                <a href="#skills" class="header__link">Skills</a>
+              </li>
+              <li class="header__item">
+                <a href="#service" class="header__link">Service</a>
+              </li>
+              <li class="header__item">
+                <a href="#about" class="header__link">About me</a>
+              </li>
+              <li class="header__item">
+                <a href="#contact" class="header__link">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main class="main">
+        <div class="main__inner">
+          <section class="top" id="top">
+            <div class="top__heading">
+              <h1 class="top__title">Welcome To My Portfolio</h1>
+            </div>
+            <p class="top__scroll">
+              <div class="top__scroll-bar"><span>scroll</span></div>
+            </p>
+          </section>
+
+          <section class="works" id="works">
+            <div class="c-inner-lv1 works__inner">
+              <h2 class="c-heading-lv1 js-fadein">WORKS</h2>
+              <div class="container">
+                <div class="row works__row">
+                  <a href="./" class="works__link col-md-4 js-fadein--queue">
+                    <p class="works__img">
+                      <img src="./assets/images/work1.png" alt="" />
+                    </p>
+                    <div class="works__box">
+                      <h3 class="works__title">
+                        ポートフォリオ<br class="u-hidden-pc" /><span
+                          class="works__title--sub"
+                          >（当サイト）</span
+                        >
+                      </h3>
+                      <p class="works__url">https://test.com/porfolio_demo/</p>
+                      <div class="works__lang"><span class="works__lang--js">Javascript</span></div>
+                      <p class="works__txt">
+                        シンプルな雰囲気のポートフォリオサイトにしました。デモサイトですが、参考になれば嬉しいです。
+                      </p>
+                    </div>
+                  </a>
+                  <a
+                  href="./"
+                  class="works__link col-md-4 js-fadein--queue"
+                  target="_blank"
+                >
+                  <p class="works__img">
+                    <img src="./assets/images/work.png" alt="" />
+                  </p>
+                  <div class="works__box">
+                    <h3 class="works__title">
+                      ブログ
+                    </h3>
+                    <p class="works__url">https://test.com/</p>
+                    <div class="works__lang"><span class="works__lang--wordpress">WordPress</span><span class="works__lang--writing">Writing</span></div>
+                    <p class="works__txt">
+                      運用中のブログです。
+                      SEOだけでなく、読みやすさや記事の質にもこだわったサイトです。
+                    </p>
+                  </div>
+                </a>
+                  <a
+                    href="./"
+                    class="works__link col-md-4 js-fadein--queue"
+                    target="_blank"
+                  >
+                    <p class="works__img">
+                      <img src="./assets/images/work.png" alt="" />
+                    </p>
+                    <div class="works__box">
+                      <h3 class="works__title">
+                        舞跳建設<br class="u-hidden-pc" /><span
+                          class="works__title--sub"
+                          >（コーポレートサイト）</span
+                        >
+                      </h3>
+                      <p class="works__url">https://test.com/test-wordpress/</p>
+                      <div class="works__lang"><span class="works__lang--wordpress">WordPress</span><span class="works__lang--php">PHP</span></div>
+                      <p class="works__txt">
+                        架空の建設会社のサイトです。コーディング〜WordPress構築まで自作しました。
+                      </p>
+                    </div>
+                  </a>
+                  <a
+                    href="./"
+                    class="works__link col-md-4 js-fadein--queue"
+                    target="_blank"
+                  >
+                    <p class="works__img">
+                      <img src="./assets/images/work.png" alt="" />
+                    </p>
+                    <div class="works__box">
+                      <h3 class="works__title">
+                        化粧品LP<br class="u-hidden-pc" /><span
+                          class="works__title--sub"
+                          >（架空のLP）</span
+                        >
+                      </h3>
+                      <p class="works__url">https://test.com/cosme_lp/</p>
+                      <div class="works__lang"><span class="works__lang--photoshop">Photoshop</span></div>
+                      <p class="works__txt">
+                        分かりやすさと女性らしさをイメージした架空のLPです。
+                        落ち着いた雰囲気を目指しました。
+                      </p>
+                    </div>
+                  </a>
+
+                  <a
+                    href="./"
+                    class="works__link col-md-4 js-fadein--queue"
+                    target="_blank"
+                  >
+                    <p class="works__img">
+                      <img src="./assets/images/work.png" alt="" />
+                    </p>
+                    <div class="works__box">
+                      <h3 class="works__title">オリジナルWordPressテーマ</h3>
+                      <p class="works__url">https://test.com/wordpress-mytheme/</p>
+                      <div class="works__lang"><span class="works__lang--wordpress">WordPress</span><span class="works__lang--php">PHP</span></div>
+                      <p class="works__txt">
+                        ブログ型レイアウトのオリジナルWordPressテーマです。
+                      </p>
+                    </div>
+                  </a>
+                  <a
+                    href="./"
+                    class="works__link col-md-4 js-fadein--queue"
+                    target="_blank"
+                  >
+                    <p class="works__img">
+                      <img src="./assets/images/work.png" alt="" />
+                    </p>
+                    <div class="works__box">
+                      <h3 class="works__title">掲示板サイト</h3>
+                      <p class="works__url">https://test.com/board/</p>
+                      <div class="works__lang"><span class="works__lang--js">Javascript</span><span class="works__lang--php">PHP</span></div>
+                      <p class="works__txt">
+                        ログイン機能のあるページを制作しました。
+                        自由に書き込みができる掲示板サイトです。
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="skills" id="skills">
+            <div class="c-inner-lv1">
+              <h2 class="c-heading-lv1 js-fadein">Skills</h2>
+              <div class="container skills__container js-fadein">
+                <ul class="row">
+                  <li class="skills__item col-md-3">
+                    <div class="skills__block">
+                        <div class="skills__circle" data-progress="90">
+                            <div class="skills__circle-inner">
+                                <div class="skills__icon">
+                                    <img
+                                    src="./assets/images/icons/language_logo.png"
+                                    alt=""
+                                    />
+                                </div>
+                                <div class="skill_per">90%</div>
+                            </div>
+                        </div>
+                        <h3 class="skills__name">HTML5</h3>
+                    </div>
+                  </li>
+                  <li class="skills__item col-md-3">
+                    <div class="skills__block">
+                        <div class="skills__circle" data-progress="90">
+                            <div class="skills__circle-inner">
+                                <div class="skills__icon">
+                                    <img
+                                    src="./assets/images/icons/language_logo.png"
+                                    alt=""
+                                    />
+                                </div>
+                                <div class="skill_per">90%</div>
+                            </div>
+                        </div>
+                        <h3 class="skills__name">CSS</h3>
+                    </div>
+                  </li>
+                  <li class="skills__item col-md-3">
+                    <div class="skills__block">
+                        <div class="skills__circle" data-progress="90">
+                            <div class="skills__circle-inner">
+                                <div class="skills__icon">
+                                    <img
+                                    src="./assets/images/icons/language_logo.png"
+                                    alt=""
+                                    />
+                                </div>
+                                <div class="skill_per">90%</div>
+                            </div>
+                        </div>
+                        <h3 class="skills__name">WordPress</h3>
+                    </div>
+                  </li>
+                  <li class="skills__item col-md-3">
+                    <div class="skills__block">
+                        <div class="skills__circle" data-progress="70">
+                            <div class="skills__circle-inner">
+                                <div class="skills__icon">
+                                    <img
+                                    src="./assets/images/icons/language_logo.png"
+                                    alt=""
+                                    />
+                                </div>
+                                <div class="skill_per">70%</div>
+                            </div>
+                        </div>
+                        <h3 class="skills__name">Sass</h3>
+                    </div>
+                  </li>
+                  <li class="skills__item col-md-3">
+                    <div class="skills__block">
+                        <div class="skills__circle" data-progress="80">
+                            <div class="skills__circle-inner">
+                                <div class="skills__icon">
+                                    <img
+                                    src="./assets/images/icons/language_logo.png"
+                                    alt="html"
+                                    />
+                                </div>
+                                <div class="skill_per">80%</div>
+                            </div>
+                        </div>
+                        <h3 class="skills__name">Javascript/jQuery</h3>
+                    </div>
+                  </li>
+                  <li class="skills__item col-md-3">
+                    <div class="skills__block">
+                        <div class="skills__circle" data-progress="70">
+                            <div class="skills__circle-inner">
+                                <div class="skills__icon">
+                                    <img
+                                    src="./assets/images/icons/language_logo.png"
+                                    alt="html"
+                                    />
+                                </div>
+                                <div class="skill_per">70%</div>
+                            </div>
+                        </div>
+                        <h3 class="skills__name">git</h3>
+                    </div>
+                  </li>
+                  <li class="skills__item col-md-3">
+                    <div class="skills__block">
+                        <div class="skills__circle" data-progress="50">
+                            <div class="skills__circle-inner">
+                                <div class="skills__icon">
+                                    <img
+                                    src="./assets/images/icons/language_logo.png"
+                                    alt="html"
+                                    />
+                                </div>
+                                <div class="skill_per">50%</div>
+                            </div>
+                        </div>
+                        <h3 class="skills__name">Photoshop</h3>
+                    </div>
+                  </li>
+                  <li class="skills__item col-md-3">
+                    <div class="skills__block">
+                        <div class="skills__circle" data-progress="40">
+                            <div class="skills__circle-inner">
+                                <div class="skills__icon">
+                                    <img
+                                    src="./assets/images/icons/language_logo.png"
+                                    alt="html"
+                                    />
+                                </div>
+                                <div class="skill_per">40%</div>
+                            </div>
+                        </div>
+                        <h3 class="skills__name">PHP</h3>
+                    </div>
+                  </li>
+                </ul>
+                <p class="skills__note">※デザインは対応できません。</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="service" id="service">
+            <div class="c-inner-lv1">
+              <h2 class="c-heading-lv1 js-fadein">Service</h2>
+              <div class="container">
+                <div class="row service__row">
+                  <div class="col-md-3 service__block js-fadein--queue">
+                    <h3 class="service__title">HP制作・LP制作</h3>
+                    <div class="service__icon-box">
+                      <i class="fas fa-desktop service__icon"></i>
+                    </div>
+                    <div class="service__box">
+                      <p class="service__txt">
+                        例：SEOを意識したマークアップに加え、デザインを忠実に再現したコーディングを行います。<br />
+                        レスポンシブ対応までお任せください。
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-3 service__block js-fadein--queue">
+                    <h3 class="service__title">WordPressサイト構築</h3>
+                    <div class="service__icon-box">
+                      <i class="fab fa-wordpress service__icon"></i>
+                    </div>
+                    <div class="service__box">
+                      <p class="service__txt">
+                        例：WordPressによるサイトリニューアルもお任せください。<br />
+                        静的サイトからWordPressへの移行や、テーマ制作も可能です。<br />
+                        運用、保守も対応いたします。
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-3 service__block js-fadein--queue">
+                    <h3 class="service__title">コーポレートサイト制作</h3>
+                    <div class="service__icon-box">
+                      <i class="far fa-building service__icon"></i>
+                    </div>
+                    <div class="service__box">
+                      <p class="service__txt">
+                        例：企業のブランドを意識した雰囲気のあるサイト制作が可能です。<br />
+                        アクセス解析ツールの埋め込みや、サイトマップ作成などもお任せください。
+                        SEO対策についても対応可能です。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="about" id="about">
+            <div class="c-inner-lv1">
+              <h2 class="c-heading-lv1 js-fadein">About Me</h2>
+              <div class="container">
+                <div class="row">
+                  <div class="about__img col-sm-5 js-fadein">
+                    <img src="./assets/images/profile.png" alt="My Profile" />
+                    <h3 class="about__name">Your Name</h3>
+                  </div>
+                  <div class="about__prof col-sm-7 js-fadein">
+                    <p class="about__info">
+                      ここにプロフィール情報を入れます。<br />
+                      <br />
+                      テキストテキストテキストテキストテキストテキストテキスト<br />
+                      テキストテキストテキストテキストテキスト<br />
+                      <br />
+                      テキストテキストテキストテキストテキストテキスト<br />
+                      テキストテキストテキストテキストテキスト<br />
+                      <br />
+                      テキストテキストテキストテキストテキスト<br />
+                      テキストテキストテキストテキストテキストテキストテキスト<br />
+                      テキストテキストテキストテキスト<br />
+                      テキストテキストテキストテキストテキストテキスト<br />
+                      <div class="git-page">
+                        <i class="fas fa-link"></i>
+                        <a href="https://github.co.jp/" target="_blank">GitHub</a>
+                      </div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="contact" id="contact">
+            <div class="c-inner-lv1">
+              <h2 class="c-heading-lv1 js-fadein">Contact</h2>
+              <div class="container">
+                <p class="row text-center contact__row js-fadein">
+                  制作のご依頼・ご相談などは<br
+                    class="u-hidden-pc"
+                  />下記のSNSまたはメールアドレスにてお願いします。
+                </p>
+                <div class="contact__block js-fadein">
+                    <div class="contact__inner"><a href="https://x.com/" class="contact__sns">X</a></div>
+                    <div class="contact__inner"><a href="mailto:testtest@gmail.com" class="contact__mail">testtest@gmail.com</a></div>
+                </div>
+              </div>
+            </div>
+          </section>
+          </div>
+          </main>
+          <footer class="footer">
+            <div class="footer__inner container">
+              <p class="footer__cr">
+                Copyright © 2024 Your Name Portfolio All rights reserved.
+              </p>
+            </div>
+          </footer>
+    </div>
+  </body>
+</html>
