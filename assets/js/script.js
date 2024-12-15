@@ -21,7 +21,11 @@ $(function () {
             $(i).is('[data-progress="40"]') &&
               $(i).addClass("skills__circle-40"),
             $(i).is('[data-progress="30"]') &&
-              $(i).addClass("skills__circle-30");
+              $(i).addClass("skills__circle-30"),
+            $(i).is('[data-progress="20"]') &&
+              $(i).addClass("skills__circle-20"),
+            $(i).is('[data-progress="10"]') &&
+              $(i).addClass("skills__circle-10");
         }, 500);
       }
     });

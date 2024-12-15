@@ -587,6 +587,12 @@ img {
 .skills__circle-30:after {
   animation: rotate-circle-right-30 2s linear forwards;
 }
+.skills__circle-20:after {
+  animation: rotate-circle-right-20 2s linear forwards;
+}
+.skills__circle-10:after {
+  animation: rotate-circle-right-10 2s linear forwards;
+}
 
 .skills__circle .skills__circle-inner {
   position: absolute;
@@ -694,7 +700,26 @@ img {
     background: #eef3f7;
   }
 }
-
+@keyframes rotate-circle-right-20 {
+  0% {
+    transform: rotate(0deg);
+    background: #eef3f7;
+  }
+  100% {
+    transform: rotate(72deg);
+    background: #eef3f7;
+  }
+}
+@keyframes rotate-circle-right-10 {
+  0% {
+    transform: rotate(0deg);
+    background: #eef3f7;
+  }
+  100% {
+    transform: rotate(36deg);
+    background: #eef3f7;
+  }
+}
 .skills__name {
   border-top: dotted 2px #ccc;
   text-align: center;
