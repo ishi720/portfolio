@@ -490,6 +490,10 @@ img {
   background: #838eb7;
 }
 
+.works__lang--python {
+  background: #3874a5;
+}
+
 .works__lang--photoshop {
   background: #00c2f7;
 }
@@ -806,7 +810,7 @@ img {
 .about {
   /* 背景を画像にする際は以下を編集 */
   /* background: url(../images/about.png) no-repeat center center; */
-  background: #f7f7f7;
+  background: #fff;
   background-size: cover;
 }
 
@@ -837,7 +841,7 @@ img {
   color: #636363;
   /* 背景を画像にする際は以下を編集 */
   /* background: url(../images/contact.png) no-repeat center center; */
-  background: #fff;
+  background: #f7f7f7;
   background-size: cover;
 }
 
