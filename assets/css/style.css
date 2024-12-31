@@ -1,3 +1,9 @@
+.hoge::before {
+  font-family: Font Awesome 5 Brands;
+  font-weight: 400;
+  content: '\f007';
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -502,10 +508,99 @@ img {
   margin-top: 1rem;
 }
 
+
+.articles {
+  /* 背景を画像にする際は以下を編集 */
+  /* background: url(../images/articles.png) no-repeat center center; */
+  background: #f7f7f7;
+  background-size: cover;
+  margin-top: 2rem;
+}
+
+.articles__row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+
+.articles__source {
+  background: #55c500;
+  display: inline;
+  border-radius: 2px;
+  color: #fff;
+  padding: 0 6px;
+}
+
+.articles__link {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: calc(33% - 30px);
+  margin: 0 15px;
+  padding: 0;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 3px 0 rgb(0 0 0 / 12%), 0 2px 3px 0 rgb(0 0 0 / 22%);
+}
+
+.articles__link:nth-of-type(n + 4) {
+  margin: 50px 15px 0;
+}
+
+.articles__link:hover {
+  box-shadow: 0 15px 30px -5px rgb(0 0 0 / 15%), 0 0 5px rgb(0 0 0 / 10%);
+  transform: translateY(-4px);
+}
+
+.articles__img {
+  overflow: hidden;
+  height: 200px;
+}
+
+.articles__img img {
+  width: 100%;
+}
+
+.articles__box {
+  padding: 15px;
+}
+
+.articles__title {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.articles__title--sub {
+  font-size: 1.2rem;
+}
+
+.articles__url {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+
+.articles__tags span {
+  font-size: 1.2rem;
+  padding: 0.2rem 1rem;
+  border-radius: 2rem;
+  color: #fff;
+}
+
+.articles__tag {
+  background: #056085;
+}
+
+
+
 .skills {
   /* 背景を画像にする際は以下を編集 */
   /* background: url(../images/skills.pnp) no-repeat center center; */
-  background: #f7f7f7;
+  background: #fff;
   background-size: cover;
 }
 
@@ -810,7 +905,7 @@ img {
 .about {
   /* 背景を画像にする際は以下を編集 */
   /* background: url(../images/about.png) no-repeat center center; */
-  background: #fff;
+  background: #f7f7f7;
   background-size: cover;
 }
 
@@ -841,7 +936,7 @@ img {
   color: #636363;
   /* 背景を画像にする際は以下を編集 */
   /* background: url(../images/contact.png) no-repeat center center; */
-  background: #f7f7f7;
+  background: #fff;
   background-size: cover;
 }
 
@@ -1014,6 +1109,23 @@ Footer
   .works__lang {
     display: none;
   }
+
+  .articles__link {
+    width: calc(50% - 7.5px);
+  }
+
+  .articles__link:nth-of-type(odd) {
+    margin: 0 7.5px 0 0;
+  }
+
+  .articles__link:nth-of-type(even) {
+    margin: 0 0 0 7.5px;
+  }
+
+  .articles__link:nth-of-type(n + 3) {
+    margin-top: 15px;
+  }
+
 
   .skills__container {
     margin: 0 15px;
