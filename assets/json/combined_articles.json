@@ -1,11 +1,19 @@
 [
     {
+        "published_at": "2025-02-23T13:41:51+09:00",
+        "url": "https://qiita.com/ishi720/items/32fc56252504f8f8a132",
+        "title": "【電脳少女 プログラミング2088 Bランク】 ギャングのアジトをPython3で効率性や可読性を意識してコーディングしてみた",
+        "tags": "Python3, paiza, paiza×Qiitaコラボキャンペーン, 電脳少女プログラミング2088",
+        "source": "Qiita",
+        "likes": 4
+    },
+    {
         "published_at": "2025-01-08T19:58:16+09:00",
         "url": "https://qiita.com/ishi720/items/12ba9db3fd70e764f7f5",
         "title": "正月からp5.jsを使って正方形を描いてみた",
         "tags": "JavaScript, p5.js",
         "source": "Qiita",
-        "likes": 4
+        "likes": 8
     },
     {
         "published_at": "2024-12-28T12:26:58+09:00",
@@ -13,7 +21,7 @@
         "title": "🏪JavaScriptのWeb Audio APIで「ファミマの入店音」を奏でる🏪",
         "tags": "JavaScript, WebAudioAPI",
         "source": "Qiita",
-        "likes": 32
+        "likes": 33
     },
     {
         "published_at": "2024-12-18T21:11:13+09:00",
@@ -37,7 +45,7 @@
         "title": "テキストをコピペするときにスタイルごとコピーされちゃうのってどんな仕組み？",
         "tags": "JavaScript, clipboard, リッチテキスト",
         "source": "Qiita",
-        "likes": 305
+        "likes": 322
     },
     {
         "published_at": "2024-10-27T23:46:28+09:00",
@@ -77,13 +85,13 @@
         "title": "個人でやってきた学習方法を紹介",
         "tags": "初心者向け, 学習方法",
         "source": "Qiita",
-        "likes": 5
+        "likes": 6
     },
     {
         "published_at": "2024-05-24T22:23:06+09:00",
         "url": "https://qiita.com/ishi720/items/65ba025a0d50211499c7",
         "title": "VisualStudioCodeからProcessingを実行できるように設定する",
-        "tags": "processing, VisualStudioCode",
+        "tags": "processing, VSCode",
         "source": "Qiita",
         "likes": 3
     },
@@ -101,7 +109,7 @@
         "title": "Reactアプリのテスト結果をCoverallsで表示",
         "tags": "Coveralls, React, GitHubActions",
         "source": "Qiita",
-        "likes": 4
+        "likes": 5
     },
     {
         "published_at": "2024-03-25T20:53:15+09:00",
@@ -125,7 +133,7 @@
         "title": "フルスタックエンジニアの悩み",
         "tags": "エンジニアのキャリア, フルスタックエンジニア",
         "source": "Qiita",
-        "likes": 113
+        "likes": 114
     },
     {
         "published_at": "2024-01-09T08:08:06+09:00",
@@ -333,7 +341,7 @@
         "title": "タイポグリセミア現象を用いて、タイポしても気づかれない文章を作りたい",
         "tags": "JavaScript, kuromoji, 形態素解析, タイポグリセミア現象",
         "source": "Qiita",
-        "likes": 8
+        "likes": 9
     },
     {
         "published_at": "2023-07-01T07:17:51+09:00",
@@ -341,7 +349,7 @@
         "title": "PowerShellを使って、Excel資料作成の仕上げを短縮する",
         "tags": "Excel, PowerShell, 仕事効率化",
         "source": "Qiita",
-        "likes": 7
+        "likes": 8
     },
     {
         "published_at": "2023-06-23T23:29:26+09:00",
