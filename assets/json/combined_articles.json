@@ -1,5 +1,13 @@
 [
     {
+        "published_at": "2025-04-22T18:03:02+09:00",
+        "url": "https://qiita.com/ishi720/items/ba4df0e7d289669a2c76",
+        "title": "AIに仕事を奪われるって言うけど、IT人材が足りてないのはなぜなのか？",
+        "tags": "エンジニア, 働き方, 生成AI",
+        "source": "Qiita",
+        "likes": 3
+    },
+    {
         "published_at": "2025-03-18T08:33:27+09:00",
         "url": "https://qiita.com/ishi720/items/3c144d3225c90910fc3d",
         "title": "QuickSightのSPICEのフル更新と増分更新の検証",
@@ -21,7 +29,7 @@
         "title": "正月からp5.jsを使って正方形を描いてみた",
         "tags": "JavaScript, p5.js",
         "source": "Qiita",
-        "likes": 8
+        "likes": 9
     },
     {
         "published_at": "2024-12-28T12:26:58+09:00",
@@ -141,7 +149,7 @@
         "title": "フルスタックエンジニアの悩み",
         "tags": "エンジニアのキャリア, フルスタックエンジニア",
         "source": "Qiita",
-        "likes": 114
+        "likes": 115
     },
     {
         "published_at": "2024-01-09T08:08:06+09:00",
@@ -317,7 +325,7 @@
         "title": "色んなサイトの検索ボックスのUI/UXを本格的に調査してみる①",
         "tags": "UIUX, 検索ボックス",
         "source": "Qiita",
-        "likes": 4
+        "likes": 5
     },
     {
         "published_at": "2023-07-30T12:22:03+09:00",
@@ -381,7 +389,7 @@
         "title": "Vis Networkを使って「コラッツの問題」を視覚化してみた",
         "tags": "JavaScript, 数学, vis.js, コラッツ予想",
         "source": "Qiita",
-        "likes": 3
+        "likes": 4
     },
     {
         "published_at": "2022-06-20T21:18:41.873+09:00",
