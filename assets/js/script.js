@@ -103,6 +103,7 @@ function setArticle() {
     $('#articles__source_1').text(data[0]['source']);
     $('#articles__title_1').text(data[0]['title']);
     $('#articles__link_1').attr('href', data[0]['url']);
+    $('#articles__likes_1').text(data[0]['likes']);
 
     const array1 = data[0]['tags'].split(",").map(item => item.trim());
     array1.forEach(tag => {
@@ -112,6 +113,7 @@ function setArticle() {
     $('#articles__source_2').text(data[1]['source']);
     $('#articles__title_2').text(data[1]['title']);
     $('#articles__link_2').attr('href', data[1]['url']);
+    $('#articles__likes_2').text(data[1]['likes']);
 
     const array2 = data[1]['tags'].split(",").map(item => item.trim());
     array2.forEach(tag => {
@@ -121,6 +123,7 @@ function setArticle() {
     $('#articles__source_3').text(data[2]['source']);
     $('#articles__title_3').text(data[2]['title']);
     $('#articles__link_3').attr('href', data[2]['url']);
+    $('#articles__likes_3').text(data[2]['likes']);
 
     const array3 = data[2]['tags'].split(",").map(item => item.trim());
     array3.forEach(tag => {
@@ -130,6 +133,7 @@ function setArticle() {
     $('#articles__source_4').text(data[3]['source']);
     $('#articles__title_4').text(data[3]['title']);
     $('#articles__link_4').attr('href', data[3]['url']);
+    $('#articles__likes_4').text(data[3]['likes']);
 
     const array4 = data[3]['tags'].split(",").map(item => item.trim());
     array4.forEach(tag => {
@@ -139,6 +143,7 @@ function setArticle() {
     $('#articles__source_5').text(data[4]['source']);
     $('#articles__title_5').text(data[4]['title']);
     $('#articles__link_5').attr('href', data[4]['url']);
+    $('#articles__likes_5').text(data[4]['likes']);
 
     const array5 = data[4]['tags'].split(",").map(item => item.trim());
     array5.forEach(tag => {
@@ -148,6 +153,7 @@ function setArticle() {
     $('#articles__source_6').text(data[5]['source']);
     $('#articles__title_6').text(data[5]['title']);
     $('#articles__link_6').attr('href', data[5]['url']);
+    $('#articles__likes_6').text(data[5]['likes']);
 
     const array6 = data[5]['tags'].split(",").map(item => item.trim());
     array6.forEach(tag => {
