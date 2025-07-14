@@ -1,11 +1,19 @@
 [
     {
+        "published_at": "2025-07-13T18:59:46+09:00",
+        "url": "https://qiita.com/ishi720/items/3fc6ade75c54d3874819",
+        "title": "QuickSightの設定をLambdaで自動バックアップ",
+        "tags": "Python, AWS, Python3, lambda, QuickSight",
+        "source": "Qiita",
+        "likes": 2
+    },
+    {
         "published_at": "2025-07-06T17:45:33+09:00",
         "url": "https://qiita.com/ishi720/items/7d9defe5301e8089b9ff",
         "title": "リンク機構の軌跡を可視化するメカニカルアートをp5.jsで作ってみた",
         "tags": "JavaScript, p5.js, リンク機構",
         "source": "Qiita",
-        "likes": 21
+        "likes": 24
     },
     {
         "published_at": "2025-07-01T00:03:28+09:00",
@@ -181,7 +189,7 @@
         "title": "フルスタックエンジニアの悩み",
         "tags": "エンジニアのキャリア, フルスタックエンジニア",
         "source": "Qiita",
-        "likes": 118
+        "likes": 119
     },
     {
         "published_at": "2024-01-09T08:08:06+09:00",
