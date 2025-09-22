@@ -35,14 +35,9 @@ $(function () {
     });
   });
 
-  $(".skills__circle").hover(
-    function () {
-      $(this).find(".skill_per").fadeIn();
-    },
-    function () {
-      $(this).find(".skill_per").fadeOut();
-    }
-  );
+  $(".skills__circle").on("mouseenter mouseleave", function () {
+    $(this).find(".skill_per").fadeToggle();
+  });
 
   $('a[href^="#"]').click(function () {
     var section = $(this).attr("href");
