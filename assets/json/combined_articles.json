@@ -1,5 +1,13 @@
 [
     {
+        "published_at": "2025-10-04T23:22:48+09:00",
+        "url": "https://qiita.com/ishi720/items/e253170afb94c5297969",
+        "title": "JavaScriptでハングルを分解してタイピングソフトを作る",
+        "tags": "JavaScript, タイピング, ハングル",
+        "source": "Qiita",
+        "likes": 5
+    },
+    {
         "published_at": "2025-09-11T21:52:36+09:00",
         "url": "https://qiita.com/ishi720/items/8dc9d2ac001ff7a711a9",
         "title": "リンク機構におけるドラッグ機能追加と可動範囲の可視化",
@@ -205,7 +213,7 @@
         "title": "フルスタックエンジニアの悩み",
         "tags": "エンジニアのキャリア, フルスタックエンジニア",
         "source": "Qiita",
-        "likes": 120
+        "likes": 121
     },
     {
         "published_at": "2024-01-09T08:08:06+09:00",
@@ -325,7 +333,7 @@
         "title": "ゲームなどでよく見る「長押しのボタン」のUIをWEBで表現してみた",
         "tags": "HTML, CSS, JavaScript, UI",
         "source": "Qiita",
-        "likes": 71
+        "likes": 70
     },
     {
         "published_at": "2023-09-30T11:08:26+09:00",
@@ -365,7 +373,7 @@
         "title": "「が」を「か゛」のように、ひらがなの濁点・半濁点を分離したい",
         "tags": "JavaScript",
         "source": "Qiita",
-        "likes": 9
+        "likes": 8
     },
     {
         "published_at": "2023-08-29T08:41:41+09:00",
