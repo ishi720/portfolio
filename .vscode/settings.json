@@ -1,6 +1,6 @@
 {
   "editor.renderWhitespace": "all",
-  "editor.tabSize": 2,
+  "editor.tabSize": 4,
   "files.trimTrailingWhitespace": true,
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "window.title":"${dirty}${activeEditorMedium}${separator}${rootName}"
