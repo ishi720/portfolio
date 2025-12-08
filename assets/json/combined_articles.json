@@ -1,11 +1,19 @@
 [
     {
+        "published_at": "2025-12-07T17:25:26+09:00",
+        "url": "https://qiita.com/ishi720/items/5c5e8779c66d45d7c216",
+        "title": "ラバーペンシル現象をWEBで再現してみた",
+        "tags": "JavaScript, ラバーペンシル現象",
+        "source": "Qiita",
+        "likes": 13
+    },
+    {
         "published_at": "2025-11-27T22:59:12+09:00",
         "url": "https://qiita.com/ishi720/items/83ffb6df96f59ad49d00",
         "title": "【Go】Echo × VOICEVOX で謎言語をずんだもんに読み上げてもらう",
         "tags": "Go, echo, VOICEVOX",
         "source": "Qiita",
-        "likes": 3
+        "likes": 7
     },
     {
         "published_at": "2025-10-04T23:22:48+09:00",
@@ -77,7 +85,7 @@
         "title": "AIに仕事を奪われるって言うけど、IT人材が足りてないのはなぜなのか？",
         "tags": "エンジニア, 働き方, 生成AI",
         "source": "Qiita",
-        "likes": 85
+        "likes": 86
     },
     {
         "published_at": "2025-03-18T08:33:27+09:00",
