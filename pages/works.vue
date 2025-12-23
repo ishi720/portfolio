@@ -12,7 +12,7 @@
         <div class="works-grid">
           <a v-for="work in works" :key="work.title" :href="work.url" target="_blank" class="work-card">
             <div class="work-image">
-              <img :src="`/portfolio/images/${work.image}`" :alt="work.title" @error="handleImgError">
+              <img :src="`/portfolio/images/service/${work.image}`" :alt="work.title" @error="handleImgError">
               <div class="work-image-placeholder">{{ work.title }}</div>
             </div>
             <div class="work-content">
