@@ -72,7 +72,7 @@ img { max-width: 100%; height: auto; }
 }
 .hero::before {
   content: ''; position: absolute; inset: 0;
-  background: 
+  background:
     radial-gradient(circle at 20% 50%, rgba(74, 144, 164, 0.15) 0%, transparent 50%),
     radial-gradient(circle at 80% 50%, rgba(74, 144, 164, 0.1) 0%, transparent 50%);
 }
@@ -151,7 +151,10 @@ img { max-width: 100%; height: auto; }
 }
 .work-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
 .work-image {
-  position: relative; height: 200px; background: var(--bg); overflow: hidden;
+    position: relative;
+    aspect-ratio: 1200 / 800;
+    background: var(--bg);
+    overflow: hidden;
 }
 .work-image img {
   width: 100%; height: 100%; object-fit: cover; transition: var(--transition);
