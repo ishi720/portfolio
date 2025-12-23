@@ -33,7 +33,7 @@ export const usePortfolio = () => {
     { title: 'WEBラテアート', url: 'https://ishi720.github.io/web-latte-art/', image: 'web-latte-art.png', description: 'ブラウザでラテアートが楽しめる、流体シミュレーションアプリケーションです。', techs: ['Javascript'] },
     { title: 'ラバーペンシル現象', url: 'https://ishi720.github.io/RubberPencilIllusion/', image: 'RubberPencilIllusion.png', description: 'ラバーペンシル現象の錯覚を再現したWebアプリケーションです。', techs: ['Javascript'] },
     { title: 'ハニカム構造マインスイパー', url: 'https://ishi720.github.io/MineSweeperHoneycomb/', image: 'MineSweeperHoneycomb.png', description: 'ハニカム構造のマインスイーパーです。', techs: ['Javascript'] },
-    { title: 'ハニカム構造リバーシ', url: 'https://honeycomb-reversi.vercel.app/', image: 'HoneycombReversi.png', description: 'ハニカム構造リバーシです。CPUも実装しています。', techs: ['Javascript'] },
+    { title: 'ハニカム構造リバーシ', url: 'https://ishi720.github.io/HoneycombReversi/', image: 'HoneycombReversi.png', description: 'ハニカム構造リバーシです。CPUも実装しています。', techs: ['Javascript'] },
     { title: 'Honeycomb Pixel Art', url: 'https://honeycomb-pixel-art.vercel.app/', image: 'HoneycombPixelArt.png', description: '画像ファイルをハニカムピクセルに変換するサービスです。', techs: ['Javascript'] },
     { title: 'Polygonal Geometric Pattern', url: 'https://ishi720.github.io/PolygonalGeometricPattern/', image: 'PolygonalGeometricPattern.png', description: '多角形の辺上を移動する点から生成される幾何学的パターンを可視化するサービスです。', techs: ['Javascript'] },
   ]
