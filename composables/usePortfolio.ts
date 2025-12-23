@@ -49,10 +49,10 @@ export const usePortfolio = () => {
     { name: 'Java', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg', level: 10 },
   ]
 
-  const articles = [
-    { title: 'Qiita記事一覧', url: 'https://qiita.com/ishi720', platform: 'Qiita' },
-    { title: 'Zenn記事一覧', url: 'https://zenn.dev/ishi720', platform: 'Zenn' },
+  const article_platforms = [
+    { title: 'Qiita', url: 'https://qiita.com/ishi720'},
+    { title: 'Zenn', url: 'https://zenn.dev/ishi720'},
   ]
 
-  return { profile, socials, works, skills, articles }
+  return { profile, socials, works, skills, article_platforms }
 }
