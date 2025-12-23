@@ -1,0 +1,41 @@
+<template>
+  <div class="app">
+    <header class="header">
+      <div class="header-inner">
+        <NuxtLink to="/" class="logo">{{ profile.name }} Portfolio</NuxtLink>
+        <nav class="nav" :class="{ active: menuOpen }">
+          <NuxtLink to="/" class="nav-link" @click="menuOpen = false">Home</NuxtLink>
+          <NuxtLink to="/works" class="nav-link" @click="menuOpen = false">Works</NuxtLink>
+          <NuxtLink to="/skills" class="nav-link" @click="menuOpen = false">Skills</NuxtLink>
+          <NuxtLink to="/articles" class="nav-link" @click="menuOpen = false">Articles</NuxtLink>
+          <NuxtLink to="/contact" class="nav-link" @click="menuOpen = false">Contact</NuxtLink>
+        </nav>
+        <button class="mobile-menu-btn" @click="menuOpen = !menuOpen">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main class="main">
+      <slot />
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-links">
+          <a v-for="social in socials" :key="social.name" :href="social.url" target="_blank">
+            {{ social.name }}
+          </a>
+        </div>
+        <p class="copyright">© 2024 {{ profile.name }} Portfolio All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { usePortfolio } from '~/composables/usePortfolio'
+
+const { profile, socials } = usePortfolio()
+const menuOpen = ref(false)
+</script>
