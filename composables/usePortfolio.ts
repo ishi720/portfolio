@@ -15,6 +15,7 @@ export const usePortfolio = () => {
 
   const works = [
     { title: 'ポケモンパーティメーカー', url: 'https://suisui.fun/ppm/', image: 'ppm.png', description: 'ポケモンをランダムで選出します。しりとり選出機能もあります。', techs: ['PHP', 'Javascript'] },
+    { title: 'Feeduck(Chrome拡張機能)', url: 'https://chromewebstore.google.com/detail/feeduck/alfjohbjhjgkcmgecbhjcjhhkiphccne?authuser=4&hl=ja', image: 'feeduck-chrome-extension.png', description: 'RSSフィードを表示するChrome拡張機能です。', techs: ['Javascript'] },
     { title: 'Collatz Visualization', url: 'https://suisui.fun/collatz_visualization/', image: 'collatz_visualization.png', description: '未解決問題のひとつであるコラッツ問題をvis.jsを用いて視覚化しました。', techs: ['Javascript'] },
     { title: "Let's Typo", url: 'https://suisui.fun/make_typo/', image: 'lets_typo.png', description: 'タイポグリセミア現象を使った、文章変換サービスです。', techs: ['Javascript'] },
     { title: '正規表現シミュレーター', url: 'https://suisui.fun/regexp/', image: 'regexp.png', description: 'Angular.jsを利用して作成しました。リアルタイムに正規表現のシミュレーションができます。', techs: ['Javascript'] },
@@ -32,6 +33,7 @@ export const usePortfolio = () => {
     { title: '3Dマインスイーパー', url: 'https://minesweeper3d.suisui.fun/', image: 'MineSweeper3d.png', description: 'Three.jsで3Dマインスイーパーを作成しました。', techs: ['Javascript'] },
     { title: 'WEBラテアート', url: 'https://ishi720.github.io/web-latte-art/', image: 'web-latte-art.png', description: 'ブラウザでラテアートが楽しめる、流体シミュレーションアプリケーションです。', techs: ['Javascript'] },
     { title: 'ラバーペンシル現象', url: 'https://ishi720.github.io/RubberPencilIllusion/', image: 'RubberPencilIllusion.png', description: 'ラバーペンシル現象の錯覚を再現したWebアプリケーションです。', techs: ['Javascript'] },
+    { title: '4目並べ', url: 'https://play.unity.com/en/games/d623ce55-a4fa-44f6-9733-d2912f7c07df/connect4', image: 'connect4.png', description: 'Unityで作成した4目並べです。', techs: ['C#'] },
     { title: 'ハニカム構造マインスイパー', url: 'https://ishi720.github.io/MineSweeperHoneycomb/', image: 'MineSweeperHoneycomb.png', description: 'ハニカム構造のマインスイーパーです。', techs: ['Javascript'] },
     { title: 'ハニカム構造リバーシ', url: 'https://ishi720.github.io/HoneycombReversi/', image: 'HoneycombReversi.png', description: 'ハニカム構造リバーシです。CPUも実装しています。', techs: ['Javascript'] },
     { title: 'Honeycomb Pixel Art', url: 'https://honeycomb-pixel-art.vercel.app/', image: 'HoneycombPixelArt.png', description: '画像ファイルをハニカムピクセルに変換するサービスです。', techs: ['Javascript'] },
