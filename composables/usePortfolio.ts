@@ -1,0 +1,60 @@
+export const usePortfolio = () => {
+  const profile = {
+    name: 'ishi720',
+    bio: '休日は、無駄なものを開発しているオカメインコです。革新的なアイデアや文化は、無駄から生まれると思ってます。',
+    avatar: '/portfolio/images/ishi720_profile.jpeg',
+    email: 'ishizuka720@gmail.com',
+  }
+
+  const socials = [
+    { name: 'GitHub', url: 'https://github.com/ishi720' },
+    { name: 'Qiita', url: 'https://qiita.com/ishi720' },
+    { name: 'Zenn', url: 'https://zenn.dev/ishi720' },
+    { name: 'npm', url: 'https://www.npmjs.com/~ishi720' },
+  ]
+
+  const works = [
+    { title: 'ポケモンパーティメーカー', url: 'https://suisui.fun/ppm/', image: 'ppm.png', description: 'ポケモンをランダムで選出します。しりとり選出機能もあります。', techs: ['PHP', 'Javascript'] },
+    { title: 'Feeduck(Chrome拡張機能)', url: 'https://chromewebstore.google.com/detail/feeduck/alfjohbjhjgkcmgecbhjcjhhkiphccne?authuser=4&hl=ja', image: 'feeduck-chrome-extension.png', description: 'RSSフィードを表示するChrome拡張機能です。', techs: ['Javascript'] },
+    { title: 'Collatz Visualization', url: 'https://suisui.fun/collatz_visualization/', image: 'collatz_visualization.png', description: '未解決問題のひとつであるコラッツ問題をvis.jsを用いて視覚化しました。', techs: ['Javascript'] },
+    { title: "Let's Typo", url: 'https://suisui.fun/make_typo/', image: 'lets_typo.png', description: 'タイポグリセミア現象を使った、文章変換サービスです。', techs: ['Javascript'] },
+    { title: '正規表現シミュレーター', url: 'https://suisui.fun/regexp/', image: 'regexp.png', description: 'Angular.jsを利用して作成しました。リアルタイムに正規表現のシミュレーションができます。', techs: ['Javascript'] },
+    { title: 'コイントスの統計', url: 'https://ishi720.github.io/cointoss_statistics/dist/', image: 'cointoss_statistics.png', description: 'コイントスのシミュレートし、二項分布のグラフをchart.jsを用いて表現しました。', techs: ['Javascript'] },
+    { title: 'Qiitaアナリティクス', url: 'https://qiita-api-sample.onrender.com/', image: 'qiita_analytics.png', description: 'Qiitaの記事を日付ごとの「いいね」数でグラフ化しました。', techs: ['Javascript', 'Python'] },
+    { title: 'Numnator', url: 'https://numnator.suisui.fun', image: 'numnator.png', description: '開発途中の数字を当てるゲームです。Vue.jsで作成しています。', techs: ['Javascript'] },
+    { title: 'キーボードUI', url: 'https://ishi720.github.io/keyboardUI/', image: 'keyboardUI.png', description: '自作のWEBキーボードです。かな、ローマ字、ハングルの3種類のキーボードを選択できます。', techs: ['Javascript'] },
+    { title: '子音チェンジャー', url: 'https://consonant-changer.suisui.fun/', image: 'ConsonantChanger.png', description: '文字の変換ができるサービスです。Go言語のechoフレームワークを使って作成しました。', techs: ['Go'] },
+    { title: 'Mechanical Sketcher', url: 'https://ishi720.github.io/mechanical-sketcher/', image: 'mechanical_sketcher.png', description: 'リンク機構の軌道を描画するシミュレーションするプログラムです。p5.jsで作成しました。', techs: ['Javascript'] },
+    { title: '正規表現のスキルチェック', url: 'https://regex-challenge.vercel.app/', image: 'regex-challenge.png', description: '正規表現のスキルをチェックできるサービスです。Reactで作成中です。', techs: ['Typescript'] },
+    { title: 'レーベンシュタイン距離の検索機能サンプル', url: 'https://levenshtein-distance-search-silk.vercel.app/', image: 'levenshtein-distance-search.png', description: 'Reactでレーベンシュタイン距離を使った検索機能を実装しました。', techs: ['Typescript'] },
+    { title: '4点を通る正方形を描く', url: 'https://ishi720.github.io/draw_shapes/', image: 'draw_shapes.png', description: 'p5.jsを用いて、移動する4点を通る正方形を描画するプログラムを作成しました。', techs: ['Javascript'] },
+    { title: '2048パズル', url: 'https://two048puzzle-1.onrender.com/', image: '2048puzzle.png', description: 'Reactとp5.jsで2048パズルを作成しました。', techs: ['Javascript'] },
+    { title: 'モールス信号シミュレーター', url: 'https://morse-code-simulator-seven.vercel.app/', image: 'morse-code-simulator.png', description: 'モールス信号のシミュレーターをReactで作成しました。', techs: ['Javascript'] },
+    { title: '3Dマインスイーパー', url: 'https://minesweeper3d.suisui.fun/', image: 'MineSweeper3d.png', description: 'Three.jsで3Dマインスイーパーを作成しました。', techs: ['Javascript'] },
+    { title: 'WEBラテアート', url: 'https://ishi720.github.io/web-latte-art/', image: 'web-latte-art.png', description: 'ブラウザでラテアートが楽しめる、流体シミュレーションアプリケーションです。', techs: ['Javascript'] },
+    { title: 'ラバーペンシル現象', url: 'https://ishi720.github.io/RubberPencilIllusion/', image: 'RubberPencilIllusion.png', description: 'ラバーペンシル現象の錯覚を再現したWebアプリケーションです。', techs: ['Javascript'] },
+    { title: '4目並べ', url: 'https://play.unity.com/en/games/d623ce55-a4fa-44f6-9733-d2912f7c07df/connect4', image: 'connect4.png', description: 'Unityで作成した4目並べです。', techs: ['C#'] },
+    { title: 'ハニカム構造マインスイパー', url: 'https://ishi720.github.io/MineSweeperHoneycomb/', image: 'MineSweeperHoneycomb.png', description: 'ハニカム構造のマインスイーパーです。', techs: ['Javascript'] },
+    { title: 'ハニカム構造リバーシ', url: 'https://ishi720.github.io/HoneycombReversi/', image: 'HoneycombReversi.png', description: 'ハニカム構造リバーシです。CPUも実装しています。', techs: ['Javascript'] },
+    { title: 'Honeycomb Pixel Art', url: 'https://honeycomb-pixel-art.vercel.app/', image: 'HoneycombPixelArt.png', description: '画像ファイルをハニカムピクセルに変換するサービスです。', techs: ['Javascript'] },
+    { title: 'Polygonal Geometric Pattern', url: 'https://ishi720.github.io/PolygonalGeometricPattern/', image: 'PolygonalGeometricPattern.png', description: '多角形の辺上を移動する点から生成される幾何学的パターンを可視化するサービスです。', techs: ['Javascript'] },
+  ]
+
+  const skills = [
+    { name: 'HTML5', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg', level: 90 },
+    { name: 'CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg', level: 90 },
+    { name: 'Javascript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg', level: 80 },
+    { name: 'Python3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg', level: 50 },
+    { name: 'PHP', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg', level: 60 },
+    { name: 'Ruby', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ruby/ruby-original.svg', level: 20 },
+    { name: 'Go', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg', level: 20 },
+    { name: 'Java', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg', level: 10 },
+  ]
+
+  const article_platforms = [
+    { title: 'Qiita', url: 'https://qiita.com/ishi720'},
+    { title: 'Zenn', url: 'https://zenn.dev/ishi720'},
+  ]
+
+  return { profile, socials, works, skills, article_platforms }
+}
