@@ -22,12 +22,7 @@
 
     <footer class="footer">
       <div class="footer-inner">
-        <div class="footer-links">
-          <a v-for="social in socials" :key="social.name" :href="social.url" target="_blank">
-            {{ social.name }}
-          </a>
-        </div>
-        <p class="copyright">© 2024 {{ profile.name }} Portfolio All rights reserved.</p>
+        <p class="copyright">© 2025 {{ profile.name }} Portfolio All rights reserved.</p>
       </div>
     </footer>
   </div>
@@ -36,6 +31,6 @@
 <script setup lang="ts">
 import { usePortfolio } from '~/composables/usePortfolio'
 
-const { profile, socials } = usePortfolio()
+const { profile } = usePortfolio()
 const menuOpen = ref(false)
 </script>

@@ -23,6 +23,7 @@ portfolio/
 │   ├── articles.vue        # Articles（/articles）
 │   └── contact.vue         # Contact（/contact）
 ├── public/
+│   ├── data/               # JSONデータファイル置き場
 │   └── images/             # 画像ファイル置き場
 ├── app.vue                 # ルートコンポーネント
 ├── nuxt.config.ts          # Nuxt設定
