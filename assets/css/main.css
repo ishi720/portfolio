@@ -217,17 +217,15 @@ img { max-width: 100%; height: auto; }
 }
 .article-platforms-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 24px;
-    max-width: 800px;
     margin: 0 auto 40px;
 }
 
 .articles-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 24px;
-    max-width: 800px;
     margin: 0 auto 40px;
 }
 .article-card {
@@ -337,4 +335,3 @@ img { max-width: 100%; height: auto; }
   .works-grid { grid-template-columns: 1fr; }
   .contact-info { padding: 32px 24px; }
 }
-
