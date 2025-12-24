@@ -11,6 +11,8 @@ export const usePortfolio = () => {
     { name: 'Qiita', url: 'https://qiita.com/ishi720' },
     { name: 'Zenn', url: 'https://zenn.dev/ishi720' },
     { name: 'npm', url: 'https://www.npmjs.com/~ishi720' },
+    { name: 'Wantedly', url: 'https://www.wantedly.com/id/ishi720' },
+    { name: 'X', url: 'https://x.com/ishi720' },
   ]
 
   const works = [
