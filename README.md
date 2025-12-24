@@ -19,9 +19,7 @@ portfolio/
 ├── pages/
 │   ├── index.vue           # Home（/）
 │   ├── works.vue           # Works（/works）
-│   ├── skills.vue          # Skills（/skills）
-│   ├── articles.vue        # Articles（/articles）
-│   └── contact.vue         # Contact（/contact）
+│   └── articles.vue        # Articles（/articles）
 ├── public/
 │   ├── data/               # JSONデータファイル置き場
 │   └── images/             # 画像ファイル置き場
