@@ -6,9 +6,7 @@
         <nav class="nav" :class="{ active: menuOpen }">
           <NuxtLink to="/" class="nav-link" @click="menuOpen = false">Home</NuxtLink>
           <NuxtLink to="/works" class="nav-link" @click="menuOpen = false">Works</NuxtLink>
-          <NuxtLink to="/skills" class="nav-link" @click="menuOpen = false">Skills</NuxtLink>
           <NuxtLink to="/articles" class="nav-link" @click="menuOpen = false">Articles</NuxtLink>
-          <NuxtLink to="/contact" class="nav-link" @click="menuOpen = false">Contact</NuxtLink>
         </nav>
         <button class="mobile-menu-btn" @click="menuOpen = !menuOpen">
           <span></span><span></span><span></span>
