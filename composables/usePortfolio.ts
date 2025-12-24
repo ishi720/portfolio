@@ -15,7 +15,7 @@ export const usePortfolio = () => {
     { name: 'X', url: 'https://x.com/ishi720' },
   ]
 
-  const works = [
+  const developments = [
     { title: 'ポケモンパーティメーカー', url: 'https://suisui.fun/ppm/', image: 'ppm.png', description: 'ポケモンをランダムで選出します。しりとり選出機能もあります。', techs: ['PHP', 'Javascript'] },
     { title: 'Feeduck(Chrome拡張機能)', url: 'https://chromewebstore.google.com/detail/feeduck/alfjohbjhjgkcmgecbhjcjhhkiphccne?authuser=4&hl=ja', image: 'feeduck-chrome-extension.png', description: 'RSSフィードを表示するChrome拡張機能です。', techs: ['Javascript'] },
     { title: 'Collatz Visualization', url: 'https://suisui.fun/collatz_visualization/', image: 'collatz_visualization.png', description: '未解決問題のひとつであるコラッツ問題をvis.jsを用いて視覚化しました。', techs: ['Javascript'] },
@@ -58,5 +58,5 @@ export const usePortfolio = () => {
     { title: 'Zenn', url: 'https://zenn.dev/ishi720'},
   ]
 
-  return { profile, socials, works, skills, article_platforms }
+  return { profile, socials, developments, skills, article_platforms }
 }

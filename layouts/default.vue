@@ -5,7 +5,7 @@
         <NuxtLink to="/" class="logo">{{ profile.name }} Portfolio</NuxtLink>
         <nav class="nav" :class="{ active: menuOpen }">
           <NuxtLink to="/" class="nav-link" @click="menuOpen = false">Home</NuxtLink>
-          <NuxtLink to="/works" class="nav-link" @click="menuOpen = false">Works</NuxtLink>
+          <NuxtLink to="/developments" class="nav-link" @click="menuOpen = false">Developments</NuxtLink>
           <NuxtLink to="/articles" class="nav-link" @click="menuOpen = false">Articles</NuxtLink>
         </nav>
         <button class="mobile-menu-btn" @click="menuOpen = !menuOpen">
