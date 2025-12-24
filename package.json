@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
-  "version": "1.0.0",
-  "description": "",
+  "version": "2.0.0",
+  "description": "ishi720のportfolio",
   "main": "index.js",
   "scripts": {
     "dev": "nuxt dev",
@@ -11,7 +11,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "",
   "dependencies": {
     "nuxt": "^4.2.2"
   }
