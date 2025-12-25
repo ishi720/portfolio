@@ -17,7 +17,6 @@
             </div>
             <div class="work-content">
               <h3 class="work-title">{{ development.title }}</h3>
-              <p class="work-url">{{ development.url }}</p>
               <p class="work-desc">{{ development.description }}</p>
               <div class="work-techs">
                 <span v-for="tech in development.techs" :key="tech" class="tech-tag">{{ tech }}</span>

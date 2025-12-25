@@ -35,7 +35,7 @@ export const usePortfolio = () => {
     { title: '3Dマインスイーパー', url: 'https://minesweeper3d.suisui.fun/', image: 'MineSweeper3d.png', description: 'Three.jsで3Dマインスイーパーを作成しました。', techs: ['Javascript'] },
     { title: 'WEBラテアート', url: 'https://ishi720.github.io/web-latte-art/', image: 'web-latte-art.png', description: 'ブラウザでラテアートが楽しめる、流体シミュレーションアプリケーションです。', techs: ['Javascript'] },
     { title: 'ラバーペンシル現象', url: 'https://ishi720.github.io/RubberPencilIllusion/', image: 'RubberPencilIllusion.png', description: 'ラバーペンシル現象の錯覚を再現したWebアプリケーションです。', techs: ['Javascript'] },
-    { title: '4目並べ', url: 'https://play.unity.com/en/games/d623ce55-a4fa-44f6-9733-d2912f7c07df/connect4', image: 'connect4.png', description: 'Unityで作成した4目並べです。', techs: ['C#'] },
+    { title: '4目並べ', url: 'https://play.unity.com/ja/games/d623ce55-a4fa-44f6-9733-d2912f7c07df/connect4', image: 'connect4.png', description: 'Unityで作成した4目並べです。', techs: ['C#'] },
     { title: 'ハニカム構造マインスイパー', url: 'https://ishi720.github.io/MineSweeperHoneycomb/', image: 'MineSweeperHoneycomb.png', description: 'ハニカム構造のマインスイーパーです。', techs: ['Javascript'] },
     { title: 'ハニカム構造リバーシ', url: 'https://ishi720.github.io/HoneycombReversi/', image: 'HoneycombReversi.png', description: 'ハニカム構造リバーシです。CPUも実装しています。', techs: ['Javascript'] },
     { title: 'Honeycomb Pixel Art', url: 'https://honeycomb-pixel-art.vercel.app/', image: 'HoneycombPixelArt.png', description: '画像ファイルをハニカムピクセルに変換するサービスです。', techs: ['Javascript'] },
