@@ -236,22 +236,6 @@ img {
     color: var(--text-light);
     margin-bottom: 20px;
 }
-.social-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-.social-link {
-    font-size: 0.85rem;
-    padding: 8px 16px;
-    background: var(--bg-dark);
-    color: var(--text-white);
-    border-radius: var(--radius);
-    transition: var(--transition);
-}
-.social-link:hover {
-    background: var(--primary);
-}
 
 /* Connect Section */
 .connect-section {
@@ -390,12 +374,6 @@ img {
     font-weight: 600;
     margin-bottom: 4px;
 }
-.work-url {
-    font-size: 0.75rem;
-    color: var(--primary);
-    margin-bottom: 10px;
-    word-break: break-all;
-}
 .work-desc {
     font-size: 0.85rem;
     color: var(--text-light);
@@ -522,11 +500,6 @@ img {
     color: var(--primary);
     font-weight: 500;
 }
-.articles-note {
-    text-align: center;
-    color: var(--text-light);
-    font-size: 0.9rem;
-}
 
 /* Platform Links */
 .platform-links {
@@ -604,21 +577,6 @@ img {
     margin: 0 auto;
     padding: 0 24px;
     text-align: center;
-}
-.footer-links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 24px;
-    margin-bottom: 24px;
-}
-.footer-links a {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.9rem;
-    transition: var(--transition);
-}
-.footer-links a:hover {
-    color: var(--primary);
 }
 .copyright {
     color: rgba(255, 255, 255, 0.4);
