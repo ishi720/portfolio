@@ -14,7 +14,6 @@
           <Pagination
             v-model="currentPage"
             :total-pages="totalPages"
-            @change="onPageChange"
           />
 
           <!-- ソート機能 -->
@@ -140,11 +139,6 @@ const toggleSort = (key: 'date' | 'likes') => {
   if (currentPage.value !== 1) {
     currentPage.value = 1
   }
-}
-
-// ページ変更時の処理
-const onPageChange = () => {
-  window.scrollTo({ top: 400, behavior: 'smooth' })
 }
 
 const formatDate = (dateStr: string) => {
