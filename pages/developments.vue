@@ -7,8 +7,36 @@
       </div>
     </section>
 
+    <!-- npm Packages Section -->
+    <section class="npm-section">
+      <div class="container">
+        <h2 class="section-title">npm Packages</h2>
+        <div class="npm-grid">
+          <a v-for="pkg in npmPackages" :key="pkg.name" :href="pkg.url" target="_blank" class="npm-card">
+            <div class="npm-header">
+              <div class="npm-icon">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg" alt="npm">
+              </div>
+              <div class="npm-info">
+                <h3 class="npm-name">{{ pkg.name }}</h3>
+                <span class="npm-version">v{{ pkg.version }}</span>
+              </div>
+            </div>
+            <p class="npm-desc">{{ pkg.description }}</p>
+            <div class="npm-footer">
+              <div class="npm-techs">
+                <span v-for="tech in pkg.techs" :key="tech" class="tech-tag">{{ tech }}</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Web Services Section -->
     <section class="works-section">
       <div class="container">
+        <h2 class="section-title">Web Services</h2>
         <div class="works-grid">
           <a v-for="development in developments" :key="development.title" :href="development.url" target="_blank" class="work-card">
             <div class="work-image">
@@ -32,7 +60,7 @@
 <script setup lang="ts">
 import { usePortfolio } from '~/composables/usePortfolio'
 
-const { developments } = usePortfolio()
+const { developments, npmPackages } = usePortfolio()
 
 const handleImgError = (e: Event) => {
   (e.target as HTMLImageElement).style.display = 'none'

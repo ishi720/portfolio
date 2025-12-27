@@ -42,6 +42,50 @@ export const usePortfolio = () => {
         { title: 'Polygonal Geometric Pattern', url: 'https://ishi720.github.io/PolygonalGeometricPattern/', image: 'PolygonalGeometricPattern.png', description: '多角形の辺上を移動する点から生成される幾何学的パターンを可視化するサービスです。', techs: ['Javascript'] },
     ]
 
+    const npmPackages = [
+        {
+            name: 'jquery-textfit',
+            url: 'https://www.npmjs.com/package/jquery-textfit',
+            github: 'https://github.com/ishi720/jquery-textfit',
+            description: 'textfitjsのjQuery版。要素からはみ出た文字を削って省略記号をつけるjQueryプラグインです。',
+            techs: ['Javascript', 'jQuery'],
+            version: '1.1.1'
+        },
+        {
+            name: 'gulp-package-version-format',
+            url: 'https://www.npmjs.com/package/gulp-package-version-format',
+            github: 'https://github.com/ishi720/gulp-package-version-format',
+            description: 'Gulpプラグイン。package.jsonのバージョンを指定された形式で更新するためのものです。',
+            techs: ['Javascript', 'Gulp'],
+            version: '1.6.1'
+        },
+        {
+            name: 'pake-style',
+            url: 'https://www.npmjs.com/package/pake-style',
+            github: 'https://github.com/ishi720/pake-style',
+            description: '時間差で順番に動いていくアニメーションのスタイルです。',
+            techs: ['CSS'],
+            version: '1.0.5'
+        },
+        {
+            name: 'textfit',
+            url: 'https://www.npmjs.com/package/textfitjs',
+            github: 'https://github.com/ishi720/textfitJS',
+            description: 'textfitjsのjQuery版。要素からはみ出た文字を削って省略記号をつけるjQueryプラグインです。',
+            techs: ['Javascript', 'jQuery'],
+            version: '2.0.1'
+        },
+        {
+            name: 'gaming-css',
+            url: 'https://www.npmjs.com/package/gaming-css',
+            github: 'https://github.com/ishi720/gaming-css',
+            description: 'ゲーミングなスタイリングするCSSです',
+            techs: ['CSS'],
+            version: '1.0.2'
+        },
+
+    ]
+
     const skills = [
         { name: 'HTML5', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg', level: 90 },
         { name: 'CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg', level: 90 },
@@ -58,5 +102,5 @@ export const usePortfolio = () => {
         { title: 'Zenn', url: 'https://zenn.dev/ishi720'},
     ]
 
-  return { profile, socials, developments, skills, article_platforms }
+  return { profile, socials, developments, npmPackages, skills, article_platforms }
 }
