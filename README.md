@@ -2,6 +2,11 @@
 
 Nuxt.js製のポートフォリオサイトです。
 
+# Badge
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/f49aa0ee56264df093952a3aced2fbb0)](https://app.codacy.com/gh/ishi720/portfolio/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+
+
 ## ディレクトリ構成
 
 ```
@@ -14,6 +19,8 @@ portfolio/
 │       └── main.scss        # グローバルSCSS
 ├── composables/
 │   └── usePortfolio.ts     # ポートフォリオデータ
+├── components/
+│   └── Pagination.vue      # ページナビコンポーネント
 ├── layouts/
 │   └── default.vue         # 共通レイアウト（ヘッダー/フッター）
 ├── pages/
