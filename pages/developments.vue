@@ -10,7 +10,7 @@
     <!-- npm Packages Section -->
     <section class="npm-section">
       <div class="container">
-        <h2 class="section-title">npm Packages</h2>
+        <h2 class="section-title">Npm Packages</h2>
         <div class="npm-grid">
           <a v-for="pkg in npmPackages" :key="pkg.name" :href="pkg.url" target="_blank" class="npm-card">
             <div class="npm-header">
@@ -26,6 +26,28 @@
             <div class="npm-footer">
               <div class="npm-techs">
                 <span v-for="tech in pkg.techs" :key="tech" class="tech-tag">{{ tech }}</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chrome Extensions Section -->
+    <section class="works-section">
+      <div class="container">
+        <h2 class="section-title">Chrome Extensions</h2>
+        <div class="works-grid">
+          <a v-for="chromeExtension in chromeExtensions" :key="chromeExtension.title" :href="chromeExtension.url" target="_blank" class="work-card">
+            <div class="work-image">
+              <img :src="`/portfolio/images/service/${chromeExtension.image}`" :alt="chromeExtension.title" @error="handleImgError">
+              <div class="work-image-placeholder">{{ chromeExtension.title }}</div>
+            </div>
+            <div class="work-content">
+              <h3 class="work-title">{{ chromeExtension.title }}</h3>
+              <p class="work-desc">{{ chromeExtension.description }}</p>
+              <div class="work-techs">
+                <span v-for="tech in chromeExtension.techs" :key="tech" class="tech-tag">{{ tech }}</span>
               </div>
             </div>
           </a>
@@ -60,7 +82,7 @@
 <script setup lang="ts">
 import { usePortfolio } from '~/composables/usePortfolio'
 
-const { developments, npmPackages } = usePortfolio()
+const { developments, chromeExtensions, npmPackages } = usePortfolio()
 
 const handleImgError = (e: Event) => {
   (e.target as HTMLImageElement).style.display = 'none'

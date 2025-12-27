@@ -17,7 +17,6 @@ export const usePortfolio = () => {
 
     const developments = [
         { title: 'ポケモンパーティメーカー', url: 'https://suisui.fun/ppm/', image: 'ppm.png', description: 'ポケモンをランダムで選出します。しりとり選出機能もあります。', techs: ['PHP', 'Javascript'] },
-        { title: 'Feeduck', url: 'https://chromewebstore.google.com/detail/feeduck/alfjohbjhjgkcmgecbhjcjhhkiphccne?authuser=4&hl=ja', image: 'feeduck-chrome-extension.png', description: 'RSSフィードを表示するChrome拡張機能です。', techs: ['Javascript'] },
         { title: 'Collatz Visualization', url: 'https://suisui.fun/collatz_visualization/', image: 'collatz_visualization.png', description: '未解決問題のひとつであるコラッツ問題をvis.jsを用いて視覚化しました。', techs: ['Javascript', 'Vue'] },
         { title: "Let's Typo", url: 'https://suisui.fun/make_typo/', image: 'lets_typo.png', description: 'タイポグリセミア現象を使った、文章変換サービスです。', techs: ['Javascript'] },
         { title: '正規表現シミュレーター', url: 'https://suisui.fun/regexp/', image: 'regexp.png', description: 'Angular.jsを利用して作成しました。リアルタイムに正規表現のシミュレーションができます。', techs: ['Javascript', 'Angular'] },
@@ -41,6 +40,10 @@ export const usePortfolio = () => {
         { title: 'Honeycomb Pixel Art', url: 'https://honeycomb-pixel-art.vercel.app/', image: 'HoneycombPixelArt.png', description: '画像ファイルをハニカムピクセルに変換するサービスです。', techs: ['Javascript', 'React'] },
         { title: 'Polygonal Geometric Pattern', url: 'https://ishi720.github.io/PolygonalGeometricPattern/', image: 'PolygonalGeometricPattern.png', description: '多角形の辺上を移動する点から生成される幾何学的パターンを可視化するサービスです。', techs: ['Javascript'] },
     ]
+
+    const chromeExtensions = [
+      { title: 'Feeduck', url: 'https://chromewebstore.google.com/detail/feeduck/alfjohbjhjgkcmgecbhjcjhhkiphccne?authuser=4&hl=ja', image: 'feeduck-chrome-extension.png', description: 'RSSフィードを表示するChrome拡張機能です。', techs: ['Javascript'] },
+    ];
 
     const npmPackages = [
         {
@@ -102,5 +105,5 @@ export const usePortfolio = () => {
         { title: 'Zenn', url: 'https://zenn.dev/ishi720'},
     ]
 
-  return { profile, socials, developments, npmPackages, skills, article_platforms }
+  return { profile, socials, developments, chromeExtensions, npmPackages, skills, article_platforms }
 }
