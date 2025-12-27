@@ -20,7 +20,8 @@ portfolio/
 ├── composables/
 │   └── usePortfolio.ts               # ポートフォリオデータ
 ├── components/
-│   └── Pagination.vue                # ページナビコンポーネント
+│   ├── Pagination.vue                # ページネーションコンポーネント
+│   └── SortControls.vue              # ソートコンポーネント
 ├── layouts/
 │   └── default.vue                   # 共通レイアウト（ヘッダー/フッター）
 ├── pages/
