@@ -13,27 +13,42 @@ Nuxt.js製のポートフォリオサイトです。
 portfolio/
 ├── .github/
 │   └── workflows/
-│       └── deploy.yml      # GitHub Actions デプロイ設定
+│       └── deploy.yml                # GitHub Actions デプロイ設定
 ├── assets/
 │   └── scss/
-│       └── main.scss        # グローバルSCSS
+│       └── main.scss                 # グローバルSCSS
 ├── composables/
-│   └── usePortfolio.ts     # ポートフォリオデータ
+│   └── usePortfolio.ts               # ポートフォリオデータ
 ├── components/
-│   └── Pagination.vue      # ページナビコンポーネント
+│   └── Pagination.vue                # ページナビコンポーネント
 ├── layouts/
-│   └── default.vue         # 共通レイアウト（ヘッダー/フッター）
+│   └── default.vue                   # 共通レイアウト（ヘッダー/フッター）
 ├── pages/
-│   ├── index.vue           # Home（/）
-│   ├── developments.vue    # Works（/developments）
-│   └── articles.vue        # Articles（/articles）
+│   ├── index.vue                     # Home（/）
+│   ├── developments.vue              # Developments（/developments）
+│   ├── repositories.vue              # Repositories（/repositories）
+│   └── articles.vue                  # Articles（/articles）
 ├── public/
-│   ├── data/               # JSONデータファイル置き場
-│   └── images/             # 画像ファイル置き場
-├── app.vue                 # ルートコンポーネント
-├── nuxt.config.ts          # Nuxt設定
+│   ├── data/                         # JSONデータファイル置き場
+│   │   ├── combined_articles.json    # Articlesに表示するQiita&Zennのデータ
+│   │   └── repos_list.json           # Githubのリポジトリデータ
+│   └── images/                       # 画像ファイル置き場
+├── app.vue                           # ルートコンポーネント
+├── nuxt.config.ts                    # Nuxt設定
 └── package.json
 ```
+
+## データ更新
+
+### Articlesのデータ
+
+- [https://github.com/ishi720/getArticle](https://github.com/ishi720/getArticle) で作成
+- `public/data/combined_articles.json` を更新
+
+### Githubのリポジトリのデータ
+
+- [https://github.com/ishi720/GithubDashboard](https://github.com/ishi720/GithubDashboard) で作成
+- `public/data/repos_list.json` を更新
 
 ## 開発
 
