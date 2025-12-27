@@ -3,24 +3,12 @@
     <section class="page-hero">
       <div class="container">
         <h1 class="page-title">Articles</h1>
-        <p class="page-subtitle">技術記事（{{ articles.length }}件）</p>
+        <p class="page-subtitle">投稿記事（{{ articles.length }}件）</p>
       </div>
     </section>
 
     <section class="articles-section">
       <div class="container">
-        <!-- アカウント一覧 -->
-        <h2 class="section-title">アカウント</h2>
-        <div class="article-platforms-grid">
-          <a v-for="article_platform in article_platforms" :key="article_platform.title" :href="article_platform.url" target="_blank" class="article-card">
-            <div class="article-platform">{{ article_platform.title }}</div>
-            <h3 class="article-title">{{ article_platform.title }}記事一覧</h3>
-            <span class="article-link">記事を見る →</span>
-          </a>
-        </div>
-
-        <h2 class="section-title">投稿記事</h2>
-
         <!-- ページネーション + ソート機能 -->
         <div class="pagination-wrapper">
           <Pagination
