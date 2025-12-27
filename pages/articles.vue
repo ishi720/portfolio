@@ -3,12 +3,13 @@
     <section class="page-hero">
       <div class="container">
         <h1 class="page-title">Articles</h1>
-        <p class="page-subtitle">投稿記事（{{ articles.length }}件）</p>
+        <p class="page-subtitle">技術記事（{{ articles.length }}件）</p>
       </div>
     </section>
 
     <section class="articles-section">
       <div class="container">
+
         <!-- ページネーション + ソート機能 -->
         <div class="pagination-wrapper">
           <Pagination
@@ -16,28 +17,11 @@
             :total-pages="totalPages"
           />
 
-          <!-- ソート機能 -->
-          <div class="sort-controls">
-            <div class="sort-group">
-              <label class="sort-label">並び替え:</label>
-              <button
-                class="sort-btn"
-                :class="{ active: sortKey === 'date' }"
-                @click="toggleSort('date')"
-              >
-                投稿日
-                <span class="sort-icon">{{ sortKey === 'date' ? (sortOrder === 'desc' ? '↓' : '↑') : '　' }}</span>
-              </button>
-              <button
-                class="sort-btn"
-                :class="{ active: sortKey === 'likes' }"
-                @click="toggleSort('likes')"
-              >
-                いいね数
-                <span class="sort-icon">{{ sortKey === 'likes' ? (sortOrder === 'desc' ? '↓' : '↑') : '　' }}</span>
-              </button>
-            </div>
-          </div>
+          <SortControls
+            v-model="sortState"
+            :options="sortOptions"
+            @update:model-value="onSortChange"
+          />
         </div>
 
         <!-- 記事一覧 -->
@@ -62,9 +46,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, watch } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { usePortfolio } from '~/composables/usePortfolio'
+import type { SortState, SortOption } from '~/components/SortControls.vue'
 
 interface Article {
   published_at: string
@@ -81,9 +66,17 @@ const { article_platforms } = usePortfolio()
 const articles = ref<Article[]>([])
 const perPage = 12
 
-// ソート用のstate
-const sortKey = ref<'date' | 'likes'>('date')
-const sortOrder = ref<'asc' | 'desc'>('desc')
+// ソートオプション
+const sortOptions: SortOption[] = [
+  { key: 'date', label: '投稿日' },
+  { key: 'likes', label: 'いいね数' }
+]
+
+// ソート状態
+const sortState = ref<SortState>({
+  key: 'date',
+  order: 'desc'
+})
 
 // URLのクエリパラメータからページ番号を取得
 const currentPage = computed({
@@ -105,12 +98,12 @@ const sortedArticles = computed(() => {
   const sorted = [...articles.value]
 
   sorted.sort((a, b) => {
-    if (sortKey.value === 'date') {
+    if (sortState.value.key === 'date') {
       const dateA = new Date(a.published_at).getTime()
       const dateB = new Date(b.published_at).getTime()
-      return sortOrder.value === 'desc' ? dateB - dateA : dateA - dateB
+      return sortState.value.order === 'desc' ? dateB - dateA : dateA - dateB
     } else {
-      return sortOrder.value === 'desc' ? b.likes - a.likes : a.likes - b.likes
+      return sortState.value.order === 'desc' ? b.likes - a.likes : a.likes - b.likes
     }
   })
 
@@ -125,17 +118,8 @@ const paginatedArticles = computed(() => {
   return sortedArticles.value.slice(start, end)
 })
 
-// ソートの切り替え
-const toggleSort = (key: 'date' | 'likes') => {
-  if (sortKey.value === key) {
-    // 同じキーなら順序を切り替え
-    sortOrder.value = sortOrder.value === 'desc' ? 'asc' : 'desc'
-  } else {
-    // 違うキーなら新しいキーで降順からスタート
-    sortKey.value = key
-    sortOrder.value = 'desc'
-  }
-  // ソート変更時は1ページ目に戻る
+// ソート変更時は1ページ目に戻る
+const onSortChange = () => {
   if (currentPage.value !== 1) {
     currentPage.value = 1
   }

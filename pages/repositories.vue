@@ -22,35 +22,10 @@
           </div>
 
           <!-- ソート -->
-          <div class="sort-controls">
-            <div class="sort-group">
-              <label class="sort-label">並び替え:</label>
-              <button
-                class="sort-btn"
-                :class="{ active: sortKey === 'updated_at' }"
-                @click="toggleSort('updated_at')"
-              >
-                更新日
-                <span class="sort-icon">{{ sortKey === 'updated_at' ? (sortOrder === 'desc' ? '↓' : '↑') : '　' }}</span>
-              </button>
-              <button
-                class="sort-btn"
-                :class="{ active: sortKey === 'created_at' }"
-                @click="toggleSort('created_at')"
-              >
-                作成日
-                <span class="sort-icon">{{ sortKey === 'created_at' ? (sortOrder === 'desc' ? '↓' : '↑') : '　' }}</span>
-              </button>
-              <button
-                class="sort-btn"
-                :class="{ active: sortKey === 'name' }"
-                @click="toggleSort('name')"
-              >
-                名前
-                <span class="sort-icon">{{ sortKey === 'name' ? (sortOrder === 'desc' ? '↓' : '↑') : '　' }}</span>
-              </button>
-            </div>
-          </div>
+          <SortControls
+            v-model="sortState"
+            :options="sortOptions"
+          />
         </div>
 
         <!-- タグフィルター -->
@@ -128,6 +103,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import type { SortState, SortOption } from '~/components/SortControls.vue'
 
 interface Repo {
   name: string
@@ -143,11 +119,22 @@ const router = useRouter()
 const repos = ref<Repo[]>([])
 const perPage = 18
 
-// フィルター・ソート用のstate
+// フィルター用のstate
 const searchQuery = ref('')
 const selectedTag = ref('')
-const sortKey = ref<'updated_at' | 'created_at' | 'name'>('updated_at')
-const sortOrder = ref<'asc' | 'desc'>('desc')
+
+// ソートオプション
+const sortOptions: SortOption[] = [
+  { key: 'updated_at', label: '更新日' },
+  { key: 'created_at', label: '作成日' },
+  { key: 'name', label: 'リポジトリ名' }
+]
+
+// ソート状態
+const sortState = ref<SortState>({
+  key: 'updated_at',
+  order: 'desc'
+})
 
 // URLのクエリパラメータからページ番号を取得
 const currentPage = computed({
@@ -221,13 +208,14 @@ const filteredRepos = computed(() => {
 
   // ソート
   result.sort((a, b) => {
-    if (sortKey.value === 'name') {
+    if (sortState.value.key === 'name') {
       const comparison = a.name.localeCompare(b.name)
-      return sortOrder.value === 'desc' ? -comparison : comparison
+      return sortState.value.order === 'desc' ? -comparison : comparison
     } else {
-      const dateA = new Date(a[sortKey.value]).getTime()
-      const dateB = new Date(b[sortKey.value]).getTime()
-      return sortOrder.value === 'desc' ? dateB - dateA : dateA - dateB
+      const key = sortState.value.key as 'updated_at' | 'created_at'
+      const dateA = new Date(a[key]).getTime()
+      const dateB = new Date(b[key]).getTime()
+      return sortState.value.order === 'desc' ? dateB - dateA : dateA - dateB
     }
   })
 
@@ -241,16 +229,6 @@ const paginatedRepos = computed(() => {
   const end = start + perPage
   return filteredRepos.value.slice(start, end)
 })
-
-// ソートの切り替え
-const toggleSort = (key: 'updated_at' | 'created_at' | 'name') => {
-  if (sortKey.value === key) {
-    sortOrder.value = sortOrder.value === 'desc' ? 'asc' : 'desc'
-  } else {
-    sortKey.value = key
-    sortOrder.value = 'desc'
-  }
-}
 
 // フィルター変更時は1ページ目に戻る
 watch([searchQuery, selectedTag], () => {
@@ -444,10 +422,6 @@ const formatDate = (dateStr: string) => {
 
   .search-box {
     max-width: none;
-  }
-
-  .sort-controls {
-    justify-content: center;
   }
 
   .repos-grid {
