@@ -1,0 +1,461 @@
+<template>
+  <div>
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-title">Repositories</h1>
+        <p class="page-subtitle">GitHubリポジトリ一覧（{{ repos.length }}件）</p>
+      </div>
+    </section>
+
+    <section class="repos-section">
+      <div class="container">
+        <!-- フィルター & ソート -->
+        <div class="repos-controls">
+          <!-- 検索 -->
+          <div class="search-box">
+            <input
+              v-model="searchQuery"
+              type="text"
+              placeholder="リポジトリを検索..."
+              class="search-input"
+            />
+          </div>
+
+          <!-- ソート -->
+          <div class="sort-controls">
+            <div class="sort-group">
+              <label class="sort-label">並び替え:</label>
+              <button
+                class="sort-btn"
+                :class="{ active: sortKey === 'updated_at' }"
+                @click="toggleSort('updated_at')"
+              >
+                更新日
+                <span class="sort-icon">{{ sortKey === 'updated_at' ? (sortOrder === 'desc' ? '↓' : '↑') : '　' }}</span>
+              </button>
+              <button
+                class="sort-btn"
+                :class="{ active: sortKey === 'created_at' }"
+                @click="toggleSort('created_at')"
+              >
+                作成日
+                <span class="sort-icon">{{ sortKey === 'created_at' ? (sortOrder === 'desc' ? '↓' : '↑') : '　' }}</span>
+              </button>
+              <button
+                class="sort-btn"
+                :class="{ active: sortKey === 'name' }"
+                @click="toggleSort('name')"
+              >
+                名前
+                <span class="sort-icon">{{ sortKey === 'name' ? (sortOrder === 'desc' ? '↓' : '↑') : '　' }}</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- タグフィルター -->
+        <div v-if="allTags.length > 0" class="tag-filter">
+          <button
+            class="tag-filter-btn"
+            :class="{ active: selectedTag === '' }"
+            @click="selectedTag = ''"
+          >
+            すべて
+          </button>
+          <button
+            v-for="tag in popularTags"
+            :key="tag"
+            class="tag-filter-btn"
+            :class="{ active: selectedTag === tag }"
+            @click="selectedTag = selectedTag === tag ? '' : tag"
+          >
+            {{ tag }}
+          </button>
+        </div>
+
+        <!-- 検索結果件数 -->
+        <p class="result-count">{{ filteredRepos.length }}件のリポジトリ</p>
+
+        <!-- リポジトリ一覧 -->
+        <div class="repos-grid">
+          <a
+            v-for="repo in paginatedRepos"
+            :key="repo.name"
+            :href="repo.url"
+            target="_blank"
+            class="repo-card"
+          >
+            <div class="repo-header">
+              <div class="repo-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"/>
+                </svg>
+              </div>
+              <h3 class="repo-name">{{ repo.name }}</h3>
+            </div>
+            <p class="repo-desc">{{ repo.description || 'No description' }}</p>
+            <div class="repo-tags" v-if="getRepoTags(repo.tags).length > 0">
+              <span
+                v-for="tag in getRepoTags(repo.tags).slice(0, 4)"
+                :key="tag"
+                class="repo-tag"
+              >
+                {{ tag }}
+              </span>
+              <span v-if="getRepoTags(repo.tags).length > 4" class="repo-tag repo-tag-more">
+                +{{ getRepoTags(repo.tags).length - 4 }}
+              </span>
+            </div>
+            <div class="repo-footer">
+              <span class="repo-date">
+                <span class="date-label">更新:</span>
+                {{ formatDate(repo.updated_at) }}
+              </span>
+            </div>
+          </a>
+        </div>
+
+        <!-- ページネーション -->
+        <Pagination
+          v-model="currentPage"
+          :total-pages="totalPages"
+        />
+      </div>
+    </section>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref, computed, onMounted, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+
+interface Repo {
+  name: string
+  url: string
+  tags: string | string[]
+  description: string
+  created_at: string
+  updated_at: string
+}
+
+const route = useRoute()
+const router = useRouter()
+const repos = ref<Repo[]>([])
+const perPage = 18
+
+// フィルター・ソート用のstate
+const searchQuery = ref('')
+const selectedTag = ref('')
+const sortKey = ref<'updated_at' | 'created_at' | 'name'>('updated_at')
+const sortOrder = ref<'asc' | 'desc'>('desc')
+
+// URLのクエリパラメータからページ番号を取得
+const currentPage = computed({
+  get: () => {
+    const page = Number(route.query.page) || 1
+    return Math.max(1, Math.min(page, totalPages.value || 1))
+  },
+  set: (value: number) => {
+    router.push({ query: { ...route.query, page: value > 1 ? value : undefined } })
+  }
+})
+
+onMounted(async () => {
+  repos.value = await $fetch('/data/repos_list.json')
+})
+
+// タグを配列として取得するヘルパー関数
+const getRepoTags = (tags: string | string[]): string[] => {
+  if (Array.isArray(tags)) {
+    return tags
+  }
+  if (typeof tags === 'string' && tags.length > 0) {
+    return [tags]
+  }
+  return []
+}
+
+// 全タグを取得
+const allTags = computed(() => {
+  const tagSet = new Set<string>()
+  repos.value.forEach(repo => {
+    getRepoTags(repo.tags).forEach(tag => tagSet.add(tag))
+  })
+  return Array.from(tagSet).sort()
+})
+
+// 人気のタグ（使用回数が多い上位10件）
+const popularTags = computed(() => {
+  const tagCount: Record<string, number> = {}
+  repos.value.forEach(repo => {
+    getRepoTags(repo.tags).forEach(tag => {
+      tagCount[tag] = (tagCount[tag] || 0) + 1
+    })
+  })
+  return Object.entries(tagCount)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10)
+    .map(([tag]) => tag)
+})
+
+// フィルタリングされたリポジトリ
+const filteredRepos = computed(() => {
+  let result = [...repos.value]
+
+  // 検索フィルター
+  if (searchQuery.value) {
+    const query = searchQuery.value.toLowerCase()
+    result = result.filter(repo =>
+      repo.name.toLowerCase().includes(query) ||
+      (repo.description && repo.description.toLowerCase().includes(query)) ||
+      getRepoTags(repo.tags).some(tag => tag.toLowerCase().includes(query))
+    )
+  }
+
+  // タグフィルター
+  if (selectedTag.value) {
+    result = result.filter(repo =>
+      getRepoTags(repo.tags).includes(selectedTag.value)
+    )
+  }
+
+  // ソート
+  result.sort((a, b) => {
+    if (sortKey.value === 'name') {
+      const comparison = a.name.localeCompare(b.name)
+      return sortOrder.value === 'desc' ? -comparison : comparison
+    } else {
+      const dateA = new Date(a[sortKey.value]).getTime()
+      const dateB = new Date(b[sortKey.value]).getTime()
+      return sortOrder.value === 'desc' ? dateB - dateA : dateA - dateB
+    }
+  })
+
+  return result
+})
+
+const totalPages = computed(() => Math.ceil(filteredRepos.value.length / perPage))
+
+const paginatedRepos = computed(() => {
+  const start = (currentPage.value - 1) * perPage
+  const end = start + perPage
+  return filteredRepos.value.slice(start, end)
+})
+
+// ソートの切り替え
+const toggleSort = (key: 'updated_at' | 'created_at' | 'name') => {
+  if (sortKey.value === key) {
+    sortOrder.value = sortOrder.value === 'desc' ? 'asc' : 'desc'
+  } else {
+    sortKey.value = key
+    sortOrder.value = 'desc'
+  }
+}
+
+// フィルター変更時は1ページ目に戻る
+watch([searchQuery, selectedTag], () => {
+  if (currentPage.value !== 1) {
+    currentPage.value = 1
+  }
+})
+
+const formatDate = (dateStr: string) => {
+  const date = new Date(dateStr)
+  return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`
+}
+</script>
+
+<style lang="scss" scoped>
+.repos-section {
+  padding: 60px 0 80px;
+}
+
+.repos-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.search-box {
+  flex: 1;
+  min-width: 200px;
+  max-width: 400px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fff;
+  transition: all 0.3s ease;
+
+  &:focus {
+    outline: none;
+    border-color: #4a90a4;
+    box-shadow: 0 0 0 3px rgba(74, 144, 164, 0.1);
+  }
+}
+
+.tag-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tag-filter-btn {
+  font-size: 0.8rem;
+  padding: 6px 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  background: #fff;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: #4a90a4;
+    color: #4a90a4;
+  }
+
+  &.active {
+    background: #4a90a4;
+    border-color: #4a90a4;
+    color: #fff;
+  }
+}
+
+.result-count {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.repos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.repo-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  border-left: 3px solid #24292e;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    border-left-color: #4a90a4;
+  }
+}
+
+.repo-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.repo-icon {
+  width: 20px;
+  height: 20px;
+  color: #666;
+  flex-shrink: 0;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.repo-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #24292e;
+  margin: 0;
+  word-break: break-word;
+}
+
+.repo-desc {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.repo-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.repo-tag {
+  font-size: 0.7rem;
+  padding: 3px 8px;
+  background: #f0f6f9;
+  color: #4a90a4;
+  border-radius: 4px;
+
+  &.repo-tag-more {
+    background: #e0e0e0;
+    color: #666;
+  }
+}
+
+.repo-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.repo-date {
+  font-size: 0.75rem;
+  color: #999;
+
+  .date-label {
+    margin-right: 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  .repos-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-box {
+    max-width: none;
+  }
+
+  .sort-controls {
+    justify-content: center;
+  }
+
+  .repos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tag-filter {
+    justify-content: center;
+  }
+}
+</style>
