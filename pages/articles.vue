@@ -19,22 +19,7 @@
           </a>
         </div>
 
-        <!-- 記事一覧 -->
         <h2 class="section-title">投稿記事</h2>
-        <div class="articles-grid">
-          <a v-for="article in paginatedArticles" :key="article.url" :href="article.url" target="_blank" class="article-card">
-            <div class="article-meta">
-              <span class="article-platform" :class="article.source.toLowerCase()">{{ article.source }}</span>
-              <span class="article-date">{{ formatDate(article.published_at) }}</span>
-              <span class="article-likes">♥ {{ article.likes }}</span>
-            </div>
-            <h3 class="article-title">{{ article.title }}</h3>
-            <div class="article-footer">
-              <span class="article-tags">{{ article.tags }}</span>
-            </div>
-          </a>
-        </div>
-
         <!-- ページネーション -->
         <nav v-if="totalPages > 1" class="pagination">
           <button
@@ -66,6 +51,23 @@
             次へ →
           </button>
         </nav>
+
+        <!-- 記事一覧 -->
+        <div class="articles-grid">
+          <a v-for="article in paginatedArticles" :key="article.url" :href="article.url" target="_blank" class="article-card">
+            <div class="article-meta">
+              <span class="article-platform" :class="article.source.toLowerCase()">{{ article.source }}</span>
+              <span class="article-date">{{ formatDate(article.published_at) }}</span>
+              <span class="article-likes">♥ {{ article.likes }}</span>
+            </div>
+            <h3 class="article-title">{{ article.title }}</h3>
+            <div class="article-footer">
+              <span class="article-tags">{{ article.tags }}</span>
+            </div>
+          </a>
+        </div>
+
+
       </div>
     </section>
   </div>
