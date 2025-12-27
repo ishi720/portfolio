@@ -616,6 +616,66 @@ img {
     }
 }
 
+// Pagination Wrapper (contains pagination + sort)
+.pagination-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+// Sort Controls
+.sort-controls {
+    display: flex;
+}
+
+.sort-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+}
+
+.sort-label {
+    font-size: 0.85rem;
+    color: $text-light;
+    font-weight: 500;
+}
+
+.sort-btn {
+    font-family: $font-ja;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 6px 12px;
+    border: 1px solid $border;
+    border-radius: $radius;
+    background: $card-bg;
+    color: $text;
+    cursor: pointer;
+    transition: $transition;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &:hover {
+        border-color: $primary;
+        color: $primary;
+    }
+
+    &.active {
+        background: $primary;
+        border-color: $primary;
+        color: $text-white;
+    }
+
+    .sort-icon {
+        font-size: 0.85rem;
+        min-width: 10px;
+    }
+}
+
 // Platform Links
 .platform {
     &-links {
@@ -651,10 +711,7 @@ img {
 .pagination {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 8px;
-    margin-top: 48px;
-    padding: 24px 0;
 
     &-btn {
         font-family: $font-ja;
@@ -794,9 +851,16 @@ img {
         }
     }
 
-    .pagination {
-        flex-wrap: wrap;
+    .pagination-wrapper {
+        flex-direction: column;
+        align-items: stretch;
         gap: 12px;
+    }
+
+    .pagination {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
 
         &-btn {
             padding: 8px 16px;
@@ -808,5 +872,23 @@ img {
             height: 36px;
             font-size: 0.85rem;
         }
+    }
+
+    .sort-controls {
+        justify-content: center;
+    }
+
+    .sort-group {
+        gap: 6px;
+        padding: 8px 12px;
+    }
+
+    .sort-label {
+        font-size: 0.8rem;
+    }
+
+    .sort-btn {
+        padding: 5px 10px;
+        font-size: 0.75rem;
     }
 }

@@ -20,37 +20,63 @@
         </div>
 
         <h2 class="section-title">投稿記事</h2>
-        <!-- ページネーション -->
-        <nav v-if="totalPages > 1" class="pagination">
-          <button
-            class="pagination-btn pagination-prev"
-            :disabled="currentPage === 1"
-            @click="goToPage(currentPage - 1)"
-          >
-            ← 前へ
-          </button>
 
-          <div class="pagination-numbers">
+        <!-- ページネーション + ソート機能 -->
+        <div class="pagination-wrapper">
+          <nav v-if="totalPages > 1" class="pagination">
             <button
-              v-for="page in visiblePages"
-              :key="page"
-              class="pagination-num"
-              :class="{ active: page === currentPage, ellipsis: page === '...' }"
-              :disabled="page === '...'"
-              @click="page !== '...' && goToPage(page as number)"
+              class="pagination-btn pagination-prev"
+              :disabled="currentPage === 1"
+              @click="goToPage(currentPage - 1)"
             >
-              {{ page }}
+              ← 前へ
             </button>
-          </div>
 
-          <button
-            class="pagination-btn pagination-next"
-            :disabled="currentPage === totalPages"
-            @click="goToPage(currentPage + 1)"
-          >
-            次へ →
-          </button>
-        </nav>
+            <div class="pagination-numbers">
+              <button
+                v-for="page in visiblePages"
+                :key="page"
+                class="pagination-num"
+                :class="{ active: page === currentPage, ellipsis: page === '...' }"
+                :disabled="page === '...'"
+                @click="page !== '...' && goToPage(page as number)"
+              >
+                {{ page }}
+              </button>
+            </div>
+
+            <button
+              class="pagination-btn pagination-next"
+              :disabled="currentPage === totalPages"
+              @click="goToPage(currentPage + 1)"
+            >
+              次へ →
+            </button>
+          </nav>
+
+          <!-- ソート機能 -->
+          <div class="sort-controls">
+            <div class="sort-group">
+              <label class="sort-label">並び替え:</label>
+              <button
+                class="sort-btn"
+                :class="{ active: sortKey === 'date' }"
+                @click="toggleSort('date')"
+              >
+                投稿日
+                <span class="sort-icon">{{ sortKey === 'date' ? (sortOrder === 'desc' ? '↓' : '↑') : ' ' }}</span>
+              </button>
+              <button
+                class="sort-btn"
+                :class="{ active: sortKey === 'likes' }"
+                @click="toggleSort('likes')"
+              >
+                いいね数
+                <span class="sort-icon">{{ sortKey === 'likes' ? (sortOrder === 'desc' ? '↓' : '↑') : ' ' }}</span>
+              </button>
+            </div>
+          </div>
+        </div>
 
         <!-- 記事一覧 -->
         <div class="articles-grid">
@@ -66,8 +92,6 @@
             </div>
           </a>
         </div>
-
-
       </div>
     </section>
   </div>
@@ -93,6 +117,10 @@ const { article_platforms } = usePortfolio()
 const articles = ref<Article[]>([])
 const perPage = 12
 
+// ソート用のstate
+const sortKey = ref<'date' | 'likes'>('date')
+const sortOrder = ref<'asc' | 'desc'>('desc')
+
 // URLのクエリパラメータからページ番号を取得
 const currentPage = computed({
   get: () => {
@@ -108,12 +136,29 @@ onMounted(async () => {
   articles.value = await $fetch('/data/combined_articles.json')
 })
 
-const totalPages = computed(() => Math.ceil(articles.value.length / perPage))
+// ソートされた記事一覧
+const sortedArticles = computed(() => {
+  const sorted = [...articles.value]
+
+  sorted.sort((a, b) => {
+    if (sortKey.value === 'date') {
+      const dateA = new Date(a.published_at).getTime()
+      const dateB = new Date(b.published_at).getTime()
+      return sortOrder.value === 'desc' ? dateB - dateA : dateA - dateB
+    } else {
+      return sortOrder.value === 'desc' ? b.likes - a.likes : a.likes - b.likes
+    }
+  })
+
+  return sorted
+})
+
+const totalPages = computed(() => Math.ceil(sortedArticles.value.length / perPage))
 
 const paginatedArticles = computed(() => {
   const start = (currentPage.value - 1) * perPage
   const end = start + perPage
-  return articles.value.slice(start, end)
+  return sortedArticles.value.slice(start, end)
 })
 
 const visiblePages = computed(() => {
@@ -138,6 +183,22 @@ const visiblePages = computed(() => {
 
   return pages
 })
+
+// ソートの切り替え
+const toggleSort = (key: 'date' | 'likes') => {
+  if (sortKey.value === key) {
+    // 同じキーなら順序を切り替え
+    sortOrder.value = sortOrder.value === 'desc' ? 'asc' : 'desc'
+  } else {
+    // 違うキーなら新しいキーで降順からスタート
+    sortKey.value = key
+    sortOrder.value = 'desc'
+  }
+  // ソート変更時は1ページ目に戻る
+  if (currentPage.value !== 1) {
+    currentPage.value = 1
+  }
+}
 
 const goToPage = (page: number) => {
   if (page >= 1 && page <= totalPages.value) {
