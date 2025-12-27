@@ -10,15 +10,15 @@ portfolio/
 │   └── workflows/
 │       └── deploy.yml      # GitHub Actions デプロイ設定
 ├── assets/
-│   └── css/
-│       └── main.css        # グローバルCSS
+│   └── scss/
+│       └── main.scss        # グローバルSCSS
 ├── composables/
 │   └── usePortfolio.ts     # ポートフォリオデータ
 ├── layouts/
 │   └── default.vue         # 共通レイアウト（ヘッダー/フッター）
 ├── pages/
 │   ├── index.vue           # Home（/）
-│   ├── works.vue           # Works（/works）
+│   ├── developments.vue    # Works（/developments）
 │   └── articles.vue        # Articles（/articles）
 ├── public/
 │   ├── data/               # JSONデータファイル置き場
@@ -31,14 +31,14 @@ portfolio/
 ## 開発
 
 ```bash
-npm install
-npm run dev
+$ npm install
+$ npm run dev
 ```
 
 ## ビルド（静的ファイル生成）
 
 ```bash
-npm run generate
+$ npm run generate
 ```
 
 `.output/public/` に静的ファイルが生成されます。
