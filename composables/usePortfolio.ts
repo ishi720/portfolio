@@ -55,7 +55,7 @@ export const usePortfolio = () => {
             name: 'gulp-package-version-format',
             url: 'https://www.npmjs.com/package/gulp-package-version-format',
             github: 'https://github.com/ishi720/gulp-package-version-format',
-            description: 'Gulpプラグイン。package.jsonのバージョンを指定された形式で更新するためのものです。',
+            description: 'Gulpプラグイン。package.jsonのバージョンを指定された形式で更新できあます。',
             techs: ['Javascript', 'Gulp'],
             version: '1.6.1'
         },
@@ -71,8 +71,8 @@ export const usePortfolio = () => {
             name: 'textfit',
             url: 'https://www.npmjs.com/package/textfitjs',
             github: 'https://github.com/ishi720/textfitJS',
-            description: 'textfitjsのjQuery版。要素からはみ出た文字を削って省略記号をつけるjQueryプラグインです。',
-            techs: ['Javascript', 'jQuery'],
+            description: '要素からはみ出た文字を削って省略記号をつけるJavaScriptライブラリです。',
+            techs: ['Javascript'],
             version: '2.0.1'
         },
         {
