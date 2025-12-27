@@ -23,36 +23,11 @@
 
         <!-- ページネーション + ソート機能 -->
         <div class="pagination-wrapper">
-          <nav v-if="totalPages > 1" class="pagination">
-            <button
-              class="pagination-btn pagination-prev"
-              :disabled="currentPage === 1"
-              @click="goToPage(currentPage - 1)"
-            >
-              ← 前へ
-            </button>
-
-            <div class="pagination-numbers">
-              <button
-                v-for="page in visiblePages"
-                :key="page"
-                class="pagination-num"
-                :class="{ active: page === currentPage, ellipsis: page === '...' }"
-                :disabled="page === '...'"
-                @click="page !== '...' && goToPage(page as number)"
-              >
-                {{ page }}
-              </button>
-            </div>
-
-            <button
-              class="pagination-btn pagination-next"
-              :disabled="currentPage === totalPages"
-              @click="goToPage(currentPage + 1)"
-            >
-              次へ →
-            </button>
-          </nav>
+          <Pagination
+            v-model="currentPage"
+            :total-pages="totalPages"
+            @change="onPageChange"
+          />
 
           <!-- ソート機能 -->
           <div class="sort-controls">
@@ -64,7 +39,7 @@
                 @click="toggleSort('date')"
               >
                 投稿日
-                <span class="sort-icon">{{ sortKey === 'date' ? (sortOrder === 'desc' ? '↓' : '↑') : ' ' }}</span>
+                <span class="sort-icon">{{ sortKey === 'date' ? (sortOrder === 'desc' ? '↓' : '↑') : '　' }}</span>
               </button>
               <button
                 class="sort-btn"
@@ -72,7 +47,7 @@
                 @click="toggleSort('likes')"
               >
                 いいね数
-                <span class="sort-icon">{{ sortKey === 'likes' ? (sortOrder === 'desc' ? '↓' : '↑') : ' ' }}</span>
+                <span class="sort-icon">{{ sortKey === 'likes' ? (sortOrder === 'desc' ? '↓' : '↑') : '　' }}</span>
               </button>
             </div>
           </div>
@@ -92,6 +67,8 @@
             </div>
           </a>
         </div>
+
+
       </div>
     </section>
   </div>
@@ -161,29 +138,6 @@ const paginatedArticles = computed(() => {
   return sortedArticles.value.slice(start, end)
 })
 
-const visiblePages = computed(() => {
-  const pages: (number | string)[] = []
-  const total = totalPages.value
-  const current = currentPage.value
-
-  if (total <= 7) {
-    for (let i = 1; i <= total; i++) pages.push(i)
-  } else {
-    pages.push(1)
-    if (current > 3) pages.push('...')
-
-    const start = Math.max(2, current - 1)
-    const end = Math.min(total - 1, current + 1)
-
-    for (let i = start; i <= end; i++) pages.push(i)
-
-    if (current < total - 2) pages.push('...')
-    pages.push(total)
-  }
-
-  return pages
-})
-
 // ソートの切り替え
 const toggleSort = (key: 'date' | 'likes') => {
   if (sortKey.value === key) {
@@ -200,11 +154,9 @@ const toggleSort = (key: 'date' | 'likes') => {
   }
 }
 
-const goToPage = (page: number) => {
-  if (page >= 1 && page <= totalPages.value) {
-    currentPage.value = page
-    window.scrollTo({ top: 400, behavior: 'smooth' })
-  }
+// ページ変更時の処理
+const onPageChange = () => {
+  window.scrollTo({ top: 400, behavior: 'smooth' })
 }
 
 const formatDate = (dateStr: string) => {
