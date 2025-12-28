@@ -125,10 +125,7 @@ const getSnsIcon = (name: string): string => {
 }
 
 .wordcloud-wrapper {
-  background: #fff;
-  border-radius: 12px;
   padding: 24px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
 .loading {
