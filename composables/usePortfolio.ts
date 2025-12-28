@@ -58,7 +58,7 @@ export const usePortfolio = () => {
             name: 'gulp-package-version-format',
             url: 'https://www.npmjs.com/package/gulp-package-version-format',
             github: 'https://github.com/ishi720/gulp-package-version-format',
-            description: 'Gulpプラグイン。package.jsonのバージョンを指定された形式で更新できあます。',
+            description: 'Gulpプラグイン。package.jsonのバージョンを指定された形式で更新できます。',
             techs: ['Javascript', 'Gulp'],
             version: '1.6.1'
         },
