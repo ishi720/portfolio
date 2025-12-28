@@ -44,6 +44,7 @@
                 v-for="project in getFilteredProjects(company.projects)"
                 :key="project.name"
                 class="project-card"
+                :class="`project-card-${companyIndex % 6}`"
               >
                 <div class="project-header">
                   <h3 class="project-name">{{ project.name }}</h3>
@@ -145,6 +146,16 @@ $radius: 12px;
 $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 $font-ja: 'Noto Sans JP', sans-serif;
 $font-en: 'Poppins', sans-serif;
+
+// 会社ごとのアクセントカラー（左ボーダーのみ）
+$company-colors: (
+  0: #667eea,
+  1: #4facfe,
+  2: #02bb3f,
+  3: #f5576c,
+  4: #f093fb,
+  5: #fbbf24,
+);
 
 .career-section {
   padding: 60px 0 100px;
@@ -269,31 +280,39 @@ $font-en: 'Poppins', sans-serif;
 }
 
 .project-card {
-  background: linear-gradient(135deg, $primary 0%, $primary-dark 100%);
   border-radius: $radius;
   padding: 24px;
-  color: $text-white;
+  background: #fff;
+  color: $text;
   transition: $transition;
   position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
-    pointer-events: none;
-  }
+  box-shadow: $shadow;
+  border-left: 4px solid $primary;
 
   &:hover {
-    transform: translateY(-4px) translateX(4px);
+    transform: translateY(-4px);
     box-shadow: $shadow-hover;
 
     .project-name::after {
       width: 100%;
+    }
+  }
+
+  // 会社ごとの左ボーダーカラー
+  @each $index, $color in $company-colors {
+    &.project-card-#{$index} {
+      border-left-color: $color;
+
+      .project-industry {
+        background: $color;
+        color: #fff;
+      }
+
+      .tech-badge-active {
+        background: rgba($color, 0.15);
+        border-color: $color;
+        color: darken($color, 15%);
+      }
     }
   }
 }
@@ -308,11 +327,12 @@ $font-en: 'Poppins', sans-serif;
 
 .project-name {
   font-family: $font-ja;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 600;
   margin: 0;
   position: relative;
   display: inline-block;
+  color: $text;
 
   &::after {
     content: '';
@@ -321,27 +341,27 @@ $font-en: 'Poppins', sans-serif;
     left: 0;
     width: 0;
     height: 2px;
-    background: rgba(255, 255, 255, 0.5);
+    background: $primary;
     transition: width 0.3s ease;
+    border-radius: 2px;
   }
 }
 
 .project-industry {
-  font-size: 0.75rem;
-  background: rgba(255, 255, 255, 0.2);
+  font-size: 0.7rem;
+  background: $primary;
+  color: #fff;
   padding: 4px 10px;
-  border-radius: 20px;
+  border-radius: 4px;
   white-space: nowrap;
-  backdrop-filter: blur(4px);
   font-weight: 500;
-  letter-spacing: 0.02em;
 }
 
 .project-description {
   font-size: 0.9rem;
   line-height: 1.7;
   margin: 0 0 16px;
-  opacity: 0.95;
+  color: $text-light;
 }
 
 .project-footer {
@@ -363,19 +383,16 @@ $font-en: 'Poppins', sans-serif;
   font-size: 0.7rem;
   font-weight: 500;
   padding: 4px 10px;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 6px;
-  backdrop-filter: blur(4px);
+  background: $bg;
+  border: 1px solid $border;
+  border-radius: 4px;
+  color: $text-light;
   transition: $transition;
 
-  &:hover {
-    background: rgba(255, 255, 255, 0.25);
-  }
-
   &.tech-badge-active {
-    background: rgba(255, 255, 255, 0.4);
-    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba($primary, 0.1);
+    border-color: $primary;
+    color: $primary;
     font-weight: 600;
   }
 }
@@ -383,7 +400,7 @@ $font-en: 'Poppins', sans-serif;
 .project-period {
   font-family: $font-en;
   font-size: 0.8rem;
-  opacity: 0.8;
+  color: $text-light;
   white-space: nowrap;
 }
 
