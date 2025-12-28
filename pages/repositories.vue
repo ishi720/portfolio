@@ -12,14 +12,10 @@
         <!-- フィルター & ソート -->
         <div class="repos-controls">
           <!-- 検索 -->
-          <div class="search-box">
-            <input
-              v-model="searchQuery"
-              type="text"
-              placeholder="リポジトリを検索..."
-              class="search-input"
-            />
-          </div>
+          <SearchBox
+            v-model="searchQuery"
+            placeholder="リポジトリを検索..."
+          />
 
           <!-- ソート -->
           <SortControls
@@ -257,28 +253,6 @@ const formatDate = (dateStr: string) => {
   flex-wrap: wrap;
 }
 
-.search-box {
-  flex: 1;
-  min-width: 200px;
-  max-width: 400px;
-}
-
-.search-input {
-  width: 100%;
-  padding: 10px 16px;
-  font-size: 0.9rem;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  background: #fff;
-  transition: all 0.3s ease;
-
-  &:focus {
-    outline: none;
-    border-color: #4a90a4;
-    box-shadow: 0 0 0 3px rgba(74, 144, 164, 0.1);
-  }
-}
-
 .tag-filter {
   display: flex;
   flex-wrap: wrap;
@@ -418,10 +392,6 @@ const formatDate = (dateStr: string) => {
   .repos-controls {
     flex-direction: column;
     align-items: stretch;
-  }
-
-  .search-box {
-    max-width: none;
   }
 
   .repos-grid {
