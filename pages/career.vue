@@ -12,8 +12,8 @@
         <!-- フィルター -->
         <div class="career-filters">
           <TagFilter
-            v-model="selectedIndustry"
-            :tags="industries"
+            v-model="selectedTech"
+            :tags="popularTechs"
           />
         </div>
 
@@ -56,6 +56,7 @@
                       v-for="tech in project.techs"
                       :key="tech"
                       class="tech-badge"
+                      :class="{ 'tech-badge-active': tech === selectedTech }"
                     >
                       {{ tech }}
                     </span>
@@ -81,14 +82,29 @@ import { ref, computed } from 'vue'
 import { useCareer } from '~/composables/useCareer'
 import type { Project } from '~/composables/useCareer'
 
-const { careers, getAllIndustries } = useCareer()
+const { careers } = useCareer()
 
-const selectedIndustry = ref('')
-const industries = computed(() => getAllIndustries())
+const selectedTech = ref('')
 
-// 選択された業界でフィルタリングされた経歴
+// 人気の技術タグ（使用回数が多い上位15件）
+const popularTechs = computed(() => {
+  const techCount: Record<string, number> = {}
+  careers.forEach(company => {
+    company.projects.forEach(project => {
+      project.techs.forEach(tech => {
+        techCount[tech] = (techCount[tech] || 0) + 1
+      })
+    })
+  })
+  return Object.entries(techCount)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 15)
+    .map(([tech]) => tech)
+})
+
+// 選択された技術タグでフィルタリングされた経歴
 const filteredCareers = computed(() => {
-  if (!selectedIndustry.value) {
+  if (!selectedTech.value) {
     return careers
   }
 
@@ -96,7 +112,7 @@ const filteredCareers = computed(() => {
     .map(company => ({
       ...company,
       projects: company.projects.filter(
-        project => project.industry === selectedIndustry.value
+        project => project.techs.includes(selectedTech.value)
       )
     }))
     .filter(company => company.projects.length > 0)
@@ -104,10 +120,10 @@ const filteredCareers = computed(() => {
 
 // プロジェクトのフィルタリング
 const getFilteredProjects = (projects: Project[]): Project[] => {
-  if (!selectedIndustry.value) {
+  if (!selectedTech.value) {
     return projects
   }
-  return projects.filter(project => project.industry === selectedIndustry.value)
+  return projects.filter(project => project.techs.includes(selectedTech.value))
 }
 </script>
 
@@ -355,6 +371,12 @@ $font-en: 'Poppins', sans-serif;
 
   &:hover {
     background: rgba(255, 255, 255, 0.25);
+  }
+
+  &.tech-badge-active {
+    background: rgba(255, 255, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.6);
+    font-weight: 600;
   }
 }
 
