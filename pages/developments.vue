@@ -8,7 +8,7 @@
     </section>
 
     <!-- npm Packages Section -->
-    <section class="npm-section">
+    <section class="npm-section" id="npm-section">
       <div class="container">
         <h2 class="section-title">Npm Packages</h2>
         <div class="npm-grid">
@@ -34,7 +34,7 @@
     </section>
 
     <!-- Chrome Extensions Section -->
-    <section class="works-section">
+    <section class="works-section" id="chrome-extension-section">
       <div class="container">
         <h2 class="section-title">Chrome Extensions</h2>
         <div class="works-grid">
@@ -56,7 +56,7 @@
     </section>
 
     <!-- Web Services Section -->
-    <section class="works-section">
+    <section class="works-section" id="web-services-section">
       <div class="container">
         <h2 class="section-title">Web Services</h2>
         <div class="works-grid">

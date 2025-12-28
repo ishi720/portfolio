@@ -11,7 +11,7 @@
     </section>
 
     <!-- About Section -->
-    <section class="about-section">
+    <section class="about-section" id="about-section">
       <div class="container">
         <h2 class="section-title">About Me</h2>
         <div class="about-card">
@@ -32,7 +32,7 @@
     </section>
 
     <!-- Future Goals Section -->
-    <section class="goals-section">
+    <section class="goals-section" id="goals-section">
       <div class="container">
         <h2 class="section-title">Future Goals</h2>
         <div class="goals-card">
@@ -44,11 +44,11 @@
     </section>
 
     <!-- Achievements Section -->
-    <section class="achievements-section">
+    <section class="achievements-section" id="achievements-section">
       <div class="container">
         <h2 class="section-title">Achievements</h2>
         <div class="achievements-grid">
-          <NuxtLink to="/developments" class="achievement-card">
+          <NuxtLink to="/developments#npm-section" class="achievement-card">
             <div class="achievement-icon">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg" alt="npm">
             </div>
@@ -57,7 +57,7 @@
               <div class="achievement-label">NPM Packages</div>
             </div>
           </NuxtLink>
-          <NuxtLink to="/developments" class="achievement-card">
+          <NuxtLink to="/developments#chrome-extension-section" class="achievement-card">
             <div class="achievement-icon">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/chrome/chrome-original.svg" alt="Chrome">
             </div>
@@ -66,7 +66,7 @@
               <div class="achievement-label">Chrome Extensions</div>
             </div>
           </NuxtLink>
-          <NuxtLink to="/developments" class="achievement-card">
+          <NuxtLink to="/developments#web-services-section" class="achievement-card">
             <div class="achievement-icon">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="Web">
             </div>
