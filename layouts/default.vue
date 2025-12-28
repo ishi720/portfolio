@@ -8,6 +8,7 @@
           <NuxtLink to="/developments" class="nav-link" @click="menuOpen = false">Developments</NuxtLink>
           <NuxtLink to="/repositories" class="nav-link" @click="menuOpen = false">Repositories</NuxtLink>
           <NuxtLink to="/articles" class="nav-link" @click="menuOpen = false">Articles</NuxtLink>
+          <NuxtLink to="/career" class="nav-link" @click="menuOpen = false">Career</NuxtLink>
         </nav>
         <button class="mobile-menu-btn" @click="menuOpen = !menuOpen">
           <span></span><span></span><span></span>
