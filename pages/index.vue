@@ -26,17 +26,16 @@
         <h2 class="section-title">Skills</h2>
         <section class="skills-section">
           <div class="container">
-            <div class="skills-grid">
-              <div v-for="skill in skills" :key="skill.name" class="skill-card">
-                <div class="skill-icon">
-                  <img :src="skill.icon" :alt="skill.name">
-                </div>
-                <h3 class="skill-name">{{ skill.name }}</h3>
-                <div class="skill-bar">
-                  <div class="skill-progress" :style="{ width: skill.level + '%' }"></div>
-                </div>
-                <span class="skill-level">{{ skill.level }}%</span>
-              </div>
+            <div v-if="isReady && aggregatedTags.length > 0" class="wordcloud-wrapper">
+              <WordCloud
+                :words="aggregatedTags"
+                :size="cloudSize"
+                :min-font-size="10"
+                :max-font-size="48"
+              />
+            </div>
+            <div v-else class="loading">
+              <p>Loading skills...</p>
             </div>
           </div>
         </section>
@@ -76,9 +75,36 @@
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted, watch } from 'vue'
 import { usePortfolio } from '~/composables/usePortfolio'
+import { useSkillCloud } from '~/composables/useSkillCloud'
+import WordCloud from '~/components/WordCloud.vue'
 
-const { profile, socials, skills } = usePortfolio()
+const { profile, socials } = usePortfolio()
+const { aggregatedTags, isLoaded, loadData } = useSkillCloud()
+
+const cloudSize = ref(500)
+const isReady = ref(false)
+
+const updateSize = () => {
+  if (typeof window !== 'undefined') {
+    cloudSize.value = Math.min(window.innerWidth - 48, 500)
+  }
+}
+
+onMounted(async () => {
+  updateSize()
+  window.addEventListener('resize', updateSize)
+  await loadData()
+  // データ読み込み後に少し待ってからレンダリング
+  setTimeout(() => {
+    isReady.value = true
+  }, 100)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', updateSize)
+})
 
 const getSnsIcon = (name: string): string => {
   const icons: Record<string, string> = {
@@ -92,3 +118,24 @@ const getSnsIcon = (name: string): string => {
   return icons[name] || 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/devicon/devicon-original.svg'
 }
 </script>
+
+<style lang="scss" scoped>
+.skills-section {
+  padding: 20px 0 40px;
+}
+
+.wordcloud-wrapper {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  color: #666;
+}
+</style>

@@ -3,5 +3,8 @@
   "editor.tabSize": 4,
   "files.trimTrailingWhitespace": true,
   "terminal.integrated.defaultProfile.windows": "Git Bash",
-  "window.title":"${dirty}${activeEditorMedium}${separator}${rootName}"
+  "window.title":"${dirty}${activeEditorMedium}${separator}${rootName}",
+  "search.exclude": {
+    "package-lock.json": true
+  }
 }
