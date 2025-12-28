@@ -52,7 +52,7 @@ export const useCareer = () => {
                     name: 'メルマガサービスの移行作業',
                     description: 'PHPバージョンアップ、AkamaiやCloudFrontのルーティング変更作業を行いました。',
                     period: '',
-                    techs: ['PHP', 'MariaDB', 'JavaScript', 'S3', 'SES', 'CloudWatch', 'Postfix', 'Linux', 'SES', 'Akamai', 'CloudFront'],
+                    techs: ['PHP', 'MariaDB', 'JavaScript', 'S3', 'SES', 'CloudWatch', 'Postfix', 'Linux', 'Akamai', 'CloudFront'],
                     industry: '公共'
                 }
             ]
@@ -73,7 +73,7 @@ export const useCareer = () => {
                     name: '学生データ分析基盤の構築',
                     description: 'データ分析基盤の構築で、データレイク・データウェアハウス・データマート間のバッチ処理を設計から開発までを担当しました。',
                     period: '',
-                    techs: ['Python', 'Git', 'SVN', 'PostgreSQL', 'Redshift', 'lambda', 'S3', 'Glue'],
+                    techs: ['Python', 'Git', 'SVN', 'PostgreSQL', 'Redshift', 'lambda', 'S3', 'Glue', 'Aurora', 'GithubActions'],
                     industry: '教育'
                 },
                 {
@@ -87,7 +87,7 @@ export const useCareer = () => {
                     name: '開発基盤の構築・整備',
                     description: '自社開発のスタートアップとして、ローコードで開発を行うための技術調査や開発手法など基盤を整えました。',
                     period: '',
-                    techs: ['OutSystems'],
+                    techs: ['OutSystems', 'JavaScript'],
                     industry: 'IT・インフラ'
                 }
             ]
@@ -101,7 +101,7 @@ export const useCareer = () => {
                     name: '金融関係の顧客管理システムの開発・運用・保守',
                     description: 'PMとしてプロジェクトマネジメントやクライアントの窓口を任されました。',
                     period: '',
-                    techs: ['Java','Eclipse', 'Spring', 'JP1', 'HULFT8', 'AWK'],
+                    techs: ['Java', 'HTML', 'JavaScript', 'CSS', 'Eclipse', 'Spring', 'JP1', 'HULFT8', 'AWK'],
                     industry: '金融'
                 },
                 {
@@ -115,14 +115,14 @@ export const useCareer = () => {
                     name: '観光データの収集',
                     description: 'スクレイピングやWebAPIを用いてデータの収集・加工などデータ管理を行いました。',
                     period: '',
-                    techs: ['HTML', 'CSS', 'PHP', 'JavaScript', 'MySql', 'Virtuoso'],
+                    techs: ['HTML', 'CSS', 'PHP', 'JavaScript', 'MySQL', 'Virtuoso'],
                     industry: '観光'
                 },
                 {
                     name: '観光関連のWEBサービスの開発・運用・保守',
                     description: 'ルート案内サービスや地域SNSなど20以上のサービスに係ることができました。',
                     period: '',
-                    techs: ['HTML', 'CSS', 'PHP', 'Xoops', 'JavaScript', 'JQuery', 'Angular', 'Ruby on Rails', 'Vue', 'MySql', 'Docker', 'Google App Engine', 'Google App Script', 'Zabbix', 'GitHub', 'GitLab', 'Google Stackdriver'],
+                    techs: ['HTML', 'CSS', 'PHP', 'Xoops', 'JavaScript', 'JQuery', 'Angular', 'Ruby on Rails', 'Vue', 'MySQL', 'Docker', 'Apache', 'Google App Engine', 'Google App Script', 'Zabbix', 'GitHub', 'GitLab', 'Google Stackdriver'],
                     industry: '観光'
                 }
             ]

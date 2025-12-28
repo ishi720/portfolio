@@ -129,6 +129,8 @@ const getFilteredProjects = (projects: Project[]): Project[] => {
 </script>
 
 <style lang="scss" scoped>
+@use 'sass:color';
+
 // Variables
 $primary: #4a90a4;
 $primary-dark: #3a7a8a;
@@ -311,7 +313,7 @@ $company-colors: (
       .tech-badge-active {
         background: rgba($color, 0.15);
         border-color: $color;
-        color: darken($color, 15%);
+        color: color.adjust($color, $lightness: -15%);
       }
     }
   }
