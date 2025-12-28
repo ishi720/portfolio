@@ -7,6 +7,11 @@ export interface TagCount {
   size: number
 }
 
+// 日本語（ひらがな、カタカナ、漢字）を含むかチェック
+const containsJapanese = (text: string): boolean => {
+  return /[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FAF]/.test(text)
+}
+
 export const useSkillCloud = () => {
   const { developments, chromeExtensions, npmPackages } = usePortfolio()
   const { careers } = useCareer()
@@ -18,7 +23,6 @@ export const useSkillCloud = () => {
   // JSONデータを読み込み
   const loadData = async () => {
     try {
-      // Nuxtのpublic配下のファイルはbaseURLを考慮
       const baseURL = '/portfolio'
       const [articlesData, reposData] = await Promise.all([
         fetch(`${baseURL}/data/combined_articles.json`).then(res => res.json()),
@@ -29,21 +33,21 @@ export const useSkillCloud = () => {
       isLoaded.value = true
     } catch (error) {
       console.error('Failed to load data:', error)
-      // エラーでもisLoadedをtrueにして、静的データだけでも表示
       isLoaded.value = true
     }
   }
 
-  // タグを集計（大文字小文字を統一）
+  // タグを集計（大文字小文字を統一、日本語除外）
   const aggregatedTags = computed<TagCount[]>(() => {
     const tagCount: Record<string, number> = {}
-    const tagOriginal: Record<string, string> = {} // 元の表記を保持
+    const tagOriginal: Record<string, string> = {}
 
-    // タグを追加するヘルパー関数（大文字小文字を統一）
     const addTag = (tag: string) => {
+      // 日本語を含む場合はスキップ
+      if (containsJapanese(tag)) return
+
       const lowerTag = tag.toLowerCase()
       tagCount[lowerTag] = (tagCount[lowerTag] || 0) + 1
-      // 最初に出現した表記を保持
       if (!tagOriginal[lowerTag]) {
         tagOriginal[lowerTag] = tag
       }
@@ -93,7 +97,6 @@ export const useSkillCloud = () => {
       }
     })
 
-    // 配列に変換してソート（元の表記を使用）
     return Object.entries(tagCount)
       .map(([lowerTag, size]) => ({ text: tagOriginal[lowerTag], size }))
       .sort((a, b) => b.size - a.size)

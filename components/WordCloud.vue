@@ -70,11 +70,10 @@ const renderCloud = () => {
     rotationSteps: 10, // 回転角度のステップ数
     backgroundColor: 'transparent', // 背景色
     gridSize: 4, // 配置グリッドのサイズ
-    weightFactor: 1.2, //フォントサイズの倍率
+    weightFactor: 1.5, //フォントサイズの倍率
     shuffle: true, // 単語の配置順をシャッフルするか
     shape: 'circle', // 配置の形状
-    ellipticity: 0.65, // 楕円率
-    shrinkToFit: false
+    ellipticity: 0.65 // 楕円率
   })
 }
 
