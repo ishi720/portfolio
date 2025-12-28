@@ -25,24 +25,10 @@
         </div>
 
         <!-- タグフィルター -->
-        <div v-if="allTags.length > 0" class="tag-filter">
-          <button
-            class="tag-filter-btn"
-            :class="{ active: selectedTag === '' }"
-            @click="selectedTag = ''"
-          >
-            すべて
-          </button>
-          <button
-            v-for="tag in popularTags"
-            :key="tag"
-            class="tag-filter-btn"
-            :class="{ active: selectedTag === tag }"
-            @click="selectedTag = selectedTag === tag ? '' : tag"
-          >
-            {{ tag }}
-          </button>
-        </div>
+        <TagFilter
+          v-model="selectedTag"
+          :tags="popularTags"
+        />
 
         <!-- 検索結果件数 -->
         <p class="result-count">{{ filteredRepos.length }}件のリポジトリ</p>
@@ -253,35 +239,6 @@ const formatDate = (dateStr: string) => {
   flex-wrap: wrap;
 }
 
-.tag-filter {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 20px;
-}
-
-.tag-filter-btn {
-  font-size: 0.8rem;
-  padding: 6px 14px;
-  border: 1px solid #e0e0e0;
-  border-radius: 20px;
-  background: #fff;
-  color: #666;
-  cursor: pointer;
-  transition: all 0.3s ease;
-
-  &:hover {
-    border-color: #4a90a4;
-    color: #4a90a4;
-  }
-
-  &.active {
-    background: #4a90a4;
-    border-color: #4a90a4;
-    color: #fff;
-  }
-}
-
 .result-count {
   font-size: 0.9rem;
   color: #666;
@@ -396,10 +353,6 @@ const formatDate = (dateStr: string) => {
 
   .repos-grid {
     grid-template-columns: 1fr;
-  }
-
-  .tag-filter {
-    justify-content: center;
   }
 }
 </style>

@@ -9,28 +9,29 @@
 
     <section class="articles-section">
       <div class="container">
-        <!-- 検索 + ページネーション + ソート機能 -->
-        <div class="controls-wrapper">
-          <SearchBox
-            v-model="searchQuery"
-            placeholder="記事を検索..."
+
+        <!-- ページネーション + ソート機能 -->
+        <div class="pagination-wrapper">
+          <Pagination
+            v-model="currentPage"
+            :total-pages="totalPages"
           />
 
-          <div class="pagination-sort-wrapper">
-            <Pagination
-              v-model="currentPage"
-              :total-pages="totalPages"
-            />
-
-            <SortControls
-              v-model="sortState"
-              :options="sortOptions"
-            />
-          </div>
+          <SortControls
+            v-model="sortState"
+            :options="sortOptions"
+            @update:model-value="onSortChange"
+          />
         </div>
 
+        <!-- タグフィルター -->
+        <TagFilter
+          v-model="selectedTag"
+          :tags="popularTags"
+        />
+
         <!-- 検索結果件数 -->
-        <p v-if="searchQuery" class="result-count">{{ filteredArticles.length }}件の記事</p>
+        <p class="result-count">{{ filteredArticles.length }}件の記事</p>
 
         <!-- 記事一覧 -->
         <div class="articles-grid">
@@ -74,8 +75,8 @@ const { article_platforms } = usePortfolio()
 const articles = ref<Article[]>([])
 const perPage = 12
 
-// 検索クエリ
-const searchQuery = ref('')
+// フィルター用のstate
+const selectedTag = ref('')
 
 // ソートオプション
 const sortOptions: SortOption[] = [
@@ -104,17 +105,34 @@ onMounted(async () => {
   articles.value = await $fetch('/data/combined_articles.json')
 })
 
+// タグを配列として取得するヘルパー関数
+const getArticleTags = (tags: string): string[] => {
+  if (!tags) return []
+  return tags.split(',').map(tag => tag.trim()).filter(tag => tag.length > 0)
+}
+
+// 人気のタグ（使用回数が多い上位10件）
+const popularTags = computed(() => {
+  const tagCount: Record<string, number> = {}
+  articles.value.forEach(article => {
+    getArticleTags(article.tags).forEach(tag => {
+      tagCount[tag] = (tagCount[tag] || 0) + 1
+    })
+  })
+  return Object.entries(tagCount)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10)
+    .map(([tag]) => tag)
+})
+
 // フィルタリングされた記事一覧
 const filteredArticles = computed(() => {
   let result = [...articles.value]
 
-  // 検索フィルター
-  if (searchQuery.value) {
-    const query = searchQuery.value.toLowerCase()
+  // タグフィルター
+  if (selectedTag.value) {
     result = result.filter(article =>
-      article.title.toLowerCase().includes(query) ||
-      (article.tags && article.tags.toLowerCase().includes(query)) ||
-      article.source.toLowerCase().includes(query)
+      getArticleTags(article.tags).includes(selectedTag.value)
     )
   }
 
@@ -140,12 +158,19 @@ const paginatedArticles = computed(() => {
   return filteredArticles.value.slice(start, end)
 })
 
-// フィルター・ソート変更時は1ページ目に戻る
-watch([searchQuery, sortState], () => {
+// ソート変更時は1ページ目に戻る
+const onSortChange = () => {
   if (currentPage.value !== 1) {
     currentPage.value = 1
   }
-}, { deep: true })
+}
+
+// フィルター変更時は1ページ目に戻る
+watch(selectedTag, () => {
+  if (currentPage.value !== 1) {
+    currentPage.value = 1
+  }
+})
 
 const formatDate = (dateStr: string) => {
   const date = new Date(dateStr)
@@ -154,32 +179,9 @@ const formatDate = (dateStr: string) => {
 </script>
 
 <style lang="scss" scoped>
-.controls-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 24px;
-}
-
-.pagination-sort-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
 .result-count {
   font-size: 0.9rem;
   color: #666;
   margin-bottom: 20px;
-}
-
-@media (max-width: 768px) {
-  .pagination-sort-wrapper {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-  }
 }
 </style>
