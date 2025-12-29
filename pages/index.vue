@@ -95,6 +95,16 @@
               <div class="achievement-sub">{{ zennStats.contributions }} contributions</div>
             </div>
           </NuxtLink>
+          <NuxtLink to="/articles" class="achievement-card">
+            <div class="achievement-icon">
+              <img src="https://cdn.simpleicons.org/note/41C9B4" alt="Note">
+            </div>
+            <div class="achievement-info">
+              <div class="achievement-number">{{ noteStats.posts }}</div>
+              <div class="achievement-label">Note Posts</div>
+              <div class="achievement-sub">{{ noteStats.contributions }} contributions</div>
+            </div>
+          </NuxtLink>
           <NuxtLink to="/repositories" class="achievement-card">
             <div class="achievement-icon">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub">
@@ -187,6 +197,7 @@ const isReady = ref(false)
 const repoCount = ref(0)
 const qiitaStats = ref({ posts: 0, contributions: 0 })
 const zennStats = ref({ posts: 0, contributions: 0 })
+const noteStats = ref({ posts: 0, contributions: 0 })
 
 // 今後やりたいこと
 const futureGoals = [
@@ -220,6 +231,7 @@ onMounted(async () => {
     const articles = await $fetch<any[]>('/data/combined_articles.json')
     const qiitaArticles = articles.filter(a => a.source === 'Qiita')
     const zennArticles = articles.filter(a => a.source === 'Zenn')
+    const noteArticles = articles.filter(a => a.source === 'note')
 
     qiitaStats.value = {
       posts: qiitaArticles.length,
@@ -228,6 +240,10 @@ onMounted(async () => {
     zennStats.value = {
       posts: zennArticles.length,
       contributions: 2
+    }
+    noteStats.value = {
+      posts: noteArticles.length,
+      contributions: 0
     }
   } catch (e) {
     console.error('Failed to load articles:', e)
@@ -247,6 +263,7 @@ const getSnsIcon = (name: string): string => {
     'GitHub': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg',
     'Qiita': 'https://cdn.simpleicons.org/qiita/55C500',
     'Zenn': 'https://cdn.simpleicons.org/zenn/3EA8FF',
+    'Note': 'https://cdn.simpleicons.org/note/41C9B4',
     'npm': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg',
     'Wantedly': 'https://cdn.simpleicons.org/wantedly/21BDDB',
     'X': 'https://cdn.simpleicons.org/x/000000',
