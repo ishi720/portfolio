@@ -2,6 +2,10 @@
 
 Nuxt.js製のポートフォリオサイトです。
 
+
+<img width="1320" height="880" alt="localhost_3000_portfolio_career" src="https://github.com/user-attachments/assets/2169153a-92e7-4089-8893-da08c5904855" />
+
+
 # Badge
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f49aa0ee56264df093952a3aced2fbb0)](https://app.codacy.com/gh/ishi720/portfolio/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
