@@ -11,7 +11,7 @@
     </section>
 
     <!-- About Section -->
-    <section class="about-section" id="about-section">
+    <section id="about-me" class="about-section">
       <div class="container">
         <h2 class="section-title">About Me</h2>
         <div class="about-card">
@@ -32,7 +32,7 @@
     </section>
 
     <!-- Future Goals Section -->
-    <section class="goals-section" id="goals-section">
+    <section id="future-goals" class="goals-section">
       <div class="container">
         <h2 class="section-title">Future Goals</h2>
         <div class="goals-card">
@@ -44,11 +44,11 @@
     </section>
 
     <!-- Achievements Section -->
-    <section class="achievements-section" id="achievements-section">
+    <section id="achievements" class="achievements-section">
       <div class="container">
         <h2 class="section-title">Achievements</h2>
         <div class="achievements-grid">
-          <NuxtLink to="/developments#npm-section" class="achievement-card">
+          <NuxtLink to="/developments" class="achievement-card">
             <div class="achievement-icon">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg" alt="npm">
             </div>
@@ -57,7 +57,7 @@
               <div class="achievement-label">NPM Packages</div>
             </div>
           </NuxtLink>
-          <NuxtLink to="/developments#chrome-extension-section" class="achievement-card">
+          <NuxtLink to="/developments" class="achievement-card">
             <div class="achievement-icon">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/chrome/chrome-original.svg" alt="Chrome">
             </div>
@@ -66,7 +66,7 @@
               <div class="achievement-label">Chrome Extensions</div>
             </div>
           </NuxtLink>
-          <NuxtLink to="/developments#web-services-section" class="achievement-card">
+          <NuxtLink to="/developments" class="achievement-card">
             <div class="achievement-icon">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="Web">
             </div>
@@ -120,7 +120,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section class="skills-section">
+    <section id="skills" class="skills-section">
       <div class="container">
         <h2 class="section-title">Skills</h2>
         <div v-if="isReady && aggregatedTags.length > 0" class="wordcloud-wrapper">
@@ -138,7 +138,7 @@
     </section>
 
     <!-- SNS Section -->
-    <section class="sns-section">
+    <section id="sns" class="sns-section">
       <div class="container">
         <h2 class="section-title">SNS</h2>
         <div class="sns-grid">
@@ -153,7 +153,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact-section">
+    <section id="contact" class="contact-section">
       <div class="container">
         <h2 class="section-title">Contact</h2>
         <a :href="`mailto:${profile.email}`" class="contact-card">
