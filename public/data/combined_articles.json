@@ -1,11 +1,19 @@
 [
     {
+        "published_at": "2025-12-29T10:35:20+09:00",
+        "url": "https://note.com/ishi720/n/n3957aa50fefa",
+        "title": "アイディアが出ない原因は「固定概念」かもしれない",
+        "tags": "アイディア, 固定観念",
+        "source": "note",
+        "likes": 0
+    },
+    {
         "published_at": "2025-12-07T18:05:40+09:00",
         "url": "https://qiita.com/ishi720/items/26febf8581e0ecfb0084",
         "title": "ブラウザで動く流体力学ラテアート☕",
         "tags": "JavaScript, 流体力学",
         "source": "Qiita",
-        "likes": 3
+        "likes": 8
     },
     {
         "published_at": "2025-12-07T17:25:26+09:00",
@@ -13,7 +21,7 @@
         "title": "ラバーペンシル現象をWEBで再現してみた",
         "tags": "JavaScript, ラバーペンシル現象",
         "source": "Qiita",
-        "likes": 15
+        "likes": 19
     },
     {
         "published_at": "2025-11-27T22:59:12+09:00",
@@ -21,7 +29,7 @@
         "title": "【Go】Echo × VOICEVOX で謎言語をずんだもんに読み上げてもらう",
         "tags": "Go, echo, VOICEVOX",
         "source": "Qiita",
-        "likes": 7
+        "likes": 9
     },
     {
         "published_at": "2025-10-04T23:22:48+09:00",
