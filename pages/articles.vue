@@ -10,11 +10,11 @@
     <section class="articles-section">
       <div class="container">
 
-        <!-- ページネーション + ソート機能 -->
+        <!-- 検索 + ソート機能 -->
         <div class="pagination-wrapper">
-          <Pagination
-            v-model="currentPage"
-            :total-pages="totalPages"
+          <SearchBox
+            v-model="searchQuery"
+            placeholder="記事を検索..."
           />
 
           <SortControls
@@ -48,6 +48,11 @@
           </a>
         </div>
 
+        <!-- ページネーション -->
+        <Pagination
+          v-model="currentPage"
+          :total-pages="totalPages"
+        />
 
       </div>
     </section>
@@ -76,6 +81,7 @@ const articles = ref<Article[]>([])
 const perPage = 12
 
 // フィルター用のstate
+const searchQuery = ref('')
 const selectedTag = ref('')
 
 // ソートオプション
@@ -129,6 +135,15 @@ const popularTags = computed(() => {
 const filteredArticles = computed(() => {
   let result = [...articles.value]
 
+  // 検索フィルター
+  if (searchQuery.value) {
+    const query = searchQuery.value.toLowerCase()
+    result = result.filter(article =>
+      article.title.toLowerCase().includes(query) ||
+      (article.tags && article.tags.toLowerCase().includes(query))
+    )
+  }
+
   // タグフィルター
   if (selectedTag.value) {
     result = result.filter(article =>
@@ -166,7 +181,7 @@ const onSortChange = () => {
 }
 
 // フィルター変更時は1ページ目に戻る
-watch(selectedTag, () => {
+watch([selectedTag, searchQuery], () => {
   if (currentPage.value !== 1) {
     currentPage.value = 1
   }
