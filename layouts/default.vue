@@ -28,9 +28,6 @@
               <NuxtLink to="/#skills" class="dropdown-item" @click="closeMenus">
                 Skills
               </NuxtLink>
-              <NuxtLink to="/#sns" class="dropdown-item" @click="closeMenus">
-                SNS
-              </NuxtLink>
               <NuxtLink to="/#contact" class="dropdown-item" @click="closeMenus">
                 Contact
               </NuxtLink>

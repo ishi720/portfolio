@@ -25,6 +25,12 @@
                 <span class="about-role">フルスタックエンジニア</span>
               </div>
               <p class="about-bio">{{ profile.bio }}</p>
+              <!-- SNS Links -->
+              <div class="about-sns">
+                <a v-for="social in socials" :key="social.name" :href="social.url" target="_blank" class="about-sns-link">
+                  <img :src="getSnsIcon(social.name)" :alt="social.name">
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -143,21 +149,6 @@
         </div>
         <div v-else class="loading">
           <p>Loading skills...</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SNS Section -->
-    <section id="sns" class="sns-section">
-      <div class="container">
-        <h2 class="section-title">SNS</h2>
-        <div class="sns-grid">
-          <a v-for="social in socials" :key="social.name" :href="social.url" target="_blank" class="sns-card">
-            <div class="sns-icon">
-              <img :src="getSnsIcon(social.name)" :alt="social.name">
-            </div>
-            <h3 class="sns-name">{{ social.name }}</h3>
-          </a>
         </div>
       </div>
     </section>
@@ -330,6 +321,41 @@ $font-en: 'Poppins', sans-serif;
 .about-bio {
   color: $text-light;
   line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+// About SNS Links
+.about-sns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.about-sns-link {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $bg;
+  border-radius: 50%;
+  transition: $transition;
+
+  img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    transition: $transition;
+  }
+
+  &:hover {
+    background: $primary;
+    transform: translateY(-2px);
+
+    img {
+      filter: brightness(0) invert(1);
+    }
+  }
 }
 
 // Future Goals Section
@@ -476,65 +502,9 @@ $font-en: 'Poppins', sans-serif;
   color: $text-light;
 }
 
-// SNS Section
-.sns-section {
-  padding: 60px 0;
-}
-
-.sns-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 16px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.sns-card {
-  background: $card-bg;
-  border-radius: $radius;
-  padding: 24px 16px;
-  text-align: center;
-  box-shadow: $shadow;
-  transition: $transition;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: $shadow-hover;
-
-    .sns-icon img {
-      transform: scale(1.1);
-    }
-  }
-}
-
-.sns-icon {
-  width: 48px;
-  height: 48px;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transition: $transition;
-  }
-}
-
-.sns-name {
-  font-family: $font-en;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: $text;
-  margin: 0;
-}
-
 // Contact Section
 .contact-section {
   padding: 60px 0 80px;
-  background: linear-gradient(180deg, $bg 0%, darken($bg, 2%) 100%);
 }
 
 .contact-card {
@@ -599,6 +569,10 @@ $font-en: 'Poppins', sans-serif;
     gap: 8px;
   }
 
+  .about-sns {
+    justify-content: flex-start;
+  }
+
   .goals-list {
     padding-left: 20px;
 
@@ -617,10 +591,6 @@ $font-en: 'Poppins', sans-serif;
 
   .achievement-number {
     font-size: 1.75rem;
-  }
-
-  .sns-grid {
-    grid-template-columns: repeat(3, 1fr);
   }
 
   .contact-card {
