@@ -117,10 +117,6 @@ const router = useRouter()
 const repos = ref<Repo[]>([])
 const perPage = 18
 
-// フィルター用のstate
-const searchQuery = ref('')
-const selectedTag = ref('')
-
 // ソートオプション
 const sortOptions: SortOption[] = [
   { key: 'updated_at', label: '更新日' },
@@ -130,20 +126,55 @@ const sortOptions: SortOption[] = [
   { key: 'name', label: 'リポジトリ名' }
 ]
 
-// ソート状態
-const sortState = ref<SortState>({
-  key: 'updated_at',
-  order: 'desc'
-})
+// URLクエリから初期値を取得
+const getInitialSortState = (): SortState => {
+  const sortKey = route.query.sort as string
+  const sortOrder = route.query.order as string
+  return {
+    key: sortOptions.some(o => o.key === sortKey) ? sortKey : 'updated_at',
+    order: (sortOrder === 'asc' || sortOrder === 'desc') ? sortOrder : 'desc'
+  }
+}
+
+// フィルター用のstate（URLクエリから初期化）
+const searchQuery = ref((route.query.q as string) || '')
+const selectedTag = ref((route.query.tag as string) || '')
+const sortState = ref<SortState>(getInitialSortState())
+
+// URLクエリを更新する関数
+const updateQuery = () => {
+  const query: Record<string, string | undefined> = {}
+
+  if (searchQuery.value) {
+    query.q = searchQuery.value
+  }
+  if (selectedTag.value) {
+    query.tag = selectedTag.value
+  }
+  if (sortState.value.key !== 'updated_at') {
+    query.sort = sortState.value.key
+  }
+  if (sortState.value.order !== 'desc') {
+    query.order = sortState.value.order
+  }
+  if (currentPageValue.value > 1) {
+    query.page = String(currentPageValue.value)
+  }
+
+  router.replace({ query })
+}
+
+// ページ番号の内部状態
+const currentPageValue = ref(Number(route.query.page) || 1)
 
 // URLのクエリパラメータからページ番号を取得
 const currentPage = computed({
   get: () => {
-    const page = Number(route.query.page) || 1
-    return Math.max(1, Math.min(page, totalPages.value || 1))
+    return Math.max(1, Math.min(currentPageValue.value, totalPages.value || 1))
   },
   set: (value: number) => {
-    router.push({ query: { ...route.query, page: value > 1 ? value : undefined } })
+    currentPageValue.value = value
+    updateQuery()
   }
 })
 
@@ -238,12 +269,11 @@ const paginatedRepos = computed(() => {
   return filteredRepos.value.slice(start, end)
 })
 
-// フィルター変更時は1ページ目に戻る
-watch([searchQuery, selectedTag], () => {
-  if (currentPage.value !== 1) {
-    currentPage.value = 1
-  }
-})
+// フィルター変更時は1ページ目に戻ってURLを更新
+watch([searchQuery, selectedTag, sortState], () => {
+  currentPageValue.value = 1
+  updateQuery()
+}, { deep: true })
 
 const formatDate = (dateStr: string) => {
   const date = new Date(dateStr)
