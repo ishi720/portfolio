@@ -20,7 +20,7 @@
         <!-- タイムライン -->
         <div class="career-timeline">
           <div
-            v-for="(company, companyIndex) in filteredCareers"
+            v-for="(company, companyIndex) in careers"
             :key="company.name"
             class="timeline-company"
           >
@@ -41,37 +41,49 @@
             <!-- プロジェクト一覧 -->
             <div class="projects-container">
               <div
-                v-for="project in getFilteredProjects(company.projects)"
+                v-for="project in company.projects"
                 :key="project.name"
                 class="project-card"
-                :class="`project-card-${companyIndex % 6}`"
+                :class="[
+                  `project-card-${companyIndex % 6}`,
+                  { 'project-card-collapsed': !isProjectMatch(project) }
+                ]"
               >
-                <div class="project-header">
-                  <h3 class="project-name">{{ project.name }}</h3>
-                  <span class="project-industry">{{ project.industry }}</span>
+                <!-- 折りたたみ時のヘッダー -->
+                <div
+                  v-if="!isProjectMatch(project)"
+                  class="project-collapsed-header"
+                >
+                  <h3 class="project-name-collapsed">{{ project.name }}</h3>
                 </div>
-                <p class="project-description">{{ project.description }}</p>
-                <div class="project-footer">
-                  <div class="project-techs">
-                    <span
-                      v-for="tech in project.techs"
-                      :key="tech"
-                      class="tech-badge"
-                      :class="{ 'tech-badge-active': tech === selectedTech }"
-                    >
-                      {{ tech }}
-                    </span>
+
+                <!-- 展開時のコンテンツ -->
+                <div
+                  v-if="isProjectMatch(project)"
+                  class="project-content"
+                >
+                  <div class="project-header">
+                    <h3 class="project-name">{{ project.name }}</h3>
+                    <span class="project-industry">{{ project.industry }}</span>
                   </div>
-                  <span class="project-period">{{ project.period }}</span>
+                  <p class="project-description">{{ project.description }}</p>
+                  <div class="project-footer">
+                    <div class="project-techs">
+                      <span
+                        v-for="tech in project.techs"
+                        :key="tech"
+                        class="tech-badge"
+                        :class="{ 'tech-badge-active': tech === selectedTech }"
+                      >
+                        {{ tech }}
+                      </span>
+                    </div>
+                    <span class="project-period">{{ project.period }}</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- 結果なしメッセージ -->
-        <div v-if="filteredCareers.length === 0" class="no-results">
-          <p>該当するプロジェクトがありません</p>
         </div>
       </div>
     </section>
@@ -86,6 +98,12 @@ import type { Project } from '~/composables/useCareer'
 const { careers } = useCareer()
 
 const selectedTech = ref('')
+
+// プロジェクトがフィルターに一致するか
+const isProjectMatch = (project: Project): boolean => {
+  if (!selectedTech.value) return true
+  return project.techs.includes(selectedTech.value)
+}
 
 // 人気の技術タグ（使用回数が多い上位15件）
 const popularTechs = computed(() => {
@@ -102,30 +120,6 @@ const popularTechs = computed(() => {
     .slice(0, 15)
     .map(([tech]) => tech)
 })
-
-// 選択された技術タグでフィルタリングされた経歴
-const filteredCareers = computed(() => {
-  if (!selectedTech.value) {
-    return careers
-  }
-
-  return careers
-    .map(company => ({
-      ...company,
-      projects: company.projects.filter(
-        project => project.techs.includes(selectedTech.value)
-      )
-    }))
-    .filter(company => company.projects.length > 0)
-})
-
-// プロジェクトのフィルタリング
-const getFilteredProjects = (projects: Project[]): Project[] => {
-  if (!selectedTech.value) {
-    return projects
-  }
-  return projects.filter(project => project.techs.includes(selectedTech.value))
-}
 </script>
 
 <style lang="scss" scoped>
@@ -283,20 +277,33 @@ $company-colors: (
 
 .project-card {
   border-radius: $radius;
-  padding: 24px;
   background: #fff;
   color: $text;
   transition: $transition;
   position: relative;
   box-shadow: $shadow;
   border-left: 4px solid $primary;
+  overflow: hidden;
 
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: $shadow-hover;
+  &:not(.project-card-collapsed) {
+    padding: 24px;
 
-    .project-name::after {
-      width: 100%;
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: $shadow-hover;
+
+      .project-name::after {
+        width: 100%;
+      }
+    }
+  }
+
+  &.project-card-collapsed {
+    padding: 0;
+    opacity: 0.7;
+
+    &:hover {
+      opacity: 1;
     }
   }
 
@@ -316,6 +323,29 @@ $company-colors: (
         color: color.adjust($color, $lightness: -15%);
       }
     }
+  }
+}
+
+// 折りたたみヘッダー
+.project-collapsed-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+}
+
+.project-name-collapsed {
+  font-family: $font-ja;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: $text-light;
+  margin: 0;
+}
+
+// 展開コンテンツ
+.project-content {
+  .project-card-collapsed & {
+    padding: 0 24px 24px;
   }
 }
 
@@ -406,14 +436,6 @@ $company-colors: (
   white-space: nowrap;
 }
 
-// 結果なし
-.no-results {
-  text-align: center;
-  padding: 60px 20px;
-  color: $text-light;
-  font-size: 1rem;
-}
-
 // レスポンシブ
 @media (max-width: 768px) {
   .career-section {
@@ -438,8 +460,18 @@ $company-colors: (
     padding-left: 16px;
   }
 
-  .project-card {
+  .project-card:not(.project-card-collapsed) {
     padding: 20px;
+  }
+
+  .project-collapsed-header {
+    padding: 14px 20px;
+  }
+
+  .project-content {
+    .project-card-collapsed & {
+      padding: 0 20px 20px;
+    }
   }
 
   .project-header {
