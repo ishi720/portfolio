@@ -64,6 +64,20 @@
               </span>
             </div>
             <div class="repo-footer">
+              <div class="repo-stats">
+                <span class="repo-stat" title="コミット数">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M10.5 7.75a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Zm1.43.75a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 0 1 0-1.5h3.32a4.002 4.002 0 0 1 7.86 0h3.32a.75.75 0 0 1 0 1.5Zm-1.43-.75a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"/>
+                  </svg>
+                  {{ repo.commit_count || 0 }}
+                </span>
+                <span class="repo-stat" title="サイズ">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M3.5 3.75v8.5h9v-8.5h-9Zm0-1.5h9A1.5 1.5 0 0 1 14 3.75v8.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12.25v-8.5A1.5 1.5 0 0 1 3.5 2.25Z"/>
+                  </svg>
+                  {{ formatSize(repo.size_kb) }}
+                </span>
+              </div>
               <span class="repo-date">
                 <span class="date-label">更新:</span>
                 {{ formatDate(repo.updated_at) }}
@@ -94,6 +108,8 @@ interface Repo {
   description: string
   created_at: string
   updated_at: string
+  commit_count?: number
+  size_kb?: number
 }
 
 const route = useRoute()
@@ -109,6 +125,8 @@ const selectedTag = ref('')
 const sortOptions: SortOption[] = [
   { key: 'updated_at', label: '更新日' },
   { key: 'created_at', label: '作成日' },
+  { key: 'commit_count', label: 'コミット数' },
+  { key: 'size_kb', label: 'サイズ' },
   { key: 'name', label: 'リポジトリ名' }
 ]
 
@@ -193,6 +211,14 @@ const filteredRepos = computed(() => {
     if (sortState.value.key === 'name') {
       const comparison = a.name.localeCompare(b.name)
       return sortState.value.order === 'desc' ? -comparison : comparison
+    } else if (sortState.value.key === 'commit_count') {
+      const countA = a.commit_count || 0
+      const countB = b.commit_count || 0
+      return sortState.value.order === 'desc' ? countB - countA : countA - countB
+    } else if (sortState.value.key === 'size_kb') {
+      const sizeA = a.size_kb || 0
+      const sizeB = b.size_kb || 0
+      return sortState.value.order === 'desc' ? sizeB - sizeA : sizeA - sizeB
     } else {
       const key = sortState.value.key as 'updated_at' | 'created_at'
       const dateA = new Date(a[key]).getTime()
@@ -222,6 +248,14 @@ watch([searchQuery, selectedTag], () => {
 const formatDate = (dateStr: string) => {
   const date = new Date(dateStr)
   return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`
+}
+
+const formatSize = (sizeKb?: number) => {
+  if (!sizeKb || sizeKb === 0) return '0 KB'
+  if (sizeKb >= 1024) {
+    return `${(sizeKb / 1024).toFixed(1)} MB`
+  }
+  return `${sizeKb} KB`
 }
 </script>
 
@@ -331,9 +365,28 @@ const formatDate = (dateStr: string) => {
 
 .repo-footer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   padding-top: 10px;
   border-top: 1px solid #f0f0f0;
+}
+
+.repo-stats {
+  display: flex;
+  gap: 12px;
+}
+
+.repo-stat {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: #666;
+
+  svg {
+    width: 14px;
+    height: 14px;
+  }
 }
 
 .repo-date {
@@ -353,6 +406,12 @@ const formatDate = (dateStr: string) => {
 
   .repos-grid {
     grid-template-columns: 1fr;
+  }
+
+  .repo-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
 }
 </style>

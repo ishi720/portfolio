@@ -5,7 +5,9 @@
     "tags": ["p5js", "reactjs"],
     "description": "2048パズル",
     "created_at": "2025-11-07T13:49:27Z",
-    "updated_at": "2025-11-10T00:16:03Z"
+    "updated_at": "2025-11-10T00:16:03Z",
+    "commit_count": 20,
+    "size_kb": 82
   },
   {
     "name": "adhere-scroll",
@@ -13,7 +15,9 @@
     "tags": [],
     "description": "(準備中）スクロールした際に要素をfixedするjavascriptプラグインです",
     "created_at": "2019-10-07T04:38:20Z",
-    "updated_at": "2019-10-26T09:03:30Z"
+    "updated_at": "2019-10-26T09:03:30Z",
+    "commit_count": 5,
+    "size_kb": 5
   },
   {
     "name": "Albiview",
@@ -21,7 +25,9 @@
     "tags": ["php", "isotope-layout", "javascript", "jquery", "jsrender", "lightbox2"],
     "description": "フォルダに格納された画像ファイルをブラウザ上で一覧表示する",
     "created_at": "2025-05-15T11:29:28Z",
-    "updated_at": "2025-11-15T06:49:19Z"
+    "updated_at": "2025-11-15T06:49:19Z",
+    "commit_count": 38,
+    "size_kb": 58
   },
   {
     "name": "autoclipy",
@@ -29,7 +35,9 @@
     "tags": [],
     "description": "",
     "created_at": "2025-03-05T14:20:28Z",
-    "updated_at": "2025-03-05T14:23:50Z"
+    "updated_at": "2025-03-05T14:23:50Z",
+    "commit_count": 1,
+    "size_kb": 0
   },
   {
     "name": "BirthdayCalendar",
@@ -37,7 +45,9 @@
     "tags": ["kaminari", "rails7", "ruby3", "rubocop", "semantic-ui", "devise"],
     "description": "キャラクターの誕生日を表示する",
     "created_at": "2024-05-10T14:10:22Z",
-    "updated_at": "2024-11-24T07:01:38Z"
+    "updated_at": "2024-11-24T07:01:38Z",
+    "commit_count": 82,
+    "size_kb": 124
   },
   {
     "name": "BirthdayCalendar_Docs",
@@ -45,7 +55,9 @@
     "tags": "drawio",
     "description": "BirthdayCalendarのドキュメント保存場所",
     "created_at": "2024-06-09T04:06:23Z",
-    "updated_at": "2024-06-12T23:14:01Z"
+    "updated_at": "2024-06-12T23:14:01Z",
+    "commit_count": 6,
+    "size_kb": 8
   },
   {
     "name": "ClipboardSample",
@@ -53,7 +65,9 @@
     "tags": [],
     "description": "プレーンテキスト・HTMLコンテンツ・リッチテキストをクリップボードにコピーするサンプルプログラム",
     "created_at": "2024-11-24T09:28:50Z",
-    "updated_at": "2025-01-04T13:50:07Z"
+    "updated_at": "2025-01-04T13:50:07Z",
+    "commit_count": 2,
+    "size_kb": 1
   },
   {
     "name": "cointoss_statistics",
@@ -61,7 +75,9 @@
     "tags": ["chartjs", "webpack5", "chota"],
     "description": "X回のコイントスをY回実行した結果が「表」になった回数を計測しグラフ表示を行う。",
     "created_at": "2022-03-24T15:00:07Z",
-    "updated_at": "2024-10-07T14:42:17Z"
+    "updated_at": "2024-10-07T14:42:17Z",
+    "commit_count": 39,
+    "size_kb": 488
   },
   {
     "name": "collatz_visualization",
@@ -69,7 +85,9 @@
     "tags": ["javascript", "visjs", "bulma", "vue2js", "jest"],
     "description": "コラッツ問題を視覚化します",
     "created_at": "2020-10-13T11:38:49Z",
-    "updated_at": "2025-10-13T11:15:56Z"
+    "updated_at": "2025-10-13T11:15:56Z",
+    "commit_count": 121,
+    "size_kb": 1441
   },
   {
     "name": "collision_detection_game",
@@ -77,7 +95,9 @@
     "tags": ["processing", "game"],
     "description": "当たり判定をテーマにしたゲーム",
     "created_at": "2024-02-23T03:44:23Z",
-    "updated_at": "2024-04-20T08:19:31Z"
+    "updated_at": "2024-04-20T08:19:31Z",
+    "commit_count": 2,
+    "size_kb": 806
   },
   {
     "name": "Connect4",
@@ -85,7 +105,9 @@
     "tags": "unity2d",
     "description": "Unityで4目並べ",
     "created_at": "2025-12-08T14:13:54Z",
-    "updated_at": "2025-12-09T14:52:08Z"
+    "updated_at": "2025-12-09T14:52:08Z",
+    "commit_count": 9,
+    "size_kb": 15068
   },
   {
     "name": "ConsonantChanger",
@@ -93,15 +115,19 @@
     "tags": ["echo", "go", "materializecss", "gemini-api", "voicevox"],
     "description": "ひらがなを指定した子音の行に変換します。",
     "created_at": "2024-10-28T12:00:01Z",
-    "updated_at": "2025-11-27T13:38:00Z"
+    "updated_at": "2025-11-27T13:38:00Z",
+    "commit_count": 62,
+    "size_kb": 60
   },
   {
     "name": "covid19_aomori_opendata_get",
     "url": "https://github.com/ishi720/covid19_aomori_opendata_get",
-    "tags": [],
+    "tags": ["javascript", "nodejs"],
     "description": "covid19青森に使用するデータを作成する",
     "created_at": "2020-04-03T08:18:23Z",
-    "updated_at": "2020-10-20T07:59:03Z"
+    "updated_at": "2025-12-27T22:48:06Z",
+    "commit_count": 44,
+    "size_kb": 435
   },
   {
     "name": "CreateFlowchart",
@@ -109,7 +135,9 @@
     "tags": "processing",
     "description": "フローチャートを組み立てる教育教材用のアプリ",
     "created_at": "2024-02-23T04:54:59Z",
-    "updated_at": "2024-02-23T09:10:33Z"
+    "updated_at": "2024-02-23T09:10:33Z",
+    "commit_count": 2,
+    "size_kb": 9
   },
   {
     "name": "customizeIME",
@@ -117,7 +145,9 @@
     "tags": "ime",
     "description": "IMEの辞書に登録するためのテキストファイル",
     "created_at": "2023-05-25T12:03:21Z",
-    "updated_at": "2023-06-24T00:10:58Z"
+    "updated_at": "2023-06-24T00:10:58Z",
+    "commit_count": 26,
+    "size_kb": 37
   },
   {
     "name": "draw_shapes",
@@ -125,7 +155,9 @@
     "tags": ["javascript", "p5js"],
     "description": "p5.jsを使って図形の描画",
     "created_at": "2025-01-04T11:49:41Z",
-    "updated_at": "2025-11-01T23:34:56Z"
+    "updated_at": "2025-11-01T23:34:56Z",
+    "commit_count": 49,
+    "size_kb": 124
   },
   {
     "name": "excelFinishSave",
@@ -133,7 +165,9 @@
     "tags": [],
     "description": "対象フォルダ内のエクセル資料の仕上げが短縮できます",
     "created_at": "2021-10-31T12:01:27Z",
-    "updated_at": "2025-05-12T12:34:35Z"
+    "updated_at": "2025-05-12T12:34:35Z",
+    "commit_count": 28,
+    "size_kb": 22
   },
   {
     "name": "feeduck",
@@ -141,7 +175,9 @@
     "tags": ["rss-reader", "laravel8", "php8"],
     "description": "RSSを管理するサービス",
     "created_at": "2024-01-21T11:44:25Z",
-    "updated_at": "2025-09-30T07:55:23Z"
+    "updated_at": "2025-09-30T07:55:23Z",
+    "commit_count": 17,
+    "size_kb": 786
   },
   {
     "name": "feeduck-chrome-extension",
@@ -149,7 +185,9 @@
     "tags": ["bootstrap5", "chrome-extension", "javascript", "jquery"],
     "description": "ページ内にRSSが存在するか確認できるchromeの拡張機能です",
     "created_at": "2020-04-18T11:29:47Z",
-    "updated_at": "2024-05-05T14:13:53Z"
+    "updated_at": "2024-05-05T14:13:53Z",
+    "commit_count": 50,
+    "size_kb": 10202
   },
   {
     "name": "ferrisWheelRotate",
@@ -157,7 +195,9 @@
     "tags": [],
     "description": "観覧車の回転から、一周回る時間を求める",
     "created_at": "2024-08-26T12:02:48Z",
-    "updated_at": "2024-08-26T12:42:52Z"
+    "updated_at": "2024-08-26T12:42:52Z",
+    "commit_count": 4,
+    "size_kb": 10362
   },
   {
     "name": "file_count",
@@ -165,7 +205,9 @@
     "tags": [],
     "description": "ignoreファイルを考慮してファイル数をカウントします",
     "created_at": "2019-06-09T23:38:47Z",
-    "updated_at": "2019-06-12T01:03:51Z"
+    "updated_at": "2019-06-12T01:03:51Z",
+    "commit_count": 2,
+    "size_kb": 1
   },
   {
     "name": "gae_nodejs_cdn",
@@ -173,7 +215,9 @@
     "tags": "cdn",
     "description": "Google App Engine上でCDNサービスの雛形",
     "created_at": "2019-06-10T10:12:18Z",
-    "updated_at": "2023-06-24T01:06:26Z"
+    "updated_at": "2023-06-24T01:06:26Z",
+    "commit_count": 15,
+    "size_kb": 23
   },
   {
     "name": "gakunenKanji",
@@ -181,7 +225,9 @@
     "tags": ["php", "igo-php"],
     "description": "igo-phpを利用して、小学生の習得漢字以外をひらがなに変換",
     "created_at": "2023-10-22T02:22:59Z",
-    "updated_at": "2025-09-27T03:24:41Z"
+    "updated_at": "2025-09-27T03:24:41Z",
+    "commit_count": 9,
+    "size_kb": 18
   },
   {
     "name": "gaming-css",
@@ -189,7 +235,9 @@
     "tags": ["css3", "npm-package"],
     "description": "ゲーミングなスタイリングするCSSです",
     "created_at": "2023-06-22T22:22:48Z",
-    "updated_at": "2025-01-03T00:55:53Z"
+    "updated_at": "2025-01-03T00:55:53Z",
+    "commit_count": 17,
+    "size_kb": 13
   },
   {
     "name": "generate_diff_dataframe",
@@ -197,7 +245,9 @@
     "tags": ["pandas", "python3", "pytest"],
     "description": "pandasを使ってデータの差分を取ります",
     "created_at": "2025-06-14T15:00:07Z",
-    "updated_at": "2025-06-15T13:58:55Z"
+    "updated_at": "2025-06-15T13:58:55Z",
+    "commit_count": 7,
+    "size_kb": 9
   },
   {
     "name": "getArticle",
@@ -205,7 +255,9 @@
     "tags": "python3",
     "description": "特定ユーザーのqiitaとzennの記事を取得する",
     "created_at": "2024-12-30T15:26:05Z",
-    "updated_at": "2025-01-04T13:50:06Z"
+    "updated_at": "2025-12-29T02:13:28Z",
+    "commit_count": 11,
+    "size_kb": 13
   },
   {
     "name": "GithubDashboard",
@@ -213,7 +265,9 @@
     "tags": ["r", "githubapi"],
     "description": "GitHubユーザーのリポジトリを分析し、可視化するRスクリプトです。",
     "created_at": "2025-12-15T23:07:29Z",
-    "updated_at": "2025-12-21T05:43:17Z"
+    "updated_at": "2025-12-27T23:25:18Z",
+    "commit_count": 39,
+    "size_kb": 2863
   },
   {
     "name": "gulp-package-version-format",
@@ -221,7 +275,9 @@
     "tags": ["gulp", "npm-package", "jest"],
     "description": "package.jsonのバージョン表記を単純化するgulpのプラグインです。",
     "created_at": "2018-07-29T04:36:32Z",
-    "updated_at": "2025-07-15T16:53:53Z"
+    "updated_at": "2025-07-15T16:53:53Z",
+    "commit_count": 123,
+    "size_kb": 883
   },
   {
     "name": "HoneycombPixelArt",
@@ -229,7 +285,9 @@
     "tags": ["honeycomb", "javascript", "react"],
     "description": "画像ファイルをハニカムピクセルに変換するサービス",
     "created_at": "2025-12-13T08:35:12Z",
-    "updated_at": "2025-12-17T22:46:55Z"
+    "updated_at": "2025-12-17T22:46:55Z",
+    "commit_count": 17,
+    "size_kb": 77
   },
   {
     "name": "HoneycombReversi",
@@ -237,15 +295,19 @@
     "tags": ["honeycomb", "javascript", "react", "reversi"],
     "description": "ハニカム構造のリバーシ",
     "created_at": "2025-12-11T13:33:13Z",
-    "updated_at": "2025-12-22T22:48:50Z"
+    "updated_at": "2025-12-22T22:48:50Z",
+    "commit_count": 18,
+    "size_kb": 73
   },
   {
     "name": "img-crop",
     "url": "https://github.com/ishi720/img-crop",
-    "tags": [],
+    "tags": "php",
     "description": "画像をいい感じに中心で切り取れます",
     "created_at": "2017-11-17T13:18:21Z",
-    "updated_at": "2021-04-18T09:12:06Z"
+    "updated_at": "2025-12-28T02:30:02Z",
+    "commit_count": 15,
+    "size_kb": 9
   },
   {
     "name": "ishi720",
@@ -253,7 +315,9 @@
     "tags": [],
     "description": "",
     "created_at": "2022-05-16T07:13:08Z",
-    "updated_at": "2025-07-12T17:03:55Z"
+    "updated_at": "2025-07-12T17:03:55Z",
+    "commit_count": 8,
+    "size_kb": 8
   },
   {
     "name": "jquery-textfit",
@@ -261,7 +325,9 @@
     "tags": ["javascript", "jquery", "npm-package"],
     "description": "文字がはみ出ないように制御します",
     "created_at": "2018-02-09T02:26:50Z",
-    "updated_at": "2023-06-23T23:59:07Z"
+    "updated_at": "2023-06-23T23:59:07Z",
+    "commit_count": 15,
+    "size_kb": 11
   },
   {
     "name": "keyboardUI",
@@ -269,7 +335,9 @@
     "tags": "javascript",
     "description": "JSで作ったキーボードUI",
     "created_at": "2023-08-29T14:59:12Z",
-    "updated_at": "2025-10-12T13:44:32Z"
+    "updated_at": "2025-10-12T13:44:32Z",
+    "commit_count": 142,
+    "size_kb": 188
   },
   {
     "name": "levenshtein_distance_search",
@@ -277,15 +345,19 @@
     "tags": ["typescript", "react18", "docker"],
     "description": "レーベンシュタイン距離を使った検索機能",
     "created_at": "2023-12-03T03:37:45Z",
-    "updated_at": "2025-11-17T08:09:20Z"
+    "updated_at": "2025-11-17T08:09:20Z",
+    "commit_count": 29,
+    "size_kb": 1055
   },
   {
     "name": "line_api_sample",
     "url": "https://github.com/ishi720/line_api_sample",
-    "tags": [],
+    "tags": ["line", "php"],
     "description": "",
     "created_at": "2024-02-20T09:24:10Z",
-    "updated_at": "2024-02-20T09:28:24Z"
+    "updated_at": "2025-12-28T02:15:04Z",
+    "commit_count": 1,
+    "size_kb": 1
   },
   {
     "name": "LongPressButton",
@@ -293,7 +365,9 @@
     "tags": "javascript",
     "description": "「長押しのボタン」のUI",
     "created_at": "2023-06-10T11:59:08Z",
-    "updated_at": "2024-04-14T13:48:07Z"
+    "updated_at": "2024-04-14T13:48:07Z",
+    "commit_count": 13,
+    "size_kb": 10
   },
   {
     "name": "long_chain_shiritori",
@@ -301,7 +375,9 @@
     "tags": "python3",
     "description": "決められた単語で一番長く繋がるしりとりパターンを探索する",
     "created_at": "2025-12-03T11:13:35Z",
-    "updated_at": "2025-12-06T11:17:28Z"
+    "updated_at": "2025-12-06T11:17:28Z",
+    "commit_count": 3,
+    "size_kb": 3
   },
   {
     "name": "make_typo",
@@ -309,7 +385,9 @@
     "tags": ["kuromoji", "purecss", "javascript"],
     "description": "タイポグリセミア変換するサービス",
     "created_at": "2025-04-20T07:52:10Z",
-    "updated_at": "2025-09-30T08:02:27Z"
+    "updated_at": "2025-09-30T08:02:27Z",
+    "commit_count": 19,
+    "size_kb": 259
   },
   {
     "name": "mechanical-sketcher",
@@ -317,7 +395,9 @@
     "tags": ["javascript", "p5js"],
     "description": "リンク機構の軌道を描画するシミュレーションするプログラム",
     "created_at": "2025-06-19T14:22:37Z",
-    "updated_at": "2025-11-02T00:05:11Z"
+    "updated_at": "2025-11-02T00:05:11Z",
+    "commit_count": 47,
+    "size_kb": 95
   },
   {
     "name": "MineSweeper3d",
@@ -325,7 +405,9 @@
     "tags": ["javascript", "threejs", "minesweeper"],
     "description": "3Dマインスーパーです",
     "created_at": "2025-12-01T10:08:35Z",
-    "updated_at": "2025-12-10T12:33:57Z"
+    "updated_at": "2025-12-10T12:33:57Z",
+    "commit_count": 15,
+    "size_kb": 40
   },
   {
     "name": "MineSweeperHoneycomb",
@@ -333,7 +415,9 @@
     "tags": ["javascript", "minesweeper", "honeycomb"],
     "description": "ハニカム構造のマインスイーパー",
     "created_at": "2025-12-10T11:14:25Z",
-    "updated_at": "2025-12-13T08:25:57Z"
+    "updated_at": "2025-12-13T08:25:57Z",
+    "commit_count": 4,
+    "size_kb": 7
   },
   {
     "name": "minesweeper_helper",
@@ -341,7 +425,9 @@
     "tags": ["flask", "python3"],
     "description": "",
     "created_at": "2025-06-14T09:23:42Z",
-    "updated_at": "2025-07-02T00:04:49Z"
+    "updated_at": "2025-07-02T00:04:49Z",
+    "commit_count": 2,
+    "size_kb": 1
   },
   {
     "name": "Minesweepy",
@@ -349,7 +435,9 @@
     "tags": ["game", "minesweeper", "python3"],
     "description": "Pythonで作るマインスイーパー",
     "created_at": "2024-04-18T09:06:06Z",
-    "updated_at": "2024-05-05T08:47:38Z"
+    "updated_at": "2024-05-05T08:47:38Z",
+    "commit_count": 28,
+    "size_kb": 42
   },
   {
     "name": "morse-code-simulator",
@@ -357,7 +445,9 @@
     "tags": ["react", "docker"],
     "description": "モールス信号シミュレーター",
     "created_at": "2025-11-22T02:12:17Z",
-    "updated_at": "2025-11-29T04:56:12Z"
+    "updated_at": "2025-11-29T04:56:12Z",
+    "commit_count": 3,
+    "size_kb": 37
   },
   {
     "name": "numnator",
@@ -365,7 +455,9 @@
     "tags": ["javascript", "vue2"],
     "description": "https://numnator.suisui.fun/",
     "created_at": "2021-07-10T12:58:43Z",
-    "updated_at": "2024-12-31T14:23:46Z"
+    "updated_at": "2024-12-31T14:23:46Z",
+    "commit_count": 60,
+    "size_kb": 609
   },
   {
     "name": "pake-style",
@@ -373,7 +465,9 @@
     "tags": ["css3", "npm-package", "scss"],
     "description": "時間差で順番に動いていくアニメーションのスタイルです。",
     "created_at": "2018-08-11T01:09:12Z",
-    "updated_at": "2023-06-23T23:59:38Z"
+    "updated_at": "2023-06-23T23:59:38Z",
+    "commit_count": 82,
+    "size_kb": 585
   },
   {
     "name": "PolygonalGeometricPattern",
@@ -381,7 +475,9 @@
     "tags": "javascript",
     "description": "多角形の辺上を移動する点から生成される幾何学的パターンを可視化するインタラクティブなWebアプリケーションです。",
     "created_at": "2025-12-19T14:01:01Z",
-    "updated_at": "2025-12-21T13:52:38Z"
+    "updated_at": "2025-12-21T13:52:38Z",
+    "commit_count": 27,
+    "size_kb": 73
   },
   {
     "name": "portfolio",
@@ -389,7 +485,9 @@
     "tags": ["nustjs", "typescript", "vue"],
     "description": "ishi720のポートフォリオ",
     "created_at": "2024-12-14T15:01:00Z",
-    "updated_at": "2025-12-27T10:13:22Z"
+    "updated_at": "2025-12-30T13:17:44Z",
+    "commit_count": 123,
+    "size_kb": 6517
   },
   {
     "name": "qiita-content",
@@ -397,7 +495,9 @@
     "tags": "qiita",
     "description": "Qiita CLI",
     "created_at": "2024-11-25T12:03:14Z",
-    "updated_at": "2025-12-14T10:25:00Z"
+    "updated_at": "2025-12-14T10:25:00Z",
+    "commit_count": 31,
+    "size_kb": 234
   },
   {
     "name": "qiita_analytics",
@@ -405,7 +505,9 @@
     "tags": ["python3", "qiita-apiv2", "bootstrap5", "webpack", "flask3", "pandas"],
     "description": "Qiita ApiとFlaskを使用したサンプルアプリです。",
     "created_at": "2024-02-17T11:42:19Z",
-    "updated_at": "2025-04-28T15:32:00Z"
+    "updated_at": "2025-04-28T15:32:00Z",
+    "commit_count": 84,
+    "size_kb": 492
   },
   {
     "name": "qiita_analytics_docker",
@@ -413,7 +515,9 @@
     "tags": ["docker", "python311-slim"],
     "description": "qiita_analyticsのDockerイメージ",
     "created_at": "2024-06-23T12:46:29Z",
-    "updated_at": "2024-06-23T14:24:59Z"
+    "updated_at": "2024-06-23T14:24:59Z",
+    "commit_count": 4,
+    "size_kb": 2
   },
   {
     "name": "qiita_analytics_document",
@@ -421,7 +525,9 @@
     "tags": [],
     "description": "",
     "created_at": "2024-07-15T17:28:51Z",
-    "updated_at": "2024-07-15T17:35:31Z"
+    "updated_at": "2024-07-15T17:35:31Z",
+    "commit_count": 1,
+    "size_kb": 1
   },
   {
     "name": "QualiFindPortal",
@@ -429,7 +535,9 @@
     "tags": ["perl", "danser2"],
     "description": "",
     "created_at": "2025-09-28T12:31:01Z",
-    "updated_at": "2025-10-13T13:47:36Z"
+    "updated_at": "2025-10-13T13:47:36Z",
+    "commit_count": 12,
+    "size_kb": 28
   },
   {
     "name": "quicksight-backup-lambda",
@@ -437,7 +545,9 @@
     "tags": ["aws-lambda", "python3", "github-actions", "aws-quicksight", "aws-s3", "aws-cloudformation"],
     "description": "QuickSightの分析とデータセットの設定をLambdaでバックアップする",
     "created_at": "2025-07-06T05:40:05Z",
-    "updated_at": "2025-07-12T17:14:25Z"
+    "updated_at": "2025-07-12T17:14:25Z",
+    "commit_count": 73,
+    "size_kb": 45
   },
   {
     "name": "rangeOCR",
@@ -445,7 +555,9 @@
     "tags": ["javascript", "ocr", "pdfjs-dist", "tesseract"],
     "description": "",
     "created_at": "2023-06-01T13:07:04Z",
-    "updated_at": "2023-06-23T23:57:58Z"
+    "updated_at": "2025-12-28T02:11:20Z",
+    "commit_count": 26,
+    "size_kb": 108
   },
   {
     "name": "regex-challenge",
@@ -453,7 +565,19 @@
     "tags": ["react", "typescript", "vite", "express", "mysql"],
     "description": "正規表現のスキルチェックができるサービス",
     "created_at": "2025-07-12T16:47:12Z",
-    "updated_at": "2025-11-30T15:13:00Z"
+    "updated_at": "2025-11-30T15:13:00Z",
+    "commit_count": 79,
+    "size_kb": 205
+  },
+  {
+    "name": "regex-search-chrome-extension",
+    "url": "https://github.com/ishi720/regex-search-chrome-extension",
+    "tags": [],
+    "description": "Webページ内を正規表現で検索し、マッチした箇所をハイライト表示するChrome拡張機能です。",
+    "created_at": "2025-12-29T08:05:02Z",
+    "updated_at": "2025-12-29T11:09:06Z",
+    "commit_count": 1,
+    "size_kb": 14
   },
   {
     "name": "regexp",
@@ -461,7 +585,9 @@
     "tags": ["angular", "fortawesome", "jquery", "materialize-css", "gulp"],
     "description": "正規表現チェッカー",
     "created_at": "2023-06-25T10:24:29Z",
-    "updated_at": "2025-05-24T00:27:26Z"
+    "updated_at": "2025-05-24T00:27:26Z",
+    "commit_count": 18,
+    "size_kb": 524
   },
   {
     "name": "rss_to_json",
@@ -469,7 +595,9 @@
     "tags": [],
     "description": "phpでRSSをjsonに変換する",
     "created_at": "2020-04-20T06:57:19Z",
-    "updated_at": "2020-09-21T06:11:02Z"
+    "updated_at": "2020-09-21T06:11:02Z",
+    "commit_count": 51,
+    "size_kb": 62
   },
   {
     "name": "RubberPencilIllusion",
@@ -477,7 +605,9 @@
     "tags": "javascript",
     "description": "ラバーペンシル現象をWebで再現",
     "created_at": "2025-12-07T01:28:07Z",
-    "updated_at": "2025-12-12T02:43:11Z"
+    "updated_at": "2025-12-12T02:43:11Z",
+    "commit_count": 6,
+    "size_kb": 8
   },
   {
     "name": "runroute",
@@ -485,7 +615,9 @@
     "tags": ["javascript", "jquery", "php", "smarty", "gulp5"],
     "description": "距離指定でランニングルートを作成します",
     "created_at": "2021-03-13T10:18:30Z",
-    "updated_at": "2025-05-29T13:00:36Z"
+    "updated_at": "2025-05-29T13:00:36Z",
+    "commit_count": 70,
+    "size_kb": 170
   },
   {
     "name": "saveExcelAsHtml",
@@ -493,7 +625,9 @@
     "tags": ["excel", "powershell"],
     "description": "エクセルファイルをHTMLで保存します。",
     "created_at": "2022-04-05T22:23:20Z",
-    "updated_at": "2023-06-24T00:02:20Z"
+    "updated_at": "2023-06-24T00:02:20Z",
+    "commit_count": 3,
+    "size_kb": 3
   },
   {
     "name": "ShapeContact",
@@ -501,7 +635,9 @@
     "tags": "prossesing",
     "description": "当たり判定のシミュレーター",
     "created_at": "2024-05-11T08:33:05Z",
-    "updated_at": "2024-05-24T15:16:27Z"
+    "updated_at": "2024-05-24T15:16:27Z",
+    "commit_count": 28,
+    "size_kb": 37
   },
   {
     "name": "sheepuu",
@@ -509,7 +645,9 @@
     "tags": "processing",
     "description": "羊をカウントする睡眠用アプリ",
     "created_at": "2024-02-23T07:33:16Z",
-    "updated_at": "2025-08-03T11:35:22Z"
+    "updated_at": "2025-08-03T11:35:22Z",
+    "commit_count": 7,
+    "size_kb": 1364
   },
   {
     "name": "showUserAgent",
@@ -517,15 +655,19 @@
     "tags": [],
     "description": "",
     "created_at": "2023-05-25T13:24:26Z",
-    "updated_at": "2023-05-25T13:51:06Z"
+    "updated_at": "2023-05-25T13:51:06Z",
+    "commit_count": 1,
+    "size_kb": 3
   },
   {
     "name": "solve_sudoku_puzzle",
     "url": "https://github.com/ishi720/solve_sudoku_puzzle",
-    "tags": [],
-    "description": "",
+    "tags": ["heroku", "python", "flask"],
+    "description": "数独パズル",
     "created_at": "2020-10-30T14:34:23Z",
-    "updated_at": "2024-03-08T08:48:20Z"
+    "updated_at": "2025-12-28T12:40:07Z",
+    "commit_count": 36,
+    "size_kb": 40
   },
   {
     "name": "space_obaa",
@@ -533,7 +675,9 @@
     "tags": "processing",
     "description": "シューティングゲーム「スペースおばぁ」",
     "created_at": "2024-02-22T11:40:23Z",
-    "updated_at": "2024-02-24T01:15:21Z"
+    "updated_at": "2024-02-24T01:15:21Z",
+    "commit_count": 2,
+    "size_kb": 16
   },
   {
     "name": "sublime3_my_snippet",
@@ -541,7 +685,9 @@
     "tags": ["snippets", "sublime-text-3"],
     "description": "",
     "created_at": "2019-05-19T23:29:53Z",
-    "updated_at": "2023-06-24T05:41:02Z"
+    "updated_at": "2023-06-24T05:41:02Z",
+    "commit_count": 12,
+    "size_kb": 7
   },
   {
     "name": "sublime3_query_ope_tool",
@@ -549,15 +695,29 @@
     "tags": ["python3", "sublime-text-3", "sublime-text-plugin"],
     "description": "SublimeText3でurlやsqlの文字列操作を行えます。",
     "created_at": "2019-02-06T11:08:16Z",
-    "updated_at": "2023-06-25T14:19:54Z"
+    "updated_at": "2023-06-25T14:19:54Z",
+    "commit_count": 25,
+    "size_kb": 16
+  },
+  {
+    "name": "tag-game",
+    "url": "https://github.com/ishi720/tag-game",
+    "tags": ["ml-agents", "mlagents", "python310", "unity3d"],
+    "description": "Unity ML-Agentsを使った2エージェント対戦型の鬼ごっこゲームです。",
+    "created_at": "2025-12-29T15:26:26Z",
+    "updated_at": "2025-12-30T05:20:22Z",
+    "commit_count": 8,
+    "size_kb": 38
   },
   {
     "name": "task-complete",
     "url": "https://github.com/ishi720/task-complete",
-    "tags": [],
+    "tags": "bash-profile",
     "description": "package.jsonなどでscriptsに定義したコマンドをタブ補完します",
     "created_at": "2019-07-02T09:41:34Z",
-    "updated_at": "2019-08-26T07:50:42Z"
+    "updated_at": "2025-12-27T22:50:36Z",
+    "commit_count": 10,
+    "size_kb": 8
   },
   {
     "name": "textfitJS",
@@ -565,15 +725,19 @@
     "tags": ["javascript", "npm-package"],
     "description": "文字がはみ出ないように制御するJSのプラグインです",
     "created_at": "2023-05-03T05:48:01Z",
-    "updated_at": "2023-06-24T00:17:10Z"
+    "updated_at": "2023-06-24T00:17:10Z",
+    "commit_count": 9,
+    "size_kb": 11
   },
   {
     "name": "urlParamDisplay",
     "url": "https://github.com/ishi720/urlParamDisplay",
-    "tags": [],
+    "tags": "php",
     "description": "",
     "created_at": "2022-05-04T00:42:18Z",
-    "updated_at": "2022-05-04T00:55:09Z"
+    "updated_at": "2025-12-27T23:31:32Z",
+    "commit_count": 1,
+    "size_kb": 0
   },
   {
     "name": "vscode_my_snippet",
@@ -581,15 +745,19 @@
     "tags": ["snippets", "vscode"],
     "description": "",
     "created_at": "2019-09-24T06:57:00Z",
-    "updated_at": "2023-06-24T01:07:48Z"
+    "updated_at": "2023-06-24T01:07:48Z",
+    "commit_count": 5,
+    "size_kb": 3
   },
   {
     "name": "vscode_settings",
     "url": "https://github.com/ishi720/vscode_settings",
     "tags": "vscode",
-    "description": "",
+    "description": "vscodeの設定ファイル、スニペットや拡張機能などまとめ",
     "created_at": "2019-10-02T07:23:09Z",
-    "updated_at": "2024-02-20T03:35:48Z"
+    "updated_at": "2025-12-28T12:37:15Z",
+    "commit_count": 8,
+    "size_kb": 5
   },
   {
     "name": "web-latte-art",
@@ -597,6 +765,8 @@
     "tags": "javascript",
     "description": "Web画面でラテアート",
     "created_at": "2025-12-02T11:25:45Z",
-    "updated_at": "2025-12-05T22:36:55Z"
+    "updated_at": "2025-12-05T22:36:55Z",
+    "commit_count": 15,
+    "size_kb": 24
   }
 ]
