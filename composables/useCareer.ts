@@ -129,7 +129,8 @@ export const useCareer = () => {
         },
         {
             name: '会社A',
-            period: 'インフラエンジニア',
+            period: '',
+            position: 'フルスタックエンジニア',
             projects: [
                 {
                     name: '居酒屋の顧客管理システムの開発',
