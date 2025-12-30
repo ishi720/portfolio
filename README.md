@@ -22,9 +22,13 @@ portfolio/
 │   └── scss/
 │       └── main.scss                 # グローバルSCSS
 ├── composables/
+│   ├── useCareer.ts                  # 経歴データ
+│   ├── useSkillCloud.ts              # ワードクラウド集計
 │   └── usePortfolio.ts               # ポートフォリオデータ
 ├── components/
 │   ├── Pagination.vue                # ページネーションコンポーネント
+│   ├── SearchBox.vue                 # 検索ボックスコンポーネント
+│   ├── TagFilter.vue                 # タグフィルターコンポーネント
 │   └── SortControls.vue              # ソートコンポーネント
 ├── layouts/
 │   └── default.vue                   # 共通レイアウト（ヘッダー/フッター）
@@ -32,7 +36,8 @@ portfolio/
 │   ├── index.vue                     # Home（/）
 │   ├── developments.vue              # Developments（/developments）
 │   ├── repositories.vue              # Repositories（/repositories）
-│   └── articles.vue                  # Articles（/articles）
+│   ├── articles.vue                  # Articles（/articles）
+│   └── career.vue                    # Career （/career） 
 ├── public/
 │   ├── data/                         # JSONデータファイル置き場
 │   │   ├── combined_articles.json    # Articlesに表示するQiita&Zennのデータ
