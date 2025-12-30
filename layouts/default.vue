@@ -5,15 +5,16 @@
         <NuxtLink to="/" class="logo">{{ profile.name }} Portfolio</NuxtLink>
         <nav class="nav" :class="{ active: menuOpen }">
           <!-- Home with dropdown -->
-          <div class="nav-dropdown" :class="{ open: homeOpen }">
-            <button
-              class="nav-link nav-link-dropdown"
+          <div class="nav-dropdown">
+            <NuxtLink
+              to="/"
+              class="nav-link"
               :class="{ 'router-link-active': isHomeActive }"
-              @click="toggleHome"
+              @click="closeMenus"
             >
               Home
               <span class="dropdown-arrow">▼</span>
-            </button>
+            </NuxtLink>
             <div class="dropdown-menu">
               <NuxtLink to="/#about-me" class="dropdown-item" @click="closeMenus">
                 About Me
@@ -37,15 +38,16 @@
           </div>
 
           <!-- Developments with dropdown -->
-          <div class="nav-dropdown" :class="{ open: developmentsOpen }">
-            <button
-              class="nav-link nav-link-dropdown"
+          <div class="nav-dropdown">
+            <NuxtLink
+              to="/developments"
+              class="nav-link"
               :class="{ 'router-link-active': isDevelopmentsActive }"
-              @click="toggleDevelopments"
+              @click="closeMenus"
             >
               Developments
               <span class="dropdown-arrow">▼</span>
-            </button>
+            </NuxtLink>
             <div class="dropdown-menu">
               <NuxtLink to="/developments#npm-packages" class="dropdown-item" @click="closeMenus">
                 Npm Packages
@@ -89,8 +91,6 @@ import { usePortfolio } from '~/composables/usePortfolio'
 const { profile } = usePortfolio()
 const route = useRoute()
 const menuOpen = ref(false)
-const homeOpen = ref(false)
-const developmentsOpen = ref(false)
 
 const isHomeActive = computed(() => {
   return route.path === '/'
@@ -100,18 +100,8 @@ const isDevelopmentsActive = computed(() => {
   return route.path === '/developments' || route.path.startsWith('/developments')
 })
 
-const toggleHome = () => {
-  homeOpen.value = !homeOpen.value
-}
-
-const toggleDevelopments = () => {
-  developmentsOpen.value = !developmentsOpen.value
-}
-
 const closeMenus = () => {
   menuOpen.value = false
-  homeOpen.value = false
-  developmentsOpen.value = false
 }
 </script>
 
@@ -125,27 +115,11 @@ $transition: all 0.3s ease;
 .nav-dropdown {
   position: relative;
 
-  &.open {
-    .dropdown-menu {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    .dropdown-arrow {
-      transform: rotate(180deg);
-    }
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
   }
-}
-
-.nav-link-dropdown {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-family: 'Poppins', sans-serif;
 }
 
 .dropdown-arrow {
@@ -204,31 +178,22 @@ $transition: all 0.3s ease;
   .nav-dropdown {
     width: 100%;
 
-    &.open {
-      .dropdown-menu {
-        max-height: 200px;
-        padding: 8px 0;
-      }
+    .nav-link {
+      width: 100%;
+      justify-content: space-between;
     }
-  }
 
-  .nav-link-dropdown {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .dropdown-menu {
-    position: static;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 4px;
-    margin: 4px 0 0 0;
-    padding: 0;
-    max-height: 0;
-    overflow: hidden;
-    box-shadow: none;
+    .dropdown-menu {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 4px;
+      margin: 4px 0 0 0;
+      padding: 8px 0;
+      box-shadow: none;
+    }
   }
 
   .dropdown-item {
