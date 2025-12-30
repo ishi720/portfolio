@@ -290,7 +290,7 @@ $font-en: 'Poppins', sans-serif;
   border-radius: $radius;
   padding: 32px;
   box-shadow: $shadow;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -369,7 +369,7 @@ $font-en: 'Poppins', sans-serif;
   border-radius: $radius;
   padding: 32px;
   box-shadow: $shadow;
-  max-width: 600px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -517,7 +517,7 @@ $font-en: 'Poppins', sans-serif;
   align-items: center;
   justify-content: center;
   gap: 24px;
-  max-width: 500px;
+  max-width: 1000px;
   margin: 0 auto;
 
   &:hover {
