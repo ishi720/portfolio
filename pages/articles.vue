@@ -79,7 +79,7 @@ const route = useRoute()
 const router = useRouter()
 const { article_platforms } = usePortfolio()
 const articles = ref<Article[]>([])
-const perPage = 12
+const perPage = 18
 
 // ソートオプション
 const sortOptions: SortOption[] = [
