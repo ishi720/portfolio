@@ -10,16 +10,11 @@
     <section class="articles-section">
       <div class="container">
 
-        <!-- 検索 + ページネーション + ソート機能 -->
+        <!-- 検索 + ソート機能 -->
         <div class="pagination-wrapper">
           <SearchBox
             v-model="searchQuery"
             placeholder="記事を検索..."
-          />
-
-          <Pagination
-            v-model="currentPage"
-            :total-pages="totalPages"
           />
 
           <SortControls
@@ -52,6 +47,12 @@
             </div>
           </a>
         </div>
+
+        <!-- ページネーション -->
+        <Pagination
+          v-model="currentPage"
+          :total-pages="totalPages"
+        />
 
 
       </div>
