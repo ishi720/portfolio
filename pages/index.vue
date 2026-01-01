@@ -54,7 +54,7 @@
       <div class="container">
         <h2 class="section-title">Achievements</h2>
         <div class="achievements-grid">
-          <NuxtLink to="/developments" class="achievement-card">
+          <NuxtLink to="/developments#npm-packages" class="achievement-card">
             <div class="achievement-icon">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg" alt="npm">
             </div>
@@ -63,7 +63,7 @@
               <div class="achievement-label">NPM Packages</div>
             </div>
           </NuxtLink>
-          <NuxtLink to="/developments" class="achievement-card">
+          <NuxtLink to="/developments#chrome-extensions" class="achievement-card">
             <div class="achievement-icon">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/chrome/chrome-original.svg" alt="Chrome">
             </div>
@@ -72,7 +72,7 @@
               <div class="achievement-label">Chrome Extensions</div>
             </div>
           </NuxtLink>
-          <NuxtLink to="/developments" class="achievement-card">
+          <NuxtLink to="/developments#web-services" class="achievement-card">
             <div class="achievement-icon">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="Web">
             </div>
