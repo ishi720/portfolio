@@ -53,14 +53,11 @@
             <p class="repo-desc">{{ repo.description || 'No description' }}</p>
             <div class="repo-tags" v-if="getRepoTags(repo.tags).length > 0">
               <span
-                v-for="tag in getRepoTags(repo.tags).slice(0, 4)"
+                v-for="tag in getRepoTags(repo.tags)"
                 :key="tag"
-                class="repo-tag"
+                class="tech-tag"
               >
                 {{ tag }}
-              </span>
-              <span v-if="getRepoTags(repo.tags).length > 4" class="repo-tag repo-tag-more">
-                +{{ getRepoTags(repo.tags).length - 4 }}
               </span>
             </div>
             <div class="repo-footer">
@@ -290,6 +287,12 @@ const formatSize = (sizeKb?: number) => {
 </script>
 
 <style lang="scss" scoped>
+$primary: #4a90a4;
+$primary-dark: #3a7a8a;
+$text-light: #666;
+$border: #e0e0e0;
+$transition: all 0.3s ease;
+
 .repos-section {
   padding: 60px 0 80px;
 }
@@ -329,7 +332,7 @@ const formatSize = (sizeKb?: number) => {
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-    border-left-color: #4a90a4;
+    border-left-color: $primary;
   }
 }
 
@@ -378,19 +381,6 @@ const formatSize = (sizeKb?: number) => {
   flex-wrap: wrap;
   gap: 6px;
   margin-bottom: 12px;
-}
-
-.repo-tag {
-  font-size: 0.7rem;
-  padding: 3px 8px;
-  background: #f0f6f9;
-  color: #4a90a4;
-  border-radius: 4px;
-
-  &.repo-tag-more {
-    background: #e0e0e0;
-    color: #666;
-  }
 }
 
 .repo-footer {

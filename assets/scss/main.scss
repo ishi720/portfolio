@@ -553,12 +553,18 @@ img {
     }
 }
 
+// ============================================
+// 統一タグスタイル（全ページ共通）
+// ============================================
 .tech-tag {
+    font-family: $font-en;
     font-size: 0.7rem;
+    font-weight: 500;
     padding: 4px 10px;
     background: $bg;
     color: $text-light;
-    border-radius: 20px;
+    border-radius: 4px;
+    white-space: nowrap;
 }
 
 // Skills
@@ -693,6 +699,11 @@ img {
             background: #3ea8ff;
             color: #fff;
         }
+
+        &.note {
+            background: #41C9B4;
+            color: #fff;
+        }
     }
 
     &-date {
@@ -712,6 +723,12 @@ img {
         justify-content: space-between;
         font-size: 0.8rem;
         color: $text-light;
+    }
+
+    &-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
     }
 
     &-likes {

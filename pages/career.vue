@@ -72,8 +72,8 @@
                       <span
                         v-for="tech in project.techs"
                         :key="tech"
-                        class="tech-badge"
-                        :class="{ 'tech-badge-active': tech === selectedTech }"
+                        class="tech-tag"
+                        :class="{ 'tech-tag-active': tech === selectedTech }"
                       >
                         {{ tech }}
                       </span>
@@ -317,7 +317,7 @@ $company-colors: (
         color: #fff;
       }
 
-      .tech-badge-active {
+      .tech-tag-active {
         background: rgba($color, 0.15);
         border-color: $color;
         color: color.adjust($color, $lightness: -15%);
@@ -407,26 +407,14 @@ $company-colors: (
 .project-techs {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
 }
 
-.tech-badge {
-  font-family: $font-en;
-  font-size: 0.7rem;
-  font-weight: 500;
-  padding: 4px 10px;
-  background: $bg;
-  border: 1px solid $border;
-  border-radius: 4px;
-  color: $text-light;
-  transition: $transition;
-
-  &.tech-badge-active {
-    background: rgba($primary, 0.1);
-    border-color: $primary;
-    color: $primary;
-    font-weight: 600;
-  }
+// tech-tag-active は選択中のタグ用（会社カラーで上書きされる）
+.tech-tag-active {
+  background: rgba($primary, 0.15);
+  color: $primary-dark;
+  font-weight: 600;
 }
 
 .project-period {

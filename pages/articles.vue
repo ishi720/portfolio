@@ -57,7 +57,15 @@
             </div>
             <h3 class="article-title">{{ article.title }}</h3>
             <div class="article-footer">
-              <span class="article-tags">{{ article.tags }}</span>
+              <div class="article-tags">
+                <span
+                  v-for="tag in getArticleTags(article.tags)"
+                  :key="tag"
+                  class="tech-tag"
+                >
+                  {{ tag }}
+                </span>
+              </div>
             </div>
           </a>
         </div>
@@ -270,6 +278,7 @@ const formatDate = (dateStr: string) => {
 <style lang="scss" scoped>
 $primary: #4a90a4;
 $text-white: #fff;
+$text-light: #666;
 $border: #e0e0e0;
 $transition: all 0.3s ease;
 
@@ -277,6 +286,13 @@ $transition: all 0.3s ease;
   font-size: 0.9rem;
   color: #666;
   margin-bottom: 20px;
+}
+
+// 記事タグ
+.article-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 // プラットフォームフィルター（プルダウン）
