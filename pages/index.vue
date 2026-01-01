@@ -81,7 +81,7 @@
               <div class="achievement-label">Web Services</div>
             </div>
           </NuxtLink>
-          <NuxtLink to="/articles" class="achievement-card">
+          <NuxtLink to="/articles?platform=Qiita" class="achievement-card">
             <div class="achievement-icon">
               <img src="https://cdn.simpleicons.org/qiita/55C500" alt="Qiita">
             </div>
@@ -91,7 +91,7 @@
               <div class="achievement-sub">{{ qiitaStats.contributions }} contributions</div>
             </div>
           </NuxtLink>
-          <NuxtLink to="/articles" class="achievement-card">
+          <NuxtLink to="/articles?platform=Zenn" class="achievement-card">
             <div class="achievement-icon">
               <img src="https://cdn.simpleicons.org/zenn/3EA8FF" alt="Zenn">
             </div>
@@ -101,7 +101,7 @@
               <div class="achievement-sub">{{ zennStats.contributions }} contributions</div>
             </div>
           </NuxtLink>
-          <NuxtLink to="/articles" class="achievement-card">
+          <NuxtLink to="/articles?platform=note" class="achievement-card">
             <div class="achievement-icon">
               <img src="https://cdn.simpleicons.org/note/41C9B4" alt="Note">
             </div>
