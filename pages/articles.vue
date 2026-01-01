@@ -10,12 +10,26 @@
     <section class="articles-section">
       <div class="container">
 
-        <!-- 検索 + ソート機能 -->
+        <!-- 検索 + プラットフォーム + ソート機能 -->
         <div class="pagination-wrapper">
           <SearchBox
             v-model="searchQuery"
             placeholder="記事を検索..."
           />
+
+          <!-- プラットフォームフィルター（プルダウン） -->
+          <div class="platform-select-wrapper">
+            <select
+              v-model="selectedPlatform"
+              class="platform-select"
+              :class="platformSelectClass"
+            >
+              <option value="">すべて</option>
+              <option v-for="platform in platforms" :key="platform.name" :value="platform.name">
+                {{ platform.name }}
+              </option>
+            </select>
+          </div>
 
           <SortControls
             v-model="sortState"
@@ -75,11 +89,23 @@ interface Article {
   likes: number
 }
 
+interface Platform {
+  name: string
+  class: string
+}
+
 const route = useRoute()
 const router = useRouter()
 const { article_platforms } = usePortfolio()
 const articles = ref<Article[]>([])
 const perPage = 18
+
+// プラットフォーム一覧
+const platforms: Platform[] = [
+  { name: 'Qiita', class: 'platform-qiita' },
+  { name: 'Zenn', class: 'platform-zenn' },
+  { name: 'note', class: 'platform-note' }
+]
 
 // ソートオプション
 const sortOptions: SortOption[] = [
@@ -100,7 +126,18 @@ const getInitialSortState = (): SortState => {
 // フィルター用のstate（URLクエリから初期化）
 const searchQuery = ref((route.query.q as string) || '')
 const selectedTag = ref((route.query.tag as string) || '')
+const selectedPlatform = ref((route.query.platform as string) || '')
 const sortState = ref<SortState>(getInitialSortState())
+
+// プラットフォーム選択時のクラス
+const platformSelectClass = computed(() => {
+  switch (selectedPlatform.value) {
+    case 'Qiita': return 'select-qiita'
+    case 'Zenn': return 'select-zenn'
+    case 'note': return 'select-note'
+    default: return ''
+  }
+})
 
 // URLクエリを更新する関数
 const updateQuery = () => {
@@ -111,6 +148,9 @@ const updateQuery = () => {
   }
   if (selectedTag.value) {
     query.tag = selectedTag.value
+  }
+  if (selectedPlatform.value) {
+    query.platform = selectedPlatform.value
   }
   if (sortState.value.key !== 'date') {
     query.sort = sortState.value.key
@@ -167,6 +207,11 @@ const popularTags = computed(() => {
 const filteredArticles = computed(() => {
   let result = [...articles.value]
 
+  // プラットフォームフィルター
+  if (selectedPlatform.value) {
+    result = result.filter(article => article.source === selectedPlatform.value)
+  }
+
   // 検索フィルター
   if (searchQuery.value) {
     const query = searchQuery.value.toLowerCase()
@@ -211,7 +256,7 @@ const onSortChange = () => {
 }
 
 // フィルター変更時は1ページ目に戻ってURLを更新
-watch([selectedTag, searchQuery, sortState], () => {
+watch([selectedTag, selectedPlatform, searchQuery, sortState], () => {
   currentPageValue.value = 1
   updateQuery()
 }, { deep: true })
@@ -223,9 +268,77 @@ const formatDate = (dateStr: string) => {
 </script>
 
 <style lang="scss" scoped>
+$primary: #4a90a4;
+$text-white: #fff;
+$border: #e0e0e0;
+$transition: all 0.3s ease;
+
 .result-count {
   font-size: 0.9rem;
   color: #666;
   margin-bottom: 20px;
+}
+
+// プラットフォームフィルター（プルダウン）
+.platform-select-wrapper {
+  position: relative;
+}
+
+.platform-select {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 10px 36px 10px 16px;
+  border: 1px solid $border;
+  border-radius: 8px;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: $transition;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  min-width: 120px;
+
+  &:hover {
+    border-color: $primary;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $primary;
+    box-shadow: 0 0 0 3px rgba($primary, 0.1);
+  }
+
+  // Qiita選択時
+  &.select-qiita {
+    border-color: #55c500;
+    background-color: rgba(#55c500, 0.05);
+    color: #3d8f00;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2355c500' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  }
+
+  // Zenn選択時
+  &.select-zenn {
+    border-color: #3ea8ff;
+    background-color: rgba(#3ea8ff, 0.05);
+    color: #0080e0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%233ea8ff' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  }
+
+  // note選択時
+  &.select-note {
+    border-color: #41C9B4;
+    background-color: rgba(#41C9B4, 0.05);
+    color: #2a9d8f;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2341C9B4' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  }
+}
+
+@media (max-width: 768px) {
+  .platform-select {
+    width: 100%;
+  }
 }
 </style>
