@@ -13,7 +13,10 @@
     <!-- About Section -->
     <section id="about-me" class="about-section">
       <div class="container">
-        <h2 class="section-title">About Me</h2>
+        <div class="section-header">
+          <h2 class="section-title">自己紹介</h2>
+          <p class="section-subtitle">About Me</p>
+        </div>
         <div class="about-card">
           <div class="about-content">
             <div class="about-image">
@@ -40,10 +43,16 @@
     <!-- Future Goals Section -->
     <section id="future-goals" class="goals-section">
       <div class="container">
-        <h2 class="section-title">Future Goals</h2>
+        <div class="section-header">
+          <h2 class="section-title">今後やりたいこと</h2>
+          <p class="section-subtitle">Future Goals</p>
+        </div>
         <div class="goals-card">
           <ul class="goals-list">
-            <li v-for="goal in futureGoals" :key="goal">{{ goal }}</li>
+            <li v-for="goal in futureGoals" :key="goal">
+              <span class="checkbox-icon"></span>
+              {{ goal }}
+            </li>
           </ul>
         </div>
       </div>
@@ -52,7 +61,10 @@
     <!-- Achievements Section -->
     <section id="achievements" class="achievements-section">
       <div class="container">
-        <h2 class="section-title">Achievements</h2>
+        <div class="section-header">
+          <h2 class="section-title">実績</h2>
+          <p class="section-subtitle">Achievements</p>
+        </div>
         <div class="achievements-grid">
           <NuxtLink to="/developments#npm-packages" class="achievement-card">
             <div class="achievement-icon">
@@ -138,7 +150,10 @@
     <!-- Skills Section -->
     <section id="skills" class="skills-section">
       <div class="container">
-        <h2 class="section-title">Skills</h2>
+        <div class="section-header">
+          <h2 class="section-title">技術スタック</h2>
+          <p class="section-subtitle">Skills</p>
+        </div>
         <div v-if="isReady && aggregatedTags.length > 0" class="wordcloud-wrapper">
           <WordCloud
             :words="aggregatedTags"
@@ -156,7 +171,10 @@
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
       <div class="container">
-        <h2 class="section-title">Contact</h2>
+        <div class="section-header">
+          <h2 class="section-title">お問い合わせ</h2>
+          <p class="section-subtitle">Contact</p>
+        </div>
         <a :href="`mailto:${profile.email}`" class="contact-card">
           <div class="contact-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -193,9 +211,9 @@ const noteStats = ref({ posts: 0, contributions: 0 })
 // 今後やりたいこと
 const futureGoals = [
   'AI（ディープラーニング・深層学習）',
-  '3Dゲーム',
-  'スマホアプリ',
-  'まだ触ったことない言語',
+  'Unityでのゲーム開発',
+  'スマホアプリの開発',
+  'まだ触ったことない技術の開拓',
 ]
 
 const updateSize = () => {
@@ -279,6 +297,45 @@ $radius: 12px;
 $transition: all 0.3s ease;
 $font-ja: 'Noto Sans JP', sans-serif;
 $font-en: 'Poppins', sans-serif;
+
+// Section Header (タイトル + サブタイトル + 装飾)
+.section-header {
+  text-align: center;
+  margin: 48px 0 32px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .section-title {
+    margin: 0;
+    position: relative;
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+// Section Subtitle
+.section-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: $text-light;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  margin: 12px 0 0;
+
+  &::before,
+  &::after {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: $border;
+  }
+}
 
 // About Section
 .about-section {
@@ -375,18 +432,30 @@ $font-en: 'Poppins', sans-serif;
 
 .goals-list {
   margin: 0;
-  padding-left: 24px;
-  list-style: disc;
+  padding: 0;
+  list-style: none;
 
   li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     font-size: 1rem;
     color: $text;
-    line-height: 2;
-    padding-left: 8px;
+    line-height: 1.6;
+    padding: 10px 0;
 
-    &::marker {
-      color: $primary;
+    &:last-child {
+      border-bottom: none;
     }
+  }
+
+  .checkbox-icon {
+    width: 18px;
+    height: 18px;
+    border: 2px solid $border;
+    border-radius: 4px;
+    flex-shrink: 0;
+    background: $card-bg;
   }
 }
 
