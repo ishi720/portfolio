@@ -12,6 +12,7 @@ export const usePortfolio = () => {
         { name: 'Zenn', url: 'https://zenn.dev/ishi720' },
         { name: 'Note', url: 'https://note.com/ishi720' },
         { name: 'npm', url: 'https://www.npmjs.com/~ishi720' },
+        { name: 'LINE Store', url: 'https://store.line.me/stickershop/author/5872119/ja' },
         { name: 'Wantedly', url: 'https://www.wantedly.com/id/ishi720' },
         { name: 'X', url: 'https://x.com/ishi720' },
     ]
@@ -45,6 +46,10 @@ export const usePortfolio = () => {
 
     const chromeExtensions = [
       { title: 'Feeduck', url: 'https://chromewebstore.google.com/detail/feeduck/alfjohbjhjgkcmgecbhjcjhhkiphccne?authuser=4&hl=ja', image: 'feeduck-chrome-extension.png', description: 'RSSフィードを表示するChrome拡張機能です。', techs: ['Javascript'] },
+    ];
+
+    const lineStamps = [
+      { title: 'うちのドラム式', url: 'https://store.line.me/stickershop/product/32539347/ja', image: 'linestamp_DrumType.png', description: 'ドラム式洗濯機のキャラクターです。 見ての通りマイペースです。' },
     ];
 
     const npmPackages = [
@@ -107,5 +112,5 @@ export const usePortfolio = () => {
         { title: 'Zenn', url: 'https://zenn.dev/ishi720'},
     ]
 
-  return { profile, socials, developments, chromeExtensions, npmPackages, skills, article_platforms }
+  return { profile, socials, developments, chromeExtensions, lineStamps, npmPackages, skills, article_platforms }
 }

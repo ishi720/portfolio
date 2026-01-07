@@ -52,6 +52,9 @@
               <NuxtLink to="/developments#chrome-extensions" class="dropdown-item" @click="closeMenus">
                 Chrome Extensions
               </NuxtLink>
+              <NuxtLink to="/developments#line-stamps" class="dropdown-item" @click="closeMenus">
+                LINE Stamps
+              </NuxtLink>
               <NuxtLink to="/developments#web-services" class="dropdown-item" @click="closeMenus">
                 Web Services
               </NuxtLink>

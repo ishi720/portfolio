@@ -55,6 +55,25 @@
       </div>
     </section>
 
+    <!-- LINE Stamps Section -->
+    <section id="line-stamps" class="line-section">
+      <div class="container">
+        <h2 class="section-title">LINE Stamps</h2>
+        <div class="line-grid">
+          <a v-for="stamp in lineStamps" :key="stamp.title" :href="stamp.url" target="_blank" class="line-card">
+            <div class="line-image">
+              <img :src="`/portfolio/images/service/${stamp.image}`" :alt="stamp.title" @error="handleImgError">
+              <div class="line-image-placeholder">{{ stamp.title }}</div>
+            </div>
+            <div class="line-content">
+              <h3 class="line-title">{{ stamp.title }}</h3>
+              <p class="line-desc">{{ stamp.description }}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- Web Services Section -->
     <section id="web-services" class="works-section">
       <div class="container">
@@ -82,9 +101,105 @@
 <script setup lang="ts">
 import { usePortfolio } from '~/composables/usePortfolio'
 
-const { developments, chromeExtensions, npmPackages } = usePortfolio()
+const { developments, chromeExtensions, lineStamps, npmPackages } = usePortfolio()
 
 const handleImgError = (e: Event) => {
   (e.target as HTMLImageElement).style.display = 'none'
 }
 </script>
+
+<style lang="scss" scoped>
+$primary: #4a90a4;
+$bg: #f5f5f5;
+$text: #333;
+$text-light: #666;
+$card-bg: #fff;
+$shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+$shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+$radius: 8px;
+$transition: all 0.3s ease;
+$line-green: #06C755;
+
+// LINE Stamps Section
+.line-section {
+  padding: 60px 0 40px;
+  background: linear-gradient(180deg, $bg 0%, darken($bg, 2%) 100%);
+}
+
+.line-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.line-card {
+  background: $card-bg;
+  border-radius: $radius;
+  overflow: hidden;
+  box-shadow: $shadow;
+  transition: $transition;
+  border-left: 4px solid $line-green;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-hover;
+
+    .line-image img {
+      transform: scale(1.02);
+    }
+  }
+}
+
+.line-image {
+  position: relative;
+  background: $bg;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: $transition;
+
+    &:not([style*="display: none"]) + .line-image-placeholder {
+      display: none;
+    }
+  }
+
+  &-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: $text-light;
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #e8e8e8 0%, #f5f5f5 100%);
+  }
+}
+
+.line-content {
+  padding: 20px;
+}
+
+.line-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: $text;
+}
+
+.line-desc {
+  font-size: 0.85rem;
+  color: $text-light;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .line-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

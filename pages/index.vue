@@ -84,6 +84,15 @@
               <div class="achievement-label">Chrome Extensions</div>
             </div>
           </NuxtLink>
+          <NuxtLink to="/developments#line-stamps" class="achievement-card achievement-card-line">
+            <div class="achievement-icon">
+              <img src="https://cdn.simpleicons.org/line/06C755" alt="LINE">
+            </div>
+            <div class="achievement-info">
+              <div class="achievement-number">{{ lineStamps.length }}</div>
+              <div class="achievement-label">LINE Stamps</div>
+            </div>
+          </NuxtLink>
           <NuxtLink to="/developments#web-services" class="achievement-card">
             <div class="achievement-icon">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="Web">
@@ -198,7 +207,7 @@ import { usePortfolio } from '~/composables/usePortfolio'
 import { useSkillCloud } from '~/composables/useSkillCloud'
 import WordCloud from '~/components/WordCloud.vue'
 
-const { profile, socials, developments, chromeExtensions, npmPackages } = usePortfolio()
+const { profile, socials, developments, chromeExtensions, lineStamps, npmPackages } = usePortfolio()
 const { aggregatedTags, isLoaded, loadData } = useSkillCloud()
 
 const cloudSize = ref(500)
@@ -274,6 +283,7 @@ const getSnsIcon = (name: string): string => {
     'Zenn': 'https://cdn.simpleicons.org/zenn/3EA8FF',
     'Note': 'https://cdn.simpleicons.org/note/41C9B4',
     'npm': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg',
+    'LINE Store': 'https://cdn.simpleicons.org/line/06C755',
     'Wantedly': 'https://cdn.simpleicons.org/wantedly/21BDDB',
     'X': 'https://cdn.simpleicons.org/x/000000',
   }
@@ -297,6 +307,7 @@ $radius: 12px;
 $transition: all 0.3s ease;
 $font-ja: 'Noto Sans JP', sans-serif;
 $font-en: 'Poppins', sans-serif;
+$line-green: #06C755;
 
 // Section Header (タイトル + サブタイトル + 装飾)
 .section-header {
@@ -494,6 +505,10 @@ $font-en: 'Poppins', sans-serif;
     }
   }
 
+  &-line:hover {
+    border-color: $line-green;
+  }
+
   &-career {
     background: linear-gradient(135deg, $primary 0%, $primary-dark 100%);
     color: $text-white;
@@ -537,6 +552,10 @@ $font-en: 'Poppins', sans-serif;
   color: $primary;
   line-height: 1;
   margin-bottom: 4px;
+}
+
+.achievement-card-line .achievement-number {
+  color: $line-green;
 }
 
 .achievement-label {
