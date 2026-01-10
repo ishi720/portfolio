@@ -42,6 +42,7 @@ export const usePortfolio = () => {
         { title: 'Honeycomb Pixel Art', url: 'https://honeycomb-pixel-art.vercel.app/', image: 'HoneycombPixelArt.png', description: '画像ファイルをハニカムピクセルに変換するサービスです。', techs: ['Javascript', 'React'] },
         { title: 'Polygonal Geometric Pattern', url: 'https://ishi720.github.io/PolygonalGeometricPattern/', image: 'PolygonalGeometricPattern.png', description: '多角形の辺上を移動する点から生成される幾何学的パターンを可視化するサービスです。', techs: ['Javascript'] },
         { title: 'ReuleauxPhysics', url: 'https://ishi720.github.io/ReuleauxPhysics/', image: 'ReuleauxPhysics.png', description: 'ルーローの三角形の物理シミュレーションです。', techs: ['Javascript'] },
+        { title: 'Tech Catalog', url: 'https://ishi720.github.io/tech-catalog/', image: 'tech-catalog.png', description: 'プログラミング技術一覧をまとめたサービスです。', techs: ['Javascript', 'Nuxt', 'Vue'] },
     ]
 
     const chromeExtensions = [
