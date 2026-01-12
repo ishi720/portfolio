@@ -46,11 +46,11 @@ export const usePortfolio = () => {
     ]
 
     const chromeExtensions = [
-      { title: 'Feeduck', url: 'https://chromewebstore.google.com/detail/feeduck/alfjohbjhjgkcmgecbhjcjhhkiphccne?authuser=4&hl=ja', image: 'feeduck-chrome-extension.png', description: 'RSSフィードを表示するChrome拡張機能です。', techs: ['Javascript'] },
+        { title: 'Feeduck', url: 'https://chromewebstore.google.com/detail/feeduck/alfjohbjhjgkcmgecbhjcjhhkiphccne?authuser=4&hl=ja', image: 'feeduck-chrome-extension.png', description: 'RSSフィードを表示するChrome拡張機能です。', techs: ['Javascript'] },
     ];
 
     const lineStamps = [
-      { title: 'うちのドラム式', url: 'https://store.line.me/stickershop/product/32539347/ja', image: 'linestamp_DrumType.png', description: 'ドラム式洗濯機のキャラクターです。 見ての通りマイペースです。' },
+        { title: 'うちのドラム式', url: 'https://store.line.me/stickershop/product/32539347/ja', image: 'linestamp_DrumType.png', description: 'ドラム式洗濯機のキャラクターです。 見ての通りマイペースです。' },
     ];
 
     const npmPackages = [
