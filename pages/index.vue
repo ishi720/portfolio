@@ -670,7 +670,7 @@ $line-green: #06C755;
   }
 
   .achievements-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .achievement-card {
