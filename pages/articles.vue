@@ -197,10 +197,17 @@ const getArticleTags = (tags: string): string[] => {
   return tags.split(',').map(tag => tag.trim()).filter(tag => tag.length > 0)
 }
 
-// 人気のタグ（使用回数が多い上位10件）
+// 人気のタグ（プラットフォームでフィルタリング後の記事から上位10件）
 const popularTags = computed(() => {
   const tagCount: Record<string, number> = {}
-  articles.value.forEach(article => {
+
+  // プラットフォームでフィルタリング
+  let targetArticles = articles.value
+  if (selectedPlatform.value) {
+    targetArticles = articles.value.filter(article => article.source === selectedPlatform.value)
+  }
+
+  targetArticles.forEach(article => {
     getArticleTags(article.tags).forEach(tag => {
       tagCount[tag] = (tagCount[tag] || 0) + 1
     })
@@ -262,6 +269,11 @@ const paginatedArticles = computed(() => {
 const onSortChange = () => {
   // watchで処理されるので何もしない
 }
+
+// プラットフォーム変更時はタグ選択をクリア（タグ一覧が変わるため）
+watch(selectedPlatform, () => {
+  selectedTag.value = ''
+})
 
 // フィルター変更時は1ページ目に戻ってURLを更新
 watch([selectedTag, selectedPlatform, searchQuery, sortState], () => {
