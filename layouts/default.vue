@@ -77,7 +77,7 @@
 
     <footer class="footer">
       <div class="footer-inner">
-        <p class="copyright">© 2025 {{ profile.name }} Portfolio All rights reserved.</p>
+        <p class="copyright">© {{ currentYear }} {{ profile.name }} Portfolio All rights reserved.</p>
       </div>
     </footer>
   </div>
@@ -91,6 +91,7 @@ import { usePortfolio } from '~/composables/usePortfolio'
 const { profile } = usePortfolio()
 const route = useRoute()
 const menuOpen = ref(false)
+const currentYear = new Date().getFullYear()
 
 const isHomeActive = computed(() => {
   return route.path === '/'
