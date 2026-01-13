@@ -34,7 +34,6 @@
           <SortControls
             v-model="sortState"
             :options="sortOptions"
-            @update:model-value="onSortChange"
           />
         </div>
 
@@ -85,7 +84,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { usePortfolio } from '~/composables/usePortfolio'
 import type { SortState, SortOption } from '~/components/SortControls.vue'
 
 interface Article {
@@ -104,7 +102,6 @@ interface Platform {
 
 const route = useRoute()
 const router = useRouter()
-const { article_platforms } = usePortfolio()
 const articles = ref<Article[]>([])
 const perPage = 18
 
@@ -264,11 +261,6 @@ const paginatedArticles = computed(() => {
   const end = start + perPage
   return filteredArticles.value.slice(start, end)
 })
-
-// ソート変更時は1ページ目に戻る
-const onSortChange = () => {
-  // watchで処理されるので何もしない
-}
 
 // プラットフォーム変更時はタグ選択をクリア（タグ一覧が変わるため）
 watch(selectedPlatform, () => {

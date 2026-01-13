@@ -190,15 +190,6 @@ const getRepoTags = (tags: string | string[]): string[] => {
   return []
 }
 
-// 全タグを取得
-const allTags = computed(() => {
-  const tagSet = new Set<string>()
-  repos.value.forEach(repo => {
-    getRepoTags(repo.tags).forEach(tag => tagSet.add(tag))
-  })
-  return Array.from(tagSet).sort()
-})
-
 // 人気のタグ（使用回数が多い上位10件）
 const popularTags = computed(() => {
   const tagCount: Record<string, number> = {}

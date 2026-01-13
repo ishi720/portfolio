@@ -170,27 +170,5 @@ export const useCareer = () => {
         }
     ]
 
-    // 業界の一覧を取得
-    const getAllIndustries = (): string[] => {
-        const industries = new Set<string>()
-        careers.forEach(company => {
-            company.projects.forEach(project => {
-                industries.add(project.industry)
-            })
-        })
-        return Array.from(industries)
-    }
-
-    // 全ての技術タグを取得
-    const getAllTechs = (): string[] => {
-        const techs = new Set<string>()
-        careers.forEach(company => {
-            company.projects.forEach(project => {
-                project.techs.forEach(tech => techs.add(tech))
-            })
-        })
-        return Array.from(techs).sort()
-    }
-
-    return { careers, getAllIndustries, getAllTechs }
+    return { careers }
 }
