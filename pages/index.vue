@@ -292,22 +292,9 @@ const getSnsIcon = (name: string): string => {
 </script>
 
 <style lang="scss" scoped>
-$primary: #4a90a4;
-$primary-dark: #3a7a8a;
-$bg: #f5f5f5;
-$bg-dark: #1a1a2e;
-$text: #333;
-$text-light: #666;
-$text-white: #fff;
-$card-bg: #fff;
-$border: #e0e0e0;
-$shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-$shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
-$radius: 12px;
-$transition: all 0.3s ease;
-$font-ja: 'Noto Sans JP', sans-serif;
-$font-en: 'Poppins', sans-serif;
-$line-green: #06C755;
+@use '~/assets/scss/variables' as *;
+
+$radius: $radius-lg; // Override for this page
 
 // Section Header (タイトル + サブタイトル + 装飾)
 .section-header {
@@ -506,7 +493,7 @@ $line-green: #06C755;
   }
 
   &-line:hover {
-    border-color: $line-green;
+    border-color: $color-line;
   }
 
   &-career {
@@ -555,7 +542,7 @@ $line-green: #06C755;
 }
 
 .achievement-card-line .achievement-number {
-  color: $line-green;
+  color: $color-line;
 }
 
 .achievement-label {

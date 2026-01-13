@@ -109,16 +109,7 @@ const handleImgError = (e: Event) => {
 </script>
 
 <style lang="scss" scoped>
-$primary: #4a90a4;
-$bg: #f5f5f5;
-$text: #333;
-$text-light: #666;
-$card-bg: #fff;
-$shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-$shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
-$radius: 8px;
-$transition: all 0.3s ease;
-$line-green: #06C755;
+@use '~/assets/scss/variables' as *;
 
 // LINE Stamps Section
 .line-section {
@@ -138,7 +129,7 @@ $line-green: #06C755;
   overflow: hidden;
   box-shadow: $shadow;
   transition: $transition;
-  border-left: 4px solid $line-green;
+  border-left: 4px solid $color-line;
 
   &:hover {
     transform: translateY(-4px);

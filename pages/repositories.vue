@@ -287,11 +287,7 @@ const formatSize = (sizeKb?: number) => {
 </script>
 
 <style lang="scss" scoped>
-$primary: #4a90a4;
-$primary-dark: #3a7a8a;
-$text-light: #666;
-$border: #e0e0e0;
-$transition: all 0.3s ease;
+@use '~/assets/scss/variables' as *;
 
 .repos-section {
   padding: 60px 0 80px;

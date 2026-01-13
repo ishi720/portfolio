@@ -124,34 +124,12 @@ const popularTechs = computed(() => {
 
 <style lang="scss" scoped>
 @use 'sass:color';
+@use '~/assets/scss/variables' as *;
 
-// Variables
-$primary: #4a90a4;
-$primary-dark: #3a7a8a;
-$primary-light: #5ba8bf;
-$accent: #e8b44a;
-$bg: #f5f5f5;
-$text: #333;
-$text-light: #666;
-$text-white: #fff;
-$card-bg: #fff;
-$border: #e0e0e0;
-$shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+$radius: $radius-lg; // Override for this page
+$shadow: 0 4px 20px rgba(0, 0, 0, 0.08); // Custom shadow for career
 $shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.15);
-$radius: 12px;
-$transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-$font-ja: 'Noto Sans JP', sans-serif;
-$font-en: 'Poppins', sans-serif;
-
-// 会社ごとのアクセントカラー（左ボーダーのみ）
-$company-colors: (
-  0: #667eea,
-  1: #4facfe,
-  2: #02bb3f,
-  3: #f5576c,
-  4: #f093fb,
-  5: #fbbf24,
-);
+$transition: $transition-smooth;
 
 .career-section {
   padding: 60px 0 100px;

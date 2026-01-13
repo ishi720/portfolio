@@ -276,11 +276,7 @@ const formatDate = (dateStr: string) => {
 </script>
 
 <style lang="scss" scoped>
-$primary: #4a90a4;
-$text-white: #fff;
-$text-light: #666;
-$border: #e0e0e0;
-$transition: all 0.3s ease;
+@use '~/assets/scss/variables' as *;
 
 .result-count {
   font-size: 0.9rem;
