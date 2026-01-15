@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'mixins' as *;
 
 // Reset & Base
 * {
@@ -255,7 +256,7 @@ img {
 // Connect Section
 .connect {
     &-section {
-        padding: 20px 0 80px;
+        @include section-padding(20px, 80px);
     }
 
     &-grid {
@@ -267,22 +268,14 @@ img {
     }
 
     &-card {
-        background: $card-bg;
-        border-radius: $radius;
+        @include card-base;
         padding: 24px;
         text-align: center;
-        box-shadow: $shadow;
-        transition: $transition;
-        display: flex;
+        @include flex-center;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
         gap: 12px;
 
         &:hover {
-            transform: translateY(-4px);
-            box-shadow: $shadow-hover;
-
             .connect-icon img,
             .connect-icon svg {
                 transform: scale(1.1);
@@ -313,12 +306,8 @@ img {
     }
 
     &-icon {
-        width: 48px;
-        height: 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
+        @include icon-container(48px);
+        @include flex-center;
 
         img,
         svg {
@@ -346,48 +335,26 @@ img {
 // npm Section
 .npm {
     &-section {
-        padding: 60px 0 40px;
+        @include section-padding(60px, 40px);
     }
 
     &-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-        gap: 24px;
+        @include grid-auto-fill(340px);
     }
 
     &-card {
-        background: $card-bg;
-        border-radius: $radius;
+        @include card-base($color-npm);
         padding: 24px;
-        box-shadow: $shadow;
-        transition: $transition;
         display: flex;
         flex-direction: column;
-        border-left: 4px solid $color-npm;
-
-        &:hover {
-            transform: translateY(-4px);
-            box-shadow: $shadow-hover;
-        }
     }
 
     &-header {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        margin-bottom: 16px;
+        @include card-header;
     }
 
     &-icon {
-        width: 48px;
-        height: 48px;
-        flex-shrink: 0;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
+        @include icon-container(48px);
     }
 
     &-info {
@@ -415,25 +382,15 @@ img {
     }
 
     &-desc {
-        font-size: 0.9rem;
-        color: $text-light;
-        line-height: 1.6;
-        margin-bottom: 16px;
-        flex: 1;
+        @include card-desc;
     }
 
     &-footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 12px;
+        @include card-footer;
     }
 
     &-techs {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
+        @include tags-container;
     }
 
     &-stats {
@@ -454,28 +411,20 @@ img {
 // Works
 .works {
     &-section {
-        padding: 60px 0 80px;
+        @include section-padding;
     }
 
     &-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-        gap: 24px;
+        @include grid-auto-fill(340px);
     }
 }
 
 .work {
     &-card {
-        background: $card-bg;
-        border-radius: $radius;
+        @include card-base;
         overflow: hidden;
-        box-shadow: $shadow;
-        transition: $transition;
 
         &:hover {
-            transform: translateY(-4px);
-            box-shadow: $shadow-hover;
-
             .work-image img {
                 transform: scale(1.05);
             }
@@ -502,9 +451,7 @@ img {
         &-placeholder {
             position: absolute;
             inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            @include flex-center;
             font-size: 0.9rem;
             color: $text-light;
             padding: 20px;
@@ -531,9 +478,7 @@ img {
     }
 
     &-techs {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
+        @include tags-container;
     }
 }
 
@@ -554,13 +499,11 @@ img {
 // Skills
 .skills {
     &-section {
-        padding: 20px 0 40px;
+        @include section-padding(20px, 40px);
     }
 
     &-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-        gap: 24px;
+        @include grid-auto-fill(220px);
         max-width: 960px;
         margin: 0 auto;
     }
@@ -568,29 +511,14 @@ img {
 
 .skill {
     &-card {
-        background: $card-bg;
-        border-radius: $radius;
+        @include card-base;
         padding: 24px;
         text-align: center;
-        box-shadow: $shadow;
-        transition: $transition;
-
-        &:hover {
-            transform: translateY(-4px);
-            box-shadow: $shadow-hover;
-        }
     }
 
     &-icon {
-        width: 64px;
-        height: 64px;
+        @include icon-container(64px);
         margin: 0 auto 16px;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
     }
 
     &-name {
@@ -624,38 +552,26 @@ img {
 // Articles
 .articles {
     &-section {
-        padding: 60px 0 80px;
+        @include section-padding;
     }
 
     &-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 24px;
+        @include grid-auto-fill(300px);
         margin: 0 auto 40px;
     }
 }
 
 .article {
     &-platforms-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-        gap: 24px;
+        @include grid-auto-fill(400px);
         margin: 0 auto 40px;
     }
 
     &-card {
-        background: $card-bg;
-        border-radius: $radius;
+        @include card-base;
         padding: 18px;
-        box-shadow: $shadow;
-        transition: $transition;
         display: flex;
         flex-direction: column;
-
-        &:hover {
-            transform: translateY(-4px);
-            box-shadow: $shadow-hover;
-        }
     }
 
     &-meta {
@@ -675,18 +591,15 @@ img {
         letter-spacing: 0.1em;
 
         &.qiita {
-            background: #55c500;
-            color: #fff;
+            @include platform-badge($color-qiita);
         }
 
         &.zenn {
-            background: #3ea8ff;
-            color: #fff;
+            @include platform-badge($color-zenn);
         }
 
         &.note {
-            background: #41C9B4;
-            color: #fff;
+            @include platform-badge($color-note);
         }
     }
 
@@ -710,9 +623,7 @@ img {
     }
 
     &-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
+        @include tags-container;
     }
 
     &-likes {
@@ -745,26 +656,10 @@ img {
 }
 
 .tag-filter-btn {
-    font-family: $font-ja;
-    font-size: 0.8rem;
+    @include control-btn;
     padding: 6px 14px;
-    border: 1px solid $border;
     border-radius: 20px;
-    background: $card-bg;
     color: $text-light;
-    cursor: pointer;
-    transition: $transition;
-
-    &:hover {
-        border-color: $primary;
-        color: $primary;
-    }
-
-    &.active {
-        background: $primary;
-        border-color: $primary;
-        color: $text-white;
-    }
 }
 
 // Sort Controls
@@ -786,30 +681,10 @@ img {
 }
 
 .sort-btn {
-    font-family: $font-ja;
-    font-size: 0.8rem;
-    font-weight: 500;
-    padding: 6px 12px;
-    border: 1px solid $border;
-    border-radius: $radius;
-    background: $card-bg;
-    color: $text;
-    cursor: pointer;
-    transition: $transition;
+    @include control-btn;
     display: flex;
     align-items: center;
     gap: 4px;
-
-    &:hover {
-        border-color: $primary;
-        color: $primary;
-    }
-
-    &.active {
-        background: $primary;
-        border-color: $primary;
-        color: $text-white;
-    }
 
     .sort-icon {
         font-size: 0.85rem;

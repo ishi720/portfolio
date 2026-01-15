@@ -1,0 +1,117 @@
+// ============================================
+// Shared SCSS Mixins
+// ============================================
+@use 'variables' as *;
+
+// Card base styles
+@mixin card-base($border-color: null) {
+    background: $card-bg;
+    border-radius: $radius;
+    box-shadow: $shadow;
+    transition: $transition;
+
+    @if $border-color {
+        border-left: 4px solid $border-color;
+    }
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: $shadow-hover;
+    }
+}
+
+// Grid auto-fill pattern
+@mixin grid-auto-fill($min-width: 340px, $gap: 24px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($min-width, 1fr));
+    gap: $gap;
+}
+
+// Section padding
+@mixin section-padding($top: 60px, $bottom: 80px) {
+    padding: $top 0 $bottom;
+}
+
+// Flex center
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Icon container
+@mixin icon-container($size: 48px) {
+    width: $size;
+    height: $size;
+    flex-shrink: 0;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+// Card header with icon
+@mixin card-header($gap: 16px, $margin-bottom: 16px) {
+    display: flex;
+    align-items: center;
+    gap: $gap;
+    margin-bottom: $margin-bottom;
+}
+
+// Card description text
+@mixin card-desc {
+    font-size: 0.9rem;
+    color: $text-light;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    flex: 1;
+}
+
+// Card footer
+@mixin card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+// Tags container
+@mixin tags-container($gap: 6px) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gap;
+}
+
+// Platform badge colors
+@mixin platform-badge($bg-color) {
+    background: $bg-color;
+    color: #fff;
+}
+
+// Filter/Control button base
+@mixin control-btn {
+    font-family: $font-ja;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 6px 12px;
+    border: 1px solid $border;
+    border-radius: $radius;
+    background: $card-bg;
+    color: $text;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+        border-color: $primary;
+        color: $primary;
+    }
+
+    &.active {
+        background: $primary;
+        border-color: $primary;
+        color: $text-white;
+    }
+}
