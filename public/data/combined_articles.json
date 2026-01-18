@@ -1,11 +1,19 @@
 [
     {
+        "published_at": "2026-01-18T10:17:45+09:00",
+        "url": "https://qiita.com/ishi720/items/71bc524b07d2be4eb4b1",
+        "title": "Smartyのデリミタを<( ﾟДﾟ) コード ( ﾟДﾟ)>に設定してVSCodeに適応する",
+        "tags": "Smarty, VSCode",
+        "source": "Qiita",
+        "likes": 2
+    },
+    {
         "published_at": "2026-01-01T09:05:37+09:00",
         "url": "https://note.com/ishi720/n/n325e0e6ded90",
         "title": "なぜ「無駄なミーティング」と感じてしまうのか？",
         "tags": "ミーティング, 打合せ",
         "source": "note",
-        "likes": 0
+        "likes": 1
     },
     {
         "published_at": "2025-12-29T10:35:20+09:00",
@@ -13,7 +21,7 @@
         "title": "アイディアが出ない原因は「固定概念」かもしれない",
         "tags": "アイディア, 固定観念",
         "source": "note",
-        "likes": 4
+        "likes": 5
     },
     {
         "published_at": "2025-12-07T18:05:40+09:00",
@@ -29,7 +37,7 @@
         "title": "ラバーペンシル現象をWEBで再現してみた",
         "tags": "JavaScript, ラバーペンシル現象",
         "source": "Qiita",
-        "likes": 19
+        "likes": 21
     },
     {
         "published_at": "2025-11-27T22:59:12+09:00",
@@ -165,7 +173,7 @@
         "title": "テキストをコピペするときにスタイルごとコピーされちゃうのってどんな仕組み？",
         "tags": "JavaScript, clipboard, リッチテキスト",
         "source": "Qiita",
-        "likes": 323
+        "likes": 322
     },
     {
         "published_at": "2024-10-27T23:46:28+09:00",
@@ -173,7 +181,7 @@
         "title": "ぱ行で会話するための変換プログラムを作成",
         "tags": "Go",
         "source": "Qiita",
-        "likes": 4
+        "likes": 5
     },
     {
         "published_at": "2024-09-21T18:54:56+09:00",
@@ -253,7 +261,7 @@
         "title": "フルスタックエンジニアの悩み",
         "tags": "エンジニアのキャリア, フルスタックエンジニア",
         "source": "Qiita",
-        "likes": 123
+        "likes": 124
     },
     {
         "published_at": "2024-01-09T08:08:06+09:00",
