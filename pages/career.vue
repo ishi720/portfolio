@@ -133,7 +133,7 @@ $transition: $transition-smooth;
 
 .career-section {
   padding: 60px 0 100px;
-  background: linear-gradient(180deg, $bg 0%, darken($bg, 2%) 100%);
+  background: linear-gradient(180deg, $bg 0%, color.adjust($bg, $lightness: -2%) 100%);
 }
 
 .career-filters {

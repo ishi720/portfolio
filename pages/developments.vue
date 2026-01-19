@@ -109,12 +109,13 @@ const handleImgError = (e: Event) => {
 </script>
 
 <style lang="scss" scoped>
+@use 'sass:color';
 @use '~/assets/scss/variables' as *;
 
 // LINE Stamps Section
 .line-section {
   padding: 60px 0 40px;
-  background: linear-gradient(180deg, $bg 0%, darken($bg, 2%) 100%);
+  background: linear-gradient(180deg, $bg 0%, color.adjust($bg, $lightness: -2%) 100%);
 }
 
 .line-grid {
