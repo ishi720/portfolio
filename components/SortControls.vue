@@ -19,15 +19,9 @@
 </template>
 
 <script setup lang="ts">
-export interface SortOption {
-  key: string
-  label: string
-}
+import type { SortOption, SortState } from '~/types/models'
 
-export interface SortState {
-  key: string
-  order: 'asc' | 'desc'
-}
+export type { SortOption, SortState }
 
 interface Props {
   modelValue: SortState

@@ -96,19 +96,8 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import type { SortState, SortOption } from '~/components/SortControls.vue'
+import type { SortState, SortOption, Repo } from '~/types/models'
 import { formatDate } from '~/composables/useUtils'
-
-interface Repo {
-  name: string
-  url: string
-  tags: string | string[]
-  description: string
-  created_at: string
-  updated_at: string
-  commit_count?: number
-  size_kb?: number
-}
 
 const route = useRoute()
 const router = useRouter()

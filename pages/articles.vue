@@ -84,22 +84,8 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import type { SortState, SortOption } from '~/components/SortControls.vue'
+import type { SortState, SortOption, Article, Platform } from '~/types/models'
 import { formatDate } from '~/composables/useUtils'
-
-interface Article {
-  published_at: string
-  url: string
-  title: string
-  tags: string
-  source: string
-  likes: number
-}
-
-interface Platform {
-  name: string
-  class: string
-}
 
 const route = useRoute()
 const router = useRouter()
@@ -200,10 +186,9 @@ const popularTags = computed(() => {
   const tagCount: Record<string, number> = {}
 
   // プラットフォームでフィルタリング
-  let targetArticles = articles.value
-  if (selectedPlatform.value) {
-    targetArticles = articles.value.filter(article => article.source === selectedPlatform.value)
-  }
+  const targetArticles: Article[] = selectedPlatform.value
+    ? articles.value.filter((article: Article) => article.source === selectedPlatform.value)
+    : articles.value
 
   targetArticles.forEach(article => {
     getArticleTags(article.tags).forEach(tag => {
