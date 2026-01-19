@@ -58,7 +58,7 @@
             <div class="article-footer">
               <div class="article-tags">
                 <span
-                  v-for="tag in getArticleTags(article.tags)"
+                  v-for="tag in parseTags(article.tags)"
                   :key="tag"
                   class="tech-tag"
                 >
@@ -85,7 +85,7 @@
 import { ref, computed, onMounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import type { SortState, SortOption, Article, Platform } from '~/types/models'
-import { formatDate } from '~/composables/useUtils'
+import { formatDate, parseTags } from '~/composables/useUtils'
 
 const route = useRoute()
 const router = useRouter()
@@ -175,11 +175,6 @@ onMounted(async () => {
   articles.value = await $fetch('/data/combined_articles.json')
 })
 
-// タグを配列として取得するヘルパー関数
-const getArticleTags = (tags: string): string[] => {
-  if (!tags) return []
-  return tags.split(',').map(tag => tag.trim()).filter(tag => tag.length > 0)
-}
 
 // 人気のタグ（プラットフォームでフィルタリング後の記事から上位10件）
 const popularTags = computed(() => {
@@ -191,7 +186,7 @@ const popularTags = computed(() => {
     : articles.value
 
   targetArticles.forEach(article => {
-    getArticleTags(article.tags).forEach(tag => {
+    parseTags(article.tags).forEach((tag: string) => {
       tagCount[tag] = (tagCount[tag] || 0) + 1
     })
   })
@@ -222,7 +217,7 @@ const filteredArticles = computed(() => {
   // タグフィルター
   if (selectedTag.value) {
     result = result.filter(article =>
-      getArticleTags(article.tags).includes(selectedTag.value)
+      parseTags(article.tags).includes(selectedTag.value)
     )
   }
 

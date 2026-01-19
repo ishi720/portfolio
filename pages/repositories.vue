@@ -51,9 +51,9 @@
               <h3 class="repo-name">{{ repo.name }}</h3>
             </div>
             <p class="repo-desc">{{ repo.description || 'No description' }}</p>
-            <div class="repo-tags" v-if="getRepoTags(repo.tags).length > 0">
+            <div class="repo-tags" v-if="parseTags(repo.tags).length > 0">
               <span
-                v-for="tag in getRepoTags(repo.tags)"
+                v-for="tag in parseTags(repo.tags)"
                 :key="tag"
                 class="tech-tag"
               >
@@ -97,7 +97,7 @@
 import { ref, computed, onMounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import type { SortState, SortOption, Repo } from '~/types/models'
-import { formatDate } from '~/composables/useUtils'
+import { formatDate, parseTags } from '~/composables/useUtils'
 
 const route = useRoute()
 const router = useRouter()
@@ -169,22 +169,12 @@ onMounted(async () => {
   repos.value = await $fetch('/data/repos_list.json')
 })
 
-// タグを配列として取得するヘルパー関数
-const getRepoTags = (tags: string | string[]): string[] => {
-  if (Array.isArray(tags)) {
-    return tags
-  }
-  if (typeof tags === 'string' && tags.length > 0) {
-    return [tags]
-  }
-  return []
-}
 
 // 人気のタグ（使用回数が多い上位10件）
 const popularTags = computed(() => {
   const tagCount: Record<string, number> = {}
   repos.value.forEach(repo => {
-    getRepoTags(repo.tags).forEach(tag => {
+    parseTags(repo.tags).forEach(tag => {
       tagCount[tag] = (tagCount[tag] || 0) + 1
     })
   })
@@ -204,14 +194,14 @@ const filteredRepos = computed(() => {
     result = result.filter(repo =>
       repo.name.toLowerCase().includes(query) ||
       (repo.description && repo.description.toLowerCase().includes(query)) ||
-      getRepoTags(repo.tags).some(tag => tag.toLowerCase().includes(query))
+      parseTags(repo.tags).some(tag => tag.toLowerCase().includes(query))
     )
   }
 
   // タグフィルター
   if (selectedTag.value) {
     result = result.filter(repo =>
-      getRepoTags(repo.tags).includes(selectedTag.value)
+      parseTags(repo.tags).includes(selectedTag.value)
     )
   }
 
