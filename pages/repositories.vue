@@ -97,6 +97,7 @@
 import { ref, computed, onMounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import type { SortState, SortOption } from '~/components/SortControls.vue'
+import { formatDate } from '~/composables/useUtils'
 
 interface Repo {
   name: string
@@ -263,10 +264,6 @@ watch([searchQuery, selectedTag, sortState], () => {
   updateQuery()
 }, { deep: true })
 
-const formatDate = (dateStr: string) => {
-  const date = new Date(dateStr)
-  return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`
-}
 
 const formatSize = (sizeKb?: number) => {
   if (!sizeKb || sizeKb === 0) return '0 KB'

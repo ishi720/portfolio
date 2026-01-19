@@ -85,6 +85,7 @@
 import { ref, computed, onMounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import type { SortState, SortOption } from '~/components/SortControls.vue'
+import { formatDate } from '~/composables/useUtils'
 
 interface Article {
   published_at: string
@@ -273,10 +274,6 @@ watch([selectedTag, selectedPlatform, searchQuery, sortState], () => {
   updateQuery()
 }, { deep: true })
 
-const formatDate = (dateStr: string) => {
-  const date = new Date(dateStr)
-  return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`
-}
 </script>
 
 <style lang="scss" scoped>
