@@ -105,7 +105,7 @@
     "tags": "unity2d",
     "description": "Unityで4目並べ",
     "created_at": "2025-12-08T14:13:54Z",
-    "updated_at": "2025-12-09T14:52:08Z",
+    "updated_at": "2026-01-01T13:52:21Z",
     "commit_count": 9,
     "size_kb": 15068
   },
@@ -265,9 +265,9 @@
     "tags": ["r", "githubapi"],
     "description": "GitHubユーザーのリポジトリを分析し、可視化するRスクリプトです。",
     "created_at": "2025-12-15T23:07:29Z",
-    "updated_at": "2025-12-30T14:13:46Z",
-    "commit_count": 41,
-    "size_kb": 2867
+    "updated_at": "2026-01-01T01:14:00Z",
+    "commit_count": 42,
+    "size_kb": 4443
   },
   {
     "name": "gulp-package-version-format",
@@ -288,6 +288,16 @@
     "updated_at": "2025-12-17T22:46:55Z",
     "commit_count": 17,
     "size_kb": 77
+  },
+  {
+    "name": "honeycombPuzzle",
+    "url": "https://github.com/ishi720/honeycombPuzzle",
+    "tags": ["react", "honeycomb"],
+    "description": "",
+    "created_at": "2026-01-14T14:02:05Z",
+    "updated_at": "2026-01-14T14:29:49Z",
+    "commit_count": 4,
+    "size_kb": 39
   },
   {
     "name": "HoneycombReversi",
@@ -453,9 +463,9 @@
     "name": "numnator",
     "url": "https://github.com/ishi720/numnator",
     "tags": ["javascript", "vue2"],
-    "description": "https://numnator.suisui.fun/",
+    "description": "",
     "created_at": "2021-07-10T12:58:43Z",
-    "updated_at": "2024-12-31T14:23:46Z",
+    "updated_at": "2026-01-13T15:29:26Z",
     "commit_count": 60,
     "size_kb": 609
   },
@@ -485,9 +495,9 @@
     "tags": ["nustjs", "typescript", "vue"],
     "description": "ishi720のポートフォリオ",
     "created_at": "2024-12-14T15:01:00Z",
-    "updated_at": "2025-12-31T12:55:48Z",
-    "commit_count": 130,
-    "size_kb": 7359
+    "updated_at": "2026-01-18T11:18:34Z",
+    "commit_count": 147,
+    "size_kb": 7859
   },
   {
     "name": "qiita-content",
@@ -690,6 +700,16 @@
     "size_kb": 16
   },
   {
+    "name": "style-manager-chrome-extension",
+    "url": "https://github.com/ishi720/style-manager-chrome-extension",
+    "tags": [],
+    "description": "個人的なスタイル変更をWEBサイトにあてるChrome拡張機能です",
+    "created_at": "2026-01-01T14:10:12Z",
+    "updated_at": "2026-01-01T14:12:26Z",
+    "commit_count": 2,
+    "size_kb": 18
+  },
+  {
     "name": "sublime3_my_snippet",
     "url": "https://github.com/ishi720/sublime3_my_snippet",
     "tags": ["snippets", "sublime-text-3"],
@@ -728,6 +748,26 @@
     "updated_at": "2025-12-27T22:50:36Z",
     "commit_count": 10,
     "size_kb": 8
+  },
+  {
+    "name": "tech-catalog",
+    "url": "https://github.com/ishi720/tech-catalog",
+    "tags": ["nuxtjs", "typescript", "vue"],
+    "description": "技術情報をまとめたカタログサイトです。",
+    "created_at": "2026-01-02T12:08:18Z",
+    "updated_at": "2026-01-16T11:36:49Z",
+    "commit_count": 41,
+    "size_kb": 373
+  },
+  {
+    "name": "template-delimiter-customizer",
+    "url": "https://github.com/ishi720/template-delimiter-customizer",
+    "tags": ["template-engine", "vscode-extension"],
+    "description": "テンプレートエンジンのデリミタの変更にあわせてカスタマイズできるVSCode拡張機能です",
+    "created_at": "2026-01-17T13:20:18Z",
+    "updated_at": "2026-01-18T01:23:02Z",
+    "commit_count": 4,
+    "size_kb": 10
   },
   {
     "name": "textfitJS",
