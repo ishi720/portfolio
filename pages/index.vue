@@ -206,6 +206,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { usePortfolio } from '~/composables/usePortfolio'
 import { useSkillCloud } from '~/composables/useSkillCloud'
 import WordCloud from '~/components/WordCloud.vue'
+import type { Article, Repo } from '~/types/models'
 
 const { profile, socials, developments, chromeExtensions, lineStamps, npmPackages } = usePortfolio()
 const { aggregatedTags, isLoaded, loadData } = useSkillCloud()
@@ -238,7 +239,7 @@ onMounted(async () => {
 
   // リポジトリ数を取得
   try {
-    const repos = await $fetch<any[]>('/data/repos_list.json')
+    const repos = await $fetch<Repo[]>('/data/repos_list.json')
     repoCount.value = repos.length
   } catch (e) {
     console.error('Failed to load repos:', e)
@@ -246,7 +247,7 @@ onMounted(async () => {
 
   // 記事統計を取得
   try {
-    const articles = await $fetch<any[]>('/data/combined_articles.json')
+    const articles = await $fetch<Article[]>('/data/combined_articles.json')
     const qiitaArticles = articles.filter(a => a.source === 'Qiita')
     const zennArticles = articles.filter(a => a.source === 'Zenn')
     const noteArticles = articles.filter(a => a.source === 'note')
