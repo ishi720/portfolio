@@ -94,13 +94,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, watch } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { ref, computed, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
 import type { SortState, SortOption, Repo } from '~/types/models'
 import { formatDate, parseTags } from '~/composables/useUtils'
+import { usePagination, getInitialSortState } from '~/composables/usePagination'
 
 const route = useRoute()
-const router = useRouter()
 const repos = ref<Repo[]>([])
 const perPage = 18
 
@@ -113,62 +113,14 @@ const sortOptions: SortOption[] = [
   { key: 'name', label: 'リポジトリ名' }
 ]
 
-// URLクエリから初期値を取得
-const getInitialSortState = (): SortState => {
-  const sortKey = route.query.sort as string
-  const sortOrder = route.query.order as string
-  return {
-    key: sortOptions.some(o => o.key === sortKey) ? sortKey : 'updated_at',
-    order: (sortOrder === 'asc' || sortOrder === 'desc') ? sortOrder : 'desc'
-  }
-}
-
 // フィルター用のstate（URLクエリから初期化）
 const searchQuery = ref((route.query.q as string) || '')
 const selectedTag = ref((route.query.tag as string) || '')
-const sortState = ref<SortState>(getInitialSortState())
-
-// URLクエリを更新する関数
-const updateQuery = () => {
-  const query: Record<string, string | undefined> = {}
-
-  if (searchQuery.value) {
-    query.q = searchQuery.value
-  }
-  if (selectedTag.value) {
-    query.tag = selectedTag.value
-  }
-  if (sortState.value.key !== 'updated_at') {
-    query.sort = sortState.value.key
-  }
-  if (sortState.value.order !== 'desc') {
-    query.order = sortState.value.order
-  }
-  if (currentPageValue.value > 1) {
-    query.page = String(currentPageValue.value)
-  }
-
-  router.replace({ query })
-}
-
-// ページ番号の内部状態
-const currentPageValue = ref(Number(route.query.page) || 1)
-
-// URLのクエリパラメータからページ番号を取得
-const currentPage = computed({
-  get: () => {
-    return Math.max(1, Math.min(currentPageValue.value, totalPages.value || 1))
-  },
-  set: (value: number) => {
-    currentPageValue.value = value
-    updateQuery()
-  }
-})
+const sortState = ref<SortState>(getInitialSortState('updated_at'))
 
 onMounted(async () => {
   repos.value = await $fetch('/data/repos_list.json')
 })
-
 
 // 人気のタグ（使用回数が多い上位10件）
 const popularTags = computed(() => {
@@ -229,20 +181,24 @@ const filteredRepos = computed(() => {
   return result
 })
 
-const totalPages = computed(() => Math.ceil(filteredRepos.value.length / perPage))
-
-const paginatedRepos = computed(() => {
-  const start = (currentPage.value - 1) * perPage
-  const end = start + perPage
-  return filteredRepos.value.slice(start, end)
+// ページネーション
+const {
+  currentPage,
+  totalPages,
+  paginatedItems: paginatedRepos
+} = usePagination({
+  filteredItems: filteredRepos,
+  perPage,
+  defaultSortKey: 'updated_at',
+  sortState,
+  buildQueryFields: () => {
+    const query: Record<string, string | undefined> = {}
+    if (searchQuery.value) query.q = searchQuery.value
+    if (selectedTag.value) query.tag = selectedTag.value
+    return query
+  },
+  watchTargets: [searchQuery, selectedTag]
 })
-
-// フィルター変更時は1ページ目に戻ってURLを更新
-watch([searchQuery, selectedTag, sortState], () => {
-  currentPageValue.value = 1
-  updateQuery()
-}, { deep: true })
-
 
 const formatSize = (sizeKb?: number) => {
   if (!sizeKb || sizeKb === 0) return '0 KB'

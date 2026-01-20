@@ -83,12 +83,12 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, watch } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 import type { SortState, SortOption, Article, Platform } from '~/types/models'
 import { formatDate, parseTags } from '~/composables/useUtils'
+import { usePagination, getInitialSortState } from '~/composables/usePagination'
 
 const route = useRoute()
-const router = useRouter()
 const articles = ref<Article[]>([])
 const perPage = 18
 
@@ -105,21 +105,11 @@ const sortOptions: SortOption[] = [
   { key: 'likes', label: 'いいね数' }
 ]
 
-// URLクエリから初期値を取得
-const getInitialSortState = (): SortState => {
-  const sortKey = route.query.sort as string
-  const sortOrder = route.query.order as string
-  return {
-    key: sortOptions.some(o => o.key === sortKey) ? sortKey : 'date',
-    order: (sortOrder === 'asc' || sortOrder === 'desc') ? sortOrder : 'desc'
-  }
-}
-
 // フィルター用のstate（URLクエリから初期化）
 const searchQuery = ref((route.query.q as string) || '')
 const selectedTag = ref((route.query.tag as string) || '')
 const selectedPlatform = ref((route.query.platform as string) || '')
-const sortState = ref<SortState>(getInitialSortState())
+const sortState = ref<SortState>(getInitialSortState('date'))
 
 // プラットフォーム選択時のクラス
 const platformSelectClass = computed(() => {
@@ -131,69 +121,8 @@ const platformSelectClass = computed(() => {
   }
 })
 
-// URLクエリを更新する関数
-const updateQuery = () => {
-  const query: Record<string, string | undefined> = {}
-
-  if (searchQuery.value) {
-    query.q = searchQuery.value
-  }
-  if (selectedTag.value) {
-    query.tag = selectedTag.value
-  }
-  if (selectedPlatform.value) {
-    query.platform = selectedPlatform.value
-  }
-  if (sortState.value.key !== 'date') {
-    query.sort = sortState.value.key
-  }
-  if (sortState.value.order !== 'desc') {
-    query.order = sortState.value.order
-  }
-  if (currentPageValue.value > 1) {
-    query.page = String(currentPageValue.value)
-  }
-
-  router.replace({ query })
-}
-
-// ページ番号の内部状態
-const currentPageValue = ref(Number(route.query.page) || 1)
-
-// URLのクエリパラメータからページ番号を取得
-const currentPage = computed({
-  get: () => {
-    return Math.max(1, Math.min(currentPageValue.value, totalPages.value || 1))
-  },
-  set: (value: number) => {
-    currentPageValue.value = value
-    updateQuery()
-  }
-})
-
 onMounted(async () => {
   articles.value = await $fetch('/data/combined_articles.json')
-})
-
-
-// 人気のタグ（プラットフォームでフィルタリング後の記事から上位10件）
-const popularTags = computed(() => {
-  const tagCount: Record<string, number> = {}
-
-  // プラットフォームでフィルタリング
-  const targetArticles: Article[] = selectedPlatform.value
-    ? articles.value.filter((article: Article) => article.source === selectedPlatform.value)
-    : articles.value
-
-  targetArticles.forEach(article => {
-    parseTags(article.tags).forEach((tag: string) => {
-      tagCount[tag] = (tagCount[tag] || 0) + 1
-    })
-  })
-  return Object.entries(tagCount)
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 10)
-    .map(([tag]) => tag)
 })
 
 // フィルタリングされた記事一覧
@@ -235,12 +164,24 @@ const filteredArticles = computed(() => {
   return result
 })
 
-const totalPages = computed(() => Math.ceil(filteredArticles.value.length / perPage))
-
-const paginatedArticles = computed(() => {
-  const start = (currentPage.value - 1) * perPage
-  const end = start + perPage
-  return filteredArticles.value.slice(start, end)
+// ページネーション
+const {
+  currentPage,
+  totalPages,
+  paginatedItems: paginatedArticles
+} = usePagination({
+  filteredItems: filteredArticles,
+  perPage,
+  defaultSortKey: 'date',
+  sortState,
+  buildQueryFields: () => {
+    const query: Record<string, string | undefined> = {}
+    if (searchQuery.value) query.q = searchQuery.value
+    if (selectedTag.value) query.tag = selectedTag.value
+    if (selectedPlatform.value) query.platform = selectedPlatform.value
+    return query
+  },
+  watchTargets: [selectedTag, selectedPlatform, searchQuery]
 })
 
 // プラットフォーム変更時はタグ選択をクリア（タグ一覧が変わるため）
@@ -248,12 +189,25 @@ watch(selectedPlatform, () => {
   selectedTag.value = ''
 })
 
-// フィルター変更時は1ページ目に戻ってURLを更新
-watch([selectedTag, selectedPlatform, searchQuery, sortState], () => {
-  currentPageValue.value = 1
-  updateQuery()
-}, { deep: true })
+// 人気のタグ（プラットフォームでフィルタリング後の記事から上位10件）
+const popularTags = computed(() => {
+  const tagCount: Record<string, number> = {}
 
+  // プラットフォームでフィルタリング
+  const targetArticles: Article[] = selectedPlatform.value
+    ? articles.value.filter((article: Article) => article.source === selectedPlatform.value)
+    : articles.value
+
+  targetArticles.forEach(article => {
+    parseTags(article.tags).forEach((tag: string) => {
+      tagCount[tag] = (tagCount[tag] || 0) + 1
+    })
+  })
+  return Object.entries(tagCount)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10)
+    .map(([tag]) => tag)
+})
 </script>
 
 <style lang="scss" scoped>
