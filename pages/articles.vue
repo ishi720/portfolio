@@ -84,20 +84,16 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
-import type { SortState, SortOption, Article, Platform } from '~/types/models'
+import type { SortState, SortOption, Article } from '~/types/models'
 import { formatDate, parseTags } from '~/composables/useUtils'
 import { usePagination, getInitialSortState } from '~/composables/usePagination'
+import { ITEMS_PER_PAGE, TOP_TAGS_COUNT, PLATFORMS } from '~/constants'
 
 const route = useRoute()
 const articles = ref<Article[]>([])
-const perPage = 18
 
 // プラットフォーム一覧
-const platforms: Platform[] = [
-  { name: 'Qiita', class: 'platform-qiita' },
-  { name: 'Zenn', class: 'platform-zenn' },
-  { name: 'note', class: 'platform-note' }
-]
+const platforms = [...PLATFORMS]
 
 // ソートオプション
 const sortOptions: SortOption[] = [
@@ -171,7 +167,7 @@ const {
   paginatedItems: paginatedArticles
 } = usePagination({
   filteredItems: filteredArticles,
-  perPage,
+  perPage: ITEMS_PER_PAGE,
   defaultSortKey: 'date',
   sortState,
   buildQueryFields: () => {
@@ -205,7 +201,7 @@ const popularTags = computed(() => {
   })
   return Object.entries(tagCount)
     .sort((a, b) => b[1] - a[1])
-    .slice(0, 10)
+    .slice(0, TOP_TAGS_COUNT)
     .map(([tag]) => tag)
 })
 </script>

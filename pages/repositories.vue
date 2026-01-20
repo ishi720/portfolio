@@ -99,10 +99,10 @@ import { useRoute } from 'vue-router'
 import type { SortState, SortOption, Repo } from '~/types/models'
 import { formatDate, parseTags } from '~/composables/useUtils'
 import { usePagination, getInitialSortState } from '~/composables/usePagination'
+import { ITEMS_PER_PAGE, TOP_TAGS_COUNT } from '~/constants'
 
 const route = useRoute()
 const repos = ref<Repo[]>([])
-const perPage = 18
 
 // ソートオプション
 const sortOptions: SortOption[] = [
@@ -132,7 +132,7 @@ const popularTags = computed(() => {
   })
   return Object.entries(tagCount)
     .sort((a, b) => b[1] - a[1])
-    .slice(0, 10)
+    .slice(0, TOP_TAGS_COUNT)
     .map(([tag]) => tag)
 })
 
@@ -188,7 +188,7 @@ const {
   paginatedItems: paginatedRepos
 } = usePagination({
   filteredItems: filteredRepos,
-  perPage,
+  perPage: ITEMS_PER_PAGE,
   defaultSortKey: 'updated_at',
   sortState,
   buildQueryFields: () => {

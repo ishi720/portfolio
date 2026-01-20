@@ -94,6 +94,7 @@
 import { ref, computed } from 'vue'
 import { useCareer } from '~/composables/useCareer'
 import type { Project } from '~/composables/useCareer'
+import { TOP_TECHS_COUNT } from '~/constants'
 
 const { careers } = useCareer()
 
@@ -117,7 +118,7 @@ const popularTechs = computed(() => {
   })
   return Object.entries(techCount)
     .sort((a, b) => b[1] - a[1])
-    .slice(0, 15)
+    .slice(0, TOP_TECHS_COUNT)
     .map(([tech]) => tech)
 })
 </script>
