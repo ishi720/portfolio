@@ -76,6 +76,16 @@ $ npm install
 $ npm run dev
 ```
 
+## テスト
+
+```bash
+# ウォッチモードで実行
+$ npm test
+
+# 1回だけ実行
+$ npm run test:run
+```
+
 ## ビルド（静的ファイル生成）
 
 ```bash

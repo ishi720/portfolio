@@ -7,8 +7,10 @@ export interface TagCount {
   size: number
 }
 
-// 日本語（ひらがな、カタカナ、漢字）を含むかチェック
-const containsJapanese = (text: string): boolean => {
+/**
+ * 日本語（ひらがな、カタカナ、漢字）を含むかチェック
+ */
+export const containsJapanese = (text: string): boolean => {
   return /[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FAF]/.test(text)
 }
 

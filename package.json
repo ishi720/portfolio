@@ -7,7 +7,9 @@
     "dev": "nuxt dev",
     "build": "nuxt build",
     "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview",
+    "test": "vitest",
+    "test:run": "vitest run"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +19,11 @@
     "wordcloud": "^1.2.2"
   },
   "devDependencies": {
-    "sass": "^1.83.0"
+    "@nuxt/test-utils": "^3.23.0",
+    "@vitejs/plugin-vue": "^6.0.3",
+    "@vue/test-utils": "^2.4.6",
+    "happy-dom": "^20.3.4",
+    "sass": "^1.83.0",
+    "vitest": "^3.2.4"
   }
 }
