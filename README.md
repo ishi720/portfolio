@@ -20,29 +20,38 @@ portfolio/
 │       └── deploy.yml                # GitHub Actions デプロイ設定
 ├── assets/
 │   └── scss/
+│       ├── _variables.scss           # SCSS変数定義
+│       ├── _mixins.scss              # SCSSミックスイン
 │       └── main.scss                 # グローバルSCSS
-├── composables/
-│   ├── useCareer.ts                  # 経歴データ
-│   ├── useSkillCloud.ts              # ワードクラウド集計
-│   └── usePortfolio.ts               # ポートフォリオデータ
 ├── components/
 │   ├── Pagination.vue                # ページネーションコンポーネント
 │   ├── SearchBox.vue                 # 検索ボックスコンポーネント
+│   ├── SortControls.vue              # ソートコンポーネント
 │   ├── TagFilter.vue                 # タグフィルターコンポーネント
-│   └── SortControls.vue              # ソートコンポーネント
+│   └── WordCloud.vue                 # ワードクラウドコンポーネント
+├── composables/
+│   ├── useCareer.ts                  # 経歴データ
+│   ├── usePagination.ts              # ページネーション共通ロジック
+│   ├── usePortfolio.ts               # ポートフォリオデータ
+│   ├── useSkillCloud.ts              # ワードクラウド集計
+│   └── useUtils.ts                   # 共通ユーティリティ関数
+├── constants/
+│   └── index.ts                      # アプリケーション共通定数
 ├── layouts/
 │   └── default.vue                   # 共通レイアウト（ヘッダー/フッター）
 ├── pages/
 │   ├── index.vue                     # Home（/）
-│   ├── developments.vue              # Developments（/developments）
-│   ├── repositories.vue              # Repositories（/repositories）
 │   ├── articles.vue                  # Articles（/articles）
-│   └── career.vue                    # Career （/career） 
+│   ├── career.vue                    # Career（/career）
+│   ├── developments.vue              # Developments（/developments）
+│   └── repositories.vue              # Repositories（/repositories）
 ├── public/
 │   ├── data/                         # JSONデータファイル置き場
 │   │   ├── combined_articles.json    # Articlesに表示するQiita&Zennのデータ
 │   │   └── repos_list.json           # Githubのリポジトリデータ
 │   └── images/                       # 画像ファイル置き場
+├── types/
+│   └── models.ts                     # 共通の型定義
 ├── app.vue                           # ルートコンポーネント
 ├── nuxt.config.ts                    # Nuxt設定
 └── package.json
