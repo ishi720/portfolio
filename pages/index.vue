@@ -205,6 +205,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { usePortfolio } from '~/composables/usePortfolio'
 import { useSkillCloud } from '~/composables/useSkillCloud'
+import { fetchMultiple } from '~/composables/useFetchData'
 import WordCloud from '~/components/WordCloud.vue'
 import type { Article, Repo } from '~/types/models'
 
@@ -237,17 +238,20 @@ onMounted(async () => {
   window.addEventListener('resize', updateSize)
   await loadData()
 
-  // リポジトリ数を取得
-  try {
-    const repos = await $fetch<Repo[]>('/data/repos_list.json')
-    repoCount.value = repos.length
-  } catch (e) {
-    console.error('Failed to load repos:', e)
+  // リポジトリと記事データを並列取得
+  const { data, errors } = await fetchMultiple<{ repos: Repo[]; articles: Article[] }>([
+    { key: 'repos', url: '/data/repos_list.json' },
+    { key: 'articles', url: '/data/combined_articles.json' }
+  ])
+
+  // リポジトリ数を設定
+  if (data.repos) {
+    repoCount.value = data.repos.length
   }
 
-  // 記事統計を取得
-  try {
-    const articles = await $fetch<Article[]>('/data/combined_articles.json')
+  // 記事統計を設定
+  if (data.articles) {
+    const articles = data.articles as Article[]
     const qiitaArticles = articles.filter(a => a.source === 'Qiita')
     const zennArticles = articles.filter(a => a.source === 'Zenn')
     const noteArticles = articles.filter(a => a.source === 'note')
@@ -264,8 +268,6 @@ onMounted(async () => {
       posts: noteArticles.length,
       contributions: 0
     }
-  } catch (e) {
-    console.error('Failed to load articles:', e)
   }
 
   setTimeout(() => {

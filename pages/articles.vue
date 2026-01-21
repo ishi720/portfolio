@@ -87,10 +87,11 @@ import { useRoute } from 'vue-router'
 import type { SortState, SortOption, Article } from '~/types/models'
 import { formatDate, parseTags } from '~/composables/useUtils'
 import { usePagination, getInitialSortState } from '~/composables/usePagination'
+import { useFetchData } from '~/composables/useFetchData'
 import { ITEMS_PER_PAGE, TOP_TAGS_COUNT, PLATFORMS } from '~/constants'
 
 const route = useRoute()
-const articles = ref<Article[]>([])
+const { data: articles, error: articlesError, fetchData } = useFetchData<Article[]>([])
 
 // プラットフォーム一覧
 const platforms = [...PLATFORMS]
@@ -117,8 +118,8 @@ const platformSelectClass = computed(() => {
   }
 })
 
-onMounted(async () => {
-  articles.value = await $fetch('/data/combined_articles.json')
+onMounted(() => {
+  fetchData('/data/combined_articles.json')
 })
 
 // フィルタリングされた記事一覧

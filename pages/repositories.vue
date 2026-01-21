@@ -99,10 +99,11 @@ import { useRoute } from 'vue-router'
 import type { SortState, SortOption, Repo } from '~/types/models'
 import { formatDate, parseTags } from '~/composables/useUtils'
 import { usePagination, getInitialSortState } from '~/composables/usePagination'
+import { useFetchData } from '~/composables/useFetchData'
 import { ITEMS_PER_PAGE, TOP_TAGS_COUNT } from '~/constants'
 
 const route = useRoute()
-const repos = ref<Repo[]>([])
+const { data: repos, fetchData } = useFetchData<Repo[]>([])
 
 // ソートオプション
 const sortOptions: SortOption[] = [
@@ -118,8 +119,8 @@ const searchQuery = ref((route.query.q as string) || '')
 const selectedTag = ref((route.query.tag as string) || '')
 const sortState = ref<SortState>(getInitialSortState('updated_at'))
 
-onMounted(async () => {
-  repos.value = await $fetch('/data/repos_list.json')
+onMounted(() => {
+  fetchData('/data/repos_list.json')
 })
 
 // 人気のタグ（使用回数が多い上位10件）

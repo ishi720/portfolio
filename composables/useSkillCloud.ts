@@ -22,21 +22,40 @@ export const useSkillCloud = () => {
   const repos = ref<Array<{ tags: string | string[] }>>([])
   const isLoaded = ref(false)
 
+  const error = ref<string | null>(null)
+
   // JSONデータを読み込み
   const loadData = async () => {
-    try {
-      const baseURL = '/portfolio'
-      const [articlesData, reposData] = await Promise.all([
-        fetch(`${baseURL}/data/combined_articles.json`).then(res => res.json()),
-        fetch(`${baseURL}/data/repos_list.json`).then(res => res.json())
-      ])
-      articles.value = articlesData || []
-      repos.value = reposData || []
-      isLoaded.value = true
-    } catch (error) {
-      console.error('Failed to load data:', error)
-      isLoaded.value = true
+    const baseURL = '/portfolio'
+    error.value = null
+
+    const results = await Promise.allSettled([
+      fetch(`${baseURL}/data/combined_articles.json`).then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`)
+        return res.json()
+      }),
+      fetch(`${baseURL}/data/repos_list.json`).then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`)
+        return res.json()
+      })
+    ])
+
+    // 個別に結果を処理
+    if (results[0].status === 'fulfilled') {
+      articles.value = results[0].value || []
+    } else {
+      console.error('Failed to load articles:', results[0].reason)
+      error.value = 'Failed to load articles'
     }
+
+    if (results[1].status === 'fulfilled') {
+      repos.value = results[1].value || []
+    } else {
+      console.error('Failed to load repos:', results[1].reason)
+      error.value = error.value ? `${error.value}, repos` : 'Failed to load repos'
+    }
+
+    isLoaded.value = true
   }
 
   // タグを集計（大文字小文字を統一、日本語除外）
@@ -107,6 +126,7 @@ export const useSkillCloud = () => {
   return {
     aggregatedTags,
     isLoaded,
+    error,
     loadData
   }
 }
