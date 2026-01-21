@@ -107,10 +107,8 @@ const closeMenus = () => {
 </script>
 
 <style lang="scss" scoped>
-$primary: #4a90a4;
-$bg-dark: #1a1a2e;
-$text-white: #fff;
-$transition: all 0.3s ease;
+@use '~/assets/scss/variables' as *;
+@use '~/assets/scss/mixins' as *;
 
 // Dropdown styles
 .nav-dropdown {
@@ -125,7 +123,7 @@ $transition: all 0.3s ease;
 
 .dropdown-arrow {
   font-size: 0.6rem;
-  transition: $transition;
+  transition: $transition-smooth;
 }
 
 .dropdown-menu {
@@ -133,15 +131,15 @@ $transition: all 0.3s ease;
   top: 100%;
   left: 0;
   min-width: 180px;
-  background: rgba(26, 26, 46, 0.98);
+  background: rgba($bg-dark, 0.98);
   backdrop-filter: blur(10px);
-  border-radius: 8px;
+  border-radius: $radius;
   padding: 8px 0;
   margin-top: 8px;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
-  transition: $transition;
+  transition: $transition-smooth;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   z-index: 1001;
 }
@@ -150,17 +148,17 @@ $transition: all 0.3s ease;
   display: block;
   padding: 10px 20px;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.7);
-  transition: $transition;
+  color: rgba($text-white, 0.7);
+  transition: $transition-smooth;
 
   &:hover {
     color: $text-white;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba($text-white, 0.1);
   }
 }
 
 // Desktop hover behavior
-@media (min-width: 769px) {
+@include desktop {
   .nav-dropdown:hover {
     .dropdown-menu {
       opacity: 1;
@@ -175,7 +173,7 @@ $transition: all 0.3s ease;
 }
 
 // Mobile styles
-@media (max-width: 768px) {
+@include mobile {
   .nav-dropdown {
     width: 100%;
 
@@ -189,7 +187,7 @@ $transition: all 0.3s ease;
       opacity: 1;
       visibility: visible;
       transform: none;
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba($text-white, 0.05);
       border-radius: 4px;
       margin: 4px 0 0 0;
       padding: 8px 0;

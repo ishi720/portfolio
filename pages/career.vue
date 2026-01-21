@@ -126,6 +126,7 @@ const popularTechs = computed(() => {
 <style lang="scss" scoped>
 @use 'sass:color';
 @use '~/assets/scss/variables' as *;
+@use '~/assets/scss/mixins' as *;
 
 $radius: $radius-lg; // Override for this page
 $shadow: 0 4px 20px rgba(0, 0, 0, 0.08); // Custom shadow for career
@@ -404,7 +405,7 @@ $transition: $transition-smooth;
 }
 
 // レスポンシブ
-@media (max-width: 768px) {
+@include mobile {
   .career-section {
     padding: 40px 0 60px;
   }
@@ -418,8 +419,7 @@ $transition: $transition-smooth;
   }
 
   .company-meta {
-    flex-direction: column;
-    align-items: flex-start;
+    @include mobile-stack;
     gap: 8px;
   }
 
@@ -442,7 +442,7 @@ $transition: $transition-smooth;
   }
 
   .project-header {
-    flex-direction: column;
+    @include mobile-stack;
     gap: 8px;
   }
 
@@ -451,8 +451,7 @@ $transition: $transition-smooth;
   }
 
   .project-footer {
-    flex-direction: column;
-    align-items: flex-start;
+    @include mobile-stack;
   }
 }
 </style>

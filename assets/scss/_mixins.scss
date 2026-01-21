@@ -3,6 +3,38 @@
 // ============================================
 @use 'variables' as *;
 
+// ============================================
+// Responsive Mixins
+// ============================================
+
+// Mobile breakpoint wrapper
+@mixin mobile {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+// Desktop breakpoint wrapper
+@mixin desktop {
+  @media (min-width: $breakpoint-mobile + 1) {
+    @content;
+  }
+}
+
+// Common mobile patterns
+@mixin mobile-stack($align: flex-start) {
+  flex-direction: column;
+  align-items: $align;
+}
+
+@mixin mobile-grid-single {
+  grid-template-columns: 1fr;
+}
+
+// ============================================
+// Component Mixins
+// ============================================
+
 // Card base styles
 @mixin card-base($border-color: null) {
     background: $card-bg;

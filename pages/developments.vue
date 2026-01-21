@@ -111,6 +111,7 @@ const handleImgError = (e: Event) => {
 <style lang="scss" scoped>
 @use 'sass:color';
 @use '~/assets/scss/variables' as *;
+@use '~/assets/scss/mixins' as *;
 
 // LINE Stamps Section
 .line-section {
@@ -189,9 +190,9 @@ const handleImgError = (e: Event) => {
   line-height: 1.6;
 }
 
-@media (max-width: 768px) {
+@include mobile {
   .line-grid {
-    grid-template-columns: 1fr;
+    @include mobile-grid-single;
   }
 }
 </style>

@@ -208,6 +208,7 @@ const popularTags = computed(() => {
 
 <style lang="scss" scoped>
 @use '~/assets/scss/variables' as *;
+@use '~/assets/scss/mixins' as *;
 
 .result-count {
   font-size: 0.9rem;
@@ -279,7 +280,7 @@ const popularTags = computed(() => {
   }
 }
 
-@media (max-width: 768px) {
+@include mobile {
   .platform-select {
     width: 100%;
   }

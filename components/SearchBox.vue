@@ -26,6 +26,9 @@ defineEmits<{
 </script>
 
 <style lang="scss" scoped>
+@use '~/assets/scss/variables' as *;
+@use '~/assets/scss/mixins' as *;
+
 .search-box {
   flex: 1;
   min-width: 200px;
@@ -36,19 +39,19 @@ defineEmits<{
   width: 100%;
   padding: 10px 16px;
   font-size: 0.9rem;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  background: #fff;
-  transition: all 0.3s ease;
+  border: 1px solid $border;
+  border-radius: $radius;
+  background: $card-bg;
+  transition: $transition;
 
   &:focus {
     outline: none;
-    border-color: #4a90a4;
-    box-shadow: 0 0 0 3px rgba(74, 144, 164, 0.1);
+    border-color: $primary;
+    box-shadow: 0 0 0 3px rgba($primary, 0.1);
   }
 }
 
-@media (max-width: 768px) {
+@include mobile {
   .search-box {
     max-width: none;
   }

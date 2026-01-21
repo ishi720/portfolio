@@ -211,6 +211,7 @@ const formatSize = (sizeKb?: number) => {
 
 <style lang="scss" scoped>
 @use '~/assets/scss/variables' as *;
+@use '~/assets/scss/mixins' as *;
 
 .repos-section {
   padding: 60px 0 80px;
@@ -337,19 +338,17 @@ const formatSize = (sizeKb?: number) => {
   }
 }
 
-@media (max-width: 768px) {
+@include mobile {
   .repos-controls {
-    flex-direction: column;
-    align-items: stretch;
+    @include mobile-stack(stretch);
   }
 
   .repos-grid {
-    grid-template-columns: 1fr;
+    @include mobile-grid-single;
   }
 
   .repo-footer {
-    flex-direction: column;
-    align-items: flex-start;
+    @include mobile-stack;
     gap: 8px;
   }
 }

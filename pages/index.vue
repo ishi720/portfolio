@@ -295,6 +295,7 @@ const getSnsIcon = (name: string): string => {
 <style lang="scss" scoped>
 @use 'sass:color';
 @use '~/assets/scss/variables' as *;
+@use '~/assets/scss/mixins' as *;
 
 $radius: $radius-lg; // Override for this page
 
@@ -639,10 +640,9 @@ $radius: $radius-lg; // Override for this page
 }
 
 // Responsive
-@media (max-width: 768px) {
+@include mobile {
   .about-name-row {
-    flex-direction: column;
-    align-items: flex-start;
+    @include mobile-stack;
     gap: 8px;
   }
 
@@ -671,7 +671,7 @@ $radius: $radius-lg; // Override for this page
   }
 
   .contact-card {
-    flex-direction: column;
+    @include mobile-stack(center);
     text-align: center;
 
     .contact-info {
