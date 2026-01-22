@@ -88,6 +88,7 @@ import type { SortState, SortOption, Article } from '~/types/models'
 import { formatDate, parseTags } from '~/composables/useUtils'
 import { usePagination, getInitialSortState } from '~/composables/usePagination'
 import { useFetchData } from '~/composables/useFetchData'
+import { usePopularTags, filterBySearch, filterByTag, sortByDate, sortByNumber } from '~/composables/useFilteredList'
 import { ITEMS_PER_PAGE, TOP_TAGS_COUNT, PLATFORMS } from '~/constants'
 
 const route = useRoute()
@@ -132,31 +133,17 @@ const filteredArticles = computed(() => {
   }
 
   // 検索フィルター
-  if (searchQuery.value) {
-    const query = searchQuery.value.toLowerCase()
-    result = result.filter(article =>
-      article.title.toLowerCase().includes(query) ||
-      (article.tags && article.tags.toLowerCase().includes(query))
-    )
-  }
+  result = filterBySearch(result, searchQuery.value, (article: Article) => [article.title, article.tags])
 
   // タグフィルター
-  if (selectedTag.value) {
-    result = result.filter(article =>
-      parseTags(article.tags).includes(selectedTag.value)
-    )
-  }
+  result = filterByTag(result, selectedTag.value, (article: Article) => article.tags)
 
   // ソート
-  result.sort((a, b) => {
-    if (sortState.value.key === 'date') {
-      const dateA = new Date(a.published_at).getTime()
-      const dateB = new Date(b.published_at).getTime()
-      return sortState.value.order === 'desc' ? dateB - dateA : dateA - dateB
-    } else {
-      return sortState.value.order === 'desc' ? b.likes - a.likes : a.likes - b.likes
-    }
-  })
+  if (sortState.value.key === 'date') {
+    result = sortByDate(result, (a: Article) => a.published_at, sortState.value.order)
+  } else {
+    result = sortByNumber(result, (a: Article) => a.likes, sortState.value.order)
+  }
 
   return result
 })
@@ -186,25 +173,19 @@ watch(selectedPlatform, () => {
   selectedTag.value = ''
 })
 
-// 人気のタグ（プラットフォームでフィルタリング後の記事から上位10件）
-const popularTags = computed(() => {
-  const tagCount: Record<string, number> = {}
-
-  // プラットフォームでフィルタリング
-  const targetArticles: Article[] = selectedPlatform.value
+// プラットフォームでフィルタリングした記事
+const platformFilteredArticles = computed(() => {
+  return selectedPlatform.value
     ? articles.value.filter((article: Article) => article.source === selectedPlatform.value)
     : articles.value
-
-  targetArticles.forEach(article => {
-    parseTags(article.tags).forEach((tag: string) => {
-      tagCount[tag] = (tagCount[tag] || 0) + 1
-    })
-  })
-  return Object.entries(tagCount)
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, TOP_TAGS_COUNT)
-    .map(([tag]) => tag)
 })
+
+// 人気のタグ（プラットフォームでフィルタリング後の記事から上位10件）
+const popularTags = usePopularTags(
+  platformFilteredArticles,
+  (article: Article) => article.tags,
+  TOP_TAGS_COUNT
+)
 </script>
 
 <style lang="scss" scoped>

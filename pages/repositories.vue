@@ -100,6 +100,7 @@ import type { SortState, SortOption, Repo } from '~/types/models'
 import { formatDate, parseTags } from '~/composables/useUtils'
 import { usePagination, getInitialSortState } from '~/composables/usePagination'
 import { useFetchData } from '~/composables/useFetchData'
+import { usePopularTags, filterBySearch, filterByTag, sortByDate, sortByNumber, sortByString } from '~/composables/useFilteredList'
 import { ITEMS_PER_PAGE, TOP_TAGS_COUNT } from '~/constants'
 
 const route = useRoute()
@@ -124,60 +125,37 @@ onMounted(() => {
 })
 
 // 人気のタグ（使用回数が多い上位10件）
-const popularTags = computed(() => {
-  const tagCount: Record<string, number> = {}
-  repos.value.forEach(repo => {
-    parseTags(repo.tags).forEach(tag => {
-      tagCount[tag] = (tagCount[tag] || 0) + 1
-    })
-  })
-  return Object.entries(tagCount)
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, TOP_TAGS_COUNT)
-    .map(([tag]) => tag)
-})
+const popularTags = usePopularTags(
+  repos,
+  (repo: Repo) => repo.tags,
+  TOP_TAGS_COUNT
+)
 
 // フィルタリングされたリポジトリ
 const filteredRepos = computed(() => {
   let result = [...repos.value]
 
   // 検索フィルター
-  if (searchQuery.value) {
-    const query = searchQuery.value.toLowerCase()
-    result = result.filter(repo =>
-      repo.name.toLowerCase().includes(query) ||
-      (repo.description && repo.description.toLowerCase().includes(query)) ||
-      parseTags(repo.tags).some(tag => tag.toLowerCase().includes(query))
-    )
-  }
+  result = filterBySearch(result, searchQuery.value, (repo: Repo) => [
+    repo.name,
+    repo.description,
+    ...parseTags(repo.tags)
+  ])
 
   // タグフィルター
-  if (selectedTag.value) {
-    result = result.filter(repo =>
-      parseTags(repo.tags).includes(selectedTag.value)
-    )
-  }
+  result = filterByTag(result, selectedTag.value, (repo: Repo) => repo.tags)
 
   // ソート
-  result.sort((a, b) => {
-    if (sortState.value.key === 'name') {
-      const comparison = a.name.localeCompare(b.name)
-      return sortState.value.order === 'desc' ? -comparison : comparison
-    } else if (sortState.value.key === 'commit_count') {
-      const countA = a.commit_count || 0
-      const countB = b.commit_count || 0
-      return sortState.value.order === 'desc' ? countB - countA : countA - countB
-    } else if (sortState.value.key === 'size_kb') {
-      const sizeA = a.size_kb || 0
-      const sizeB = b.size_kb || 0
-      return sortState.value.order === 'desc' ? sizeB - sizeA : sizeA - sizeB
-    } else {
-      const key = sortState.value.key as 'updated_at' | 'created_at'
-      const dateA = new Date(a[key]).getTime()
-      const dateB = new Date(b[key]).getTime()
-      return sortState.value.order === 'desc' ? dateB - dateA : dateA - dateB
-    }
-  })
+  const { key, order } = sortState.value
+  if (key === 'name') {
+    result = sortByString(result, (r: Repo) => r.name, order)
+  } else if (key === 'commit_count') {
+    result = sortByNumber(result, (r: Repo) => r.commit_count || 0, order)
+  } else if (key === 'size_kb') {
+    result = sortByNumber(result, (r: Repo) => r.size_kb || 0, order)
+  } else {
+    result = sortByDate(result, (r: Repo) => r[key as 'updated_at' | 'created_at'], order)
+  }
 
   return result
 })
