@@ -1,216 +1,26 @@
 <template>
   <div>
-    <section class="hero">
-      <div class="hero-content">
-        <h1 class="hero-title">Welcome To<br><span>{{ profile.name }} Portfolio</span></h1>
-        <div class="scroll-indicator">
-          <span>scroll</span>
-          <div class="scroll-line"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about-me" class="about-section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">自己紹介</h2>
-          <p class="section-subtitle">About Me</p>
-        </div>
-        <div class="about-card">
-          <div class="about-content">
-            <div class="about-image">
-              <img :src="profile.avatar" :alt="profile.name">
-            </div>
-            <div class="about-text">
-              <div class="about-name-row">
-                <h3>{{ profile.name }}</h3>
-                <span class="about-role">フルスタックエンジニア</span>
-              </div>
-              <p class="about-bio">{{ profile.bio }}</p>
-              <!-- SNS Links -->
-              <div class="about-sns">
-                <a v-for="social in socials" :key="social.name" :href="social.url" target="_blank" class="about-sns-link">
-                  <img :src="getSnsIcon(social.name)" :alt="social.name">
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Future Goals Section -->
-    <section id="future-goals" class="goals-section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">今後やりたいこと</h2>
-          <p class="section-subtitle">Future Goals</p>
-        </div>
-        <div class="goals-card">
-          <ul class="goals-list">
-            <li v-for="goal in futureGoals" :key="goal">
-              <span class="checkbox-icon"></span>
-              {{ goal }}
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Achievements Section -->
-    <section id="achievements" class="achievements-section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">実績</h2>
-          <p class="section-subtitle">Achievements</p>
-        </div>
-        <div class="achievements-grid">
-          <NuxtLink to="/developments#npm-packages" class="achievement-card">
-            <div class="achievement-icon">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg" alt="npm">
-            </div>
-            <div class="achievement-info">
-              <div class="achievement-number">{{ npmPackages.length }}</div>
-              <div class="achievement-label">NPM Packages</div>
-            </div>
-          </NuxtLink>
-          <NuxtLink to="/developments#chrome-extensions" class="achievement-card">
-            <div class="achievement-icon">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/chrome/chrome-original.svg" alt="Chrome">
-            </div>
-            <div class="achievement-info">
-              <div class="achievement-number">{{ chromeExtensions.length }}</div>
-              <div class="achievement-label">Chrome Extensions</div>
-            </div>
-          </NuxtLink>
-          <NuxtLink to="/developments#line-stamps" class="achievement-card achievement-card-line">
-            <div class="achievement-icon">
-              <img src="https://cdn.simpleicons.org/line/06C755" alt="LINE">
-            </div>
-            <div class="achievement-info">
-              <div class="achievement-number">{{ lineStamps.length }}</div>
-              <div class="achievement-label">LINE Stamps</div>
-            </div>
-          </NuxtLink>
-          <NuxtLink to="/developments#web-services" class="achievement-card">
-            <div class="achievement-icon">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="Web">
-            </div>
-            <div class="achievement-info">
-              <div class="achievement-number">{{ developments.length }}</div>
-              <div class="achievement-label">Web Services</div>
-            </div>
-          </NuxtLink>
-          <NuxtLink to="/articles?platform=Qiita" class="achievement-card">
-            <div class="achievement-icon">
-              <img src="https://cdn.simpleicons.org/qiita/55C500" alt="Qiita">
-            </div>
-            <div class="achievement-info">
-              <div class="achievement-number">{{ qiitaStats.posts }}</div>
-              <div class="achievement-label">Qiita Posts</div>
-              <div class="achievement-sub">{{ qiitaStats.contributions }} contributions</div>
-            </div>
-          </NuxtLink>
-          <NuxtLink to="/articles?platform=Zenn" class="achievement-card">
-            <div class="achievement-icon">
-              <img src="https://cdn.simpleicons.org/zenn/3EA8FF" alt="Zenn">
-            </div>
-            <div class="achievement-info">
-              <div class="achievement-number">{{ zennStats.posts }}</div>
-              <div class="achievement-label">Zenn Posts</div>
-              <div class="achievement-sub">{{ zennStats.contributions }} contributions</div>
-            </div>
-          </NuxtLink>
-          <NuxtLink to="/articles?platform=note" class="achievement-card">
-            <div class="achievement-icon">
-              <img src="https://cdn.simpleicons.org/note/41C9B4" alt="Note">
-            </div>
-            <div class="achievement-info">
-              <div class="achievement-number">{{ noteStats.posts }}</div>
-              <div class="achievement-label">Note Posts</div>
-              <div class="achievement-sub">{{ noteStats.contributions }} contributions</div>
-            </div>
-          </NuxtLink>
-          <NuxtLink to="/repositories" class="achievement-card">
-            <div class="achievement-icon">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub">
-            </div>
-            <div class="achievement-info">
-              <div class="achievement-number">{{ repoCount }}</div>
-              <div class="achievement-label">GitHub Repositories</div>
-            </div>
-          </NuxtLink>
-          <NuxtLink to="/career" class="achievement-card achievement-card-career">
-            <div class="achievement-icon achievement-icon-career">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect width="20" height="14" x="2" y="7" rx="2" ry="2"/>
-                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-              </svg>
-            </div>
-            <div class="achievement-info">
-              <div class="achievement-label">Career History</div>
-            </div>
-          </NuxtLink>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">技術スタック</h2>
-          <p class="section-subtitle">Skills</p>
-        </div>
-        <div v-if="isReady && aggregatedTags.length > 0" class="wordcloud-wrapper">
-          <WordCloud
-            :words="aggregatedTags"
-            :size="cloudSize"
-            :min-font-size="10"
-            :max-font-size="48"
-          />
-        </div>
-        <div v-else class="loading">
-          <p>Loading skills...</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">お問い合わせ</h2>
-          <p class="section-subtitle">Contact</p>
-        </div>
-        <a :href="`mailto:${profile.email}`" class="contact-card">
-          <div class="contact-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect width="20" height="16" x="2" y="4" rx="2"/>
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-            </svg>
-          </div>
-          <div class="contact-info">
-            <h3 class="contact-label">Email</h3>
-            <span class="contact-email">{{ profile.email }}</span>
-          </div>
-        </a>
-      </div>
-    </section>
+    <SectionsHeroSection :name="profile.name" />
+    <SectionsAboutSection :profile="profile" :socials="socials" />
+    <SectionsGoalsSection :goals="futureGoals" />
+    <SectionsAchievementsSection :stats="achievementStats" />
+    <SectionsSkillsSection :tags="aggregatedTags" :size="cloudSize" :is-ready="isReady" />
+    <SectionsContactSection :email="profile.email" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { usePortfolio } from '~/composables/usePortfolio'
 import { useSkillCloud } from '~/composables/useSkillCloud'
 import { fetchMultiple } from '~/composables/useFetchData'
-import WordCloud from '~/components/WordCloud.vue'
 import type { Article, Repo } from '~/types/models'
 
+// コンポーネントはNuxtの自動インポートを使用
+// components/sections/ 配下のコンポーネントは SectionsXxx として利用可能
+
 const { profile, socials, developments, chromeExtensions, lineStamps, npmPackages } = usePortfolio()
-const { aggregatedTags, isLoaded, loadData } = useSkillCloud()
+const { aggregatedTags, loadData } = useSkillCloud()
 
 const cloudSize = ref(500)
 const isReady = ref(false)
@@ -227,6 +37,18 @@ const futureGoals = [
   'まだ触ったことない技術の開拓',
 ]
 
+// 実績統計（computed）
+const achievementStats = computed(() => ({
+  npmPackages: npmPackages.length,
+  chromeExtensions: chromeExtensions.length,
+  lineStamps: lineStamps.length,
+  developments: developments.length,
+  qiita: qiitaStats.value,
+  zenn: zennStats.value,
+  note: noteStats.value,
+  repos: repoCount.value
+}))
+
 const updateSize = () => {
   if (typeof window !== 'undefined') {
     cloudSize.value = Math.min(window.innerWidth - 48, 500)
@@ -239,7 +61,7 @@ onMounted(async () => {
   await loadData()
 
   // リポジトリと記事データを並列取得
-  const { data, errors } = await fetchMultiple<{ repos: Repo[]; articles: Article[] }>([
+  const { data } = await fetchMultiple<{ repos: Repo[]; articles: Article[] }>([
     { key: 'repos', url: '/data/repos_list.json' },
     { key: 'articles', url: '/data/combined_articles.json' }
   ])
@@ -278,31 +100,15 @@ onMounted(async () => {
 onUnmounted(() => {
   window.removeEventListener('resize', updateSize)
 })
-
-const getSnsIcon = (name: string): string => {
-  const icons: Record<string, string> = {
-    'GitHub': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg',
-    'Qiita': 'https://cdn.simpleicons.org/qiita/55C500',
-    'Zenn': 'https://cdn.simpleicons.org/zenn/3EA8FF',
-    'Note': 'https://cdn.simpleicons.org/note/41C9B4',
-    'npm': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg',
-    'LINE Store': 'https://cdn.simpleicons.org/line/06C755',
-    'Wantedly': 'https://cdn.simpleicons.org/wantedly/21BDDB',
-    'X': 'https://cdn.simpleicons.org/x/000000',
-  }
-  return icons[name] || 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/devicon/devicon-original.svg'
-}
 </script>
 
 <style lang="scss" scoped>
-@use 'sass:color';
 @use '~/assets/scss/variables' as *;
-@use '~/assets/scss/mixins' as *;
 
-$radius: $radius-lg; // Override for this page
+$radius: $radius-lg;
 
-// Section Header (タイトル + サブタイトル + 装飾)
-.section-header {
+// Section Header (共通スタイル - 子コンポーネントから継承)
+:deep(.section-header) {
   text-align: center;
   margin: 48px 0 32px;
   position: relative;
@@ -320,8 +126,7 @@ $radius: $radius-lg; // Override for this page
   }
 }
 
-// Section Subtitle
-.section-subtitle {
+:deep(.section-subtitle) {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -337,348 +142,6 @@ $radius: $radius-lg; // Override for this page
     width: 40px;
     height: 1px;
     background: $border;
-  }
-}
-
-// About Section
-.about-section {
-  padding: 60px 0 40px;
-}
-
-.about-card {
-  background: $card-bg;
-  border-radius: $radius;
-  padding: 32px;
-  box-shadow: $shadow;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.about-name-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
-  flex-wrap: wrap;
-
-  h3 {
-    font-family: $font-en;
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin: 0;
-  }
-}
-
-.about-role {
-  font-size: 0.85rem;
-  color: $primary;
-  background: rgba($primary, 0.1);
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-weight: 500;
-}
-
-.about-bio {
-  color: $text-light;
-  line-height: 1.8;
-  margin-bottom: 20px;
-}
-
-// About SNS Links
-.about-sns {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.about-sns-link {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: $bg;
-  border-radius: 50%;
-  transition: $transition;
-
-  img {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-    transition: $transition;
-  }
-
-  &:hover {
-    background: $primary;
-    transform: translateY(-2px);
-
-    img {
-      filter: brightness(0) invert(1);
-    }
-  }
-}
-
-// Future Goals Section
-.goals-section {
-  padding: 40px 0;
-  background: linear-gradient(180deg, $bg 0%, color.adjust($bg, $lightness: -2%) 100%);
-}
-
-.goals-card {
-  background: $card-bg;
-  border-radius: $radius;
-  padding: 32px;
-  box-shadow: $shadow;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.goals-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-
-  li {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 1rem;
-    color: $text;
-    line-height: 1.6;
-    padding: 10px 0;
-
-    &:last-child {
-      border-bottom: none;
-    }
-  }
-
-  .checkbox-icon {
-    width: 18px;
-    height: 18px;
-    border: 2px solid $border;
-    border-radius: 4px;
-    flex-shrink: 0;
-    background: $card-bg;
-  }
-}
-
-// Achievements Section
-.achievements-section {
-  padding: 60px 0;
-}
-
-.achievements-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.achievement-card {
-  background: $card-bg;
-  border-radius: $radius;
-  padding: 24px;
-  box-shadow: $shadow;
-  transition: $transition;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  border: 2px solid transparent;
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: $shadow-hover;
-    border-color: $primary;
-
-    .achievement-icon img,
-    .achievement-icon svg {
-      transform: scale(1.1);
-    }
-  }
-
-  &-line:hover {
-    border-color: $color-line;
-  }
-
-  &-career {
-    background: linear-gradient(135deg, $primary 0%, $primary-dark 100%);
-    color: $text-white;
-
-    .achievement-label {
-      color: $text-white;
-      font-size: 1rem;
-    }
-
-    &:hover {
-      border-color: transparent;
-    }
-  }
-}
-
-.achievement-icon {
-  width: 48px;
-  height: 48px;
-  flex-shrink: 0;
-
-  img, svg {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transition: $transition;
-  }
-
-  &-career {
-    color: $text-white;
-  }
-}
-
-.achievement-info {
-  flex: 1;
-}
-
-.achievement-number {
-  font-family: $font-en;
-  font-size: 2rem;
-  font-weight: 700;
-  color: $primary;
-  line-height: 1;
-  margin-bottom: 4px;
-}
-
-.achievement-card-line .achievement-number {
-  color: $color-line;
-}
-
-.achievement-label {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: $text;
-}
-
-.achievement-sub {
-  font-size: 0.75rem;
-  color: $text-light;
-  margin-top: 2px;
-}
-
-// Skills Section
-.skills-section {
-  padding: 60px 0;
-  background: linear-gradient(180deg, $bg 0%, color.adjust($bg, $lightness: -2%) 100%);
-}
-
-.wordcloud-wrapper {
-  padding: 24px;
-  display: flex;
-  justify-content: center;
-}
-
-.loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 400px;
-  color: $text-light;
-}
-
-// Contact Section
-.contact-section {
-  padding: 60px 0 80px;
-}
-
-.contact-card {
-  background: $card-bg;
-  border-radius: $radius;
-  padding: 32px;
-  box-shadow: $shadow;
-  transition: $transition;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  max-width: 1000px;
-  margin: 0 auto;
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: $shadow-hover;
-
-    .contact-icon svg {
-      transform: scale(1.1);
-    }
-  }
-}
-
-.contact-icon {
-  width: 56px;
-  height: 56px;
-  color: $primary;
-  flex-shrink: 0;
-
-  svg {
-    width: 100%;
-    height: 100%;
-    transition: $transition;
-  }
-}
-
-.contact-info {
-  text-align: left;
-}
-
-.contact-label {
-  font-family: $font-en;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: $text;
-  margin: 0 0 4px;
-}
-
-.contact-email {
-  font-size: 0.9rem;
-  color: $primary;
-  word-break: break-all;
-}
-
-// Responsive
-@include mobile {
-  .about-name-row {
-    @include mobile-stack;
-    gap: 8px;
-  }
-
-  .about-sns {
-    justify-content: flex-start;
-  }
-
-  .goals-list {
-    padding-left: 20px;
-
-    li {
-      font-size: 0.95rem;
-    }
-  }
-
-  .achievements-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .achievement-card {
-    padding: 20px;
-  }
-
-  .achievement-number {
-    font-size: 1.75rem;
-  }
-
-  .contact-card {
-    @include mobile-stack(center);
-    text-align: center;
-
-    .contact-info {
-      text-align: center;
-    }
   }
 }
 </style>
