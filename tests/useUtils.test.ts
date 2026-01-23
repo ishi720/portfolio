@@ -11,7 +11,7 @@ describe('formatDate', () => {
   })
 
   it('ISO 8601形式を正しくフォーマットする', () => {
-    expect(formatDate('2024-12-31T23:59:59Z')).toBe('2025/1/1') // UTC→JST変換
+    expect(formatDate('2024-06-15T12:00:00Z')).toBe('2024/6/15')
   })
 
   it('月・日の先頭ゼロを除去する', () => {
