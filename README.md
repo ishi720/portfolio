@@ -9,6 +9,7 @@ Nuxt.js製のポートフォリオサイトです。
 # Badge
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f49aa0ee56264df093952a3aced2fbb0)](https://app.codacy.com/gh/ishi720/portfolio/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+[![Coverage Status](https://coveralls.io/repos/github/ishi720/portfolio/badge.svg?branch=main)](https://coveralls.io/github/ishi720/portfolio?branch=main)
 
 
 ## ディレクトリ構成
