@@ -2,7 +2,7 @@
   <section id="future-goals" class="goals-section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">今後やりたいこと</h2>
+        <h2 class="section-title">個人的に挑戦したいこと</h2>
         <p class="section-subtitle">Future Goals</p>
       </div>
       <div class="goals-card">

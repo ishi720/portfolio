@@ -29,7 +29,7 @@ const qiitaStats = ref({ posts: 0, contributions: 0 })
 const zennStats = ref({ posts: 0, contributions: 0 })
 const noteStats = ref({ posts: 0, contributions: 0 })
 
-// 今後やりたいこと
+// 個人的に挑戦したいこと
 const futureGoals = [
   'AI（ディープラーニング・深層学習）',
   'Unityでのゲーム開発',
