@@ -53,8 +53,6 @@ const getSnsIcon = (name: string): string => {
     'Note': 'https://cdn.simpleicons.org/note/41C9B4',
     'npm': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg',
     'LINE Store': 'https://cdn.simpleicons.org/line/06C755',
-    'Wantedly': 'https://cdn.simpleicons.org/wantedly/21BDDB',
-    'X': 'https://cdn.simpleicons.org/x/000000',
   }
   return icons[name] || 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/devicon/devicon-original.svg'
 }

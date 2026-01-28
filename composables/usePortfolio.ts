@@ -13,8 +13,6 @@ export const usePortfolio = () => {
         { name: 'Note', url: 'https://note.com/ishi720' },
         { name: 'npm', url: 'https://www.npmjs.com/~ishi720' },
         { name: 'LINE Store', url: 'https://store.line.me/stickershop/author/5872119/ja' },
-        { name: 'Wantedly', url: 'https://www.wantedly.com/id/ishi720' },
-        { name: 'X', url: 'https://x.com/ishi720' },
     ]
 
     const developments = [
