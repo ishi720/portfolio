@@ -5,9 +5,9 @@
     "tags": ["p5js", "reactjs"],
     "description": "2048パズル",
     "created_at": "2025-11-07T13:49:27Z",
-    "updated_at": "2025-11-10T00:16:03Z",
-    "commit_count": 20,
-    "size_kb": 82
+    "updated_at": "2026-01-24T13:33:36Z",
+    "commit_count": 22,
+    "size_kb": 86
   },
   {
     "name": "adhere-scroll",
@@ -265,9 +265,9 @@
     "tags": ["r", "githubapi"],
     "description": "GitHubユーザーのリポジトリを分析し、可視化するRスクリプトです。",
     "created_at": "2025-12-15T23:07:29Z",
-    "updated_at": "2026-01-01T01:14:00Z",
-    "commit_count": 42,
-    "size_kb": 4443
+    "updated_at": "2026-01-18T11:33:31Z",
+    "commit_count": 43,
+    "size_kb": 6013
   },
   {
     "name": "gulp-package-version-format",
@@ -277,7 +277,7 @@
     "created_at": "2018-07-29T04:36:32Z",
     "updated_at": "2025-07-15T16:53:53Z",
     "commit_count": 123,
-    "size_kb": 883
+    "size_kb": 1108
   },
   {
     "name": "HoneycombPixelArt",
@@ -330,6 +330,16 @@
     "size_kb": 8
   },
   {
+    "name": "josushi-quiz-app",
+    "url": "https://github.com/ishi720/josushi-quiz-app",
+    "tags": ["expo", "react-native"],
+    "description": "助数詞クイズ",
+    "created_at": "2026-01-26T12:43:38Z",
+    "updated_at": "2026-01-31T12:23:43Z",
+    "commit_count": 11,
+    "size_kb": 206
+  },
+  {
     "name": "jquery-textfit",
     "url": "https://github.com/ishi720/jquery-textfit",
     "tags": ["javascript", "jquery", "npm-package"],
@@ -345,9 +355,9 @@
     "tags": "javascript",
     "description": "JSで作ったキーボードUI",
     "created_at": "2023-08-29T14:59:12Z",
-    "updated_at": "2025-10-12T13:44:32Z",
-    "commit_count": 142,
-    "size_kb": 188
+    "updated_at": "2026-01-20T10:42:26Z",
+    "commit_count": 143,
+    "size_kb": 190
   },
   {
     "name": "levenshtein_distance_search",
@@ -405,9 +415,9 @@
     "tags": ["javascript", "p5js"],
     "description": "リンク機構の軌道を描画するシミュレーションするプログラム",
     "created_at": "2025-06-19T14:22:37Z",
-    "updated_at": "2025-11-02T00:05:11Z",
-    "commit_count": 47,
-    "size_kb": 95
+    "updated_at": "2026-01-24T14:46:24Z",
+    "commit_count": 48,
+    "size_kb": 97
   },
   {
     "name": "MineSweeper3d",
@@ -480,6 +490,16 @@
     "size_kb": 585
   },
   {
+    "name": "pitch-detector",
+    "url": "https://github.com/ishi720/pitch-detector",
+    "tags": ["javascript", "nextjs", "react"],
+    "description": "",
+    "created_at": "2026-01-25T11:06:35Z",
+    "updated_at": "2026-01-25T12:27:38Z",
+    "commit_count": 1,
+    "size_kb": 62
+  },
+  {
     "name": "PolygonalGeometricPattern",
     "url": "https://github.com/ishi720/PolygonalGeometricPattern",
     "tags": "javascript",
@@ -495,9 +515,9 @@
     "tags": ["nustjs", "typescript", "vue"],
     "description": "ishi720のポートフォリオ",
     "created_at": "2024-12-14T15:01:00Z",
-    "updated_at": "2026-01-18T11:18:34Z",
-    "commit_count": 147,
-    "size_kb": 7859
+    "updated_at": "2026-01-30T11:49:10Z",
+    "commit_count": 173,
+    "size_kb": 7758
   },
   {
     "name": "qiita-content",
@@ -505,9 +525,9 @@
     "tags": "qiita",
     "description": "Qiita CLI",
     "created_at": "2024-11-25T12:03:14Z",
-    "updated_at": "2025-12-14T10:25:00Z",
-    "commit_count": 31,
-    "size_kb": 234
+    "updated_at": "2026-01-26T23:28:42Z",
+    "commit_count": 33,
+    "size_kb": 254
   },
   {
     "name": "qiita_analytics",
@@ -597,7 +617,7 @@
     "created_at": "2023-06-25T10:24:29Z",
     "updated_at": "2025-05-24T00:27:26Z",
     "commit_count": 18,
-    "size_kb": 524
+    "size_kb": 594
   },
   {
     "name": "ReuleauxPhysics",
@@ -605,9 +625,9 @@
     "tags": "javascript",
     "description": "ルーローの三角形で物理演算",
     "created_at": "2025-12-31T00:39:08Z",
-    "updated_at": "2025-12-31T12:18:04Z",
-    "commit_count": 18,
-    "size_kb": 30
+    "updated_at": "2026-01-24T13:21:37Z",
+    "commit_count": 21,
+    "size_kb": 36
   },
   {
     "name": "rss_to_json",
