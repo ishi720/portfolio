@@ -1,6 +1,10 @@
 <template>
   <div>
-    <SectionsHeroSection :name="profile.name" />
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-title">{{ profile.name }} Portfolio</h1>
+      </div>
+    </section>
     <SectionsAboutSection :profile="profile" :socials="socials" />
     <SectionsGoalsSection :goals="futureGoals" />
     <SectionsAchievementsSection :stats="achievementStats" />
