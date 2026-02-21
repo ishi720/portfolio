@@ -1,11 +1,19 @@
 [
     {
+        "published_at": "2026-02-16T06:32:37+09:00",
+        "url": "https://qiita.com/ishi720/items/29eb2cf5ee6e83222deb",
+        "title": "Juliaで円周率10万桁を解析して数字の規則性を可視化してみた",
+        "tags": "Julia, 円周率",
+        "source": "Qiita",
+        "likes": 2
+    },
+    {
         "published_at": "2026-02-01T00:44:05+09:00",
         "url": "https://note.com/ishi720/n/n6f71db1eb1f7",
         "title": "「自分で考えろ」「勝手なことするな」という矛盾が生まれる理由",
         "tags": "コミュニケーション, 働き方, 仕事論, 上司部下, 会社あるある",
         "source": "note",
-        "likes": 0
+        "likes": 4
     },
     {
         "published_at": "2026-01-18T10:17:45+09:00",
@@ -21,7 +29,7 @@
         "title": "なぜ「無駄なミーティング」と感じてしまうのか？",
         "tags": "ミーティング, 打合せ",
         "source": "note",
-        "likes": 1
+        "likes": 2
     },
     {
         "published_at": "2025-12-29T10:35:20+09:00",
@@ -29,7 +37,7 @@
         "title": "アイディアが出ない原因は「固定概念」かもしれない",
         "tags": "アイディア, 固定観念",
         "source": "note",
-        "likes": 1
+        "likes": 3
     },
     {
         "published_at": "2025-12-07T18:05:40+09:00",
@@ -37,7 +45,7 @@
         "title": "ブラウザで動く流体力学ラテアート☕",
         "tags": "JavaScript, 流体力学",
         "source": "Qiita",
-        "likes": 8
+        "likes": 9
     },
     {
         "published_at": "2025-12-07T17:25:26+09:00",
@@ -45,7 +53,7 @@
         "title": "ラバーペンシル現象をWEBで再現してみた",
         "tags": "JavaScript, ラバーペンシル現象",
         "source": "Qiita",
-        "likes": 21
+        "likes": 23
     },
     {
         "published_at": "2025-11-27T22:59:12+09:00",
@@ -253,7 +261,7 @@
         "title": "誕生日のパラドックスをpythonを使って検証してみた",
         "tags": "matplotlib, Python3, 確率, 誕生日のパラドックス",
         "source": "Qiita",
-        "likes": 5
+        "likes": 7
     },
     {
         "published_at": "2024-03-18T08:41:57+09:00",
@@ -269,7 +277,7 @@
         "title": "フルスタックエンジニアの悩み",
         "tags": "エンジニアのキャリア, フルスタックエンジニア",
         "source": "Qiita",
-        "likes": 124
+        "likes": 123
     },
     {
         "published_at": "2024-01-09T08:08:06+09:00",
@@ -445,7 +453,7 @@
         "title": "色んなサイトの検索ボックスのUI/UXを本格的に調査してみる①",
         "tags": "UIUX, 検索ボックス",
         "source": "Qiita",
-        "likes": 6
+        "likes": 7
     },
     {
         "published_at": "2023-07-30T12:22:03+09:00",
@@ -485,7 +493,7 @@
         "title": "PowerShellを使って、Excel資料作成の仕上げを短縮する",
         "tags": "Excel, PowerShell, 仕事効率化",
         "source": "Qiita",
-        "likes": 9
+        "likes": 10
     },
     {
         "published_at": "2023-06-23T23:29:26+09:00",
