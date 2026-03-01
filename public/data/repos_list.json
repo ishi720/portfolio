@@ -155,9 +155,9 @@
     "tags": ["javascript", "p5js"],
     "description": "p5.jsを使って図形の描画",
     "created_at": "2025-01-04T11:49:41Z",
-    "updated_at": "2025-11-01T23:34:56Z",
-    "commit_count": 49,
-    "size_kb": 124
+    "updated_at": "2026-02-21T11:54:22Z",
+    "commit_count": 66,
+    "size_kb": 75
   },
   {
     "name": "excelFinishSave",
@@ -187,7 +187,7 @@
     "created_at": "2020-04-18T11:29:47Z",
     "updated_at": "2024-05-05T14:13:53Z",
     "commit_count": 50,
-    "size_kb": 10202
+    "size_kb": 10272
   },
   {
     "name": "ferrisWheelRotate",
@@ -255,9 +255,9 @@
     "tags": "python3",
     "description": "特定ユーザーのqiitaとzennの記事を取得する",
     "created_at": "2024-12-30T15:26:05Z",
-    "updated_at": "2025-12-29T02:13:28Z",
-    "commit_count": 11,
-    "size_kb": 13
+    "updated_at": "2026-02-03T11:53:57Z",
+    "commit_count": 12,
+    "size_kb": 14
   },
   {
     "name": "GithubDashboard",
@@ -265,9 +265,9 @@
     "tags": ["r", "githubapi"],
     "description": "GitHubユーザーのリポジトリを分析し、可視化するRスクリプトです。",
     "created_at": "2025-12-15T23:07:29Z",
-    "updated_at": "2026-01-18T11:33:31Z",
-    "commit_count": 43,
-    "size_kb": 6013
+    "updated_at": "2026-02-01T01:29:54Z",
+    "commit_count": 44,
+    "size_kb": 7547
   },
   {
     "name": "gulp-package-version-format",
@@ -305,8 +305,8 @@
     "tags": ["honeycomb", "javascript", "react", "reversi"],
     "description": "ハニカム構造のリバーシ",
     "created_at": "2025-12-11T13:33:13Z",
-    "updated_at": "2025-12-22T22:48:50Z",
-    "commit_count": 18,
+    "updated_at": "2026-02-09T11:04:25Z",
+    "commit_count": 19,
     "size_kb": 73
   },
   {
@@ -335,9 +335,9 @@
     "tags": ["expo", "react-native"],
     "description": "助数詞クイズ",
     "created_at": "2026-01-26T12:43:38Z",
-    "updated_at": "2026-01-31T12:23:43Z",
-    "commit_count": 11,
-    "size_kb": 206
+    "updated_at": "2026-02-02T12:41:49Z",
+    "commit_count": 18,
+    "size_kb": 249
   },
   {
     "name": "jquery-textfit",
@@ -495,9 +495,19 @@
     "tags": ["javascript", "nextjs", "react"],
     "description": "",
     "created_at": "2026-01-25T11:06:35Z",
-    "updated_at": "2026-01-25T12:27:38Z",
-    "commit_count": 1,
-    "size_kb": 62
+    "updated_at": "2026-02-03T12:14:34Z",
+    "commit_count": 2,
+    "size_kb": 63
+  },
+  {
+    "name": "pi_digit_analysis",
+    "url": "https://github.com/ishi720/pi_digit_analysis",
+    "tags": "julia",
+    "description": "円周率の小数点で出てきた数字を集計",
+    "created_at": "2026-02-10T12:00:13Z",
+    "updated_at": "2026-02-23T11:57:30Z",
+    "commit_count": 15,
+    "size_kb": 366
   },
   {
     "name": "PolygonalGeometricPattern",
@@ -515,9 +525,9 @@
     "tags": ["nustjs", "typescript", "vue"],
     "description": "ishi720のポートフォリオ",
     "created_at": "2024-12-14T15:01:00Z",
-    "updated_at": "2026-01-30T11:49:10Z",
-    "commit_count": 173,
-    "size_kb": 7758
+    "updated_at": "2026-02-21T12:00:43Z",
+    "commit_count": 177,
+    "size_kb": 8285
   },
   {
     "name": "qiita-content",
@@ -525,9 +535,9 @@
     "tags": "qiita",
     "description": "Qiita CLI",
     "created_at": "2024-11-25T12:03:14Z",
-    "updated_at": "2026-01-26T23:28:42Z",
-    "commit_count": 33,
-    "size_kb": 254
+    "updated_at": "2026-02-15T23:23:46Z",
+    "commit_count": 34,
+    "size_kb": 258
   },
   {
     "name": "qiita_analytics",
@@ -615,9 +625,9 @@
     "tags": ["angular", "fortawesome", "jquery", "materialize-css", "gulp"],
     "description": "正規表現チェッカー",
     "created_at": "2023-06-25T10:24:29Z",
-    "updated_at": "2025-05-24T00:27:26Z",
-    "commit_count": 18,
-    "size_kb": 594
+    "updated_at": "2026-02-24T14:02:33Z",
+    "commit_count": 22,
+    "size_kb": 672
   },
   {
     "name": "ReuleauxPhysics",
@@ -775,9 +785,9 @@
     "tags": ["nuxtjs", "typescript", "vue"],
     "description": "技術情報をまとめたカタログサイトです。",
     "created_at": "2026-01-02T12:08:18Z",
-    "updated_at": "2026-01-16T11:36:49Z",
-    "commit_count": 41,
-    "size_kb": 373
+    "updated_at": "2026-02-22T12:46:18Z",
+    "commit_count": 50,
+    "size_kb": 418
   },
   {
     "name": "template-delimiter-customizer",
