@@ -1,11 +1,19 @@
 [
     {
+        "published_at": "2026-03-25T08:02:37+09:00",
+        "url": "https://qiita.com/ishi720/items/de986f1c92d1769c8f47",
+        "title": "WEBブラウザで動く六角形オセロを作ってみた",
+        "tags": "JavaScript, オセロ, React",
+        "source": "Qiita",
+        "likes": 6
+    },
+    {
         "published_at": "2026-02-16T06:32:37+09:00",
         "url": "https://qiita.com/ishi720/items/29eb2cf5ee6e83222deb",
         "title": "Juliaで円周率10万桁を解析して数字の規則性を可視化してみた",
         "tags": "Julia, 円周率",
         "source": "Qiita",
-        "likes": 2
+        "likes": 4
     },
     {
         "published_at": "2026-02-01T00:44:05+09:00",
@@ -13,7 +21,7 @@
         "title": "「自分で考えろ」「勝手なことするな」という矛盾が生まれる理由",
         "tags": "コミュニケーション, 働き方, 仕事論, 上司部下, 会社あるある",
         "source": "note",
-        "likes": 4
+        "likes": 6
     },
     {
         "published_at": "2026-01-18T10:17:45+09:00",
@@ -29,7 +37,7 @@
         "title": "なぜ「無駄なミーティング」と感じてしまうのか？",
         "tags": "ミーティング, 打合せ",
         "source": "note",
-        "likes": 2
+        "likes": 4
     },
     {
         "published_at": "2025-12-29T10:35:20+09:00",
@@ -37,7 +45,7 @@
         "title": "アイディアが出ない原因は「固定概念」かもしれない",
         "tags": "アイディア, 固定観念",
         "source": "note",
-        "likes": 3
+        "likes": 4
     },
     {
         "published_at": "2025-12-07T18:05:40+09:00",
@@ -101,7 +109,7 @@
         "title": "リンク機構の軌跡を可視化するメカニカルアートをp5.jsで作ってみた",
         "tags": "JavaScript, p5.js, リンク機構",
         "source": "Qiita",
-        "likes": 26
+        "likes": 27
     },
     {
         "published_at": "2025-07-01T00:03:28+09:00",
@@ -157,7 +165,7 @@
         "title": "正月からp5.jsを使って正方形を描いてみた",
         "tags": "JavaScript, p5.js",
         "source": "Qiita",
-        "likes": 10
+        "likes": 11
     },
     {
         "published_at": "2024-12-28T12:26:58+09:00",
@@ -165,7 +173,7 @@
         "title": "🏪JavaScriptのWeb Audio APIで「ファミマの入店音」を奏でる🏪",
         "tags": "JavaScript, WebAudioAPI",
         "source": "Qiita",
-        "likes": 35
+        "likes": 34
     },
     {
         "published_at": "2024-12-18T21:11:13+09:00",
@@ -189,7 +197,7 @@
         "title": "テキストをコピペするときにスタイルごとコピーされちゃうのってどんな仕組み？",
         "tags": "JavaScript, clipboard, リッチテキスト",
         "source": "Qiita",
-        "likes": 322
+        "likes": 321
     },
     {
         "published_at": "2024-10-27T23:46:28+09:00",
@@ -277,7 +285,7 @@
         "title": "フルスタックエンジニアの悩み",
         "tags": "エンジニアのキャリア, フルスタックエンジニア",
         "source": "Qiita",
-        "likes": 123
+        "likes": 124
     },
     {
         "published_at": "2024-01-09T08:08:06+09:00",
@@ -325,7 +333,7 @@
         "title": "「文字の類似度」からポケモン名をサジェストするコンポーネントを実装【React】",
         "tags": "JavaScript, UX, React, サジェスト, レーベンシュタイン距離",
         "source": "Qiita",
-        "likes": 19
+        "likes": 20
     },
     {
         "published_at": "2023-12-02T13:55:15+09:00",
