@@ -1,11 +1,19 @@
 [
     {
+        "published_at": "2026-03-28T20:54:22+09:00",
+        "url": "https://note.com/ishi720/n/n433a2ca33ca6",
+        "title": "上司の指示がコロコロ変わる理由とその対処法",
+        "tags": "仕事, 働き方, 仕事術, 業務改善, 無駄な仕事",
+        "source": "note",
+        "likes": 0
+    },
+    {
         "published_at": "2026-03-25T08:02:37+09:00",
         "url": "https://qiita.com/ishi720/items/de986f1c92d1769c8f47",
         "title": "WEBブラウザで動く六角形オセロを作ってみた",
         "tags": "JavaScript, オセロ, React",
         "source": "Qiita",
-        "likes": 6
+        "likes": 13
     },
     {
         "published_at": "2026-02-16T06:32:37+09:00",
@@ -125,7 +133,7 @@
         "title": "PythonのPandasで簡易Diffツールを作ってみた",
         "tags": "Python, diff, pandas, Python3",
         "source": "Qiita",
-        "likes": 4
+        "likes": 5
     },
     {
         "published_at": "2025-05-22T18:45:19+09:00",
@@ -285,7 +293,7 @@
         "title": "フルスタックエンジニアの悩み",
         "tags": "エンジニアのキャリア, フルスタックエンジニア",
         "source": "Qiita",
-        "likes": 124
+        "likes": 125
     },
     {
         "published_at": "2024-01-09T08:08:06+09:00",
