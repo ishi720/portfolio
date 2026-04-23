@@ -1,5 +1,13 @@
 [
     {
+        "published_at": "2026-04-23T08:08:13+09:00",
+        "url": "https://qiita.com/ishi720/items/e18caa90aa098215329e",
+        "title": "R言語で毎月自動更新されるGitHubダッシュボードを作ってみた",
+        "tags": "GitHub, R, ggplot2, GitHubAPI, GitHubActions",
+        "source": "Qiita",
+        "likes": 2
+    },
+    {
         "published_at": "2026-03-28T20:54:22+09:00",
         "url": "https://note.com/ishi720/n/n433a2ca33ca6",
         "title": "上司の指示がコロコロ変わる理由とその対処法",
@@ -13,7 +21,7 @@
         "title": "WEBブラウザで動く六角形オセロを作ってみた",
         "tags": "JavaScript, オセロ, React",
         "source": "Qiita",
-        "likes": 13
+        "likes": 15
     },
     {
         "published_at": "2026-02-16T06:32:37+09:00",
