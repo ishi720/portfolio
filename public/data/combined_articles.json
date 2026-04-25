@@ -1,11 +1,19 @@
 [
     {
+        "published_at": "2026-04-25T13:43:02+09:00",
+        "url": "https://note.com/ishi720/n/n2b6b4724b351",
+        "title": "「三人の石工」が持つ本当の意味、経営者はここを見ている",
+        "tags": "仕事, 新しい仕事に向き合うとき, 三人の石工",
+        "source": "note",
+        "likes": 1
+    },
+    {
         "published_at": "2026-04-23T08:08:13+09:00",
         "url": "https://qiita.com/ishi720/items/e18caa90aa098215329e",
         "title": "R言語で毎月自動更新されるGitHubダッシュボードを作ってみた",
         "tags": "GitHub, R, ggplot2, GitHubAPI, GitHubActions",
         "source": "Qiita",
-        "likes": 2
+        "likes": 3
     },
     {
         "published_at": "2026-03-28T20:54:22+09:00",
@@ -13,7 +21,7 @@
         "title": "上司の指示がコロコロ変わる理由とその対処法",
         "tags": "仕事, 働き方, 仕事術, 業務改善, 無駄な仕事",
         "source": "note",
-        "likes": 0
+        "likes": 1
     },
     {
         "published_at": "2026-03-25T08:02:37+09:00",
@@ -37,7 +45,7 @@
         "title": "「自分で考えろ」「勝手なことするな」という矛盾が生まれる理由",
         "tags": "コミュニケーション, 働き方, 仕事論, 上司部下, 会社あるある",
         "source": "note",
-        "likes": 6
+        "likes": 8
     },
     {
         "published_at": "2026-01-18T10:17:45+09:00",
