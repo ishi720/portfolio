@@ -64,7 +64,7 @@
         </NuxtLink>
         <NuxtLink to="/articles?platform=note" class="achievement-card">
           <div class="achievement-icon">
-            <img src="https://cdn.simpleicons.org/note/41C9B4" alt="Note">
+            <img src="https://cdn.simpleicons.org/note/000000" alt="Note">
           </div>
           <div class="achievement-info">
             <div class="achievement-number">{{ stats.note.posts }}</div>

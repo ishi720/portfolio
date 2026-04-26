@@ -50,7 +50,7 @@ const getSnsIcon = (name: string): string => {
     'GitHub': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg',
     'Qiita': 'https://cdn.simpleicons.org/qiita/55C500',
     'Zenn': 'https://cdn.simpleicons.org/zenn/3EA8FF',
-    'Note': 'https://cdn.simpleicons.org/note/41C9B4',
+    'Note': 'https://cdn.simpleicons.org/note/000000',
     'npm': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg',
     'LINE Store': 'https://cdn.simpleicons.org/line/06C755',
   }
