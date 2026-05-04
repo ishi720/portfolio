@@ -1,11 +1,19 @@
 [
     {
+        "published_at": "2026-05-01T08:54:32+09:00",
+        "url": "https://note.com/ishi720/n/ne8014f3460b9",
+        "title": "部下に対して「上辺だけ」のマネジメントに陥っていませんか？",
+        "tags": "マネジメント, 新しい仕事に向き合うとき",
+        "source": "note",
+        "likes": 3
+    },
+    {
         "published_at": "2026-04-25T13:43:02+09:00",
         "url": "https://note.com/ishi720/n/n2b6b4724b351",
         "title": "「三人の石工」が持つ本当の意味、経営者はここを見ている",
         "tags": "仕事, 新しい仕事に向き合うとき, 三人の石工",
         "source": "note",
-        "likes": 1
+        "likes": 4
     },
     {
         "published_at": "2026-04-23T08:08:13+09:00",
@@ -29,7 +37,7 @@
         "title": "WEBブラウザで動く六角形オセロを作ってみた",
         "tags": "JavaScript, オセロ, React",
         "source": "Qiita",
-        "likes": 15
+        "likes": 16
     },
     {
         "published_at": "2026-02-16T06:32:37+09:00",
@@ -69,7 +77,7 @@
         "title": "アイディアが出ない原因は「固定概念」かもしれない",
         "tags": "アイディア, 固定観念",
         "source": "note",
-        "likes": 4
+        "likes": 5
     },
     {
         "published_at": "2025-12-07T18:05:40+09:00",
@@ -133,7 +141,7 @@
         "title": "リンク機構の軌跡を可視化するメカニカルアートをp5.jsで作ってみた",
         "tags": "JavaScript, p5.js, リンク機構",
         "source": "Qiita",
-        "likes": 27
+        "likes": 28
     },
     {
         "published_at": "2025-07-01T00:03:28+09:00",
