@@ -42,6 +42,7 @@ export const usePortfolio = () => {
         { title: 'ReuleauxPhysics', url: 'https://ishi720.github.io/ReuleauxPhysics/', image: 'ReuleauxPhysics.png', description: 'ルーローの三角形の物理シミュレーションです。', techs: ['Javascript'] },
         { title: 'Tech Catalog', url: 'https://ishi720.github.io/tech-catalog/', image: 'tech-catalog.png', description: 'プログラミング技術一覧をまとめたサービスです。', techs: ['Javascript', 'Nuxt', 'Vue'] },
         { title: '音程検出', url: 'https://ishi720.github.io/pitch-detector/', image: 'pitch-detector.png', description: '音程を検出するサービスです。', techs: ['Javascript', 'Next.js'] },
+        { title: 'ホテリングの法則シミュレーター', url: 'https://ishi720.github.io/hotelling-sim/', image: 'hotelling-sim.png', description: 'ホテリングの法則をシミュレートするサービスです。', techs: ['Javascript', 'Nuxt', 'Vue'] },
     ]
 
     const chromeExtensions = [
