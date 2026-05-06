@@ -16,6 +16,7 @@
   "license": "",
   "dependencies": {
     "nuxt": "^4.2.2",
+    "swiper": "^12.1.4",
     "wordcloud": "^1.2.2"
   },
   "devDependencies": {

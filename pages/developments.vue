@@ -7,6 +7,28 @@
       </div>
     </section>
 
+    <!-- Web Services Section -->
+    <section id="web-services" class="works-section">
+      <div class="container">
+        <h2 class="section-title">Web Services</h2>
+        <div class="works-grid">
+          <a v-for="development in developments" :key="development.title" :href="development.url" target="_blank" class="work-card">
+            <div class="work-image">
+              <img :src="`/portfolio/images/service/${development.image}`" :alt="development.title" @error="handleImgError">
+              <div class="work-image-placeholder">{{ development.title }}</div>
+            </div>
+            <div class="work-content">
+              <h3 class="work-title">{{ development.title }}</h3>
+              <p class="work-desc">{{ development.description }}</p>
+              <div class="work-techs">
+                <span v-for="tech in development.techs" :key="tech" class="tech-tag">{{ tech }}</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- npm Packages Section -->
     <section id="npm-packages" class="npm-section">
       <div class="container">
@@ -68,28 +90,6 @@
             <div class="line-content">
               <h3 class="line-title">{{ stamp.title }}</h3>
               <p class="line-desc">{{ stamp.description }}</p>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Web Services Section -->
-    <section id="web-services" class="works-section">
-      <div class="container">
-        <h2 class="section-title">Web Services</h2>
-        <div class="works-grid">
-          <a v-for="development in developments" :key="development.title" :href="development.url" target="_blank" class="work-card">
-            <div class="work-image">
-              <img :src="`/portfolio/images/service/${development.image}`" :alt="development.title" @error="handleImgError">
-              <div class="work-image-placeholder">{{ development.title }}</div>
-            </div>
-            <div class="work-content">
-              <h3 class="work-title">{{ development.title }}</h3>
-              <p class="work-desc">{{ development.description }}</p>
-              <div class="work-techs">
-                <span v-for="tech in development.techs" :key="tech" class="tech-tag">{{ tech }}</span>
-              </div>
             </div>
           </a>
         </div>

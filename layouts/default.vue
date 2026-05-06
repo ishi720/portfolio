@@ -19,6 +19,9 @@
               <NuxtLink to="/#about-me" class="dropdown-item" @click="closeMenus">
                 About Me
               </NuxtLink>
+              <NuxtLink to="/#services" class="dropdown-item" @click="closeMenus">
+                Services
+              </NuxtLink>
               <NuxtLink to="/#future-goals" class="dropdown-item" @click="closeMenus">
                 Future Goals
               </NuxtLink>
@@ -46,6 +49,9 @@
               <span class="dropdown-arrow">▼</span>
             </NuxtLink>
             <div class="dropdown-menu">
+              <NuxtLink to="/developments#web-services" class="dropdown-item" @click="closeMenus">
+                Web Services
+              </NuxtLink>
               <NuxtLink to="/developments#npm-packages" class="dropdown-item" @click="closeMenus">
                 Npm Packages
               </NuxtLink>
@@ -54,9 +60,6 @@
               </NuxtLink>
               <NuxtLink to="/developments#line-stamps" class="dropdown-item" @click="closeMenus">
                 LINE Stamps
-              </NuxtLink>
-              <NuxtLink to="/developments#web-services" class="dropdown-item" @click="closeMenus">
-                Web Services
               </NuxtLink>
             </div>
           </div>
