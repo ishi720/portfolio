@@ -89,6 +89,7 @@ const handleImgError = (e: Event) => {
   display: flex;
   flex-direction: column;
   width: 300px;
+  height: 100%;
   background: $card-bg;
   border-radius: $radius-lg;
   overflow: hidden;
@@ -158,6 +159,10 @@ const handleImgError = (e: Event) => {
   line-height: 1.6;
   flex: 1;
   margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .slide-techs {
@@ -204,10 +209,15 @@ const handleImgError = (e: Event) => {
 .swiper-btn-prev { left: 0; }
 .swiper-btn-next { right: 0; }
 
-// スライド幅（auto モードで必須）
+// スライド幅・高さ統一
 :deep(.swiper-slide) {
   width: 300px;
   height: auto;
+  display: flex;
+}
+
+:deep(.swiper-wrapper) {
+  align-items: stretch;
 }
 
 // ホバー時のはみ出しを許可
