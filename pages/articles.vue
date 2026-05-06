@@ -82,7 +82,10 @@
 </template>
 
 <script setup lang="ts">
+import { useHead } from '@unhead/vue'
 import { ref, computed, onMounted, watch } from 'vue'
+
+useHead({ title: 'Articles' })
 import { useRoute } from 'vue-router'
 import type { SortState, SortOption, Article } from '~/types/models'
 import { formatDate, parseTags } from '~/composables/useUtils'

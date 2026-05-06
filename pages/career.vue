@@ -91,7 +91,10 @@
 </template>
 
 <script setup lang="ts">
+import { useHead } from '@unhead/vue'
 import { ref, computed } from 'vue'
+
+useHead({ title: 'Career' })
 import { useCareer } from '~/composables/useCareer'
 import type { Project } from '~/composables/useCareer'
 import { TOP_TECHS_COUNT } from '~/constants'

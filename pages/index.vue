@@ -16,6 +16,9 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { useHead } from '@unhead/vue'
+
+useHead({ title: 'Home' })
 import { usePortfolio } from '~/composables/usePortfolio'
 import { useSkillCloud } from '~/composables/useSkillCloud'
 import { fetchMultiple } from '~/composables/useFetchData'

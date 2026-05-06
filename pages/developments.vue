@@ -99,7 +99,10 @@
 </template>
 
 <script setup lang="ts">
+import { useHead } from '@unhead/vue'
 import { usePortfolio } from '~/composables/usePortfolio'
+
+useHead({ title: 'Developments' })
 
 const { developments, chromeExtensions, lineStamps, npmPackages } = usePortfolio()
 

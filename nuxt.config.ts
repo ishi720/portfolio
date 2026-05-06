@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   app: {
     baseURL: '/portfolio/',
     head: {
+      titleTemplate: '%s | ishi720 Portfolio',
       title: 'ishi720 Portfolio',
       meta: [
         { charset: 'utf-8' },

@@ -94,7 +94,10 @@
 </template>
 
 <script setup lang="ts">
+import { useHead } from '@unhead/vue'
 import { ref, computed, onMounted } from 'vue'
+
+useHead({ title: 'Repositories' })
 import { useRoute } from 'vue-router'
 import type { SortState, SortOption, Repo } from '~/types/models'
 import { formatDate, parseTags } from '~/composables/useUtils'
