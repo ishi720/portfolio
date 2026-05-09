@@ -21,6 +21,7 @@ export interface Article {
   tags: string
   source: string
   likes: number
+  eyecatch?: string
 }
 
 export interface Platform {

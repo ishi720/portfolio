@@ -49,6 +49,12 @@
         <!-- 記事一覧 -->
         <div class="articles-grid">
           <a v-for="article in paginatedArticles" :key="article.url" :href="article.url" target="_blank" class="article-card">
+            <div class="article-eyecatch">
+              <img v-if="article.eyecatch" :src="article.eyecatch" :alt="article.title" loading="lazy" />
+              <div v-else class="article-eyecatch-placeholder" :class="article.source.toLowerCase()">
+                <span class="article-eyecatch-title">{{ article.title }}</span>
+              </div>
+            </div>
             <div class="article-meta">
               <span class="article-platform" :class="article.source.toLowerCase()">{{ article.source }}</span>
               <span class="article-date">{{ formatDate(article.published_at) }}</span>
