@@ -2,8 +2,8 @@
   <section id="services" class="services-section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">サービス一覧</h2>
-        <p class="section-subtitle">Web Services</p>
+        <h2 class="section-title">ピックアップサービス</h2>
+        <p class="section-subtitle">Pick Up</p>
       </div>
       <div class="swiper-container">
         <Swiper
@@ -11,9 +11,9 @@
           :slides-per-view="'auto'"
           :space-between="24"
           :loop="true"
-          :autoplay="{ delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true }"
-          :pagination="{ clickable: true }"
-          :navigation="{ prevEl: '.swiper-btn-prev', nextEl: '.swiper-btn-next' }"
+          :speed="4000"
+          :autoplay="{ delay: 0, disableOnInteraction: false }"
+          :free-mode="{ enabled: true, momentum: false }"
           :grab-cursor="true"
           class="services-swiper"
         >
@@ -33,8 +33,7 @@
             </a>
           </SwiperSlide>
         </Swiper>
-        <button class="swiper-btn-prev">&#8249;</button>
-        <button class="swiper-btn-next">&#8250;</button>
+
       </div>
       <div class="slider-footer">
         <NuxtLink to="/developments#web-services" class="view-all-link">すべて見る →</NuxtLink>
@@ -45,7 +44,7 @@
 
 <script setup lang="ts">
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Autoplay, Pagination, Navigation } from 'swiper/modules'
+import { Autoplay, FreeMode, Pagination, Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
@@ -60,7 +59,7 @@ interface Service {
 
 defineProps<{ services: Service[] }>()
 
-const modules = [Autoplay, Pagination, Navigation]
+const modules = [Autoplay, FreeMode]
 
 const handleImgError = (e: Event) => {
   (e.target as HTMLImageElement).style.display = 'none'
@@ -180,35 +179,6 @@ const handleImgError = (e: Event) => {
   font-weight: 500;
 }
 
-.swiper-btn-prev,
-.swiper-btn-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(calc(-50% - 20px));
-  z-index: 10;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 2px solid $border;
-  background: $card-bg;
-  color: $text;
-  font-size: 1.4rem;
-  cursor: pointer;
-  transition: $transition;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &:hover {
-    background: $primary;
-    border-color: $primary;
-    color: $text-white;
-  }
-}
-
-.swiper-btn-prev { left: 0; }
-.swiper-btn-next { right: 0; }
-
 // スライド幅・高さ統一
 :deep(.swiper-slide) {
   width: 300px;
@@ -229,20 +199,10 @@ const handleImgError = (e: Event) => {
   overflow: visible;
 }
 
-// Swiper pagination dots のスタイル上書き
-:deep(.swiper-pagination-bullet) {
-  background: $border;
-  opacity: 1;
-  width: 8px;
-  height: 8px;
-  transition: $transition;
+:deep(.swiper-wrapper) {
+  transition-timing-function: linear !important;
 }
 
-:deep(.swiper-pagination-bullet-active) {
-  background: $primary;
-  width: 24px;
-  border-radius: 4px;
-}
 
 .slider-footer {
   text-align: center;

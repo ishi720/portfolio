@@ -6,7 +6,7 @@
       </div>
     </section>
     <SectionsAboutSection :profile="profile" :socials="socials" />
-    <SectionsServicesSliderSection :services="developments" />
+    <SectionsServicesSliderSection :services="pickupServices" />
     <SectionsGoalsSection :goals="futureGoals" />
     <SectionsAchievementsSection :stats="achievementStats" />
     <SectionsSkillsSection :tags="aggregatedTags" :size="cloudSize" :is-ready="isReady" />
@@ -28,6 +28,25 @@ import type { Article, Repo } from '~/types/models'
 // components/sections/ 配下のコンポーネントは SectionsXxx として利用可能
 
 const { profile, socials, developments, chromeExtensions, lineStamps, npmPackages } = usePortfolio()
+
+const pickupTitles = [
+  'ポケモンパーティメーカー',
+  'キーボードUI',
+  'ハニカム構造リバーシ',
+  'ホテリングの法則シミュレーター',
+  'Feeduck',
+  'うちのドラム式',
+  '3Dマインスイーパー',
+  'ラバーペンシル現象',
+  'ReuleauxPhysics',
+]
+const pickupServices = [
+  ...developments,
+  ...chromeExtensions,
+  ...(lineStamps as { title: string; url: string; image: string; description: string }[]).map(({ title, url, image, description }) => ({ title, url, image, description, techs: [] as string[] })),
+]
+  .filter(s => pickupTitles.includes(s.title))
+  .sort((a, b) => pickupTitles.indexOf(a.title) - pickupTitles.indexOf(b.title))
 const { aggregatedTags, loadData } = useSkillCloud()
 
 const cloudSize = ref(500)
