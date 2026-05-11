@@ -625,7 +625,7 @@ img {
         }
 
         &.note {
-            @include platform-badge($color-note);
+            @include platform-badge(#000);
         }
     }
 

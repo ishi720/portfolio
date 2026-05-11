@@ -22,7 +22,6 @@
             <select
               v-model="selectedPlatform"
               class="platform-select"
-              :class="platformSelectClass"
             >
               <option value="">すべて</option>
               <option v-for="platform in platforms" :key="platform.name" :value="platform.name">
@@ -118,15 +117,6 @@ const selectedTag = ref((route.query.tag as string) || '')
 const selectedPlatform = ref((route.query.platform as string) || '')
 const sortState = ref<SortState>(getInitialSortState('date'))
 
-// プラットフォーム選択時のクラス
-const platformSelectClass = computed(() => {
-  switch (selectedPlatform.value) {
-    case 'Qiita': return 'select-qiita'
-    case 'Zenn': return 'select-zenn'
-    case 'note': return 'select-note'
-    default: return ''
-  }
-})
 
 onMounted(() => {
   fetchData('/data/combined_articles.json')
@@ -246,29 +236,6 @@ const popularTags = usePopularTags(
     box-shadow: 0 0 0 3px rgba($primary, 0.1);
   }
 
-  // Qiita選択時
-  &.select-qiita {
-    border-color: #55c500;
-    background-color: rgba(#55c500, 0.05);
-    color: #3d8f00;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2355c500' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-  }
-
-  // Zenn選択時
-  &.select-zenn {
-    border-color: #3ea8ff;
-    background-color: rgba(#3ea8ff, 0.05);
-    color: #0080e0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%233ea8ff' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-  }
-
-  // note選択時
-  &.select-note {
-    border-color: #41C9B4;
-    background-color: rgba(#41C9B4, 0.05);
-    color: #2a9d8f;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2341C9B4' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-  }
 }
 
 @include mobile {

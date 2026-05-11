@@ -20,7 +20,7 @@
                 自己紹介
               </NuxtLink>
               <NuxtLink to="/#services" class="dropdown-item" @click="closeMenus">
-                サービス一覧
+                ピックアップサービス
               </NuxtLink>
               <NuxtLink to="/#future-goals" class="dropdown-item" @click="closeMenus">
                 個人的に挑戦したいこと
