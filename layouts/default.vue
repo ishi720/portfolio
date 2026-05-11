@@ -17,22 +17,22 @@
             </NuxtLink>
             <div class="dropdown-menu">
               <NuxtLink to="/#about-me" class="dropdown-item" @click="closeMenus">
-                About Me
+                自己紹介
               </NuxtLink>
               <NuxtLink to="/#services" class="dropdown-item" @click="closeMenus">
-                Services
+                サービス一覧
               </NuxtLink>
               <NuxtLink to="/#future-goals" class="dropdown-item" @click="closeMenus">
-                Future Goals
+                個人的に挑戦したいこと
               </NuxtLink>
               <NuxtLink to="/#achievements" class="dropdown-item" @click="closeMenus">
-                Achievements
+                実績
               </NuxtLink>
               <NuxtLink to="/#skills" class="dropdown-item" @click="closeMenus">
-                Skills
+                技術スタック
               </NuxtLink>
               <NuxtLink to="/#contact" class="dropdown-item" @click="closeMenus">
-                Contact
+                お問い合わせ
               </NuxtLink>
             </div>
           </div>
@@ -50,16 +50,16 @@
             </NuxtLink>
             <div class="dropdown-menu">
               <NuxtLink to="/developments#web-services" class="dropdown-item" @click="closeMenus">
-                Web Services
+                Webサービス
               </NuxtLink>
               <NuxtLink to="/developments#npm-packages" class="dropdown-item" @click="closeMenus">
-                Npm Packages
+                NPMパッケージ
               </NuxtLink>
               <NuxtLink to="/developments#chrome-extensions" class="dropdown-item" @click="closeMenus">
-                Chrome Extensions
+                Chrome拡張機能
               </NuxtLink>
               <NuxtLink to="/developments#line-stamps" class="dropdown-item" @click="closeMenus">
-                LINE Stamps
+                LINEスタンプ
               </NuxtLink>
             </div>
           </div>

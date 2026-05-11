@@ -10,7 +10,10 @@
     <!-- Web Services Section -->
     <section id="web-services" class="works-section">
       <div class="container">
-        <h2 class="section-title">Web Services</h2>
+        <div class="section-header">
+          <h2 class="section-title">Webサービス</h2>
+          <p class="section-subtitle">Web Services</p>
+        </div>
         <div class="works-grid">
           <a v-for="development in developments" :key="development.title" :href="development.url" target="_blank" class="work-card">
             <div class="work-image">
@@ -32,7 +35,10 @@
     <!-- npm Packages Section -->
     <section id="npm-packages" class="npm-section">
       <div class="container">
-        <h2 class="section-title">Npm Packages</h2>
+        <div class="section-header">
+          <h2 class="section-title">NPMパッケージ</h2>
+          <p class="section-subtitle">Npm Packages</p>
+        </div>
         <div class="npm-grid">
           <a v-for="pkg in npmPackages" :key="pkg.name" :href="pkg.url" target="_blank" class="npm-card">
             <div class="npm-header">
@@ -58,7 +64,10 @@
     <!-- Chrome Extensions Section -->
     <section id="chrome-extensions" class="works-section">
       <div class="container">
-        <h2 class="section-title">Chrome Extensions</h2>
+        <div class="section-header">
+          <h2 class="section-title">Chrome拡張機能</h2>
+          <p class="section-subtitle">Chrome Extensions</p>
+        </div>
         <div class="works-grid">
           <a v-for="chromeExtension in chromeExtensions" :key="chromeExtension.title" :href="chromeExtension.url" target="_blank" class="work-card">
             <div class="work-image">
@@ -80,7 +89,10 @@
     <!-- LINE Stamps Section -->
     <section id="line-stamps" class="line-section">
       <div class="container">
-        <h2 class="section-title">LINE Stamps</h2>
+        <div class="section-header">
+          <h2 class="section-title">LINEスタンプ</h2>
+          <p class="section-subtitle">LINE Stamps</p>
+        </div>
         <div class="line-grid">
           <a v-for="stamp in lineStamps" :key="stamp.title" :href="stamp.url" target="_blank" class="line-card">
             <div class="line-image">
