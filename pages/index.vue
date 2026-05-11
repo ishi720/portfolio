@@ -17,9 +17,9 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useHead } from '@unhead/vue'
+import { usePortfolio } from '~/composables/usePortfolio'
 
 useHead({ title: 'Home' })
-import { usePortfolio } from '~/composables/usePortfolio'
 import { useSkillCloud } from '~/composables/useSkillCloud'
 import { fetchMultiple } from '~/composables/useFetchData'
 import type { Article, Repo } from '~/types/models'
@@ -129,46 +129,3 @@ onUnmounted(() => {
 })
 </script>
 
-<style lang="scss" scoped>
-@use '~/assets/scss/variables' as *;
-
-$radius: $radius-lg;
-
-// Section Header (共通スタイル - 子コンポーネントから継承)
-:deep(.section-header) {
-  text-align: center;
-  margin: 48px 0 32px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  .section-title {
-    margin: 0;
-    position: relative;
-
-    &::after {
-      display: none;
-    }
-  }
-}
-
-:deep(.section-subtitle) {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  color: $text-light;
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  margin: 12px 0 0;
-
-  &::before,
-  &::after {
-    content: '';
-    width: 40px;
-    height: 1px;
-    background: $border;
-  }
-}
-</style>
