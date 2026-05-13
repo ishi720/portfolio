@@ -51,7 +51,13 @@
             <div class="article-eyecatch">
               <img v-if="article.eyecatch" :src="article.eyecatch" :alt="article.title" loading="lazy" />
               <div v-else class="article-eyecatch-placeholder" :class="article.source.toLowerCase()">
-                <span class="article-eyecatch-title">{{ article.title }}</span>
+                <div class="ogp-corner-tr"></div>
+                <div class="ogp-body">
+                  <p class="ogp-title">{{ article.title }}</p>
+                </div>
+                <div class="ogp-footer">
+                  <span class="ogp-author">@{{ profile.name }}</span>
+                </div>
               </div>
             </div>
             <div class="article-meta">
@@ -89,9 +95,12 @@
 <script setup lang="ts">
 import { useHead } from '@unhead/vue'
 import { ref, computed, onMounted, watch } from 'vue'
+import { useRoute } from 'vue-router'
+import { usePortfolio } from '~/composables/usePortfolio'
 
 useHead({ title: 'Articles' })
-import { useRoute } from 'vue-router'
+
+const { profile } = usePortfolio()
 import type { SortState, SortOption, Article } from '~/types/models'
 import { formatDate, parseTags } from '~/composables/useUtils'
 import { usePagination, getInitialSortState } from '~/composables/usePagination'
@@ -195,6 +204,70 @@ const popularTags = usePopularTags(
   font-size: 0.9rem;
   color: #666;
   margin-bottom: 20px;
+}
+
+// OGP風プレースホルダー
+.ogp-header {
+  padding: 14px 16px 8px;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ogp-platform-name {
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.05em;
+  padding: 3px 18px;
+  border-radius: 20px;
+}
+
+.ogp-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 8px 18px;
+  overflow: hidden;
+}
+
+.ogp-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #222;
+  line-height: 1.65;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+}
+
+.ogp-footer {
+  padding: 6px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  border-bottom: 1px solid #eee;
+}
+
+.ogp-corner-tr {
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  background: #f7acac;
+}
+
+.ogp-author {
+  font-size: 0.78rem;
+  color: #666;
+  font-family: 'Poppins', sans-serif;
 }
 
 // 記事タグ
