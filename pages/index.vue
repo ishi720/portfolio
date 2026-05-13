@@ -5,8 +5,8 @@
         <h1 class="page-title">{{ profile.name }} Portfolio</h1>
       </div>
     </section>
-    <SectionsAboutSection :profile="profile" :socials="socials" />
     <SectionsServicesSliderSection :services="pickupServices" />
+    <SectionsAboutSection :profile="profile" :socials="socials" />
     <SectionsGoalsSection :goals="futureGoals" />
     <SectionsAchievementsSection :stats="achievementStats" />
     <SectionsSkillsSection :tags="aggregatedTags" :size="cloudSize" :is-ready="isReady" />

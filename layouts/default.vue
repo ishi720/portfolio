@@ -19,9 +19,6 @@
               <NuxtLink to="/#about-me" class="dropdown-item" @click="closeMenus">
                 自己紹介
               </NuxtLink>
-              <NuxtLink to="/#services" class="dropdown-item" @click="closeMenus">
-                ピックアップサービス
-              </NuxtLink>
               <NuxtLink to="/#future-goals" class="dropdown-item" @click="closeMenus">
                 個人的に挑戦したいこと
               </NuxtLink>

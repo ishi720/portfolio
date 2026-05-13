@@ -1,40 +1,35 @@
 <template>
   <section id="services" class="services-section">
+    <div class="swiper-outer">
+      <Swiper
+        :modules="modules"
+        :slides-per-view="'auto'"
+        :space-between="24"
+        :loop="true"
+        :speed="4000"
+        :autoplay="{ delay: 0, disableOnInteraction: false }"
+        :free-mode="{ enabled: true, momentum: false }"
+        :grab-cursor="true"
+        class="services-swiper"
+      >
+        <SwiperSlide v-for="service in services" :key="service.title">
+          <a :href="service.url" target="_blank" class="slide-card">
+            <div class="slide-image">
+              <img :src="`/portfolio/images/service/${service.image}`" :alt="service.title" :draggable="false" @error="handleImgError">
+              <div class="slide-image-placeholder">{{ service.title }}</div>
+            </div>
+            <div class="slide-content">
+              <h3 class="slide-title">{{ service.title }}</h3>
+              <p class="slide-desc">{{ service.description }}</p>
+              <div class="slide-techs">
+                <span v-for="tech in service.techs" :key="tech" class="tech-tag">{{ tech }}</span>
+              </div>
+            </div>
+          </a>
+        </SwiperSlide>
+      </Swiper>
+    </div>
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">ピックアップサービス</h2>
-        <p class="section-subtitle">Pick Up</p>
-      </div>
-      <div class="swiper-container">
-        <Swiper
-          :modules="modules"
-          :slides-per-view="'auto'"
-          :space-between="24"
-          :loop="true"
-          :speed="4000"
-          :autoplay="{ delay: 0, disableOnInteraction: false }"
-          :free-mode="{ enabled: true, momentum: false }"
-          :grab-cursor="true"
-          class="services-swiper"
-        >
-          <SwiperSlide v-for="service in services" :key="service.title">
-            <a :href="service.url" target="_blank" class="slide-card">
-              <div class="slide-image">
-                <img :src="`/portfolio/images/service/${service.image}`" :alt="service.title" :draggable="false" @error="handleImgError">
-                <div class="slide-image-placeholder">{{ service.title }}</div>
-              </div>
-              <div class="slide-content">
-                <h3 class="slide-title">{{ service.title }}</h3>
-                <p class="slide-desc">{{ service.description }}</p>
-                <div class="slide-techs">
-                  <span v-for="tech in service.techs" :key="tech" class="tech-tag">{{ tech }}</span>
-                </div>
-              </div>
-            </a>
-          </SwiperSlide>
-        </Swiper>
-
-      </div>
       <div class="slider-footer">
         <NuxtLink to="/developments#web-services" class="view-all-link">すべて見る →</NuxtLink>
       </div>
@@ -71,17 +66,16 @@ const handleImgError = (e: Event) => {
 @use '~/assets/scss/mixins' as *;
 
 .services-section {
-  padding: 60px 0 40px;
+  padding: 0 0 40px;
 }
 
-.swiper-container {
-  position: relative;
-  padding: 0 48px;
+.swiper-outer {
+  width: 100%;
   overflow: hidden;
 }
 
 .services-swiper {
-  padding-bottom: 40px !important;
+  padding-bottom: 16px !important;
 }
 
 .slide-card {
@@ -195,9 +189,6 @@ const handleImgError = (e: Event) => {
   padding-top: 8px;
 }
 
-:deep(.swiper) {
-  overflow: visible;
-}
 
 :deep(.swiper-wrapper) {
   transition-timing-function: linear !important;
@@ -205,24 +196,20 @@ const handleImgError = (e: Event) => {
 
 
 .slider-footer {
-  text-align: center;
+  text-align: right;
   margin-top: 8px;
 }
 
 .view-all-link {
   display: inline-block;
-  color: $primary;
-  font-size: 0.9rem;
-  font-weight: 500;
+  color: $text-light;
+  font-size: 0.8rem;
+  font-weight: 400;
   text-decoration: none;
-  padding: 8px 20px;
-  border: 1px solid $primary;
-  border-radius: 20px;
   transition: $transition;
 
   &:hover {
-    background: $primary;
-    color: $text-white;
+    color: $primary;
   }
 }
 
