@@ -255,9 +255,9 @@
     "tags": "python3",
     "description": "特定ユーザーのqiitaとzennの記事を取得する",
     "created_at": "2024-12-30T15:26:05Z",
-    "updated_at": "2026-02-03T11:53:57Z",
-    "commit_count": 12,
-    "size_kb": 14
+    "updated_at": "2026-05-09T12:18:06Z",
+    "commit_count": 14,
+    "size_kb": 17
   },
   {
     "name": "GithubDashboard",
@@ -265,9 +265,9 @@
     "tags": ["r", "githubapi"],
     "description": "GitHubユーザーのリポジトリを分析し、可視化するRスクリプトです。",
     "created_at": "2025-12-15T23:07:29Z",
-    "updated_at": "2026-04-01T01:38:48Z",
-    "commit_count": 46,
-    "size_kb": 9778
+    "updated_at": "2026-05-01T02:11:18Z",
+    "commit_count": 47,
+    "size_kb": 10887
   },
   {
     "name": "gulp-package-version-format",
@@ -305,9 +305,19 @@
     "tags": ["honeycomb", "javascript", "react", "reversi"],
     "description": "ハニカム構造のリバーシ",
     "created_at": "2025-12-11T13:33:13Z",
-    "updated_at": "2026-03-27T04:01:52Z",
-    "commit_count": 19,
-    "size_kb": 73
+    "updated_at": "2026-05-06T11:40:42Z",
+    "commit_count": 20,
+    "size_kb": 74
+  },
+  {
+    "name": "hotelling-sim",
+    "url": "https://github.com/ishi720/hotelling-sim",
+    "tags": ["javascript", "nuxtjs", "vue"],
+    "description": "ホテリングの法則シミュレーション",
+    "created_at": "2026-05-02T11:19:50Z",
+    "updated_at": "2026-05-06T07:54:31Z",
+    "commit_count": 31,
+    "size_kb": 174
   },
   {
     "name": "img-crop",
@@ -470,6 +480,16 @@
     "size_kb": 37
   },
   {
+    "name": "note-content",
+    "url": "https://github.com/ishi720/note-content",
+    "tags": [],
+    "description": "",
+    "created_at": "2026-05-26T14:58:47Z",
+    "updated_at": "2026-05-31T16:14:06Z",
+    "commit_count": 5,
+    "size_kb": 60
+  },
+  {
     "name": "numnator",
     "url": "https://github.com/ishi720/numnator",
     "tags": ["javascript", "vue2"],
@@ -525,9 +545,9 @@
     "tags": ["nustjs", "typescript", "vue"],
     "description": "ishi720のポートフォリオ",
     "created_at": "2024-12-14T15:01:00Z",
-    "updated_at": "2026-04-26T13:39:54Z",
-    "commit_count": 183,
-    "size_kb": 8308
+    "updated_at": "2026-05-24T12:03:15Z",
+    "commit_count": 201,
+    "size_kb": 8608
   },
   {
     "name": "qiita-content",
@@ -535,9 +555,9 @@
     "tags": ["qiita", "qiita-cli"],
     "description": "Qiita CLIでQiita記事を保管",
     "created_at": "2024-11-25T12:03:14Z",
-    "updated_at": "2026-04-29T13:57:24Z",
-    "commit_count": 40,
-    "size_kb": 289
+    "updated_at": "2026-05-24T12:19:54Z",
+    "commit_count": 43,
+    "size_kb": 302
   },
   {
     "name": "qiita_analytics",
@@ -635,9 +655,9 @@
     "tags": "javascript",
     "description": "ルーローの三角形で物理演算",
     "created_at": "2025-12-31T00:39:08Z",
-    "updated_at": "2026-01-24T13:21:37Z",
-    "commit_count": 21,
-    "size_kb": 36
+    "updated_at": "2026-05-10T11:35:55Z",
+    "commit_count": 22,
+    "size_kb": 37
   },
   {
     "name": "rss_to_json",
