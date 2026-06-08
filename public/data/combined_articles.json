@@ -1,11 +1,20 @@
 [
     {
+        "published_at": "2026-06-05T07:57:54+09:00",
+        "url": "https://qiita.com/ishi720/items/6a86107a2bf6ca07ed88",
+        "title": "MySQLのトランザクションの仕組みについて理解したい！",
+        "tags": "MySQL, トランザクション",
+        "source": "Qiita",
+        "likes": 3,
+        "eyecatch": ""
+    },
+    {
         "published_at": "2026-05-23T19:13:42+09:00",
         "url": "https://qiita.com/ishi720/items/bac7a492b1b7d5ffe510",
         "title": "Qiita記事の毎月投稿を三年間継続できたので振り返ります！",
         "tags": "ポエム, まとめ, 振り返り, エンジニア, アウトプット",
         "source": "Qiita",
-        "likes": 7,
+        "likes": 33,
         "eyecatch": ""
     },
     {
@@ -23,7 +32,7 @@
         "title": "部下に対して「上辺だけ」のマネジメントに陥っていませんか？",
         "tags": "マネジメント, 新しい仕事に向き合うとき",
         "source": "note",
-        "likes": 4,
+        "likes": 5,
         "eyecatch": "https://assets.st-note.com/production/uploads/images/270693547/rectangle_large_type_2_399c5fe3cc38fce02bf3e32285e481a9.png?fit=bounds&quality=85&width=1280"
     },
     {
@@ -212,7 +221,7 @@
         "title": "AIに仕事を奪われるって言うけど、IT人材が足りてないのはなぜなのか？",
         "tags": "エンジニア, 働き方, 生成AI",
         "source": "Qiita",
-        "likes": 86,
+        "likes": 87,
         "eyecatch": ""
     },
     {
@@ -275,7 +284,7 @@
         "title": "テキストをコピペするときにスタイルごとコピーされちゃうのってどんな仕組み？",
         "tags": "JavaScript, clipboard, リッチテキスト",
         "source": "Qiita",
-        "likes": 321,
+        "likes": 323,
         "eyecatch": ""
     },
     {
@@ -455,7 +464,7 @@
         "title": "ゲーミングCSSを作ってQiitaを光らせてみた",
         "tags": "CSS, animation, npm, gaming-css",
         "source": "Qiita",
-        "likes": 74,
+        "likes": 75,
         "eyecatch": ""
     },
     {
