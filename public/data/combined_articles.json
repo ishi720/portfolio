@@ -1,11 +1,20 @@
 [
     {
+        "published_at": "2026-06-14T09:11:31+09:00",
+        "url": "https://note.com/ishi720/n/n1e587bee1d8a",
+        "title": "退職者が増えるのは当事者意識がないから",
+        "tags": "退職, 組織開発, 離職率, 人材定着, 退職理由の本音",
+        "source": "note",
+        "likes": 2,
+        "eyecatch": "https://assets.st-note.com/production/uploads/images/285106235/rectangle_large_type_2_f0e68378a7c7c830900e5eb1d03d4135.png?fit=bounds&quality=85&width=1280"
+    },
+    {
         "published_at": "2026-06-05T07:57:54+09:00",
         "url": "https://qiita.com/ishi720/items/6a86107a2bf6ca07ed88",
         "title": "MySQLのトランザクションの仕組みについて理解したい！",
         "tags": "MySQL, トランザクション",
         "source": "Qiita",
-        "likes": 3,
+        "likes": 5,
         "eyecatch": ""
     },
     {
@@ -383,7 +392,7 @@
         "title": "フルスタックエンジニアの悩み",
         "tags": "エンジニアのキャリア, フルスタックエンジニア",
         "source": "Qiita",
-        "likes": 125,
+        "likes": 126,
         "eyecatch": ""
     },
     {
