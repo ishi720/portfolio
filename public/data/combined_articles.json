@@ -1,11 +1,20 @@
 [
     {
+        "published_at": "2026-07-11T18:48:47+09:00",
+        "url": "https://note.com/ishi720/n/n43ecaff15ce1",
+        "title": "「なんでそう思った？」に潜む圧の正体",
+        "tags": "仕事, コミュニケーション, 働き方, 部下育成, OJT",
+        "source": "note",
+        "likes": 3,
+        "eyecatch": "https://assets.st-note.com/production/uploads/images/293361655/rectangle_large_type_2_fb7fb28a0cb0e9e88a39eca2c0375f38.png?fit=bounds&quality=85&width=1280"
+    },
+    {
         "published_at": "2026-06-14T09:11:31+09:00",
         "url": "https://note.com/ishi720/n/n1e587bee1d8a",
         "title": "退職者が増えるのは当事者意識がないから",
         "tags": "退職, 組織開発, 離職率, 人材定着, 退職理由の本音",
         "source": "note",
-        "likes": 2,
+        "likes": 7,
         "eyecatch": "https://assets.st-note.com/production/uploads/images/285106235/rectangle_large_type_2_f0e68378a7c7c830900e5eb1d03d4135.png?fit=bounds&quality=85&width=1280"
     },
     {
@@ -23,7 +32,7 @@
         "title": "Qiita記事の毎月投稿を三年間継続できたので振り返ります！",
         "tags": "ポエム, まとめ, 振り返り, エンジニア, アウトプット",
         "source": "Qiita",
-        "likes": 33,
+        "likes": 34,
         "eyecatch": ""
     },
     {
@@ -95,7 +104,7 @@
         "title": "「自分で考えろ」「勝手なことするな」という矛盾が生まれる理由",
         "tags": "コミュニケーション, 働き方, 仕事論, 上司部下, 会社あるある",
         "source": "note",
-        "likes": 9,
+        "likes": 10,
         "eyecatch": "https://assets.st-note.com/production/uploads/images/248076183/rectangle_large_type_2_6fa54ac80d46c1090c9e6056ecd1fbcf.png?fit=bounds&quality=85&width=1280"
     },
     {
@@ -140,7 +149,7 @@
         "title": "ラバーペンシル現象をWEBで再現してみた",
         "tags": "JavaScript, ラバーペンシル現象",
         "source": "Qiita",
-        "likes": 23,
+        "likes": 24,
         "eyecatch": ""
     },
     {
@@ -230,7 +239,7 @@
         "title": "AIに仕事を奪われるって言うけど、IT人材が足りてないのはなぜなのか？",
         "tags": "エンジニア, 働き方, 生成AI",
         "source": "Qiita",
-        "likes": 87,
+        "likes": 88,
         "eyecatch": ""
     },
     {
@@ -392,7 +401,7 @@
         "title": "フルスタックエンジニアの悩み",
         "tags": "エンジニアのキャリア, フルスタックエンジニア",
         "source": "Qiita",
-        "likes": 126,
+        "likes": 127,
         "eyecatch": ""
     },
     {
