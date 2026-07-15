@@ -43,6 +43,7 @@ export const usePortfolio = () => {
         { title: 'Tech Catalog', url: 'https://ishi720.github.io/tech-catalog/', image: 'tech-catalog.png', description: 'プログラミング技術一覧をまとめたサービスです。', techs: ['Javascript', 'Nuxt', 'Vue'] },
         { title: '音程検出', url: 'https://ishi720.github.io/pitch-detector/', image: 'pitch-detector.png', description: '音程を検出するサービスです。', techs: ['Javascript', 'Next.js'] },
         { title: 'ホテリングの法則シミュレーター', url: 'https://ishi720.github.io/hotelling-sim/', image: 'hotelling-sim.png', description: 'ホテリングの法則をシミュレートするサービスです。', techs: ['Javascript', 'Nuxt', 'Vue'] },
+        { title: '白は、どこまで白か。', url: 'https://white-boundary-simulator.vercel.app/', image: 'white_boundary_simulator.png', description: '白が200色あるか確かめるシミュレータです', techs: ['Javascript'] },
     ]
 
     const chromeExtensions = [
