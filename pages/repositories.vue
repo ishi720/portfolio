@@ -62,6 +62,12 @@
             </div>
             <div class="repo-footer">
               <div class="repo-stats">
+                <span class="repo-stat" title="スター数">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/>
+                  </svg>
+                  {{ repo.stars || 0 }}
+                </span>
                 <span class="repo-stat" title="コミット数">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
                     <path d="M10.5 7.75a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Zm1.43.75a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 0 1 0-1.5h3.32a4.002 4.002 0 0 1 7.86 0h3.32a.75.75 0 0 1 0 1.5Zm-1.43-.75a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"/>
@@ -113,6 +119,7 @@ const { data: repos, fetchData } = useFetchData<Repo[]>([])
 const sortOptions: SortOption[] = [
   { key: 'updated_at', label: '更新日' },
   { key: 'created_at', label: '作成日' },
+  { key: 'stars', label: 'スター数' },
   { key: 'commit_count', label: 'コミット数' },
   { key: 'size_kb', label: 'サイズ' },
   { key: 'name', label: 'リポジトリ名' }
@@ -152,6 +159,8 @@ const filteredRepos = computed(() => {
   const { key, order } = sortState.value
   if (key === 'name') {
     result = sortByString(result, (r: Repo) => r.name, order)
+  } else if (key === 'stars') {
+    result = sortByNumber(result, (r: Repo) => r.stars || 0, order)
   } else if (key === 'commit_count') {
     result = sortByNumber(result, (r: Repo) => r.commit_count || 0, order)
   } else if (key === 'size_kb') {

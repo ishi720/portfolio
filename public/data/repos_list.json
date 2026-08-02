@@ -7,7 +7,8 @@
     "created_at": "2025-11-07T13:49:27Z",
     "updated_at": "2026-01-24T13:33:36Z",
     "commit_count": 22,
-    "size_kb": 86
+    "size_kb": 86,
+    "stars": 0
   },
   {
     "name": "adhere-scroll",
@@ -17,7 +18,8 @@
     "created_at": "2019-10-07T04:38:20Z",
     "updated_at": "2019-10-26T09:03:30Z",
     "commit_count": 5,
-    "size_kb": 5
+    "size_kb": 5,
+    "stars": 0
   },
   {
     "name": "Albiview",
@@ -27,7 +29,8 @@
     "created_at": "2025-05-15T11:29:28Z",
     "updated_at": "2025-11-15T06:49:19Z",
     "commit_count": 38,
-    "size_kb": 58
+    "size_kb": 58,
+    "stars": 0
   },
   {
     "name": "autoclipy",
@@ -37,7 +40,8 @@
     "created_at": "2025-03-05T14:20:28Z",
     "updated_at": "2025-03-05T14:23:50Z",
     "commit_count": 1,
-    "size_kb": 0
+    "size_kb": 0,
+    "stars": 0
   },
   {
     "name": "balance-roll-bar",
@@ -47,7 +51,8 @@
     "created_at": "2026-06-28T03:09:14Z",
     "updated_at": "2026-07-12T13:02:47Z",
     "commit_count": 25,
-    "size_kb": 97
+    "size_kb": 97,
+    "stars": 0
   },
   {
     "name": "BirthdayCalendar",
@@ -57,7 +62,8 @@
     "created_at": "2024-05-10T14:10:22Z",
     "updated_at": "2024-11-24T07:01:38Z",
     "commit_count": 82,
-    "size_kb": 124
+    "size_kb": 124,
+    "stars": 0
   },
   {
     "name": "BirthdayCalendar_Docs",
@@ -67,7 +73,8 @@
     "created_at": "2024-06-09T04:06:23Z",
     "updated_at": "2024-06-12T23:14:01Z",
     "commit_count": 6,
-    "size_kb": 8
+    "size_kb": 8,
+    "stars": 0
   },
   {
     "name": "ClipboardSample",
@@ -77,7 +84,8 @@
     "created_at": "2024-11-24T09:28:50Z",
     "updated_at": "2025-01-04T13:50:07Z",
     "commit_count": 2,
-    "size_kb": 1
+    "size_kb": 1,
+    "stars": 0
   },
   {
     "name": "cointoss_statistics",
@@ -87,7 +95,8 @@
     "created_at": "2022-03-24T15:00:07Z",
     "updated_at": "2024-10-07T14:42:17Z",
     "commit_count": 39,
-    "size_kb": 488
+    "size_kb": 488,
+    "stars": 0
   },
   {
     "name": "collatz_visualization",
@@ -97,7 +106,8 @@
     "created_at": "2020-10-13T11:38:49Z",
     "updated_at": "2025-10-13T11:15:56Z",
     "commit_count": 121,
-    "size_kb": 1441
+    "size_kb": 1441,
+    "stars": 1
   },
   {
     "name": "collision_detection_game",
@@ -107,7 +117,8 @@
     "created_at": "2024-02-23T03:44:23Z",
     "updated_at": "2024-04-20T08:19:31Z",
     "commit_count": 2,
-    "size_kb": 806
+    "size_kb": 806,
+    "stars": 0
   },
   {
     "name": "conan-vital-story",
@@ -117,7 +128,8 @@
     "created_at": "2026-06-07T12:07:21Z",
     "updated_at": "2026-06-12T13:02:46Z",
     "commit_count": 9,
-    "size_kb": 131
+    "size_kb": 131,
+    "stars": 0
   },
   {
     "name": "Connect4",
@@ -127,7 +139,8 @@
     "created_at": "2025-12-08T14:13:54Z",
     "updated_at": "2026-01-01T13:52:21Z",
     "commit_count": 9,
-    "size_kb": 15068
+    "size_kb": 15068,
+    "stars": 0
   },
   {
     "name": "ConsonantChanger",
@@ -137,7 +150,8 @@
     "created_at": "2024-10-28T12:00:01Z",
     "updated_at": "2025-11-27T13:38:00Z",
     "commit_count": 62,
-    "size_kb": 60
+    "size_kb": 60,
+    "stars": 0
   },
   {
     "name": "covid19_aomori_opendata_get",
@@ -147,7 +161,8 @@
     "created_at": "2020-04-03T08:18:23Z",
     "updated_at": "2025-12-27T22:48:06Z",
     "commit_count": 44,
-    "size_kb": 435
+    "size_kb": 435,
+    "stars": 0
   },
   {
     "name": "CreateFlowchart",
@@ -157,7 +172,8 @@
     "created_at": "2024-02-23T04:54:59Z",
     "updated_at": "2024-02-23T09:10:33Z",
     "commit_count": 2,
-    "size_kb": 9
+    "size_kb": 9,
+    "stars": 0
   },
   {
     "name": "customizeIME",
@@ -167,7 +183,8 @@
     "created_at": "2023-05-25T12:03:21Z",
     "updated_at": "2023-06-24T00:10:58Z",
     "commit_count": 26,
-    "size_kb": 37
+    "size_kb": 37,
+    "stars": 0
   },
   {
     "name": "draw_shapes",
@@ -177,7 +194,8 @@
     "created_at": "2025-01-04T11:49:41Z",
     "updated_at": "2026-02-21T11:54:22Z",
     "commit_count": 66,
-    "size_kb": 75
+    "size_kb": 75,
+    "stars": 0
   },
   {
     "name": "excelFinishSave",
@@ -187,7 +205,8 @@
     "created_at": "2021-10-31T12:01:27Z",
     "updated_at": "2025-05-12T12:34:35Z",
     "commit_count": 28,
-    "size_kb": 22
+    "size_kb": 22,
+    "stars": 0
   },
   {
     "name": "feeduck",
@@ -197,7 +216,8 @@
     "created_at": "2024-01-21T11:44:25Z",
     "updated_at": "2025-09-30T07:55:23Z",
     "commit_count": 17,
-    "size_kb": 786
+    "size_kb": 786,
+    "stars": 0
   },
   {
     "name": "feeduck-chrome-extension",
@@ -207,7 +227,8 @@
     "created_at": "2020-04-18T11:29:47Z",
     "updated_at": "2024-05-05T14:13:53Z",
     "commit_count": 50,
-    "size_kb": 10272
+    "size_kb": 10272,
+    "stars": 0
   },
   {
     "name": "ferrisWheelRotate",
@@ -217,7 +238,8 @@
     "created_at": "2024-08-26T12:02:48Z",
     "updated_at": "2024-08-26T12:42:52Z",
     "commit_count": 4,
-    "size_kb": 10362
+    "size_kb": 10362,
+    "stars": 0
   },
   {
     "name": "file_count",
@@ -227,7 +249,8 @@
     "created_at": "2019-06-09T23:38:47Z",
     "updated_at": "2019-06-12T01:03:51Z",
     "commit_count": 2,
-    "size_kb": 1
+    "size_kb": 1,
+    "stars": 0
   },
   {
     "name": "gae_nodejs_cdn",
@@ -237,7 +260,8 @@
     "created_at": "2019-06-10T10:12:18Z",
     "updated_at": "2023-06-24T01:06:26Z",
     "commit_count": 15,
-    "size_kb": 23
+    "size_kb": 23,
+    "stars": 0
   },
   {
     "name": "gakunenKanji",
@@ -247,7 +271,8 @@
     "created_at": "2023-10-22T02:22:59Z",
     "updated_at": "2025-09-27T03:24:41Z",
     "commit_count": 9,
-    "size_kb": 18
+    "size_kb": 18,
+    "stars": 0
   },
   {
     "name": "gaming-css",
@@ -257,7 +282,8 @@
     "created_at": "2023-06-22T22:22:48Z",
     "updated_at": "2025-01-03T00:55:53Z",
     "commit_count": 17,
-    "size_kb": 13
+    "size_kb": 13,
+    "stars": 6
   },
   {
     "name": "generate_diff_dataframe",
@@ -267,7 +293,8 @@
     "created_at": "2025-06-14T15:00:07Z",
     "updated_at": "2025-06-15T13:58:55Z",
     "commit_count": 7,
-    "size_kb": 9
+    "size_kb": 9,
+    "stars": 0
   },
   {
     "name": "getArticle",
@@ -277,7 +304,8 @@
     "created_at": "2024-12-30T15:26:05Z",
     "updated_at": "2026-05-09T12:18:06Z",
     "commit_count": 14,
-    "size_kb": 17
+    "size_kb": 17,
+    "stars": 0
   },
   {
     "name": "GithubDashboard",
@@ -285,9 +313,10 @@
     "tags": ["r", "githubapi"],
     "description": "GitHubユーザーのリポジトリを分析し、可視化するRスクリプトです。",
     "created_at": "2025-12-15T23:07:29Z",
-    "updated_at": "2026-07-01T02:42:06Z",
-    "commit_count": 50,
-    "size_kb": 15495
+    "updated_at": "2026-08-02T10:40:37Z",
+    "commit_count": 52,
+    "size_kb": 17136,
+    "stars": 0
   },
   {
     "name": "gulp-package-version-format",
@@ -297,7 +326,8 @@
     "created_at": "2018-07-29T04:36:32Z",
     "updated_at": "2025-07-15T16:53:53Z",
     "commit_count": 123,
-    "size_kb": 1108
+    "size_kb": 1108,
+    "stars": 0
   },
   {
     "name": "HoneycombPixelArt",
@@ -307,7 +337,8 @@
     "created_at": "2025-12-13T08:35:12Z",
     "updated_at": "2025-12-17T22:46:55Z",
     "commit_count": 17,
-    "size_kb": 77
+    "size_kb": 77,
+    "stars": 0
   },
   {
     "name": "honeycombPuzzle",
@@ -317,7 +348,8 @@
     "created_at": "2026-01-14T14:02:05Z",
     "updated_at": "2026-01-14T14:29:49Z",
     "commit_count": 4,
-    "size_kb": 39
+    "size_kb": 39,
+    "stars": 0
   },
   {
     "name": "HoneycombReversi",
@@ -327,7 +359,8 @@
     "created_at": "2025-12-11T13:33:13Z",
     "updated_at": "2026-05-06T11:40:42Z",
     "commit_count": 20,
-    "size_kb": 74
+    "size_kb": 74,
+    "stars": 1
   },
   {
     "name": "hotelling-sim",
@@ -335,9 +368,10 @@
     "tags": ["javascript", "nuxtjs", "vue"],
     "description": "ホテリングの法則シミュレーション",
     "created_at": "2026-05-02T11:19:50Z",
-    "updated_at": "2026-05-06T07:54:31Z",
-    "commit_count": 31,
-    "size_kb": 174
+    "updated_at": "2026-08-02T09:42:55Z",
+    "commit_count": 33,
+    "size_kb": 178,
+    "stars": 0
   },
   {
     "name": "img-crop",
@@ -347,7 +381,8 @@
     "created_at": "2017-11-17T13:18:21Z",
     "updated_at": "2025-12-28T02:30:02Z",
     "commit_count": 15,
-    "size_kb": 9
+    "size_kb": 9,
+    "stars": 0
   },
   {
     "name": "ishi720",
@@ -357,7 +392,8 @@
     "created_at": "2022-05-16T07:13:08Z",
     "updated_at": "2025-07-12T17:03:55Z",
     "commit_count": 8,
-    "size_kb": 8
+    "size_kb": 8,
+    "stars": 0
   },
   {
     "name": "josushi-quiz-app",
@@ -367,7 +403,8 @@
     "created_at": "2026-01-26T12:43:38Z",
     "updated_at": "2026-02-02T12:41:49Z",
     "commit_count": 18,
-    "size_kb": 249
+    "size_kb": 249,
+    "stars": 0
   },
   {
     "name": "jquery-textfit",
@@ -377,7 +414,8 @@
     "created_at": "2018-02-09T02:26:50Z",
     "updated_at": "2023-06-23T23:59:07Z",
     "commit_count": 15,
-    "size_kb": 11
+    "size_kb": 11,
+    "stars": 1
   },
   {
     "name": "keyboardUI",
@@ -387,7 +425,8 @@
     "created_at": "2023-08-29T14:59:12Z",
     "updated_at": "2026-06-20T14:24:22Z",
     "commit_count": 144,
-    "size_kb": 204
+    "size_kb": 204,
+    "stars": 1
   },
   {
     "name": "levenshtein_distance_search",
@@ -397,7 +436,8 @@
     "created_at": "2023-12-03T03:37:45Z",
     "updated_at": "2025-11-17T08:09:20Z",
     "commit_count": 29,
-    "size_kb": 1055
+    "size_kb": 1055,
+    "stars": 1
   },
   {
     "name": "line_api_sample",
@@ -407,7 +447,8 @@
     "created_at": "2024-02-20T09:24:10Z",
     "updated_at": "2025-12-28T02:15:04Z",
     "commit_count": 1,
-    "size_kb": 1
+    "size_kb": 1,
+    "stars": 0
   },
   {
     "name": "LongPressButton",
@@ -417,7 +458,8 @@
     "created_at": "2023-06-10T11:59:08Z",
     "updated_at": "2024-04-14T13:48:07Z",
     "commit_count": 13,
-    "size_kb": 10
+    "size_kb": 10,
+    "stars": 0
   },
   {
     "name": "long_chain_shiritori",
@@ -427,7 +469,8 @@
     "created_at": "2025-12-03T11:13:35Z",
     "updated_at": "2025-12-06T11:17:28Z",
     "commit_count": 3,
-    "size_kb": 3
+    "size_kb": 3,
+    "stars": 0
   },
   {
     "name": "make_typo",
@@ -437,7 +480,8 @@
     "created_at": "2025-04-20T07:52:10Z",
     "updated_at": "2025-09-30T08:02:27Z",
     "commit_count": 19,
-    "size_kb": 259
+    "size_kb": 259,
+    "stars": 0
   },
   {
     "name": "mechanical-sketcher",
@@ -447,7 +491,8 @@
     "created_at": "2025-06-19T14:22:37Z",
     "updated_at": "2026-01-24T14:46:24Z",
     "commit_count": 48,
-    "size_kb": 97
+    "size_kb": 97,
+    "stars": 1
   },
   {
     "name": "MineSweeper3d",
@@ -457,7 +502,8 @@
     "created_at": "2025-12-01T10:08:35Z",
     "updated_at": "2026-03-12T01:03:06Z",
     "commit_count": 15,
-    "size_kb": 40
+    "size_kb": 40,
+    "stars": 1
   },
   {
     "name": "MineSweeperHoneycomb",
@@ -467,7 +513,8 @@
     "created_at": "2025-12-10T11:14:25Z",
     "updated_at": "2025-12-13T08:25:57Z",
     "commit_count": 4,
-    "size_kb": 7
+    "size_kb": 7,
+    "stars": 0
   },
   {
     "name": "minesweeper_helper",
@@ -477,7 +524,8 @@
     "created_at": "2025-06-14T09:23:42Z",
     "updated_at": "2025-07-02T00:04:49Z",
     "commit_count": 2,
-    "size_kb": 1
+    "size_kb": 1,
+    "stars": 0
   },
   {
     "name": "Minesweepy",
@@ -487,7 +535,8 @@
     "created_at": "2024-04-18T09:06:06Z",
     "updated_at": "2024-05-05T08:47:38Z",
     "commit_count": 28,
-    "size_kb": 42
+    "size_kb": 42,
+    "stars": 1
   },
   {
     "name": "morse-code-simulator",
@@ -497,7 +546,8 @@
     "created_at": "2025-11-22T02:12:17Z",
     "updated_at": "2025-11-29T04:56:12Z",
     "commit_count": 3,
-    "size_kb": 37
+    "size_kb": 37,
+    "stars": 0
   },
   {
     "name": "note-content",
@@ -507,7 +557,8 @@
     "created_at": "2026-05-26T14:58:47Z",
     "updated_at": "2026-07-31T16:47:48Z",
     "commit_count": 29,
-    "size_kb": 287
+    "size_kb": 287,
+    "stars": 0
   },
   {
     "name": "numnator",
@@ -517,7 +568,8 @@
     "created_at": "2021-07-10T12:58:43Z",
     "updated_at": "2026-01-13T15:29:26Z",
     "commit_count": 60,
-    "size_kb": 609
+    "size_kb": 609,
+    "stars": 0
   },
   {
     "name": "pake-style",
@@ -527,7 +579,8 @@
     "created_at": "2018-08-11T01:09:12Z",
     "updated_at": "2023-06-23T23:59:38Z",
     "commit_count": 82,
-    "size_kb": 585
+    "size_kb": 585,
+    "stars": 0
   },
   {
     "name": "pitch-detector",
@@ -537,7 +590,8 @@
     "created_at": "2026-01-25T11:06:35Z",
     "updated_at": "2026-02-03T12:14:34Z",
     "commit_count": 2,
-    "size_kb": 63
+    "size_kb": 63,
+    "stars": 0
   },
   {
     "name": "pi_digit_analysis",
@@ -547,7 +601,8 @@
     "created_at": "2026-02-10T12:00:13Z",
     "updated_at": "2026-02-23T11:57:30Z",
     "commit_count": 15,
-    "size_kb": 366
+    "size_kb": 366,
+    "stars": 1
   },
   {
     "name": "PolygonalGeometricPattern",
@@ -557,7 +612,8 @@
     "created_at": "2025-12-19T14:01:01Z",
     "updated_at": "2025-12-21T13:52:38Z",
     "commit_count": 27,
-    "size_kb": 73
+    "size_kb": 73,
+    "stars": 0
   },
   {
     "name": "portfolio",
@@ -565,9 +621,10 @@
     "tags": ["nustjs", "typescript", "vue"],
     "description": "ishi720のポートフォリオ",
     "created_at": "2024-12-14T15:01:00Z",
-    "updated_at": "2026-07-19T12:03:53Z",
-    "commit_count": 209,
-    "size_kb": 8783
+    "updated_at": "2026-08-02T10:27:16Z",
+    "commit_count": 210,
+    "size_kb": 8783,
+    "stars": 1
   },
   {
     "name": "qiita-content",
@@ -575,9 +632,10 @@
     "tags": ["qiita", "qiita-cli"],
     "description": "Qiita CLIでQiita記事を保管",
     "created_at": "2024-11-25T12:03:14Z",
-    "updated_at": "2026-06-05T00:54:16Z",
-    "commit_count": 44,
-    "size_kb": 306
+    "updated_at": "2026-08-01T03:32:37Z",
+    "commit_count": 45,
+    "size_kb": 312,
+    "stars": 0
   },
   {
     "name": "qiita_analytics",
@@ -587,7 +645,8 @@
     "created_at": "2024-02-17T11:42:19Z",
     "updated_at": "2025-04-28T15:32:00Z",
     "commit_count": 84,
-    "size_kb": 492
+    "size_kb": 492,
+    "stars": 0
   },
   {
     "name": "qiita_analytics_docker",
@@ -597,7 +656,8 @@
     "created_at": "2024-06-23T12:46:29Z",
     "updated_at": "2024-06-23T14:24:59Z",
     "commit_count": 4,
-    "size_kb": 2
+    "size_kb": 2,
+    "stars": 0
   },
   {
     "name": "qiita_analytics_document",
@@ -607,7 +667,8 @@
     "created_at": "2024-07-15T17:28:51Z",
     "updated_at": "2024-07-15T17:35:31Z",
     "commit_count": 1,
-    "size_kb": 1
+    "size_kb": 1,
+    "stars": 0
   },
   {
     "name": "QualiFindPortal",
@@ -617,7 +678,8 @@
     "created_at": "2025-09-28T12:31:01Z",
     "updated_at": "2025-10-13T13:47:36Z",
     "commit_count": 12,
-    "size_kb": 28
+    "size_kb": 28,
+    "stars": 0
   },
   {
     "name": "quicksight-backup-lambda",
@@ -627,7 +689,8 @@
     "created_at": "2025-07-06T05:40:05Z",
     "updated_at": "2025-07-12T17:14:25Z",
     "commit_count": 73,
-    "size_kb": 45
+    "size_kb": 45,
+    "stars": 0
   },
   {
     "name": "rangeOCR",
@@ -637,7 +700,8 @@
     "created_at": "2023-06-01T13:07:04Z",
     "updated_at": "2025-12-28T02:11:20Z",
     "commit_count": 26,
-    "size_kb": 108
+    "size_kb": 108,
+    "stars": 0
   },
   {
     "name": "regex-challenge",
@@ -647,7 +711,8 @@
     "created_at": "2025-07-12T16:47:12Z",
     "updated_at": "2026-07-13T16:00:21Z",
     "commit_count": 79,
-    "size_kb": 205
+    "size_kb": 205,
+    "stars": 1
   },
   {
     "name": "regex-search-chrome-extension",
@@ -657,7 +722,8 @@
     "created_at": "2025-12-29T08:05:02Z",
     "updated_at": "2025-12-31T13:10:49Z",
     "commit_count": 1,
-    "size_kb": 14
+    "size_kb": 14,
+    "stars": 0
   },
   {
     "name": "regexp",
@@ -665,9 +731,10 @@
     "tags": ["angular", "fortawesome", "jquery", "materialize-css", "gulp"],
     "description": "正規表現チェッカー",
     "created_at": "2023-06-25T10:24:29Z",
-    "updated_at": "2026-04-20T12:23:26Z",
-    "commit_count": 31,
-    "size_kb": 957
+    "updated_at": "2026-08-02T03:14:09Z",
+    "commit_count": 36,
+    "size_kb": 1035,
+    "stars": 0
   },
   {
     "name": "ReuleauxPhysics",
@@ -677,7 +744,8 @@
     "created_at": "2025-12-31T00:39:08Z",
     "updated_at": "2026-05-10T11:35:55Z",
     "commit_count": 22,
-    "size_kb": 37
+    "size_kb": 37,
+    "stars": 0
   },
   {
     "name": "rss_to_json",
@@ -687,7 +755,8 @@
     "created_at": "2020-04-20T06:57:19Z",
     "updated_at": "2020-09-21T06:11:02Z",
     "commit_count": 51,
-    "size_kb": 62
+    "size_kb": 62,
+    "stars": 0
   },
   {
     "name": "RubberPencilIllusion",
@@ -697,7 +766,8 @@
     "created_at": "2025-12-07T01:28:07Z",
     "updated_at": "2025-12-12T02:43:11Z",
     "commit_count": 6,
-    "size_kb": 8
+    "size_kb": 8,
+    "stars": 0
   },
   {
     "name": "runroute",
@@ -707,7 +777,8 @@
     "created_at": "2021-03-13T10:18:30Z",
     "updated_at": "2025-05-29T13:00:36Z",
     "commit_count": 70,
-    "size_kb": 170
+    "size_kb": 170,
+    "stars": 0
   },
   {
     "name": "saveExcelAsHtml",
@@ -717,7 +788,8 @@
     "created_at": "2022-04-05T22:23:20Z",
     "updated_at": "2023-06-24T00:02:20Z",
     "commit_count": 3,
-    "size_kb": 3
+    "size_kb": 3,
+    "stars": 0
   },
   {
     "name": "ShapeContact",
@@ -727,7 +799,8 @@
     "created_at": "2024-05-11T08:33:05Z",
     "updated_at": "2024-05-24T15:16:27Z",
     "commit_count": 28,
-    "size_kb": 37
+    "size_kb": 37,
+    "stars": 0
   },
   {
     "name": "sheepuu",
@@ -737,7 +810,8 @@
     "created_at": "2024-02-23T07:33:16Z",
     "updated_at": "2025-08-03T11:35:22Z",
     "commit_count": 7,
-    "size_kb": 1364
+    "size_kb": 1364,
+    "stars": 0
   },
   {
     "name": "showUserAgent",
@@ -747,7 +821,8 @@
     "created_at": "2023-05-25T13:24:26Z",
     "updated_at": "2023-05-25T13:51:06Z",
     "commit_count": 1,
-    "size_kb": 3
+    "size_kb": 3,
+    "stars": 0
   },
   {
     "name": "solve_sudoku_puzzle",
@@ -757,7 +832,8 @@
     "created_at": "2020-10-30T14:34:23Z",
     "updated_at": "2025-12-28T12:40:07Z",
     "commit_count": 36,
-    "size_kb": 40
+    "size_kb": 40,
+    "stars": 0
   },
   {
     "name": "space_obaa",
@@ -767,7 +843,8 @@
     "created_at": "2024-02-22T11:40:23Z",
     "updated_at": "2024-02-24T01:15:21Z",
     "commit_count": 2,
-    "size_kb": 16
+    "size_kb": 16,
+    "stars": 0
   },
   {
     "name": "style-manager-chrome-extension",
@@ -777,7 +854,8 @@
     "created_at": "2026-01-01T14:10:12Z",
     "updated_at": "2026-01-01T14:12:26Z",
     "commit_count": 2,
-    "size_kb": 18
+    "size_kb": 18,
+    "stars": 0
   },
   {
     "name": "sublime3_my_snippet",
@@ -787,7 +865,8 @@
     "created_at": "2019-05-19T23:29:53Z",
     "updated_at": "2023-06-24T05:41:02Z",
     "commit_count": 12,
-    "size_kb": 7
+    "size_kb": 7,
+    "stars": 0
   },
   {
     "name": "sublime3_query_ope_tool",
@@ -797,7 +876,8 @@
     "created_at": "2019-02-06T11:08:16Z",
     "updated_at": "2023-06-25T14:19:54Z",
     "commit_count": 25,
-    "size_kb": 16
+    "size_kb": 16,
+    "stars": 1
   },
   {
     "name": "tag-game",
@@ -807,7 +887,8 @@
     "created_at": "2025-12-29T15:26:26Z",
     "updated_at": "2025-12-30T05:20:22Z",
     "commit_count": 8,
-    "size_kb": 38
+    "size_kb": 38,
+    "stars": 0
   },
   {
     "name": "task-complete",
@@ -817,7 +898,8 @@
     "created_at": "2019-07-02T09:41:34Z",
     "updated_at": "2025-12-27T22:50:36Z",
     "commit_count": 10,
-    "size_kb": 8
+    "size_kb": 8,
+    "stars": 0
   },
   {
     "name": "tech-catalog",
@@ -827,7 +909,8 @@
     "created_at": "2026-01-02T12:08:18Z",
     "updated_at": "2026-02-22T12:46:18Z",
     "commit_count": 50,
-    "size_kb": 418
+    "size_kb": 418,
+    "stars": 0
   },
   {
     "name": "template-delimiter-customizer",
@@ -837,7 +920,8 @@
     "created_at": "2026-01-17T13:20:18Z",
     "updated_at": "2026-01-18T01:23:02Z",
     "commit_count": 4,
-    "size_kb": 10
+    "size_kb": 10,
+    "stars": 0
   },
   {
     "name": "textfitJS",
@@ -847,7 +931,8 @@
     "created_at": "2023-05-03T05:48:01Z",
     "updated_at": "2023-06-24T00:17:10Z",
     "commit_count": 9,
-    "size_kb": 11
+    "size_kb": 11,
+    "stars": 0
   },
   {
     "name": "urlParamDisplay",
@@ -857,7 +942,8 @@
     "created_at": "2022-05-04T00:42:18Z",
     "updated_at": "2025-12-27T23:31:32Z",
     "commit_count": 1,
-    "size_kb": 0
+    "size_kb": 0,
+    "stars": 0
   },
   {
     "name": "vscode_my_snippet",
@@ -867,7 +953,8 @@
     "created_at": "2019-09-24T06:57:00Z",
     "updated_at": "2023-06-24T01:07:48Z",
     "commit_count": 5,
-    "size_kb": 3
+    "size_kb": 3,
+    "stars": 0
   },
   {
     "name": "vscode_settings",
@@ -877,7 +964,8 @@
     "created_at": "2019-10-02T07:23:09Z",
     "updated_at": "2025-12-28T12:37:15Z",
     "commit_count": 8,
-    "size_kb": 5
+    "size_kb": 5,
+    "stars": 0
   },
   {
     "name": "web-latte-art",
@@ -887,7 +975,8 @@
     "created_at": "2025-12-02T11:25:45Z",
     "updated_at": "2025-12-05T22:36:55Z",
     "commit_count": 15,
-    "size_kb": 24
+    "size_kb": 24,
+    "stars": 0
   },
   {
     "name": "white_boundary_simulator",
@@ -895,8 +984,9 @@
     "tags": "javascript",
     "description": "白の境界線シミュレータ",
     "created_at": "2026-07-14T13:50:40Z",
-    "updated_at": "2026-07-21T14:06:54Z",
-    "commit_count": 15,
-    "size_kb": 116
+    "updated_at": "2026-08-02T03:32:03Z",
+    "commit_count": 16,
+    "size_kb": 119,
+    "stars": 1
   }
 ]

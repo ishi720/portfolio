@@ -39,4 +39,5 @@ export interface Repo {
   updated_at: string
   commit_count?: number
   size_kb?: number
+  stars?: number
 }
