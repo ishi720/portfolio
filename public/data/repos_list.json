@@ -302,9 +302,9 @@
     "tags": "python3",
     "description": "特定ユーザーのqiitaとzennの記事を取得する",
     "created_at": "2024-12-30T15:26:05Z",
-    "updated_at": "2026-05-09T12:18:06Z",
-    "commit_count": 14,
-    "size_kb": 17,
+    "updated_at": "2026-08-03T10:31:30Z",
+    "commit_count": 16,
+    "size_kb": 20,
     "stars": 0
   },
   {
@@ -313,9 +313,9 @@
     "tags": ["r", "githubapi"],
     "description": "GitHubユーザーのリポジトリを分析し、可視化するRスクリプトです。",
     "created_at": "2025-12-15T23:07:29Z",
-    "updated_at": "2026-08-02T10:40:37Z",
-    "commit_count": 52,
-    "size_kb": 17136,
+    "updated_at": "2026-08-04T13:51:23Z",
+    "commit_count": 54,
+    "size_kb": 17869,
     "stars": 0
   },
   {
@@ -344,9 +344,9 @@
     "name": "honeycombPuzzle",
     "url": "https://github.com/ishi720/honeycombPuzzle",
     "tags": ["react", "honeycomb"],
-    "description": "",
+    "description": "ハニカム構造のパズルゲーム",
     "created_at": "2026-01-14T14:02:05Z",
-    "updated_at": "2026-01-14T14:29:49Z",
+    "updated_at": "2026-08-11T12:55:41Z",
     "commit_count": 4,
     "size_kb": 39,
     "stars": 0
@@ -555,9 +555,9 @@
     "tags": "python",
     "description": "note.com の記事を HTML ファイルとして GitHub にバックアップするスクリプト",
     "created_at": "2026-05-26T14:58:47Z",
-    "updated_at": "2026-07-31T16:47:48Z",
-    "commit_count": 29,
-    "size_kb": 287,
+    "updated_at": "2026-08-11T16:02:42Z",
+    "commit_count": 32,
+    "size_kb": 295,
     "stars": 0
   },
   {
@@ -621,9 +621,9 @@
     "tags": ["nustjs", "typescript", "vue"],
     "description": "ishi720のポートフォリオ",
     "created_at": "2024-12-14T15:01:00Z",
-    "updated_at": "2026-08-02T10:27:16Z",
-    "commit_count": 210,
-    "size_kb": 8783,
+    "updated_at": "2026-08-11T12:51:32Z",
+    "commit_count": 215,
+    "size_kb": 8592,
     "stars": 1
   },
   {
@@ -764,9 +764,9 @@
     "tags": "javascript",
     "description": "ラバーペンシル現象をWebで再現",
     "created_at": "2025-12-07T01:28:07Z",
-    "updated_at": "2025-12-12T02:43:11Z",
-    "commit_count": 6,
-    "size_kb": 8,
+    "updated_at": "2026-08-09T12:44:31Z",
+    "commit_count": 8,
+    "size_kb": 10,
     "stars": 0
   },
   {
@@ -907,9 +907,9 @@
     "tags": ["nuxtjs", "typescript", "vue"],
     "description": "技術情報をまとめたカタログサイトです。",
     "created_at": "2026-01-02T12:08:18Z",
-    "updated_at": "2026-02-22T12:46:18Z",
-    "commit_count": 50,
-    "size_kb": 418,
+    "updated_at": "2026-08-08T03:09:49Z",
+    "commit_count": 51,
+    "size_kb": 421,
     "stars": 0
   },
   {
@@ -984,9 +984,9 @@
     "tags": "javascript",
     "description": "白の境界線シミュレータ",
     "created_at": "2026-07-14T13:50:40Z",
-    "updated_at": "2026-08-02T03:32:03Z",
-    "commit_count": 16,
-    "size_kb": 119,
+    "updated_at": "2026-08-04T14:47:29Z",
+    "commit_count": 18,
+    "size_kb": 123,
     "stars": 1
   }
 ]
