@@ -1,0 +1,34 @@
+name: Update Repositories Data
+
+on:
+  schedule:
+    - cron: '0 18 * * 6' # 毎週日曜の午前3時（日本時間）に実行 = UTC 18:00
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout portfolio
+        uses: actions/checkout@v4
+
+      - name: Clone GithubDashboard
+        run: git clone --depth 1 https://github.com/ishi720/GithubDashboard.git github-dashboard
+
+      - name: Copy repos_list.json
+        run: cp github-dashboard/Documents/repos_list.json public/data/repos_list.json
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/repos_list.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Repositoriesデータを自動更新"
+            git push
+          fi
