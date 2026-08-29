@@ -44,6 +44,7 @@ export const usePortfolio = () => {
         { title: '音程検出', url: 'https://ishi720.github.io/pitch-detector/', image: 'pitch-detector.png', description: '音程を検出するサービスです。', techs: ['Javascript', 'Next.js'] },
         { title: 'ホテリングの法則シミュレーター', url: 'https://ishi720.github.io/hotelling-sim/', image: 'hotelling-sim.png', description: 'ホテリングの法則をシミュレートするサービスです。', techs: ['Javascript', 'Nuxt', 'Vue'] },
         { title: '白は、どこまで白か。', url: 'https://ishi720.github.io/white_boundary_simulator/', image: 'white_boundary_simulator.png', description: '白が200色あるか確かめるシミュレータです', techs: ['Javascript'] },
+        { title: '反復横跳びチャレンジ', url: 'https://ishi720.github.io/side_steps/', image: 'side_steps.png', description: '反復横跳びのミニゲームです', techs: ['Javascript'] },
     ]
 
     const chromeExtensions = [
