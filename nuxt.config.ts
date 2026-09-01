@@ -16,5 +16,10 @@ export default defineNuxtConfig({
     }
   },
   css: ['~/assets/scss/main.scss'],
+  runtimeConfig: {
+    public: {
+      gaId: '',
+    },
+  },
   compatibilityDate: '2024-01-01',
 })
