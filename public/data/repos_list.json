@@ -300,11 +300,11 @@
     "name": "getArticle",
     "url": "https://github.com/ishi720/getArticle",
     "tags": "python3",
-    "description": "特定ユーザーのqiitaとzennの記事を取得する",
+    "description": "特定ユーザーのQiita/Note/Zennの記事を取得する",
     "created_at": "2024-12-30T15:26:05Z",
-    "updated_at": "2026-08-03T10:31:30Z",
-    "commit_count": 16,
-    "size_kb": 20,
+    "updated_at": "2026-08-12T14:50:00Z",
+    "commit_count": 19,
+    "size_kb": 25,
     "stars": 0
   },
   {
@@ -313,9 +313,9 @@
     "tags": ["r", "githubapi"],
     "description": "GitHubユーザーのリポジトリを分析し、可視化するRスクリプトです。",
     "created_at": "2025-12-15T23:07:29Z",
-    "updated_at": "2026-08-04T13:51:23Z",
-    "commit_count": 54,
-    "size_kb": 17869,
+    "updated_at": "2026-08-11T23:43:26Z",
+    "commit_count": 55,
+    "size_kb": 18517,
     "stars": 0
   },
   {
@@ -555,9 +555,9 @@
     "tags": "python",
     "description": "note.com の記事を HTML ファイルとして GitHub にバックアップするスクリプト",
     "created_at": "2026-05-26T14:58:47Z",
-    "updated_at": "2026-08-11T16:02:42Z",
-    "commit_count": 32,
-    "size_kb": 295,
+    "updated_at": "2026-08-14T15:55:58Z",
+    "commit_count": 35,
+    "size_kb": 299,
     "stars": 0
   },
   {
@@ -621,9 +621,9 @@
     "tags": ["nustjs", "typescript", "vue"],
     "description": "ishi720のポートフォリオ",
     "created_at": "2024-12-14T15:01:00Z",
-    "updated_at": "2026-08-11T12:51:32Z",
-    "commit_count": 215,
-    "size_kb": 8592,
+    "updated_at": "2026-08-30T06:05:08Z",
+    "commit_count": 223,
+    "size_kb": 8717,
     "stars": 1
   },
   {
@@ -825,6 +825,17 @@
     "stars": 0
   },
   {
+    "name": "side_steps",
+    "url": "https://github.com/ishi720/side_steps",
+    "tags": "vue",
+    "description": "反復横跳びのミニゲームです。",
+    "created_at": "2026-08-15T14:36:34Z",
+    "updated_at": "2026-08-16T05:31:21Z",
+    "commit_count": 4,
+    "size_kb": 87,
+    "stars": 0
+  },
+  {
     "name": "solve_sudoku_puzzle",
     "url": "https://github.com/ishi720/solve_sudoku_puzzle",
     "tags": ["heroku", "python", "flask"],
@@ -984,9 +995,9 @@
     "tags": "javascript",
     "description": "白の境界線シミュレータ",
     "created_at": "2026-07-14T13:50:40Z",
-    "updated_at": "2026-08-04T14:47:29Z",
+    "updated_at": "2026-08-13T10:20:46Z",
     "commit_count": 18,
     "size_kb": 123,
-    "stars": 1
+    "stars": 2
   }
 ]
