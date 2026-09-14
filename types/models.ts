@@ -40,4 +40,5 @@ export interface Repo {
   commit_count?: number
   size_kb?: number
   stars?: number
+  language?: string | null
 }

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { formatDate, parseTags } from '../composables/useUtils'
+import { formatDate, parseTags, formatLanguageLabel } from '../composables/useUtils'
 
 describe('formatDate', () => {
   it('YYYY-MM-DD形式を正しくフォーマットする', () => {
@@ -69,5 +69,26 @@ describe('parseTags', () => {
     it('単一の文字列を配列に変換する', () => {
       expect(parseTags('TypeScript')).toEqual(['TypeScript'])
     })
+  })
+})
+
+describe('formatLanguageLabel', () => {
+  it('空文字の場合は空文字を返す', () => {
+    expect(formatLanguageLabel('')).toBe('')
+  })
+
+  it('先頭を大文字化する', () => {
+    expect(formatLanguageLabel('javascript')).toBe('Javascript')
+    expect(formatLanguageLabel('processing')).toBe('Processing')
+  })
+
+  it('既に大文字化されている場合はそのまま返す', () => {
+    expect(formatLanguageLabel('JavaScript')).toBe('JavaScript')
+    expect(formatLanguageLabel('PHP')).toBe('PHP')
+  })
+
+  it('区切り文字を含む単語は単語ごとに先頭を大文字化する', () => {
+    expect(formatLanguageLabel('aws-lambda')).toBe('Aws Lambda')
+    expect(formatLanguageLabel('bash_profile')).toBe('Bash Profile')
   })
 })

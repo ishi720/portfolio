@@ -42,49 +42,54 @@
             target="_blank"
             class="repo-card"
           >
-            <div class="repo-header">
-              <div class="repo-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
-                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
-                </svg>
+            <div class="repo-eyecatch">
+              <span class="repo-eyecatch-lang">{{ eyecatchLabel(repo) }}</span>
+            </div>
+            <div class="repo-body">
+              <div class="repo-header">
+                <div class="repo-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                  </svg>
+                </div>
+                <h3 class="repo-name">{{ repo.name }}</h3>
               </div>
-              <h3 class="repo-name">{{ repo.name }}</h3>
-            </div>
-            <p class="repo-desc">{{ repo.description || 'No description' }}</p>
-            <div class="repo-tags" v-if="parseTags(repo.tags).length > 0">
-              <span
-                v-for="tag in parseTags(repo.tags)"
-                :key="tag"
-                class="tech-tag"
-              >
-                {{ tag }}
-              </span>
-            </div>
-            <div class="repo-footer">
-              <div class="repo-stats">
-                <span class="repo-stat" title="スター数">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
-                    <path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/>
-                  </svg>
-                  {{ repo.stars || 0 }}
-                </span>
-                <span class="repo-stat" title="コミット数">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
-                    <path d="M10.5 7.75a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Zm1.43.75a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 0 1 0-1.5h3.32a4.002 4.002 0 0 1 7.86 0h3.32a.75.75 0 0 1 0 1.5Zm-1.43-.75a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"/>
-                  </svg>
-                  {{ repo.commit_count || 0 }}
-                </span>
-                <span class="repo-stat" title="サイズ">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
-                    <path d="M3.5 3.75v8.5h9v-8.5h-9Zm0-1.5h9A1.5 1.5 0 0 1 14 3.75v8.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12.25v-8.5A1.5 1.5 0 0 1 3.5 2.25Z"/>
-                  </svg>
-                  {{ formatSize(repo.size_kb) }}
+              <p class="repo-desc">{{ repo.description || 'No description' }}</p>
+              <div class="repo-tags" v-if="parseTags(repo.tags).length > 0">
+                <span
+                  v-for="tag in parseTags(repo.tags)"
+                  :key="tag"
+                  class="tech-tag"
+                >
+                  {{ tag }}
                 </span>
               </div>
-              <span class="repo-date">
-                <span class="date-label">更新:</span>
-                {{ formatDate(repo.updated_at) }}
-              </span>
+              <div class="repo-footer">
+                <div class="repo-stats">
+                  <span class="repo-stat" title="スター数">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+                      <path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/>
+                    </svg>
+                    {{ repo.stars || 0 }}
+                  </span>
+                  <span class="repo-stat" title="コミット数">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+                      <path d="M10.5 7.75a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Zm1.43.75a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 0 1 0-1.5h3.32a4.002 4.002 0 0 1 7.86 0h3.32a.75.75 0 0 1 0 1.5Zm-1.43-.75a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"/>
+                    </svg>
+                    {{ repo.commit_count || 0 }}
+                  </span>
+                  <span class="repo-stat" title="サイズ">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+                      <path d="M3.5 3.75v8.5h9v-8.5h-9Zm0-1.5h9A1.5 1.5 0 0 1 14 3.75v8.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 12.25v-8.5A1.5 1.5 0 0 1 3.5 2.25Z"/>
+                    </svg>
+                    {{ formatSize(repo.size_kb) }}
+                  </span>
+                </div>
+                <span class="repo-date">
+                  <span class="date-label">更新:</span>
+                  {{ formatDate(repo.updated_at) }}
+                </span>
+              </div>
             </div>
           </a>
         </div>
@@ -106,7 +111,7 @@ import { ref, computed, onMounted } from 'vue'
 useHead({ title: 'Repositories' })
 import { useRoute } from 'vue-router'
 import type { SortState, SortOption, Repo } from '~/types/models'
-import { formatDate, parseTags } from '~/composables/useUtils'
+import { formatDate, parseTags, formatLanguageLabel } from '~/composables/useUtils'
 import { usePagination, getInitialSortState } from '~/composables/usePagination'
 import { useFetchData } from '~/composables/useFetchData'
 import { usePopularTags, filterBySearch, filterByTag, sortByDate, sortByNumber, sortByString } from '~/composables/useFilteredList'
@@ -191,6 +196,16 @@ const {
   watchTargets: [searchQuery, selectedTag]
 })
 
+// アイキャッチに表示する主要言語。language未設定の場合は先頭タグ、それも無ければ「Text」と表示
+const eyecatchSource = (repo: Repo) => {
+  return repo.language?.trim() || parseTags(repo.tags)[0] || ''
+}
+
+const eyecatchLabel = (repo: Repo) => {
+  const source = eyecatchSource(repo)
+  return source ? formatLanguageLabel(source) : 'Text'
+}
+
 const formatSize = (sizeKb?: number) => {
   if (!sizeKb || sizeKb === 0) return '0 KB'
   if (sizeKb >= 1024) {
@@ -231,20 +246,39 @@ const formatSize = (sizeKb?: number) => {
 }
 
 .repo-card {
-  background: #fff;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  @include card-base;
   display: flex;
   flex-direction: column;
-  border-left: 3px solid #24292e;
+  overflow: hidden;
+}
 
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-    border-left-color: $primary;
-  }
+.repo-eyecatch {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #424242;
+}
+
+.repo-eyecatch-lang {
+  max-width: 100%;
+  padding: 0 16px;
+  font-family: $font-en;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: $text-white;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.repo-body {
+  padding: 18px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .repo-header {

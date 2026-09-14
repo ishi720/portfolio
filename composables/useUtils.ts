@@ -24,3 +24,16 @@ export const parseTags = (tags: string | string[] | undefined | null): string[] 
   }
   return tags.length > 0 ? [tags] : []
 }
+
+/**
+ * タグ名を表示用ラベルに変換する（言語アイキャッチ用）
+ * - language未設定時のタグフォールバック用に、単語ごとに先頭を大文字化する
+ */
+export const formatLanguageLabel = (tag: string): string => {
+  if (!tag) return ''
+  return tag
+    .split(/[-_ ]+/)
+    .filter(word => word.length > 0)
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ')
+}
