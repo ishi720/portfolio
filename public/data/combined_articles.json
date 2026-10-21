@@ -1,11 +1,38 @@
 [
     {
+        "published_at": "2026-10-21T07:16:16+09:00",
+        "url": "https://qiita.com/ishi720/items/5468cfb47e7e3c96ddbb",
+        "title": "Summernoteで挿入した画像を署名付きURLでS3に直接アップロードする",
+        "tags": "S3, summernote, Express.js",
+        "source": "Qiita",
+        "likes": 3,
+        "eyecatch": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRmF2YXRhcnMxLmdpdGh1YnVzZXJjb250ZW50LmNvbSUyRnUlMkYyNjgxMTUyNyUzRnYlM0Q0P2l4bGliPXJiLTQuMS4xJmFyPTElM0ExJmZpdD1jcm9wJm1hc2s9ZWxsaXBzZSZiZz1GRkZGRkYmZm09cG5nMzImcz0xZjY1ZDQ1ZjEyYzNjZjk0MmU5NGVlNzhlY2Q5NGJjZQ%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D7aa619405e5c95be93beccab6d66ee45?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9U3VtbWVybm90ZSVFMyU4MSVBNyVFNiU4QyVCRiVFNSU4NSVBNSVFMyU4MSU5NyVFMyU4MSU5RiVFNyU5NCVCQiVFNSU4MyU4RiVFMyU4MiU5MiVFNyVCRCVCMiVFNSU5MCU4RCVFNCVCQiU5OCVFMyU4MSU4RFVSTCVFMyU4MSVBN1MzJUUzJTgxJUFCJUU3JTlCJUI0JUU2JThFJUE1JUUzJTgyJUEyJUUzJTgzJTgzJUUzJTgzJTk3JUUzJTgzJUFEJUUzJTgzJUJDJUUzJTgzJTg5JUUzJTgxJTk5JUUzJTgyJThCJnR4dC1hbGlnbj1sZWZ0JTJDdG9wJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9NTYmdHh0LXBhZD0wJnM9M2JkOTZmMjQ5MjM0ZDc0M2E1ZmEzZTVmMjNhZGU1YmI&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBpc2hpNzIwJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9MzYmdHh0LXBhZD0wJnM9ZDZjMzZiZWJjYTg5YTdiNjk1MGNhYWJhNjQyMDY1Y2Y&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=203f438e900ac0cf919aee465d489df2"
+    },
+    {
+        "published_at": "2026-10-12T21:41:22+09:00",
+        "url": "https://note.com/ishi720/n/nd1338a3821c8",
+        "title": "評価とは評価者の興味の範囲で決まる",
+        "tags": "キャリア, 働き方, マーケティング, 自己評価, 評価基準",
+        "source": "note",
+        "likes": 3,
+        "eyecatch": "https://assets.st-note.com/production/uploads/images/323671775/rectangle_large_type_2_9fe279e31e5596cb31feae1f8bb1af2a.png?fit=bounds&quality=85&width=1280"
+    },
+    {
+        "published_at": "2026-09-21T21:11:36+09:00",
+        "url": "https://qiita.com/ishi720/items/f104721b47e7e23b5c8a",
+        "title": "妖精が飛んでいるかのような幾何学模様をJavaScriptで作ってみた",
+        "tags": "JavaScript, canvas, 幾何学, ジェネラティブアート",
+        "source": "Qiita",
+        "likes": 5,
+        "eyecatch": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRmF2YXRhcnMxLmdpdGh1YnVzZXJjb250ZW50LmNvbSUyRnUlMkYyNjgxMTUyNyUzRnYlM0Q0P2l4bGliPXJiLTQuMS4xJmFyPTElM0ExJmZpdD1jcm9wJm1hc2s9ZWxsaXBzZSZiZz1GRkZGRkYmZm09cG5nMzImcz0xZjY1ZDQ1ZjEyYzNjZjk0MmU5NGVlNzhlY2Q5NGJjZQ%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D7aa619405e5c95be93beccab6d66ee45?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9JUU1JUE2JTk2JUU3JUIyJUJFJUUzJTgxJThDJUU5JUEzJTlCJUUzJTgyJTkzJUUzJTgxJUE3JUUzJTgxJTg0JUUzJTgyJThCJUUzJTgxJThCJUUzJTgxJUFFJUUzJTgyJTg4JUUzJTgxJTg2JUUzJTgxJUFBJUU1JUI5JUJFJUU0JUJEJTk1JUU1JUFEJUE2JUU2JUE4JUExJUU2JUE3JTk4JUUzJTgyJTkySmF2YVNjcmlwdCVFMyU4MSVBNyVFNCVCRCU5QyVFMyU4MSVBMyVFMyU4MSVBNiVFMyU4MSVCRiVFMyU4MSU5RiZ0eHQtYWxpZ249bGVmdCUyQ3RvcCZ0eHQtY29sb3I9JTIzMUUyMTIxJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTU2JnR4dC1wYWQ9MCZzPThiMWE2NWRiMjlmZjJhNWUyOGFjMDM5MjM3MDhjYjRk&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBpc2hpNzIwJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9MzYmdHh0LXBhZD0wJnM9ZDZjMzZiZWJjYTg5YTdiNjk1MGNhYWJhNjQyMDY1Y2Y&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=4d8baae67dbad944512f5f4189506683"
+    },
+    {
         "published_at": "2026-09-06T23:36:24+09:00",
         "url": "https://note.com/ishi720/n/n093833a6447c",
         "title": "「エンジニア上司」と「非エンジニア上司」はどちらが良い？",
         "tags": "転職, エンジニア, 上司, IT業界, 評価基準",
         "source": "note",
-        "likes": 2,
+        "likes": 3,
         "eyecatch": "https://assets.st-note.com/production/uploads/images/311005351/rectangle_large_type_2_d7553e31626f7636398ac75091552283.png?fit=bounds&quality=85&width=1280"
     },
     {
@@ -14,7 +41,7 @@
         "title": "「言語◯年」だけで採用を判断するのは解像度が低い",
         "tags": "Nuxt, TypeScript, 転職",
         "source": "Qiita",
-        "likes": 8,
+        "likes": 9,
         "eyecatch": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRmF2YXRhcnMxLmdpdGh1YnVzZXJjb250ZW50LmNvbSUyRnUlMkYyNjgxMTUyNyUzRnYlM0Q0P2l4bGliPXJiLTQuMS4xJmFyPTElM0ExJmZpdD1jcm9wJm1hc2s9ZWxsaXBzZSZiZz1GRkZGRkYmZm09cG5nMzImcz0xZjY1ZDQ1ZjEyYzNjZjk0MmU5NGVlNzhlY2Q5NGJjZQ%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D7aa619405e5c95be93beccab6d66ee45?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9JUUzJTgwJThDJUU4JUE4JTgwJUU4JUFBJTlFJUUyJTk3JUFGJUU1JUI5JUI0JUUzJTgwJThEJUUzJTgxJUEwJUUzJTgxJTkxJUUzJTgxJUE3JUU2JThFJUExJUU3JTk0JUE4JUUzJTgyJTkyJUU1JTg4JUE0JUU2JTk2JUFEJUUzJTgxJTk5JUUzJTgyJThCJUUzJTgxJUFFJUUzJTgxJUFGJUU4JUE3JUEzJUU1JTgzJThGJUU1JUJBJUE2JUUzJTgxJThDJUU0JUJEJThFJUUzJTgxJTg0JnR4dC1hbGlnbj1sZWZ0JTJDdG9wJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9NTYmdHh0LXBhZD0wJnM9OWI3MWE0N2MxMjUwNTFjY2EzZTY0NjIyNGIxYjMyOTM&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBpc2hpNzIwJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9MzYmdHh0LXBhZD0wJnM9ZDZjMzZiZWJjYTg5YTdiNjk1MGNhYWJhNjQyMDY1Y2Y&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=ab5e870d045fea8f3b8d3eadabeecdac"
     },
     {
@@ -32,7 +59,7 @@
         "title": "白って1600色あんねん！",
         "tags": "JavaScript, ユークリッド距離, rgb",
         "source": "Qiita",
-        "likes": 118,
+        "likes": 124,
         "eyecatch": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRmF2YXRhcnMxLmdpdGh1YnVzZXJjb250ZW50LmNvbSUyRnUlMkYyNjgxMTUyNyUzRnYlM0Q0P2l4bGliPXJiLTQuMS4xJmFyPTElM0ExJmZpdD1jcm9wJm1hc2s9ZWxsaXBzZSZiZz1GRkZGRkYmZm09cG5nMzImcz0xZjY1ZDQ1ZjEyYzNjZjk0MmU5NGVlNzhlY2Q5NGJjZQ%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D7aa619405e5c95be93beccab6d66ee45?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9JUU3JTk5JUJEJUUzJTgxJUEzJUUzJTgxJUE2MTYwMCVFOCU4OSVCMiVFMyU4MSU4MiVFMyU4MiU5MyVFMyU4MSVBRCVFMyU4MiU5MyVFRiVCQyU4MSZ0eHQtYWxpZ249bGVmdCUyQ3RvcCZ0eHQtY29sb3I9JTIzMUUyMTIxJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTU2JnR4dC1wYWQ9MCZzPWZiZDE1N2FjYmFkMmMzNDI2MzM1OWRmZTM2NGZkMjg0&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBpc2hpNzIwJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9MzYmdHh0LXBhZD0wJnM9ZDZjMzZiZWJjYTg5YTdiNjk1MGNhYWJhNjQyMDY1Y2Y&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=0048ec5a2ed912835bb47c0d240e0976"
     },
     {
@@ -68,7 +95,7 @@
         "title": "Qiita記事の毎月投稿を三年間継続できたので振り返ります！",
         "tags": "ポエム, まとめ, 振り返り, エンジニア, アウトプット",
         "source": "Qiita",
-        "likes": 34,
+        "likes": 35,
         "eyecatch": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRmF2YXRhcnMxLmdpdGh1YnVzZXJjb250ZW50LmNvbSUyRnUlMkYyNjgxMTUyNyUzRnYlM0Q0P2l4bGliPXJiLTQuMS4xJmFyPTElM0ExJmZpdD1jcm9wJm1hc2s9ZWxsaXBzZSZiZz1GRkZGRkYmZm09cG5nMzImcz0xZjY1ZDQ1ZjEyYzNjZjk0MmU5NGVlNzhlY2Q5NGJjZQ%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D7aa619405e5c95be93beccab6d66ee45?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9UWlpdGElRTglQTglOTglRTQlQkElOEIlRTMlODElQUUlRTYlQUYlOEUlRTYlOUMlODglRTYlOEElOTUlRTclQTglQkYlRTMlODIlOTIlRTQlQjglODklRTUlQjklQjQlRTklOTYlOTMlRTclQjYlOTklRTclQjYlOUElRTMlODElQTclRTMlODElOEQlRTMlODElOUYlRTMlODElQUUlRTMlODElQTclRTYlOEMlQUYlRTMlODIlOEElRTglQkYlOTQlRTMlODIlOEElRTMlODElQkUlRTMlODElOTklRUYlQkMlODEmdHh0LWFsaWduPWxlZnQlMkN0b3AmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT01NiZ0eHQtcGFkPTAmcz03ZDA0M2JlZmIxYjZlMDlhZDAxMTA0NGY0YjFiMzY1MQ&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBpc2hpNzIwJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9MzYmdHh0LXBhZD0wJnM9ZDZjMzZiZWJjYTg5YTdiNjk1MGNhYWJhNjQyMDY1Y2Y&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=4b887565e908f7ec48e073e6b7cf5415"
     },
     {
@@ -437,7 +464,7 @@
         "title": "フルスタックエンジニアの悩み",
         "tags": "エンジニアのキャリア, フルスタックエンジニア",
         "source": "Qiita",
-        "likes": 126,
+        "likes": 125,
         "eyecatch": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRmF2YXRhcnMxLmdpdGh1YnVzZXJjb250ZW50LmNvbSUyRnUlMkYyNjgxMTUyNyUzRnYlM0Q0P2l4bGliPXJiLTQuMS4xJmFyPTElM0ExJmZpdD1jcm9wJm1hc2s9ZWxsaXBzZSZiZz1GRkZGRkYmZm09cG5nMzImcz0xZjY1ZDQ1ZjEyYzNjZjk0MmU5NGVlNzhlY2Q5NGJjZQ%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D7aa619405e5c95be93beccab6d66ee45?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9JUUzJTgzJTk1JUUzJTgzJUFCJUUzJTgyJUI5JUUzJTgyJUJGJUUzJTgzJTgzJUUzJTgyJUFGJUUzJTgyJUE4JUUzJTgzJUIzJUUzJTgyJUI4JUUzJTgzJThCJUUzJTgyJUEyJUUzJTgxJUFFJUU2JTgyJUE5JUUzJTgxJUJGJnR4dC1hbGlnbj1sZWZ0JTJDdG9wJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9NTYmdHh0LXBhZD0wJnM9Y2IyMjI2YzBhZGFjZmQ1YmZlODJkZTk5ZWMxZGJkZGQ&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBpc2hpNzIwJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9MzYmdHh0LXBhZD0wJnM9ZDZjMzZiZWJjYTg5YTdiNjk1MGNhYWJhNjQyMDY1Y2Y&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=687796672117c51a387bc55147be2929"
     },
     {
@@ -518,7 +545,7 @@
         "title": "ゲーミングCSSを作ってQiitaを光らせてみた",
         "tags": "CSS, animation, npm, gaming-css",
         "source": "Qiita",
-        "likes": 75,
+        "likes": 76,
         "eyecatch": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRmF2YXRhcnMxLmdpdGh1YnVzZXJjb250ZW50LmNvbSUyRnUlMkYyNjgxMTUyNyUzRnYlM0Q0P2l4bGliPXJiLTQuMS4xJmFyPTElM0ExJmZpdD1jcm9wJm1hc2s9ZWxsaXBzZSZiZz1GRkZGRkYmZm09cG5nMzImcz0xZjY1ZDQ1ZjEyYzNjZjk0MmU5NGVlNzhlY2Q5NGJjZQ%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D7aa619405e5c95be93beccab6d66ee45?ixlib=rb-4.1.1&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9JUUzJTgyJUIyJUUzJTgzJUJDJUUzJTgzJTlGJUUzJTgzJUIzJUUzJTgyJUIwQ1NTJUUzJTgyJTkyJUU0JUJEJTlDJUUzJTgxJUEzJUUzJTgxJUE2UWlpdGElRTMlODIlOTIlRTUlODUlODklRTMlODIlODklRTMlODElOUIlRTMlODElQTYlRTMlODElQkYlRTMlODElOUYmdHh0LWFsaWduPWxlZnQlMkN0b3AmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT01NiZ0eHQtcGFkPTAmcz05NzkyZDU1NjdlN2VjMjZjNDc4NThmNjI0NGJjMzM3Nw&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBpc2hpNzIwJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9MzYmdHh0LXBhZD0wJnM9ZDZjMzZiZWJjYTg5YTdiNjk1MGNhYWJhNjQyMDY1Y2Y&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=18c0345ba738cf9a7a559c11a98fcc3a"
     },
     {
