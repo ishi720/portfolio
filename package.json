@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "nuxt": "^4.2.2",
-    "swiper": "^12.1.4",
+    "swiper": "^14.3.0",
     "wordcloud": "^1.2.2"
   },
   "devDependencies": {
@@ -28,7 +28,7 @@
     "@vitejs/plugin-vue": "^6.0.3",
     "@vitest/coverage-v8": "^5.0.5",
     "@vue/test-utils": "^2.4.6",
-    "happy-dom": "^20.3.4",
+    "happy-dom": "^21.0.4",
     "sass": "^1.83.0",
     "vitest": "^5.0.5"
   }
