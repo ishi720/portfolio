@@ -50,7 +50,7 @@ const renderCloud = () => {
   const minCount = Math.min(...props.words.map(w => w.size))
 
   // サイズを正規化
-  const wordList: [string, number][] = props.words.map((w, i) => {
+  const wordList: [string, number][] = props.words.map((w) => {
     const normalizedSize = ((w.size - minCount) / (maxCount - minCount)) * (props.maxFontSize - props.minFontSize) + props.minFontSize
     return [w.text, Math.round(normalizedSize)]
   })
