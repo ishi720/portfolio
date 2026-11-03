@@ -45,6 +45,7 @@ export const usePortfolio = () => {
         { title: 'ホテリングの法則シミュレーター', url: 'https://ishi720.github.io/hotelling-sim/', image: 'hotelling-sim.png', description: 'ホテリングの法則をシミュレートするサービスです。', techs: ['Javascript', 'Nuxt', 'Vue'] },
         { title: '白は、どこまで白か。', url: 'https://ishi720.github.io/white_boundary_simulator/', image: 'white_boundary_simulator.png', description: '白が200色あるか確かめるシミュレータです', techs: ['Javascript'] },
         { title: '反復横跳びチャレンジ', url: 'https://ishi720.github.io/side_steps/', image: 'side_steps.png', description: '反復横跳びのミニゲームです', techs: ['Javascript'] },
+        { title: 'Shifting Corkboard', url: 'https://ishi720.github.io/shifting-corkboard-viewer/', image: 'shifting-corkboard-viewer.png', description: '動くコルクボードを作れます。データはブラウザ上に保存しているので他人に見られることもありません', techs: ['Javascript', 'Svelte'] },
     ]
 
     const chromeExtensions = [
