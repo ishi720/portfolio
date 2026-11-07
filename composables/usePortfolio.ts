@@ -17,9 +17,9 @@ export const usePortfolio = () => {
 
     const developments = [
         { title: 'ポケモンパーティメーカー', url: 'https://ppm.suisui.fun/', image: 'ppm.png', description: 'ポケモンをランダムで選出します。しりとり選出機能もあります。', techs: ['PHP', 'Javascript'] },
-        { title: 'Collatz Visualization', url: 'https://suisui.fun/collatz_visualization/', image: 'collatz_visualization.png', description: '未解決問題のひとつであるコラッツ問題をvis.jsを用いて視覚化しました。', techs: ['Javascript', 'Vue'] },
-        { title: "Let's Typo", url: 'https://suisui.fun/make_typo/', image: 'lets_typo.png', description: 'タイポグリセミア現象を使った、文章変換サービスです。', techs: ['Javascript'] },
-        { title: '正規表現シミュレーター', url: 'https://suisui.fun/regexp/', image: 'regexp.png', description: 'Angular.jsを利用して作成しました。リアルタイムに正規表現のシミュレーションができます。', techs: ['Javascript', 'Angular'] },
+        { title: 'Collatz Visualization', url: 'https://ishi720.github.io/collatz_visualization/', image: 'collatz_visualization.png', description: '未解決問題のひとつであるコラッツ問題をvis.jsを用いて視覚化しました。', techs: ['Javascript', 'Vue'] },
+        { title: "Let's Typo", url: 'https://ishi720.github.io/make_typo/', image: 'lets_typo.png', description: 'タイポグリセミア現象を使った、文章変換サービスです。', techs: ['Javascript'] },
+        { title: '正規表現シミュレーター', url: 'https://ishi720.github.io/regexp/', image: 'regexp.png', description: 'Angular.jsを利用して作成しました。リアルタイムに正規表現のシミュレーションができます。', techs: ['Javascript', 'Angular'] },
         { title: 'コイントスの統計', url: 'https://ishi720.github.io/cointoss_statistics/dist/', image: 'cointoss_statistics.png', description: 'コイントスのシミュレートし、二項分布のグラフをchart.jsを用いて表現しました。', techs: ['Javascript'] },
         { title: 'Qiitaアナリティクス', url: 'https://qiita-api-sample.onrender.com/', image: 'qiita_analytics.png', description: 'Qiitaの記事を日付ごとの「いいね」数でグラフ化しました。', techs: ['Javascript', 'Python', 'Flask'] },
         { title: 'Numnator', url: 'https://numnator.suisui.fun', image: 'numnator.png', description: '開発途中の数字を当てるゲームです。Vue.jsで作成しています。', techs: ['Javascript', 'Vue'] },
