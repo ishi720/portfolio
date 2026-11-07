@@ -16,7 +16,7 @@ export const usePortfolio = () => {
     ]
 
     const developments = [
-        { title: 'ポケモンパーティメーカー', url: 'https://suisui.fun/ppm/', image: 'ppm.png', description: 'ポケモンをランダムで選出します。しりとり選出機能もあります。', techs: ['PHP', 'Javascript'] },
+        { title: 'ポケモンパーティメーカー', url: 'https://ppm.suisui.fun/', image: 'ppm.png', description: 'ポケモンをランダムで選出します。しりとり選出機能もあります。', techs: ['PHP', 'Javascript'] },
         { title: 'Collatz Visualization', url: 'https://suisui.fun/collatz_visualization/', image: 'collatz_visualization.png', description: '未解決問題のひとつであるコラッツ問題をvis.jsを用いて視覚化しました。', techs: ['Javascript', 'Vue'] },
         { title: "Let's Typo", url: 'https://suisui.fun/make_typo/', image: 'lets_typo.png', description: 'タイポグリセミア現象を使った、文章変換サービスです。', techs: ['Javascript'] },
         { title: '正規表現シミュレーター', url: 'https://suisui.fun/regexp/', image: 'regexp.png', description: 'Angular.jsを利用して作成しました。リアルタイムに正規表現のシミュレーションができます。', techs: ['Javascript', 'Angular'] },
