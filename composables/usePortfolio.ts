@@ -46,6 +46,7 @@ export const usePortfolio = () => {
         { title: '白は、どこまで白か。', url: 'https://ishi720.github.io/white_boundary_simulator/', image: 'white_boundary_simulator.png', description: '白が200色あるか確かめるシミュレータです', techs: ['Javascript'] },
         { title: '反復横跳びチャレンジ', url: 'https://ishi720.github.io/side_steps/', image: 'side_steps.png', description: '反復横跳びのミニゲームです', techs: ['Javascript'] },
         { title: 'Shifting Corkboard', url: 'https://ishi720.github.io/shifting-corkboard-viewer/', image: 'shifting-corkboard-viewer.png', description: '動くコルクボードを作れます。データはブラウザ上に保存しているので他人に見られることもありません', techs: ['Javascript', 'Svelte'] },
+        { title: '紙を破る', url: 'https://ishi720.github.io/paper-tear/', image: 'paper-tear.png', description: '紙を破けます', techs: ['Javascript', 'Svelte'] },
     ]
 
     const chromeExtensions = [
