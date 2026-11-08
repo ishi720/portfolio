@@ -10,7 +10,6 @@
     <SectionsGoalsSection :goals="futureGoals" />
     <SectionsAchievementsSection :stats="achievementStats" />
     <SectionsSkillsSection :tags="aggregatedTags" :size="cloudSize" :is-ready="isReady" />
-    <SectionsContactSection :email="profile.email" />
   </div>
 </template>
 

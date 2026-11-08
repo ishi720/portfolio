@@ -28,9 +28,6 @@
               <NuxtLink to="/#skills" class="dropdown-item" @click="closeMenus">
                 技術スタック
               </NuxtLink>
-              <NuxtLink to="/#contact" class="dropdown-item" @click="closeMenus">
-                お問い合わせ
-              </NuxtLink>
             </div>
           </div>
 
