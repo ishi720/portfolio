@@ -38,7 +38,7 @@ export const useCareer = () => {
                     name: '基幹システムの機能追加',
                     description: '短期間ですが、スポットで設計や開発のサポートに入りました。',
                     period: '',
-                    techs: ['Java8', 'Infra-mart', 'a5m2', 'eBuilder', 'OracleDB'],
+                    techs: ['Java8', 'intra-mart', 'a5m2', 'eBuilder', 'OracleDB'],
                     industry: '製造'
                 },
                 {
@@ -64,23 +64,23 @@ export const useCareer = () => {
             projects: [
                 {
                     name: '見守りサービスの開発',
-                    description: 'Line APIを使った見守りサービスを新規プロジェクトとして要件定義から行い実際に実証実験を行う企画まで携わりました。',
+                    description: 'LINE APIを使った見守りサービスを新規プロジェクトとして要件定義から行い実際に実証実験を行う企画まで携わりました。',
                     period: '',
-                    techs: ['Python', 'Flask', 'Git', 'PostgreSQL', 'Almalinux', 'Nginx', 'Line API'],
+                    techs: ['Python', 'Flask', 'Git', 'PostgreSQL', 'AlmaLinux', 'Nginx', 'LINE API'],
                     industry: '介護'
                 },
                 {
                     name: '学生データ分析基盤の構築',
                     description: 'データ分析基盤の構築で、データレイク・データウェアハウス・データマート間のバッチ処理を設計から開発までを担当しました。',
                     period: '',
-                    techs: ['Python', 'Git', 'SVN', 'PostgreSQL', 'Redshift', 'lambda', 'S3', 'Glue', 'Aurora', 'GithubActions'],
+                    techs: ['Python', 'Git', 'SVN', 'PostgreSQL', 'Redshift', 'Lambda', 'S3', 'Glue', 'Aurora', 'GitHub Actions'],
                     industry: '教育'
                 },
                 {
                     name: '業務内容のDX化',
                     description: '紙での業務フローをGoogle Workspaceを用いて最適化&自動化しました。',
                     period: '',
-                    techs: ['Google Workspace', 'Google Apps Script', 'Google Sheets', 'Google Drive', 'Chrome books'],
+                    techs: ['Google Workspace', 'Google Apps Script', 'Google Sheets', 'Google Drive', 'Chromebook'],
                     industry: '公共'
                 },
                 {
@@ -122,7 +122,7 @@ export const useCareer = () => {
                     name: '観光関連のWEBサービスの開発・運用・保守',
                     description: 'ルート案内サービスや地域SNSなど20以上のサービスに係ることができました。',
                     period: '',
-                    techs: ['HTML', 'CSS', 'PHP', 'Xoops', 'JavaScript', 'JQuery', 'Angular', 'Ruby on Rails', 'Vue', 'MySQL', 'Docker', 'Apache', 'Google App Engine', 'Google App Script', 'Zabbix', 'GitHub', 'GitLab', 'Google Stackdriver'],
+                    techs: ['HTML', 'CSS', 'PHP', 'Xoops', 'JavaScript', 'jQuery', 'Angular', 'Ruby on Rails', 'Vue', 'MySQL', 'Docker', 'Apache', 'Google App Engine', 'Google Apps Script', 'Zabbix', 'GitHub', 'GitLab', 'Google Stackdriver'],
                     industry: '観光'
                 }
             ]
@@ -154,16 +154,16 @@ export const useCareer = () => {
             projects: [
                 {
                     name: 'プログラミング教材の開発',
-                    description: 'Prosseingで「Scratch」のような教材を開発し、実際にデモ授業を実施しました。',
+                    description: 'Processingで「Scratch」のような教材を開発し、実際にデモ授業を実施しました。',
                     period: '',
-                    techs: ['Prosseing'],
+                    techs: ['Processing'],
                     industry: '教育'
                 },
                 {
                     name: '青森の街並みをデジタルで再現',
                     description: '青森市の街並みを3Dで再現するため、画像の作成やモデリングを行いました。',
                     period: '',
-                    techs: ['Google SketchUp', 'Gimp', 'Inkscape', 'Hugin'],
+                    techs: ['Google SketchUp', 'GIMP', 'Inkscape', 'Hugin'],
                     industry: '教育'
                 }
             ]
