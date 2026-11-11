@@ -14,13 +14,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout portfolio
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Clone getArticle
         run: git clone --depth 1 https://github.com/ishi720/getArticle.git get-article
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.x'
 

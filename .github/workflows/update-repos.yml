@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout portfolio
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Clone GithubDashboard
         run: git clone --depth 1 https://github.com/ishi720/GithubDashboard.git github-dashboard
