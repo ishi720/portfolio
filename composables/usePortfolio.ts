@@ -46,6 +46,7 @@ export const usePortfolio = () => {
         { title: '反復横跳びチャレンジ', url: 'https://ishi720.github.io/side_steps/', image: 'side_steps.png', description: '反復横跳びのミニゲームです', techs: ['JavaScript'] },
         { title: 'Shifting Corkboard', url: 'https://ishi720.github.io/shifting-corkboard-viewer/', image: 'shifting-corkboard-viewer.png', description: '動くコルクボードを作れます。データはブラウザ上に保存しているので他人に見られることもありません', techs: ['JavaScript', 'Svelte'] },
         { title: '紙を破く', url: 'https://ishi720.github.io/paper-tear/', image: 'paper-tear.png', description: '紙を破けます', techs: ['JavaScript', 'Svelte'] },
+        { title: 'HPバーシミュレーター', url: 'https://ishi720.github.io/hp-bar-simulator/', image: 'hp-bar-simulator.png', description: 'HPバーの動作をシミュレートするサービスです。', techs: ['JavaScript', 'Svelte'] },
     ]
 
     const chromeExtensions = [
