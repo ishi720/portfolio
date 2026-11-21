@@ -18,7 +18,8 @@
             <p class="about-bio">{{ profile.bio }}</p>
             <div class="about-sns">
               <a v-for="social in socials" :key="social.name" :href="social.url" target="_blank" class="about-sns-link">
-                <img :src="getSnsIcon(social.name)" :alt="social.name">
+                <img :src="getSnsIcon(social.name)" alt="">
+                <span class="about-sns-label">{{ social.name }}</span>
               </a>
             </div>
           </div>
@@ -53,6 +54,7 @@ const getSnsIcon = (name: string): string => {
     'Note': 'https://cdn.simpleicons.org/note/000000',
     'npm': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg',
     'LINE Store': 'https://cdn.simpleicons.org/line/06C755',
+    'VS Marketplace': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg',
   }
   return icons[name] || 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/devicon/devicon-original.svg'
 }
@@ -110,22 +112,22 @@ $radius: $radius-lg;
 .about-sns {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
 }
 
 .about-sns-link {
-  width: 40px;
   height: 40px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 8px;
+  padding: 0 16px 0 10px;
   background: $bg;
-  border-radius: 50%;
+  border-radius: 20px;
   transition: $transition;
 
   img {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     object-fit: contain;
     transition: $transition;
   }
@@ -137,7 +139,19 @@ $radius: $radius-lg;
     img {
       filter: brightness(0) invert(1);
     }
+
+    .about-sns-label {
+      color: #fff;
+    }
   }
+}
+
+.about-sns-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: $text;
+  white-space: nowrap;
+  transition: $transition;
 }
 
 @include mobile {

@@ -11,6 +11,7 @@ export const usePortfolio = () => {
         { name: 'Zenn', url: 'https://zenn.dev/ishi720' },
         { name: 'Note', url: 'https://note.com/ishi720' },
         { name: 'npm', url: 'https://www.npmjs.com/~ishi720' },
+        { name: 'VS Marketplace', url: 'https://marketplace.visualstudio.com/publishers/ishi720' },
         { name: 'LINE Store', url: 'https://store.line.me/stickershop/author/5872119/ja' },
     ]
 
