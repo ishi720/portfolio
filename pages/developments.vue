@@ -86,6 +86,34 @@
       </div>
     </section>
 
+    <!-- VSCode Extensions Section -->
+    <section id="vscode-extensions" class="npm-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">VSCode拡張機能</h2>
+          <p class="section-subtitle">VSCode Extensions</p>
+        </div>
+        <div class="npm-grid">
+          <a v-for="vscodeExtension in vscodeExtensions" :key="vscodeExtension.title" :href="vscodeExtension.url" target="_blank" class="npm-card vscode-card">
+            <div class="npm-header">
+              <div class="npm-icon">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VSCode">
+              </div>
+              <div class="npm-info">
+                <h3 class="npm-name">{{ vscodeExtension.title }}</h3>
+              </div>
+            </div>
+            <p class="npm-desc">{{ vscodeExtension.description }}</p>
+            <div class="npm-footer">
+              <div class="npm-techs">
+                <span v-for="tech in vscodeExtension.techs" :key="tech" class="tech-tag">{{ tech }}</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- LINE Stamps Section -->
     <section id="line-stamps" class="line-section">
       <div class="container">
@@ -116,7 +144,7 @@ import { usePortfolio } from '~/composables/usePortfolio'
 
 useHead({ title: 'Developments' })
 
-const { developments, chromeExtensions, lineStamps, npmPackages } = usePortfolio()
+const { developments, chromeExtensions, vscodeExtensions, lineStamps, npmPackages } = usePortfolio()
 
 const handleImgError = (e: Event) => {
   (e.target as HTMLImageElement).style.display = 'none'

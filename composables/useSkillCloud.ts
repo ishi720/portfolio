@@ -15,7 +15,7 @@ export const containsJapanese = (text: string): boolean => {
 }
 
 export const useSkillCloud = () => {
-  const { developments, chromeExtensions, npmPackages } = usePortfolio()
+  const { developments, chromeExtensions, vscodeExtensions, npmPackages } = usePortfolio()
   const { careers } = useCareer()
 
   const articles = ref<Array<{ tags: string }>>([])
@@ -81,6 +81,11 @@ export const useSkillCloud = () => {
 
     // Chrome Extensionsのタグを集計
     chromeExtensions.forEach(ext => {
+      ext.techs.forEach(tech => addTag(tech))
+    })
+
+    // VSCode Extensionsのタグを集計
+    vscodeExtensions.forEach(ext => {
       ext.techs.forEach(tech => addTag(tech))
     })
 

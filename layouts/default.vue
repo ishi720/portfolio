@@ -52,6 +52,9 @@
               <NuxtLink to="/developments#chrome-extensions" class="dropdown-item" @click="closeMenus">
                 Chrome拡張機能
               </NuxtLink>
+              <NuxtLink to="/developments#vscode-extensions" class="dropdown-item" @click="closeMenus">
+                VSCode拡張機能
+              </NuxtLink>
               <NuxtLink to="/developments#line-stamps" class="dropdown-item" @click="closeMenus">
                 LINEスタンプ
               </NuxtLink>

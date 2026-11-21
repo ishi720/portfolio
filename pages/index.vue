@@ -26,7 +26,7 @@ import type { Article, Repo } from '~/types/models'
 // コンポーネントはNuxtの自動インポートを使用
 // components/sections/ 配下のコンポーネントは SectionsXxx として利用可能
 
-const { profile, socials, developments, chromeExtensions, lineStamps, npmPackages } = usePortfolio()
+const { profile, socials, developments, chromeExtensions, vscodeExtensions, lineStamps, npmPackages } = usePortfolio()
 
 const pickupTitles = [
   'ポケモンパーティメーカー',
@@ -67,6 +67,7 @@ const futureGoals = [
 const achievementStats = computed(() => ({
   npmPackages: npmPackages.length,
   chromeExtensions: chromeExtensions.length,
+  vscodeExtensions: vscodeExtensions.length,
   lineStamps: lineStamps.length,
   developments: developments.length,
   qiita: qiitaStats.value,

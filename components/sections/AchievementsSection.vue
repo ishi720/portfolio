@@ -24,6 +24,15 @@
             <div class="achievement-label">Chrome Extensions</div>
           </div>
         </NuxtLink>
+        <NuxtLink to="/developments#vscode-extensions" class="achievement-card">
+          <div class="achievement-icon">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VSCode">
+          </div>
+          <div class="achievement-info">
+            <div class="achievement-number">{{ stats.vscodeExtensions }}</div>
+            <div class="achievement-label">VSCode Extensions</div>
+          </div>
+        </NuxtLink>
         <NuxtLink to="/developments#line-stamps" class="achievement-card achievement-card-line">
           <div class="achievement-icon">
             <img src="https://cdn.simpleicons.org/line/06C755" alt="LINE">
@@ -95,6 +104,7 @@ interface PlatformStats {
 interface Stats {
   npmPackages: number
   chromeExtensions: number
+  vscodeExtensions: number
   lineStamps: number
   developments: number
   qiita: PlatformStats

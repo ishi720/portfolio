@@ -380,6 +380,10 @@ img {
     }
 }
 
+.vscode-card {
+    border-left-color: $color-vscode;
+}
+
 // Works
 .works {
     &-section {
