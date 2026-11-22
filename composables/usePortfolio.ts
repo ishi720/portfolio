@@ -48,6 +48,8 @@ export const usePortfolio = () => {
         { title: 'Shifting Corkboard', url: 'https://ishi720.github.io/shifting-corkboard-viewer/', image: 'shifting-corkboard-viewer.png', description: '動くコルクボードを作れます。データはブラウザ上に保存しているので他人に見られることもありません', techs: ['JavaScript', 'Svelte'] },
         { title: '紙を破く', url: 'https://ishi720.github.io/paper-tear/', image: 'paper-tear.png', description: '紙を破けます', techs: ['JavaScript', 'Svelte'] },
         { title: 'HPバーシミュレーター', url: 'https://ishi720.github.io/hp-bar-simulator/', image: 'hp-bar-simulator.png', description: 'HPバーの動作をシミュレートするサービスです。', techs: ['JavaScript', 'Svelte'] },
+        { title: 'デフラグ・ビジュアライザー', url: 'https://ishi720.github.io/defrag-visualizer/', image: 'defrag-visualizer.png', description: 'ディスクの断片化と、デフラグで並べ直す様子をブラウザで見える化するツールです。', techs: ['JavaScript', 'Alpine.js'] },
+        { title: 'Relatime', url: 'https://ishi720.github.io/relatime/', image: 'relatime.png', description: 'relation（関係）＋ time（時間）。時系列で変わる人物の相関図を作るWebアプリです。', techs: ['TypeScript', 'Next.js'] },
     ]
 
     const chromeExtensions = [
