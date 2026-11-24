@@ -17,3 +17,8 @@ export const PLATFORMS = [
 ] as const
 
 export const PAGE_PATHS = ['/', '/developments', '/articles', '/repositories', '/career'] as const
+
+export const NOINDEX_PATHS: readonly string[] = ['/career']
+
+export const isNoindexPath = (path: string): boolean =>
+  NOINDEX_PATHS.includes(path.replace(/\/+$/, '') || '/')

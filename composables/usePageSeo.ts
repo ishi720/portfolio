@@ -1,5 +1,6 @@
 import { useHead } from '@unhead/vue'
 import { normalizeSiteUrl } from '~/utils/siteUrl'
+import { isNoindexPath } from '~/constants'
 
 export const SITE_NAME = 'ishi720 Portfolio'
 
@@ -25,6 +26,7 @@ export const usePageSeo = ({ title, description, path }: PageSeo) => {
       { property: 'og:site_name', content: SITE_NAME },
       { property: 'og:locale', content: 'ja_JP' },
       { name: 'twitter:card', content: 'summary' },
+      ...(isNoindexPath(path) ? [{ name: 'robots', content: 'noindex' }] : []),
       ...(siteUrl
         ? [
             { property: 'og:url', content: url },

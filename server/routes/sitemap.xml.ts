@@ -1,9 +1,10 @@
-import { PAGE_PATHS } from '../../constants'
+import { PAGE_PATHS, isNoindexPath } from '../../constants'
 import { normalizeSiteUrl } from '../../utils/siteUrl'
 
 export default defineEventHandler((event) => {
   const siteUrl = normalizeSiteUrl(useRuntimeConfig(event).public.siteUrl as string)
   const urls = PAGE_PATHS
+    .filter(path => !isNoindexPath(path))
     .map(path => `  <url><loc>${siteUrl}${path === '/' ? '/' : `${path}/`}</loc></url>`)
     .join('\n')
 

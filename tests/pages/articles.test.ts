@@ -51,7 +51,8 @@ vi.mock('~/composables/useFilteredList', async () => {
 vi.mock('~/constants', () => ({
   ITEMS_PER_PAGE: 20,
   TOP_TAGS_COUNT: 10,
-  PLATFORMS: []
+  PLATFORMS: [],
+  isNoindexPath: () => false
 }))
 
 import ArticlesPage from '~/pages/articles.vue'
