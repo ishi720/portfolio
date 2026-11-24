@@ -5,9 +5,17 @@
 /**
  * 日付文字列を YYYY/M/D 形式にフォーマット
  */
+const dateFormatter = new Intl.DateTimeFormat('ja-JP', {
+  timeZone: 'Asia/Tokyo',
+  year: 'numeric',
+  month: 'numeric',
+  day: 'numeric'
+})
+
 export const formatDate = (dateStr: string): string => {
-  const date = new Date(dateStr)
-  return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`
+  const parts = dateFormatter.formatToParts(new Date(dateStr))
+  const get = (type: Intl.DateTimeFormatPartTypes) => parts.find(p => p.type === type)?.value
+  return `${get('year')}/${get('month')}/${get('day')}`
 }
 
 /**

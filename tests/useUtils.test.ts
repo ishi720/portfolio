@@ -23,6 +23,11 @@ describe('formatDate', () => {
     expect(formatDate('2024-10-15')).toBe('2024/10/15')
     expect(formatDate('2024-12-25')).toBe('2024/12/25')
   })
+
+  it('実行環境のタイムゾーンに関係なく日本時間の日付を返す', () => {
+    expect(formatDate('2026-11-09T06:44:47+09:00')).toBe('2026/11/9')
+    expect(formatDate('2026-01-24T20:00:00Z')).toBe('2026/1/25')
+  })
 })
 
 describe('parseTags', () => {
