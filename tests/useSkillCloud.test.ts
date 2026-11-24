@@ -1,4 +1,5 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
+import { describe, it, expect } from 'vitest'
+import { ref } from 'vue'
 import { containsJapanese, useSkillCloud } from '../composables/useSkillCloud'
 
 describe('containsJapanese', () => {
@@ -58,28 +59,14 @@ describe('containsJapanese', () => {
 })
 
 describe('useSkillCloud', () => {
-  const mockFetch = vi.fn()
+  const setup = (
+    articles: Array<{ tags: string }> = [],
+    repos: Array<{ tags: string | string[] }> = []
+  ) => useSkillCloud(ref(articles), ref(repos))
 
-  beforeEach(() => {
-    mockFetch.mockReset()
-    vi.stubGlobal('fetch', mockFetch)
-  })
-
-  afterEach(() => {
-    vi.unstubAllGlobals()
-    vi.clearAllMocks()
-  })
-
-  describe('初期状態', () => {
-    it('isLoadedはfalse、errorはnullで始まる', () => {
-      const { isLoaded, error } = useSkillCloud()
-
-      expect(isLoaded.value).toBe(false)
-      expect(error.value).toBeNull()
-    })
-
-    it('loadData前でもportfolio/career由来のタグを集計する', () => {
-      const { aggregatedTags } = useSkillCloud()
+  describe('portfolio/career由来のタグ', () => {
+    it('articles/reposが空でもタグを集計する', () => {
+      const { aggregatedTags } = setup()
 
       expect(aggregatedTags.value.length).toBeGreaterThan(0)
       expect(aggregatedTags.value.every(t => typeof t.text === 'string')).toBe(true)
@@ -87,7 +74,7 @@ describe('useSkillCloud', () => {
     })
 
     it('タグは出現回数の降順でソートされる', () => {
-      const { aggregatedTags } = useSkillCloud()
+      const { aggregatedTags } = setup()
 
       const sizes = aggregatedTags.value.map(t => t.size)
       const sorted = [...sizes].sort((a, b) => b - a)
@@ -95,29 +82,9 @@ describe('useSkillCloud', () => {
     })
   })
 
-  describe('loadData 成功時', () => {
-    it('articlesとreposを取得してisLoadedをtrueにする', async () => {
-      mockFetch.mockImplementation((url: string) => {
-        if (url.includes('combined_articles.json')) {
-          return Promise.resolve({
-            ok: true,
-            json: () => Promise.resolve([{ tags: 'TypeScript,Vue' }])
-          })
-        }
-        if (url.includes('repos_list.json')) {
-          return Promise.resolve({
-            ok: true,
-            json: () => Promise.resolve([{ tags: ['Go', 'Docker'] }])
-          })
-        }
-        return Promise.reject(new Error('Unknown URL'))
-      })
-
-      const { loadData, isLoaded, error, aggregatedTags } = useSkillCloud()
-      await loadData()
-
-      expect(isLoaded.value).toBe(true)
-      expect(error.value).toBeNull()
+  describe('articles/reposのタグ', () => {
+    it('articlesとreposのタグを集計する', () => {
+      const { aggregatedTags } = setup([{ tags: 'TypeScript,Vue' }], [{ tags: ['Go', 'Docker'] }])
 
       const texts = aggregatedTags.value.map(t => t.text.toLowerCase())
       expect(texts).toContain('typescript')
@@ -126,19 +93,8 @@ describe('useSkillCloud', () => {
       expect(texts).toContain('docker')
     })
 
-    it('articleのtagsがカンマ区切り文字列としてパースされる', async () => {
-      mockFetch.mockImplementation((url: string) => {
-        if (url.includes('combined_articles.json')) {
-          return Promise.resolve({
-            ok: true,
-            json: () => Promise.resolve([{ tags: 'React, Next.js ,GraphQL' }])
-          })
-        }
-        return Promise.resolve({ ok: true, json: () => Promise.resolve([]) })
-      })
-
-      const { loadData, aggregatedTags } = useSkillCloud()
-      await loadData()
+    it('articleのtagsがカンマ区切り文字列としてパースされる', () => {
+      const { aggregatedTags } = setup([{ tags: 'React, Next.js ,GraphQL' }])
 
       const texts = aggregatedTags.value.map(t => t.text)
       expect(texts).toContain('React')
@@ -146,161 +102,41 @@ describe('useSkillCloud', () => {
       expect(texts).toContain('GraphQL')
     })
 
-    it('repoのtagsが単一文字列の場合も配列として扱われる', async () => {
-      mockFetch.mockImplementation((url: string) => {
-        if (url.includes('repos_list.json')) {
-          return Promise.resolve({
-            ok: true,
-            json: () => Promise.resolve([{ tags: 'Rust' }])
-          })
-        }
-        return Promise.resolve({ ok: true, json: () => Promise.resolve([]) })
-      })
+    it('repoのtagsが単一文字列の場合も配列として扱われる', () => {
+      const { aggregatedTags } = setup([], [{ tags: 'Rust' }])
 
-      const { loadData, aggregatedTags } = useSkillCloud()
-      await loadData()
-
-      const texts = aggregatedTags.value.map(t => t.text)
-      expect(texts).toContain('Rust')
+      expect(aggregatedTags.value.map(t => t.text)).toContain('Rust')
     })
 
-    it('日本語タグは集計から除外される', async () => {
-      mockFetch.mockImplementation((url: string) => {
-        if (url.includes('combined_articles.json')) {
-          return Promise.resolve({
-            ok: true,
-            json: () => Promise.resolve([{ tags: '入門,Svelte' }])
-          })
-        }
-        return Promise.resolve({ ok: true, json: () => Promise.resolve([]) })
-      })
-
-      const { loadData, aggregatedTags } = useSkillCloud()
-      await loadData()
+    it('日本語タグは集計から除外される', () => {
+      const { aggregatedTags } = setup([{ tags: '入門,Svelte' }])
 
       const texts = aggregatedTags.value.map(t => t.text)
       expect(texts).not.toContain('入門')
       expect(texts).toContain('Svelte')
     })
 
-    it('大文字小文字が異なる同一タグは1つに統合される', async () => {
-      mockFetch.mockImplementation((url: string) => {
-        if (url.includes('combined_articles.json')) {
-          return Promise.resolve({
-            ok: true,
-            json: () => Promise.resolve([{ tags: 'typescript' }, { tags: 'TypeScript' }])
-          })
-        }
-        return Promise.resolve({ ok: true, json: () => Promise.resolve([]) })
-      })
-
-      const { loadData, aggregatedTags } = useSkillCloud()
-      await loadData()
+    it('大文字小文字が異なる同一タグは1つに統合される', () => {
+      const { aggregatedTags } = setup([{ tags: 'typescript' }, { tags: 'TypeScript' }])
 
       const matches = aggregatedTags.value.filter(t => t.text.toLowerCase() === 'typescript')
       expect(matches).toHaveLength(1)
       expect(matches[0].size).toBeGreaterThanOrEqual(2)
     })
 
-    it('articleにtagsが無い場合はスキップされる', async () => {
-      mockFetch.mockImplementation((url: string) => {
-        if (url.includes('combined_articles.json')) {
-          return Promise.resolve({
-            ok: true,
-            json: () => Promise.resolve([{ title: 'no tags here' }])
-          })
-        }
-        return Promise.resolve({ ok: true, json: () => Promise.resolve([]) })
-      })
+    it('articleにtagsが無い場合はスキップされる', () => {
+      const { aggregatedTags } = setup([{ title: 'no tags here' } as unknown as { tags: string }])
 
-      const { loadData, isLoaded, error } = useSkillCloud()
-      await expect(loadData()).resolves.toBeUndefined()
-
-      expect(isLoaded.value).toBe(true)
-      expect(error.value).toBeNull()
-    })
-  })
-
-  describe('loadData 失敗時', () => {
-    it('articlesの取得に失敗した場合はerrorが設定される', async () => {
-      const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {})
-
-      mockFetch.mockImplementation((url: string) => {
-        if (url.includes('combined_articles.json')) {
-          return Promise.resolve({ ok: false, status: 500, json: () => Promise.resolve([]) })
-        }
-        return Promise.resolve({ ok: true, json: () => Promise.resolve([]) })
-      })
-
-      const { loadData, error, isLoaded } = useSkillCloud()
-      await loadData()
-
-      expect(error.value).toBe('Failed to load articles')
-      expect(isLoaded.value).toBe(true)
-
-      consoleErrorSpy.mockRestore()
+      expect(aggregatedTags.value.length).toBeGreaterThan(0)
     })
 
-    it('reposの取得に失敗した場合はerrorが設定される', async () => {
-      const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {})
+    it('データが更新されると集計し直される', () => {
+      const articles = ref<Array<{ tags: string }>>([])
+      const { aggregatedTags } = useSkillCloud(articles, ref([]))
+      expect(aggregatedTags.value.map(t => t.text)).not.toContain('Elixir')
 
-      mockFetch.mockImplementation((url: string) => {
-        if (url.includes('repos_list.json')) {
-          return Promise.resolve({ ok: false, status: 404, json: () => Promise.resolve([]) })
-        }
-        return Promise.resolve({ ok: true, json: () => Promise.resolve([]) })
-      })
-
-      const { loadData, error } = useSkillCloud()
-      await loadData()
-
-      expect(error.value).toBe('Failed to load repos')
-
-      consoleErrorSpy.mockRestore()
-    })
-
-    it('両方の取得に失敗した場合は両方のエラーメッセージが結合される', async () => {
-      const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {})
-
-      mockFetch.mockResolvedValue({ ok: false, status: 500, json: () => Promise.resolve([]) })
-
-      const { loadData, error } = useSkillCloud()
-      await loadData()
-
-      expect(error.value).toBe('Failed to load articles, repos')
-
-      consoleErrorSpy.mockRestore()
-    })
-
-    it('fetch自体が例外を投げた場合もerrorが設定される', async () => {
-      const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {})
-
-      mockFetch.mockRejectedValue(new Error('network down'))
-
-      const { loadData, error, isLoaded } = useSkillCloud()
-      await loadData()
-
-      expect(error.value).toBe('Failed to load articles, repos')
-      expect(isLoaded.value).toBe(true)
-
-      consoleErrorSpy.mockRestore()
-    })
-
-    it('loadDataを再度呼ぶとerrorがリセットされる', async () => {
-      const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {})
-
-      mockFetch.mockResolvedValueOnce({ ok: false, status: 500, json: () => Promise.resolve([]) })
-      mockFetch.mockResolvedValueOnce({ ok: false, status: 500, json: () => Promise.resolve([]) })
-
-      const { loadData, error } = useSkillCloud()
-      await loadData()
-      expect(error.value).not.toBeNull()
-
-      mockFetch.mockResolvedValue({ ok: true, json: () => Promise.resolve([]) })
-      await loadData()
-      expect(error.value).toBeNull()
-
-      consoleErrorSpy.mockRestore()
+      articles.value = [{ tags: 'Elixir' }]
+      expect(aggregatedTags.value.map(t => t.text)).toContain('Elixir')
     })
   })
 })

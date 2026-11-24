@@ -32,8 +32,10 @@ portfolio/
 │   └── WordCloud.vue                 # ワードクラウドコンポーネント
 ├── composables/
 │   ├── useCareer.ts                  # 経歴データ
+│   ├── usePageSeo.ts                 # ページごとのmeta/OGP/canonical設定
 │   ├── usePagination.ts              # ページネーション共通ロジック
 │   ├── usePortfolio.ts               # ポートフォリオデータ
+│   ├── useSiteData.ts                # 記事・リポジトリJSONの読み込み（ビルド時に取得）
 │   ├── useSkillCloud.ts              # ワードクラウド集計
 │   └── useUtils.ts                   # 共通ユーティリティ関数
 ├── constants/
@@ -50,6 +52,7 @@ portfolio/
 │   ├── data/                         # JSONデータファイル置き場
 │   │   ├── combined_articles.json    # Articlesに表示するQiita&Zennのデータ
 │   │   └── repos_list.json           # Githubのリポジトリデータ
+│   ├── sitemap.xml                   # サイトマップ
 │   └── images/                       # 画像ファイル置き場
 ├── types/
 │   └── models.ts                     # 共通の型定義
@@ -93,7 +96,7 @@ $ npm run test:run
 $ npm run generate
 ```
 
-`.output/public/` に静的ファイルが生成されます。
+全ページをビルド時にプリレンダリングし、`.output/public/` に静的ファイルが生成されます。
 
 ## デプロイ
 

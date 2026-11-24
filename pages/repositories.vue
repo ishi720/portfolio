@@ -105,20 +105,24 @@
 </template>
 
 <script setup lang="ts">
-import { useHead } from '@unhead/vue'
-import { ref, computed, onMounted } from 'vue'
+import { usePageSeo } from '~/composables/usePageSeo'
+import { ref, computed } from 'vue'
 
-useHead({ title: 'Repositories' })
+usePageSeo({
+  title: 'Repositories',
+  description: 'ishi720がGitHubで公開しているリポジトリの一覧です。キーワードやタグで絞り込めます。',
+  path: '/repositories/',
+})
 import { useRoute } from 'vue-router'
 import type { SortState, SortOption, Repo } from '~/types/models'
 import { formatDate, parseTags, formatLanguageLabel } from '~/composables/useUtils'
 import { usePagination, getInitialSortState } from '~/composables/usePagination'
-import { useFetchData } from '~/composables/useFetchData'
+import { useRepos } from '~/composables/useSiteData'
 import { usePopularTags, filterBySearch, filterByTag, sortByDate, sortByNumber, sortByString } from '~/composables/useFilteredList'
 import { ITEMS_PER_PAGE, TOP_TAGS_COUNT } from '~/constants'
 
 const route = useRoute()
-const { data: repos, fetchData } = useFetchData<Repo[]>([])
+const { data: repos } = useRepos()
 
 // ソートオプション
 const sortOptions: SortOption[] = [
@@ -134,10 +138,6 @@ const sortOptions: SortOption[] = [
 const searchQuery = ref((route.query.q as string) || '')
 const selectedTag = ref((route.query.tag as string) || '')
 const sortState = ref<SortState>(getInitialSortState('updated_at'))
-
-onMounted(() => {
-  fetchData('/data/repos_list.json')
-})
 
 // 人気のタグ（使用回数が多い上位10件）
 const popularTags = usePopularTags(
@@ -192,6 +192,10 @@ const {
     if (searchQuery.value) query.q = searchQuery.value
     if (selectedTag.value) query.tag = selectedTag.value
     return query
+  },
+  applyQuery: (query) => {
+    searchQuery.value = (query.q as string) || ''
+    selectedTag.value = (query.tag as string) || ''
   },
   watchTargets: [searchQuery, selectedTag]
 })

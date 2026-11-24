@@ -1,8 +1,9 @@
 export default defineNuxtConfig({
-  ssr: false,
+  ssr: true,
   app: {
     baseURL: '/portfolio/',
     head: {
+      htmlAttrs: { lang: 'ja' },
       titleTemplate: '%s | ishi720 Portfolio',
       title: 'ishi720 Portfolio',
       meta: [
@@ -19,6 +20,12 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       gaId: '',
+    },
+  },
+  nitro: {
+    prerender: {
+      crawlLinks: false,
+      routes: ['/', '/developments', '/articles', '/repositories', '/career'],
     },
   },
   compatibilityDate: '2024-01-01',

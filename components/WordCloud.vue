@@ -6,7 +6,6 @@
 
 <script setup lang="ts">
 import { ref, onMounted, watch, nextTick } from 'vue'
-import WordCloud from 'wordcloud'
 
 interface WordData {
   text: string
@@ -43,7 +42,7 @@ const colors = [
   '#a29bfe', '#6c5ce7', '#00b894', '#e17055', '#0984e3'
 ]
 
-const renderCloud = () => {
+const renderCloud = async () => {
   if (!canvasRef.value || props.words.length === 0) return
 
   const maxCount = Math.max(...props.words.map(w => w.size))
@@ -54,6 +53,8 @@ const renderCloud = () => {
     const normalizedSize = ((w.size - minCount) / (maxCount - minCount)) * (props.maxFontSize - props.minFontSize) + props.minFontSize
     return [w.text, Math.round(normalizedSize)]
   })
+
+  const { default: WordCloud } = await import('wordcloud')
 
   let colorIndex = 0
 

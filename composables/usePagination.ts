@@ -1,5 +1,5 @@
-import { ref, computed, watch, type Ref, type ComputedRef } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { ref, computed, watch, nextTick, type Ref, type ComputedRef } from 'vue'
+import { useRoute, useRouter, type LocationQuery } from 'vue-router'
 import type { SortState } from '~/types/models'
 
 interface UsePaginationOptions<T> {
@@ -13,6 +13,7 @@ interface UsePaginationOptions<T> {
   sortState: Ref<SortState>
   /** URLクエリに追加するフィールドを構築する関数 */
   buildQueryFields?: () => Record<string, string | undefined>
+  applyQuery?: (query: LocationQuery) => void
   /** フィルター変更を監視するref配列 */
   watchTargets: Ref<unknown>[]
 }
@@ -29,7 +30,7 @@ export const getInitialSortState = (defaultSortKey: string): SortState => {
 }
 
 export const usePagination = <T>(options: UsePaginationOptions<T>) => {
-  const { filteredItems, perPage, defaultSortKey, sortState, buildQueryFields, watchTargets } = options
+  const { filteredItems, perPage, defaultSortKey, sortState, buildQueryFields, applyQuery, watchTargets } = options
 
   const route = useRoute()
   const router = useRouter()
@@ -40,8 +41,7 @@ export const usePagination = <T>(options: UsePaginationOptions<T>) => {
   // 総ページ数
   const totalPages = computed(() => Math.ceil(filteredItems.value.length / perPage))
 
-  // URLのクエリパラメータを更新
-  const updateQuery = () => {
+  const buildQuery = () => {
     const query: Record<string, string | undefined> = {}
 
     // カスタムフィールドを追加
@@ -62,7 +62,12 @@ export const usePagination = <T>(options: UsePaginationOptions<T>) => {
       query.page = String(currentPageValue.value)
     }
 
-    router.replace({ query })
+    return query
+  }
+
+  // URLのクエリパラメータを更新
+  const updateQuery = () => {
+    router.replace({ query: buildQuery() })
   }
 
   // currentPage computed (get/set)
@@ -81,8 +86,35 @@ export const usePagination = <T>(options: UsePaginationOptions<T>) => {
     return filteredItems.value.slice(start, end)
   })
 
+  const serializeQuery = (query: Record<string, unknown>) =>
+    JSON.stringify(
+      Object.entries(query)
+        .filter(([, value]) => value !== undefined && value !== null && value !== '')
+        .map(([key, value]) => [key, String(value)])
+        .sort(([a], [b]) => a.localeCompare(b))
+    )
+
+  let isSyncingFromQuery = false
+  watch(() => route.query, (query: LocationQuery) => {
+    if (serializeQuery(query) === serializeQuery(buildQuery())) return
+    isSyncingFromQuery = true
+    applyQuery?.(query)
+    const nextSort = {
+      key: (query.sort as string) || defaultSortKey,
+      order: (query.order as 'asc' | 'desc') || 'desc'
+    }
+    if (nextSort.key !== sortState.value.key || nextSort.order !== sortState.value.order) {
+      sortState.value = nextSort
+    }
+    currentPageValue.value = Number(query.page) || 1
+    nextTick(() => {
+      isSyncingFromQuery = false
+    })
+  })
+
   // フィルター変更時は1ページ目に戻ってURLを更新
   watch([...watchTargets, sortState], () => {
+    if (isSyncingFromQuery) return
     currentPageValue.value = 1
     updateQuery()
   }, { deep: true })

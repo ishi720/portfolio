@@ -337,3 +337,61 @@ describe('getInitialSortState', () => {
     expect(sortState.order).toBe('desc')
   })
 })
+
+describe('URLクエリからの状態復元', () => {
+  const setupWithReactiveRoute = async () => {
+    vi.resetModules()
+    const { reactive } = await import('vue')
+    const route = reactive<{ query: Record<string, string> }>({ query: {} })
+    const replace = vi.fn()
+    vi.doMock('vue-router', () => ({
+      useRoute: () => route,
+      useRouter: () => ({ replace })
+    }))
+    const { usePagination: use } = await import('../composables/usePagination')
+
+    const items = Array.from({ length: 50 }, (_, i) => ({ id: i + 1 }))
+    const tag = ref('')
+    const sortState = ref<{ key: string; order: 'asc' | 'desc' }>({ key: 'date', order: 'desc' })
+    const applyQuery = vi.fn((query: Record<string, unknown>) => {
+      tag.value = (query.tag as string) || ''
+    })
+    const pagination = use({
+      filteredItems: computed(() => items),
+      perPage: 10,
+      defaultSortKey: 'date',
+      sortState,
+      buildQueryFields: () => (tag.value ? { tag: tag.value } : {}),
+      applyQuery,
+      watchTargets: [tag]
+    })
+
+    return { route, replace, tag, sortState, applyQuery, ...pagination }
+  }
+
+  it('外部からクエリが変わるとフィルター・ソート・ページを復元する', async () => {
+    const { route, replace, tag, sortState, currentPage } = await setupWithReactiveRoute()
+
+    route.query = { tag: 'vue', sort: 'likes', order: 'asc', page: '3' }
+    await nextTick()
+    await nextTick()
+
+    expect(tag.value).toBe('vue')
+    expect(sortState.value).toEqual({ key: 'likes', order: 'asc' })
+    expect(currentPage.value).toBe(3)
+    expect(replace).not.toHaveBeenCalled()
+  })
+
+  it('現在の状態と同じクエリへの変更（自身のURL更新）では状態を復元しない', async () => {
+    const { route, tag, applyQuery, currentPage } = await setupWithReactiveRoute()
+
+    tag.value = 'nuxt'
+    await nextTick()
+    currentPage.value = 2
+    route.query = { tag: 'nuxt', page: '2' }
+    await nextTick()
+
+    expect(applyQuery).not.toHaveBeenCalled()
+    expect(currentPage.value).toBe(2)
+  })
+})

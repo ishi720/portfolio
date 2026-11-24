@@ -15,13 +15,16 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
-import { useHead } from '@unhead/vue'
+import { usePageSeo } from '~/composables/usePageSeo'
 import { usePortfolio } from '~/composables/usePortfolio'
 
-useHead({ title: 'Home' })
+usePageSeo({
+  title: 'Home',
+  description: 'ishi720のポートフォリオサイトです。個人開発したWebサービス、Chrome拡張機能、VS Code拡張機能、npmパッケージ、LINEスタンプ、技術記事などを紹介しています。',
+  path: '/',
+})
 import { useSkillCloud } from '~/composables/useSkillCloud'
-import { fetchMultiple } from '~/composables/useFetchData'
-import type { Article, Repo } from '~/types/models'
+import { useArticleSummaries, useRepoSummaries } from '~/composables/useSiteData'
 
 // コンポーネントはNuxtの自動インポートを使用
 // components/sections/ 配下のコンポーネントは SectionsXxx として利用可能
@@ -46,14 +49,14 @@ const pickupServices = [
 ]
   .filter(s => pickupTitles.includes(s.title))
   .sort((a, b) => pickupTitles.indexOf(a.title) - pickupTitles.indexOf(b.title))
-const { aggregatedTags, loadData } = useSkillCloud()
+const { data: articles } = useArticleSummaries()
+const { data: repos } = useRepoSummaries()
+const { aggregatedTags } = useSkillCloud(articles, repos)
 
 const cloudSize = ref(500)
 const isReady = ref(false)
-const repoCount = ref(0)
-const qiitaStats = ref({ posts: 0, contributions: 0 })
-const zennStats = ref({ posts: 0, contributions: 0 })
-const noteStats = ref({ posts: 0, contributions: 0 })
+
+const countBySource = (source: string) => articles.value.filter(a => a.source === source).length
 
 // 個人的に挑戦したいこと
 const futureGoals = [
@@ -70,10 +73,10 @@ const achievementStats = computed(() => ({
   vscodeExtensions: vscodeExtensions.length,
   lineStamps: lineStamps.length,
   developments: developments.length,
-  qiita: qiitaStats.value,
-  zenn: zennStats.value,
-  note: noteStats.value,
-  repos: repoCount.value
+  qiita: { posts: countBySource('Qiita'), contributions: 1584 },
+  zenn: { posts: countBySource('Zenn'), contributions: 2 },
+  note: { posts: countBySource('note'), contributions: 0 },
+  repos: repos.value.length
 }))
 
 const updateSize = () => {
@@ -82,42 +85,9 @@ const updateSize = () => {
   }
 }
 
-onMounted(async () => {
+onMounted(() => {
   updateSize()
   window.addEventListener('resize', updateSize)
-  await loadData()
-
-  // リポジトリと記事データを並列取得
-  const { data } = await fetchMultiple<{ repos: Repo[]; articles: Article[] }>([
-    { key: 'repos', url: '/data/repos_list.json' },
-    { key: 'articles', url: '/data/combined_articles.json' }
-  ])
-
-  // リポジトリ数を設定
-  if (data.repos) {
-    repoCount.value = data.repos.length
-  }
-
-  // 記事統計を設定
-  if (data.articles) {
-    const articles = data.articles as Article[]
-    const qiitaArticles = articles.filter(a => a.source === 'Qiita')
-    const zennArticles = articles.filter(a => a.source === 'Zenn')
-    const noteArticles = articles.filter(a => a.source === 'note')
-
-    qiitaStats.value = {
-      posts: qiitaArticles.length,
-      contributions: 1584
-    }
-    zennStats.value = {
-      posts: zennArticles.length,
-      contributions: 2
-    }
-    noteStats.value = {
-      posts: noteArticles.length,
-      contributions: 0
-    }
-  }
 
   setTimeout(() => {
     isReady.value = true

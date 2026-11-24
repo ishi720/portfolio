@@ -91,10 +91,14 @@
 </template>
 
 <script setup lang="ts">
-import { useHead } from '@unhead/vue'
+import { usePageSeo } from '~/composables/usePageSeo'
 import { ref, computed } from 'vue'
 
-useHead({ title: 'Career' })
+usePageSeo({
+  title: 'Career',
+  description: 'ishi720の経歴と、これまでに携わったプロジェクトや使用技術を紹介しています。',
+  path: '/career/',
+})
 import { useCareer } from '~/composables/useCareer'
 import type { Project } from '~/composables/useCareer'
 import { TOP_TECHS_COUNT } from '~/constants'

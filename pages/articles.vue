@@ -22,6 +22,7 @@
             <select
               v-model="selectedPlatform"
               class="platform-select"
+              @change="selectedTag = ''"
             >
               <option value="">すべて</option>
               <option v-for="platform in platforms" :key="platform.name" :value="platform.name">
@@ -93,23 +94,27 @@
 </template>
 
 <script setup lang="ts">
-import { useHead } from '@unhead/vue'
-import { ref, computed, onMounted, watch } from 'vue'
+import { usePageSeo } from '~/composables/usePageSeo'
+import { ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { usePortfolio } from '~/composables/usePortfolio'
 
-useHead({ title: 'Articles' })
+usePageSeo({
+  title: 'Articles',
+  description: 'ishi720がQiita・Zenn・noteに投稿した技術記事の一覧です。タグやプラットフォームで絞り込めます。',
+  path: '/articles/',
+})
 
 const { profile } = usePortfolio()
 import type { SortState, SortOption, Article } from '~/types/models'
 import { formatDate, parseTags } from '~/composables/useUtils'
 import { usePagination, getInitialSortState } from '~/composables/usePagination'
-import { useFetchData } from '~/composables/useFetchData'
+import { useArticles } from '~/composables/useSiteData'
 import { usePopularTags, filterBySearch, filterByTag, sortByDate, sortByNumber } from '~/composables/useFilteredList'
 import { ITEMS_PER_PAGE, TOP_TAGS_COUNT, PLATFORMS } from '~/constants'
 
 const route = useRoute()
-const { data: articles, error: articlesError, fetchData } = useFetchData<Article[]>([])
+const { data: articles } = useArticles()
 
 // プラットフォーム一覧
 const platforms = [...PLATFORMS]
@@ -125,11 +130,6 @@ const searchQuery = ref((route.query.q as string) || '')
 const selectedTag = ref((route.query.tag as string) || '')
 const selectedPlatform = ref((route.query.platform as string) || '')
 const sortState = ref<SortState>(getInitialSortState('date'))
-
-
-onMounted(() => {
-  fetchData('/data/combined_articles.json')
-})
 
 // フィルタリングされた記事一覧
 const filteredArticles = computed(() => {
@@ -173,12 +173,12 @@ const {
     if (selectedPlatform.value) query.platform = selectedPlatform.value
     return query
   },
+  applyQuery: (query) => {
+    searchQuery.value = (query.q as string) || ''
+    selectedTag.value = (query.tag as string) || ''
+    selectedPlatform.value = (query.platform as string) || ''
+  },
   watchTargets: [selectedTag, selectedPlatform, searchQuery]
-})
-
-// プラットフォーム変更時はタグ選択をクリア（タグ一覧が変わるため）
-watch(selectedPlatform, () => {
-  selectedTag.value = ''
 })
 
 // プラットフォームでフィルタリングした記事

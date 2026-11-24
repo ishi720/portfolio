@@ -139,10 +139,14 @@
 </template>
 
 <script setup lang="ts">
-import { useHead } from '@unhead/vue'
+import { usePageSeo } from '~/composables/usePageSeo'
 import { usePortfolio } from '~/composables/usePortfolio'
 
-useHead({ title: 'Developments' })
+usePageSeo({
+  title: 'Developments',
+  description: 'ishi720が個人開発したWebサービス、Chrome拡張機能、VS Code拡張機能、npmパッケージ、LINEスタンプの一覧です。',
+  path: '/developments/',
+})
 
 const { developments, chromeExtensions, vscodeExtensions, lineStamps, npmPackages } = usePortfolio()
 

@@ -26,13 +26,11 @@ vi.mock('~/composables/usePagination', () => ({
   getInitialSortState: (key: string) => ({ key, order: 'desc' })
 }))
 
-vi.mock('~/composables/useFetchData', async () => {
+vi.mock('~/composables/useSiteData', async () => {
   const { shallowRef } = await import('vue')
   return {
-    useFetchData: () => ({
-      data: shallowRef<Article[]>([]),
-      error: shallowRef(null),
-      fetchData: vi.fn()
+    useArticles: () => ({
+      data: shallowRef<Article[]>([])
     })
   }
 })
