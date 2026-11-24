@@ -50,6 +50,7 @@ export const usePortfolio = () => {
         { title: 'HPバーシミュレーター', url: 'https://ishi720.github.io/hp-bar-simulator/', image: 'hp-bar-simulator.png', description: 'HPバーの動作をシミュレートするサービスです。', techs: ['JavaScript', 'Svelte'] },
         { title: 'デフラグ・ビジュアライザー', url: 'https://ishi720.github.io/defrag-visualizer/', image: 'defrag-visualizer.png', description: 'ディスクの断片化と、デフラグで並べ直す様子をブラウザで見える化するツールです。', techs: ['JavaScript', 'Alpine.js'] },
         { title: 'Relatime', url: 'https://ishi720.github.io/relatime/', image: 'relatime.png', description: 'relation（関係）＋ time（時間）。時系列で変わる人物の相関図を作るWebアプリです。', techs: ['TypeScript', 'Next.js'] },
+        { title: 'コイン回転のパラドックス シミュレーター', url: 'https://ishi720.github.io/coin-rotation-paradox-simulator/', image: 'coin-rotation-paradox-simulator.png', description: 'コイン回転のパラドックスをシミュレートするサービスです。', techs: ['JavaScript', 'Svelte'] },
     ]
 
     const chromeExtensions = [
