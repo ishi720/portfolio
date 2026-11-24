@@ -1,7 +1,9 @@
+import { PAGE_PATHS } from './constants'
+
 export default defineNuxtConfig({
   ssr: true,
   app: {
-    baseURL: '/portfolio/',
+    baseURL: '/',
     head: {
       htmlAttrs: { lang: 'ja' },
       titleTemplate: '%s | ishi720 Portfolio',
@@ -11,7 +13,7 @@ export default defineNuxtConfig({
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/portfolio/images/favicon.ico' },
+        { rel: 'icon', type: 'image/x-icon', href: '/images/favicon.ico' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap' }
       ]
     }
@@ -20,12 +22,17 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       gaId: '',
+      siteUrl: '',
     },
   },
   nitro: {
     prerender: {
       crawlLinks: false,
-      routes: ['/', '/developments', '/articles', '/repositories', '/career'],
+      routes: [
+        ...PAGE_PATHS,
+        '/robots.txt',
+        ...(process.env.NUXT_PUBLIC_SITE_URL ? ['/sitemap.xml'] : []),
+      ],
     },
   },
   compatibilityDate: '2024-01-01',

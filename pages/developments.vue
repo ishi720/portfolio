@@ -17,7 +17,7 @@
         <div class="works-grid">
           <a v-for="development in developments" :key="development.title" :href="development.url" target="_blank" class="work-card">
             <div class="work-image">
-              <img :src="`/portfolio/images/service/${development.image}`" :alt="development.title" @error="handleImgError">
+              <img :src="`/images/service/${development.image}`" :alt="development.title" @error="handleImgError">
               <div class="work-image-placeholder">{{ development.title }}</div>
             </div>
             <div class="work-content">
@@ -71,7 +71,7 @@
         <div class="works-grid">
           <a v-for="chromeExtension in chromeExtensions" :key="chromeExtension.title" :href="chromeExtension.url" target="_blank" class="work-card">
             <div class="work-image">
-              <img :src="`/portfolio/images/service/${chromeExtension.image}`" :alt="chromeExtension.title" @error="handleImgError">
+              <img :src="`/images/service/${chromeExtension.image}`" :alt="chromeExtension.title" @error="handleImgError">
               <div class="work-image-placeholder">{{ chromeExtension.title }}</div>
             </div>
             <div class="work-content">
@@ -124,7 +124,7 @@
         <div class="line-grid">
           <a v-for="stamp in lineStamps" :key="stamp.title" :href="stamp.url" target="_blank" class="line-card">
             <div class="line-image">
-              <img :src="`/portfolio/images/service/${stamp.image}`" :alt="stamp.title" @error="handleImgError">
+              <img :src="`/images/service/${stamp.image}`" :alt="stamp.title" @error="handleImgError">
               <div class="line-image-placeholder">{{ stamp.title }}</div>
             </div>
             <div class="line-content">

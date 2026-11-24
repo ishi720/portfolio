@@ -15,3 +15,5 @@ export const PLATFORMS = [
   { name: 'Zenn', class: 'platform-zenn' },
   { name: 'note', class: 'platform-note' }
 ] as const
+
+export const PAGE_PATHS = ['/', '/developments', '/articles', '/repositories', '/career'] as const

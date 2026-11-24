@@ -52,7 +52,6 @@ portfolio/
 │   ├── data/                         # JSONデータファイル置き場
 │   │   ├── combined_articles.json    # Articlesに表示するQiita&Zennのデータ
 │   │   └── repos_list.json           # Githubのリポジトリデータ
-│   ├── sitemap.xml                   # サイトマップ
 │   └── images/                       # 画像ファイル置き場
 ├── types/
 │   └── models.ts                     # 共通の型定義

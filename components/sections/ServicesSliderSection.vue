@@ -15,7 +15,7 @@
         <SwiperSlide v-for="service in services" :key="service.title">
           <a :href="service.url" target="_blank" class="slide-card">
             <div class="slide-image">
-              <img :src="`/portfolio/images/service/${service.image}`" :alt="service.title" :draggable="false" @error="handleImgError">
+              <img :src="`/images/service/${service.image}`" :alt="service.title" :draggable="false" @error="handleImgError">
               <div class="slide-image-placeholder">{{ service.title }}</div>
             </div>
             <div class="slide-content">

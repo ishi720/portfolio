@@ -12,6 +12,8 @@ vi.mock('vue-router', () => ({
   useRoute: () => ({ query: {} })
 }))
 
+vi.stubGlobal('useRuntimeConfig', () => ({ public: { siteUrl: '' } }))
+
 vi.mock('@unhead/vue', () => ({
   useHead: vi.fn()
 }))

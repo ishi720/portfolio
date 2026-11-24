@@ -2,7 +2,7 @@ export const usePortfolio = () => {
     const profile = {
         name: 'ishi720',
         bio: '休日は、無駄なものを開発しているオカメインコです。革新的なアイデアや文化は、無駄から生まれると思ってます。',
-        avatar: '/portfolio/images/ishi720_profile.jpeg',
+        avatar: '/images/ishi720_profile.jpeg',
     }
 
     const socials = [
