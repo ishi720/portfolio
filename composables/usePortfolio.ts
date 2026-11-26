@@ -51,6 +51,7 @@ export const usePortfolio = () => {
         { title: 'デフラグ・ビジュアライザー', url: 'https://ishi720.github.io/defrag-visualizer/', image: 'defrag-visualizer.png', description: 'ディスクの断片化と、デフラグで並べ直す様子をブラウザで見える化するツールです。', techs: ['JavaScript', 'Alpine.js'] },
         { title: 'Relatime', url: 'https://ishi720.github.io/relatime/', image: 'relatime.png', description: 'relation（関係）＋ time（時間）。時系列で変わる人物の相関図を作るWebアプリです。', techs: ['TypeScript', 'Next.js'] },
         { title: 'コイン回転のパラドックス シミュレーター', url: 'https://ishi720.github.io/coin-rotation-paradox-simulator/', image: 'coin-rotation-paradox-simulator.png', description: 'コイン回転のパラドックスをシミュレートするサービスです。', techs: ['JavaScript', 'Svelte'] },
+        { title: '病院から最寄りの薬局距離', url: 'https://ishi720.github.io/pharmacy-hospital-distance/', image: 'pharmacy-hospital-distance.png', description: '薬局と病院の距離を可視化するサービスです。', techs: ['JavaScript', 'Svelte'] },
     ]
 
     const chromeExtensions = [
