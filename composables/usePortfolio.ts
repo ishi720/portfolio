@@ -56,7 +56,7 @@ export const usePortfolio = () => {
     ]
 
     const chromeExtensions = [
-        { title: 'Feeduck', url: 'https://chromewebstore.google.com/detail/feeduck/alfjohbjhjgkcmgecbhjcjhhkiphccne?authuser=4&hl=ja', image: 'feeduck-chrome-extension.png', description: 'RSSフィードを表示するChrome拡張機能です。', techs: ['JavaScript'] },
+        { title: 'Feeduck', url: 'https://chromewebstore.google.com/detail/feeduck/alfjohbjhjgkcmgecbhjcjhhkiphccne', image: 'feeduck-chrome-extension.png', description: 'RSSフィードを表示するChrome拡張機能です。', techs: ['JavaScript'] },
     ];
 
     const vscodeExtensions = [
