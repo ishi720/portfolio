@@ -53,6 +53,7 @@ const getSnsIcon = (name: string): string => {
     'Zenn': 'https://cdn.simpleicons.org/zenn/3EA8FF',
     'Note': 'https://cdn.simpleicons.org/note/000000',
     'npm': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg',
+    'Packagist': 'https://cdn.simpleicons.org/packagist/F28D1A',
     'LINE Store': 'https://cdn.simpleicons.org/line/06C755',
     'VS Marketplace': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg',
   }

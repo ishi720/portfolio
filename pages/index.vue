@@ -29,7 +29,7 @@ import { useArticleSummaries, useRepoSummaries } from '~/composables/useSiteData
 // コンポーネントはNuxtの自動インポートを使用
 // components/sections/ 配下のコンポーネントは SectionsXxx として利用可能
 
-const { profile, socials, developments, chromeExtensions, vscodeExtensions, lineStamps, npmPackages } = usePortfolio()
+const { profile, socials, developments, chromeExtensions, vscodeExtensions, lineStamps, npmPackages, composerPackages } = usePortfolio()
 
 const pickupTitles = [
   'ポケモンパーティメーカー',
@@ -69,6 +69,7 @@ const futureGoals = [
 // 実績統計（computed）
 const achievementStats = computed(() => ({
   npmPackages: npmPackages.length,
+  composerPackages: composerPackages.length,
   chromeExtensions: chromeExtensions.length,
   vscodeExtensions: vscodeExtensions.length,
   lineStamps: lineStamps.length,

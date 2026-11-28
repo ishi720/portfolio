@@ -15,6 +15,15 @@
             <div class="achievement-label">NPM Packages</div>
           </div>
         </NuxtLink>
+        <NuxtLink to="/developments#composer-packages" class="achievement-card">
+          <div class="achievement-icon">
+            <img src="https://cdn.simpleicons.org/packagist/F28D1A" alt="Packagist">
+          </div>
+          <div class="achievement-info">
+            <div class="achievement-number">{{ stats.composerPackages }}</div>
+            <div class="achievement-label">Composer Packages</div>
+          </div>
+        </NuxtLink>
         <NuxtLink to="/developments#chrome-extensions" class="achievement-card">
           <div class="achievement-icon">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/chrome/chrome-original.svg" alt="Chrome">
@@ -103,6 +112,7 @@ interface PlatformStats {
 
 interface Stats {
   npmPackages: number
+  composerPackages: number
   chromeExtensions: number
   vscodeExtensions: number
   lineStamps: number

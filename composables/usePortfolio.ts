@@ -11,6 +11,7 @@ export const usePortfolio = () => {
         { name: 'Zenn', url: 'https://zenn.dev/ishi720' },
         { name: 'Note', url: 'https://note.com/ishi720' },
         { name: 'npm', url: 'https://www.npmjs.com/~ishi720' },
+        { name: 'Packagist', url: 'https://packagist.org/users/ishi720/' },
         { name: 'VS Marketplace', url: 'https://marketplace.visualstudio.com/publishers/ishi720' },
         { name: 'LINE Store', url: 'https://store.line.me/stickershop/author/5872119/ja' },
     ]
@@ -110,6 +111,17 @@ export const usePortfolio = () => {
 
     ]
 
+    const composerPackages = [
+        {
+            name: 'bysensor-gacha',
+            url: 'https://packagist.org/packages/ishi720/bysensor-gacha',
+            github: 'https://github.com/ishi720/bysensor-gacha',
+            description: '集めるほど持っていない観光地が出にくくなる、物欲センサー搭載のガチャライブラリです。',
+            techs: ['PHP'],
+            version: '1.0.0'
+        },
+    ]
+
     const skills = [
         { name: 'HTML5', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg', level: 90 },
         { name: 'CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg', level: 90 },
@@ -126,5 +138,5 @@ export const usePortfolio = () => {
         { title: 'Zenn', url: 'https://zenn.dev/ishi720'},
     ]
 
-  return { profile, socials, developments, chromeExtensions, vscodeExtensions, lineStamps, npmPackages, skills, article_platforms }
+  return { profile, socials, developments, chromeExtensions, vscodeExtensions, lineStamps, npmPackages, composerPackages, skills, article_platforms }
 }

@@ -49,6 +49,9 @@
               <NuxtLink to="/developments#npm-packages" class="dropdown-item" @click="closeMenus">
                 NPMパッケージ
               </NuxtLink>
+              <NuxtLink to="/developments#composer-packages" class="dropdown-item" @click="closeMenus">
+                Composerパッケージ
+              </NuxtLink>
               <NuxtLink to="/developments#chrome-extensions" class="dropdown-item" @click="closeMenus">
                 Chrome拡張機能
               </NuxtLink>

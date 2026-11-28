@@ -18,7 +18,7 @@ export const useSkillCloud = (
   articles: Ref<Array<{ tags: string }>>,
   repos: Ref<Array<{ tags: string | string[] }>>
 ) => {
-  const { developments, chromeExtensions, vscodeExtensions, npmPackages } = usePortfolio()
+  const { developments, chromeExtensions, vscodeExtensions, npmPackages, composerPackages } = usePortfolio()
   const { careers } = useCareer()
 
   // タグを集計（大文字小文字を統一、日本語除外）
@@ -54,6 +54,10 @@ export const useSkillCloud = (
 
     // npm Packagesのタグを集計
     npmPackages.forEach(pkg => {
+      pkg.techs.forEach(tech => addTag(tech))
+    })
+
+    composerPackages.forEach(pkg => {
       pkg.techs.forEach(tech => addTag(tech))
     })
 

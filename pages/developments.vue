@@ -61,6 +61,35 @@
       </div>
     </section>
 
+    <!-- Composer Packages Section -->
+    <section id="composer-packages" class="npm-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Composerパッケージ</h2>
+          <p class="section-subtitle">Composer Packages</p>
+        </div>
+        <div class="npm-grid">
+          <a v-for="pkg in composerPackages" :key="pkg.name" :href="pkg.url" target="_blank" class="npm-card composer-card">
+            <div class="npm-header">
+              <div class="npm-icon">
+                <img src="https://cdn.simpleicons.org/packagist/F28D1A" alt="Packagist">
+              </div>
+              <div class="npm-info">
+                <h3 class="npm-name">{{ pkg.name }}</h3>
+                <span class="npm-version">v{{ pkg.version }}</span>
+              </div>
+            </div>
+            <p class="npm-desc">{{ pkg.description }}</p>
+            <div class="npm-footer">
+              <div class="npm-techs">
+                <span v-for="tech in pkg.techs" :key="tech" class="tech-tag">{{ tech }}</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- Chrome Extensions Section -->
     <section id="chrome-extensions" class="works-section">
       <div class="container">
@@ -144,11 +173,11 @@ import { usePortfolio } from '~/composables/usePortfolio'
 
 usePageSeo({
   title: 'Developments',
-  description: 'ishi720が個人開発したWebサービス、Chrome拡張機能、VS Code拡張機能、npmパッケージ、LINEスタンプの一覧です。',
+  description: 'ishi720が個人開発したWebサービス、Chrome拡張機能、VS Code拡張機能、npmパッケージ、Composerパッケージ、LINEスタンプの一覧です。',
   path: '/developments/',
 })
 
-const { developments, chromeExtensions, vscodeExtensions, lineStamps, npmPackages } = usePortfolio()
+const { developments, chromeExtensions, vscodeExtensions, lineStamps, npmPackages, composerPackages } = usePortfolio()
 
 const handleImgError = (e: Event) => {
   (e.target as HTMLImageElement).style.display = 'none'
